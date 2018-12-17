@@ -52,20 +52,22 @@ $ python sample.py
 
 これで以下の画像が表示されれば成功です！
 何かボタンを押せば消えます。
+
+
 ![](assets/imori.jpg)
 
 
 これからは問題を解いていってください。
 問では assets/imori.jpg を使用して下さい。
 
-問題1~10  >> Quetion1_10
-問題11~20 >> Question11_20
-問題21~30 >> Question21_30
-問題31~40 >> Question31_40
-問題41~50 >> Question41_50
-問題51~60 >> Question51_60
-問題61~70 >> Question61_70
-問題71~80 >> Quesiton71_80
-問題81~90 >> Question81_90
-問題91~100 >> Question91_100
+問題1-10  >> Quetion1_10
+問題11-20 >> Question11_20
+問題21-30 >> Question21_30
+問題31-40 >> Question31_40
+問題41-50 >> Question41_50
+問題51-60 >> Question51_60
+問題61-70 >> Question61_70
+問題71-80 >> Quesiton71_80
+問題81-90 >> Question81_90
+問題91-100 >> Question91_100
 
