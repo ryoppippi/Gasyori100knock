@@ -14,7 +14,7 @@ img = cv2.imread("imori.jpg")
 red = img[:, :, 2].copy()
 ```
 
-|入力画像 imori.jpg|出力画像 answer_1.jpg||
+|入力画像 (imori.jpg)|出力画像 (answer_1.jpg)|
 |---|---|
 |![](imori.jpg)|![](answer_1.jpg)|
 
