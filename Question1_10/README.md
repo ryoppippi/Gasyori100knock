@@ -25,7 +25,7 @@ red = img[:, :, 2].copy()
 
 Y = 0.2126 R + 0.7152 G + 0.0722 B
 
-|入力画像(imori.jpg)|出力画像(answer_2.jpg)||
+|入力画像 (imori.jpg)|出力画像 (answer_2.jpg)|
 |---|---|
 |![](imori.jpg)|![](answer_2.jpg)|
 
@@ -40,7 +40,7 @@ y = { 0 (if y < 128)
      255 (else) 
 ```
 
-|入力画像(imori.jpg)|出力画像(answer_3.jpg)||
+|入力画像 (imori.jpg)|出力画像 (answer_3.jpg)|
 |---|---|
 |![](imori.jpg)|![](answer_3.jpg)|
 
@@ -72,6 +72,6 @@ argmax_{t} X = argmax_{t} Sb^2
 ```
 となる。すなわち、Sb^2 =  w0 * w1 * (M0 - M1) ^2 となる、閾値tを二値化の閾値とすれば良い。
 
-|入力画像(imori.jpg)|出力画像(th = 143)(answer_4.jpg)||
+|入力画像 (imori.jpg)|出力画像 (th = 143) (answer_4.jpg)|
 |---|---|
 |![](imori.jpg)|![](answer_4.jpg)|
