@@ -18,6 +18,8 @@ red = img[:, :, 2].copy()
 |---|---|
 |![](imori.jpg)|![](answer_1.jpg)|
 
+答え >> answer_1.py
+
 ## Q.2. グレースケール化
 
 画像をグレースケールにせよ。
@@ -28,6 +30,8 @@ Y = 0.2126 R + 0.7152 G + 0.0722 B
 |入力画像 (imori.jpg)|出力画像 (answer_2.jpg)|
 |---|---|
 |![](imori.jpg)|![](answer_2.jpg)|
+
+答え >> answer_2.py
 
 ## Q.3. 二値化
 
@@ -43,6 +47,8 @@ y = { 0 (if y < 128)
 |入力画像 (imori.jpg)|出力画像 (answer_3.jpg)|
 |---|---|
 |![](imori.jpg)|![](answer_3.jpg)|
+
+答え >> answer_3.py
 
 ## Q.4. 大津の二値化
 
@@ -75,3 +81,5 @@ argmax_{t} X = argmax_{t} Sb^2
 |入力画像 (imori.jpg)|出力画像 (th = 143) (answer_4.jpg)|
 |---|---|
 |![](imori.jpg)|![](answer_4.jpg)|
+
+答え >> answer_4.py
