@@ -9,7 +9,7 @@
 Python-3.6でやって下さい。
 (解答はPython-3.6です)
 
-### Minicondaのインストール
+### 1. Minicondaのインストール
 
 https://conda.io/miniconda.html
 のサイトからMinicondaをインストールします。
@@ -26,7 +26,7 @@ $ conda create python=3.6 -n gasyori100
 $ source actiavte gasyori100
 ```
 
-### パッケージのインストール
+### 2. パッケージのインストール
 
 以下のコマンドで必要なパッケージをインストールします。
 
@@ -35,7 +35,7 @@ $ source actiavte gasyori100
 $ pip install -r requirement.txt
 ```
 
-### 画像処理チュートリアル
+### 3. 画像処理チュートリアル
 
 以下のファイルを作成し sample.py という名前で保存し、実行します。
 
