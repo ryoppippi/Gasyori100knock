@@ -16,7 +16,7 @@ red = img[:, :, 2].copy()
 
 |入力画像|出力画像|
 |---|---|
-|![](../assets/imori.jpg)|![](answer_1.jpg)|
+|![](imori.jpg)|![](answer_1.jpg)|
 
 ## 問題2.
 
@@ -27,4 +27,4 @@ Y = 0.2126 R + 0.7152 G + 0.0722 B
 
 |入力画像|出力画像|
 |---|---|
-|![](../assets/imori.jpg)|![](answer_2.jpg)|
+|![](imori.jpg)|![](answer_2.jpg)|
