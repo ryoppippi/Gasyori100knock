@@ -11,6 +11,9 @@ out_img = np.zeros((h, w), dtype=np.float)
 
 out = 0.2126 * r + 0.7152 * g + 0.0722 * b
 out = out.astype(np.uint8)
+th = 128
+out[out < th] = 0
+out[out >= th] = 255
 
 cv2.imwrite("out.jpg", out)
 cv2.imshow("result", out)

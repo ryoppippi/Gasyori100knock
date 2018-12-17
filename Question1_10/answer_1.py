@@ -1,6 +1,6 @@
 import cv2
 
-img = cv2.imread("assets/imori.jpg")
+img = cv2.imread("imori.jpg")
 b = img[:, :, 0].copy()
 g = img[:, :, 1].copy()
 r = img[:, :, 2].copy()
