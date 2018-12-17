@@ -11,11 +11,11 @@ cv2.imread()関数ではチャネルがBGRの順になることに注意！
 ```python
 import cv2
 img = cv2.imread("assets/imori.jpg")
-red = img[:, :, 2].copy()
+red = img[:, :, 2].copy()
 ```
 
 |入力画像|出力画像|
 |---|---|
-|![](assets/imori.jpg)|![](assets/answer_1.jpg)|
+|![](../assets/imori.jpg)|![](../assets/answer_1.jpg)|
 
 ## 問題2
