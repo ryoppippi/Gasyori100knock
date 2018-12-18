@@ -40,7 +40,7 @@ MAX-MINフィルタとはフィルタ内の画素の最大値と最小値の差�
 ```
 
 |入力画像 (imori.jpg)|出力画像・縦方向 (answer_13_vertocal.jpg)|出力画像・横方向 (answer_13_horizontal.jpg)|
-|---|---|
+|---|---|---|
 |![](imori.jpg)|![](answer_13_vertical.jpg)|![](answer_13_horizontal.jpg)|
 
 答え >> answer_13.py
