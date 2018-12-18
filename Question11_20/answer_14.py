@@ -13,7 +13,7 @@ r = img[:, :, 2].copy()
 gray = 0.2126 * r + 0.7152 * g + 0.0722 * b
 gray = gray.astype(np.uint8)
 
-# Max-Min Filter
+# sobel Filter
 K_size = 3
 
 ## Zero padding
@@ -22,9 +22,14 @@ out = np.zeros((H + pad*2, W + pad*2), dtype=np.float)
 out[pad:pad+H, pad:pad+W] = gray.copy().astype(np.float)
 tmp = out.copy()
 
+## Sobel vertical
+#K = [[0., -1., 0.],[0., 1., 0.],[0., 0., 0.]]
+## Sobel horizontal
+K = [[0., 0., 0.],[-1., 1., 0.], [0., 0., 0.]]
+
 for y in range(H):
     for x in range(W):
-        out[pad+y, pad+x] = np.max(tmp[y:y+K_size, x:x+K_size]) - np.min(tmp[y:y+K_size, x:x+K_size])
+        out[pad+y, pad+x] = np.mean(K * (tmp[y:y+K_size, x:x+K_size]))
 
 out = out[pad:pad+H, pad:pad+W].astype(np.uint8)
 
