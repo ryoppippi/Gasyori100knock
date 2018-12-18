@@ -1,10 +1,8 @@
 import cv2
 import numpy as np
 
+# Read image
 img = cv2.imread("imori.jpg").astype(np.float)
-b = img[:, :, 0].copy()
-g = img[:, :, 1].copy()
-r = img[:, :, 2].copy()
 
 h, w, c = img.shape
 
@@ -34,6 +32,7 @@ th = max_t
 out[out < th] = 0
 out[out >= th] = 255
 
+# Save result
 cv2.imwrite("out.jpg", out)
 cv2.imshow("result", out)
 cv2.waitKey(0)

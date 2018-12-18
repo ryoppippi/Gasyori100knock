@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 
+# Read image
 img = cv2.imread("imori.jpg").astype(np.float) / 255.
 b = img[:, :, 0].copy()
 g = img[:, :, 1].copy()
@@ -46,6 +47,7 @@ for i in range(6):
 out[np.where(max_v == min_v)] = 0
 out = (out * 255).astype(np.uint8) 
 
+# Save result
 cv2.imwrite("out.jpg", out)
 cv2.imshow("result", out)
 cv2.waitKey(0)
