@@ -171,13 +171,13 @@ xout = s0 / s * (xin - m) + m0
 c ... 定数、g ... ガンマ特性(通常は2.2)
 
 ```bash
-x' = c * Iin ^ g
+x' = c * Iin ^ g
 ```
 
 そこで、ガンマ補正は次式で行われる。
 
 ```bash
-Iout = (1/c * Iin) ^ (1/g)
+Iout = (1/c * Iin) ^ (1/g)
 ```
 
 |入力画像 (imori_gamma.jpg)|出力画像 (answer_20.jpg)|
