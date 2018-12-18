@@ -180,6 +180,8 @@ x' = c * Iin ^ g
 Iout = (1/c * Iin) ^ (1/g)
 ```
 
+|![](auqestion_20_1.jpg)|![](question_20_2.jpg)|
+
 |入力画像 (imori_gamma.jpg)|出力画像 (answer_20.jpg)|
 |---|---|
 |![](imori_gamma.jpg)|![](answer_20.jpg)|
