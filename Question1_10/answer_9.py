@@ -20,8 +20,8 @@ K = np.zeros((K_size, K_size), dtype=np.float)
 for x in range(-pad, -pad+K_size):
     for y in range(-pad, -pad+K_size):
         K[y+pad, x+pad] = np.exp( -(x**2 + y**2) / (2* (sigma**2)))
-K /= (sigma * np.sqrt(2 * np.pi)) 
-print(K)
+K /= (sigma * np.sqrt(2 * np.pi))
+K /= K.sum()
 
 for y in range(H):
     for x in range(W):
