@@ -111,9 +111,9 @@ matplotlibを用いて*imori_dark.jpg*のヒストグラムを表示せよ。
 ヒストグラムとは画素の出現回数をグラフにしたものである。
 matplotlibではhist()という関数がすでにあるので、それを利用する。
 
-|入力画像 (imori.jpg)|出力画像 (answer_17_1.png) |出力画像(減色処理後)(answer_17_2.png)|
+|入力画像 (imori.jpg)|出力画像 (answer_17_1.jpg) |出力画像(減色処理後)(answer_17_2.jpg)|
 |---|---|---|
-|![](imori.jpg)|![](answer_17_1.png)|![](answer_17_2.png)|
+|![](imori.jpg)|![](answer_17_1.jpg)|![](answer_17_2.jpg)|
 
 答え >> answer_17.py
 
@@ -135,8 +135,8 @@ xout = {  a                         (xin < c)
           b                         (d < xin)
 ```
 
-|入力画像 (imori.jpg)|出力画像 (answer_18_1.png) |出力画像(ヒストグラム)(answer_18_2.png)|
+|入力画像 (imori.jpg)|出力画像 (answer_18_1.jpg) |出力画像(ヒストグラム)(answer_18_2.jpg)|
 |---|---|---|
-|![](imori.jpg)|![](answer_18_1.png)|![](answer_18_2.png)|
+|![](imori.jpg)|![](answer_18_1.jpg)|![](answer_18_2.jpg)|
 
 答え >> answer_18.py
