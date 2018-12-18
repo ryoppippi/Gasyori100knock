@@ -111,7 +111,7 @@ matplotlibを用いて*imori_dark.jpg*のヒストグラムを表示せよ。
 ヒストグラムとは画素の出現回数をグラフにしたものである。
 matplotlibではhist()という関数がすでにあるので、それを利用する。
 
-|入力画像 (imori_dark.jpg)|出力画像 (answer_17_1.jpg) |出力画像(減色処理後)(answer_17_2.jpg)|
+|入力画像 (imori_dark.jpg)|出力画像 (answer_17_1.jpg) |出力画像(減色処理後)(answer_17_2.jpg)|
 |---|---|---|
 |![](imori_dark.jpg)|![](answer_17_1.jpg)|![](answer_17_2.jpg)|
 
@@ -140,3 +140,21 @@ xout = {  a                         (xin < c)
 |![](imori_dark.jpg)|![](answer_18_1.jpg)|![](answer_18_2.jpg)|
 
 答え >> answer_18.py
+
+## Q.19. ヒストグラム平坦化
+
+ヒストグラム平坦化(平均値m0=128、標準偏差s0=52)を実装せよ。
+
+ヒストグラム平坦化とはヒストグラムのダイナミックレンジを変更するのではなく、ヒストグラムを平坦に変更する操作である。
+
+平均値m、標準偏差s、のヒストグラムを平均値m0, 標準偏差s0に変更するには、次式によって変換する。
+
+```bash
+xout = s0 / s * (xin - m) + m0
+```
+
+|入力画像 (imori_dark.jpg)|出力画像 (answer_19_1.jpg) |出力画像(ヒストグラム)(answer_19_2.jpg)|
+|---|---|---|
+|![](imori_dark.jpg)|![](answer_19_1.jpg)|![](answer_19_2.jpg)|
+
+答え >> answer_19.py
