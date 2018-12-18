@@ -6,8 +6,6 @@ import matplotlib.pyplot as plt
 img = cv2.imread("imori_dark.jpg").astype(np.float)
 H, W, C = img.shape
 
-# Trans [30, 200]
-a, b = 30., 200.
 # Trans [0, 255]
 a, b = 0., 255.
 

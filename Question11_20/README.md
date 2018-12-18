@@ -111,7 +111,7 @@ matplotlibを用いて*imori_dark.jpg*のヒストグラムを表示せよ。
 ヒストグラムとは画素の出現回数をグラフにしたものである。
 matplotlibではhist()という関数がすでにあるので、それを利用する。
 
-|入力画像 (imori.jpg)|出力画像 (answer_17_1.jpg) |出力画像(減色処理後)(answer_17_2.jpg)|
+|入力画像 (imori_dark.jpg)|出力画像 (answer_17_1.jpg) |出力画像(減色処理後)(answer_17_2.jpg)|
 |---|---|---|
 |![](imori.jpg)|![](answer_17_1.jpg)|![](answer_17_2.jpg)|
 
@@ -127,7 +127,7 @@ matplotlibではhist()という関数がすでにあるので、それを利用�
 そのため画像を人の目に見やすくするために、ヒストグラムを正規化したり正規化したりなどの処理が必要である。
 
 このヒストグラム正規化は**濃度階調変換(glay-scale transformation)**と呼ばれ、[c,d]の画素値を持つ画像を[a,b]のレンジに変換する場合は次式で実現できる。
-今回は*imori_dark.jpg*を[30, 200]と[0, 255]のレンジにそれぞれ変換する。
+今回は*imori_dark.jpg*を[0, 255]のレンジにそれぞれ変換する。
 
 ```bash
 xout = {  a                         (xin < c)
@@ -135,7 +135,7 @@ xout = {  a                         (xin < c)
           b                         (d < xin)
 ```
 
-|入力画像 (imori.jpg)|出力画像 (answer_18_1.jpg) |出力画像(ヒストグラム)(answer_18_2.jpg)|
+|入力画像 (imori_dark.jpg)|出力画像 (answer_18_1.jpg) |出力画像(ヒストグラム)(answer_18_2.jpg)|
 |---|---|---|
 |![](imori.jpg)|![](answer_18_1.jpg)|![](answer_18_2.jpg)|
 
