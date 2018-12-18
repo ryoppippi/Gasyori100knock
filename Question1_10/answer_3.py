@@ -6,10 +6,7 @@ b = img[:, :, 0].copy()
 g = img[:, :, 1].copy()
 r = img[:, :, 2].copy()
 
-h, w, c = img.shape
-
 # Grayscale
-out_img = np.zeros((h, w), dtype=np.float)
 out = 0.2126 * r + 0.7152 * g + 0.0722 * b
 out = out.astype(np.uint8)
 
