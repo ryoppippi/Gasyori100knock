@@ -13,8 +13,6 @@ s0 = 52
 m = np.mean(img)
 s = np.std(img)
 
-print(s)
-
 out = img.copy()
 out = s0 / s * (out - m) + m0
 out = out.astype(np.uint8)

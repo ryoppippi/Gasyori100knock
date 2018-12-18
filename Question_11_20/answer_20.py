@@ -3,18 +3,28 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Read image
-img = cv2.imread("imori_gamma.jpg").astype(np.float)
+img = cv2.imread("imori.jpg").astype(np.float)
+H, W, C = img.shape
 
-# Gammma correction
-c = 1.
-g = 2.2
+# Histogram flattening
+S = H * W * C * 1.
 
 out = img.copy()
-out /= 255.
-out = (1/c * out) ** (1/g)
 
-out *= 255
+sum_h = 0.
+z_max = 255.
+
+for i in range(1, 255):
+    ind = np.where(img == i)
+    sum_h += len(img[ind])
+    z_prime = z_max / S * sum_h
+    out[ind] = z_prime
+
 out = out.astype(np.uint8)
+
+# Display histogram
+plt.hist(out.ravel(), rwidth=0.8, range=(0, 255))
+plt.show()
 
 # Save result
 cv2.imshow("result", out)
