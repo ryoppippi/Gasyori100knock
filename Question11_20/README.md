@@ -181,7 +181,7 @@ Iout = (1/c * Iin) ^ (1/g)
 ```
 
 |入力画像 (imori_gamma.jpg)|出力画像 (answer_20.jpg)|
-|---|---|---|
+|---|---|
 |![](imori_gamma.jpg)|![](answer_20.jpg)|
 
 答え >> answer_20.py
