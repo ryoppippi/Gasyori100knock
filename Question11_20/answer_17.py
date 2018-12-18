@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Read image
-img = cv2.imread("imori.jpg").astype(np.float)
+img = cv2.imread("imori_dark.jpg").astype(np.float)
 H, W, C = img.shape
 
 # Dicrease color
@@ -14,8 +14,8 @@ for i in range(4):
     out[ind] = 32 * (2*i+1)
 
 # Display histogram
-plt.hist(img.ravel(), rwidth=0.8)
+plt.hist(img.ravel(), rwidth=0.8, range=(0, 255))
 
 plt.subplots()
-plt.hist(out.ravel(), rwidth=0.8)
+plt.hist(out.ravel(), rwidth=0.8, range=(0, 255))
 plt.show()
