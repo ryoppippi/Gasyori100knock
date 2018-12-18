@@ -135,7 +135,7 @@ xout = {  a                         (xin < c)
           b                         (d < xin)
 ```
 
-|入力画像 (imori_dark.jpg)|出力画像 (answer_18_1.jpg) |出力画像(ヒストグラム)(answer_18_2.jpg)|
+|入力画像 (imori_dark.jpg)|出力画像 (answer_18_1.jpg) |ヒストグラム(answer_18_2.jpg)|
 |---|---|---|
 |![](imori_dark.jpg)|![](answer_18_1.jpg)|![](answer_18_2.jpg)|
 
@@ -153,7 +153,7 @@ xout = {  a                         (xin < c)
 xout = s0 / s * (xin - m) + m0
 ```
 
-|入力画像 (imori.jpg)|出力画像 (answer_19_1.jpg) |出力画像(ヒストグラム)(answer_19_2.jpg)|
+|入力画像 (imori.jpg)|出力画像 (answer_19_1.jpg) |ヒストグラム(answer_19_2.jpg)|
 |---|---|---|
 |![](imori.jpg)|![](answer_19_1.jpg)|![](answer_19_2.jpg)|
 
