@@ -3,19 +3,23 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Read image
-img = cv2.imread("imori_dark.jpg").astype(np.float)
+img = cv2.imread("imori.jpg").astype(np.float)
 H, W, C = img.shape
 
-# Trans [0, 255]
-a, b = 0., 255.
-
-vmin = img.min()
-vmax = img.max()
+# Histogram flattening
+S = H * W * C * 1.
 
 out = img.copy()
-out[out<a] = a
-out[out>b] = b
-out = (b-a) / (vmax - vmin) * (out - vmin) + a
+
+sum_h = 0.
+z_max = 255.
+
+for i in range(1, 255):
+    ind = np.where(img == i)
+    sum_h += len(img[ind])
+    z_prime = z_max / S * sum_h
+    out[ind] = z_prime
+
 out = out.astype(np.uint8)
 
 # Display histogram

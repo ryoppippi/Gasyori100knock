@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 # Read image
-img = cv2.imread("imori.jpg")
+img = cv2.imread("imori_noise.jpg")
 H, W, C = img.shape
 
 
