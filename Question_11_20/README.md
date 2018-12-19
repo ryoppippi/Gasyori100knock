@@ -180,7 +180,7 @@ LoG(x,y) = (x^2 + y^2 - s^2) / (2 * pi * s^6) * exp(-(x^2+y^2) / (2*s^2))
 ```
 
 |入力画像 (imori.jpg)|出力画像 (answer_19.jpg) |
-|:---:|:---:|:---:|
+|:---:|:---:|
 |![](imori.jpg)|![](answer_19.jpg)|
 
 答え >> answer_20.py
@@ -192,7 +192,7 @@ matplotlibを用いて*imori_dark.jpg*のヒストグラムを表示せよ。
 matplotlibではhist()という関数がすでにあるので、それを利用する。
 
 |入力画像 (imori_dark.jpg)|出力画像 (answer_20_1.jpg) |
-|:---:|:---:|:---:|
+|:---:|:---:|
 |![](imori_dark.jpg)|![](answer_20.jpg)|
 
 答え >> answer_20.py
