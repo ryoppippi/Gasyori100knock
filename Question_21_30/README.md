@@ -106,8 +106,8 @@ I' ... 拡大後の画像、 I ... 拡大前の画像、a ... 拡大率、[] ...
 ```bash
 I'(x,y) = I([x/a], [y/a])
 ```
-|入力画像 (imori_gamma.jpg)|出力画像 (answer_25.jpg)|
+|入力画像 (imori.jpg)|出力画像 (answer_25.jpg)|
 |:---:|:---:|
-|![](imori_gamma.jpg)|![](answer_25.jpg)|
+|![](imori.jpg)|![](answer_25.jpg)|
 
 答え >> answer_25.py
