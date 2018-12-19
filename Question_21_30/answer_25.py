@@ -9,11 +9,11 @@ H, W, C = img.shape
 
 # Nearest Neighbor
 a = 1.5
-a_shape = (int(a*H), int(a*W), C)
-out = np.zeros_like(a_shape)
+aH = int(a * H)
+aW = int(a * W)
 
-y = np.arange(a_shape[0]).repeat(a_shape[1]).reshape(a_shape[1], -1)
-x = np.tile(np.arange(a_shape[1]), (a_shape[0],1))
+y = np.arange(aH).repeat(aW).reshape(aW, -1)
+x = np.tile(np.arange(aW), (aH, 1))
 y = np.round(y / a).astype(np.int)
 x = np.round(x / a).astype(np.int)
 

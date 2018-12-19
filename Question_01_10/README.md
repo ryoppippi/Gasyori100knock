@@ -15,7 +15,7 @@ red = img[:, :, 2].copy()
 ```
 
 |入力画像 (imori.jpg)|出力画像 (answer_1.jpg)|
-|---|---|
+|:---:|:---:|
 |![](imori.jpg)|![](answer_1.jpg)|
 
 答え >> answer_1.py
@@ -28,7 +28,7 @@ red = img[:, :, 2].copy()
 Y = 0.2126 R + 0.7152 G + 0.0722 B
 
 |入力画像 (imori.jpg)|出力画像 (answer_2.jpg)|
-|---|---|
+|:---:|:---:|
 |![](imori.jpg)|![](answer_2.jpg)|
 
 答え >> answer_2.py
@@ -45,7 +45,7 @@ y = { 0 (if y < 128)
 ```
 
 |入力画像 (imori.jpg)|出力画像 (answer_3.jpg)|
-|---|---|
+|:---:|:---:|
 |![](imori.jpg)|![](answer_3.jpg)|
 
 答え >> answer_3.py
@@ -80,7 +80,7 @@ argmax_{t} X = argmax_{t} Sb^2
 となる。すなわち、Sb^2 =  w0 * w1 * (M0 - M1) ^2 となる、閾値tを二値化の閾値とすれば良い。
 
 |入力画像 (imori.jpg)|出力画像 (th = 143) (answer_4.jpg)|
-|---|---|
+|:---:|:---:|
 |![](imori.jpg)|![](answer_4.jpg)|
 
 答え >> answer_4.py
@@ -134,7 +134,7 @@ X = C (1 - |H' mod 2 - 1|)
 ここでは色相Hを反転(180を加算)し、RGBに直し画像を表示せよ。
 
 |入力画像 (imori.jpg)|出力画像 (answer_5.jpg)|
-|---|---|
+|:---:|:---:|
 |![](imori.jpg)|![](answer_5.jpg)|
 
 答え >> answer_5.py
@@ -152,7 +152,7 @@ val = {  32  (0 <= val < 63)
         224  (191 <= val < 256)
 ```
 |入力画像 (imori.jpg)|出力画像 (answer_6.jpg)|
-|---|---|
+|:---:|:---:|
 |![](imori.jpg)|![](answer_6.jpg)|
 
 答え >> answer_6.py
@@ -172,7 +172,7 @@ v = 1/|R| * Sum_{i in R} v_i
 ここではimori.jpgは128x128なので、8x8にグリッド分割し、平均プーリングせよ。
 
 |入力画像 (imori.jpg)|出力画像 (answer_7.jpg)|
-|---|---|
+|:---:|:---:|
 |![](imori.jpg)|![](answer_7.jpg)|
 
 答え >> answer_7.py
@@ -181,7 +181,7 @@ v = 1/|R| * Sum_{i in R} v_i
 ここでは平均値でなく最大値でプーリングせよ。
 
 |入力画像 (imori.jpg)|出力画像 (answer_8.jpg)|
-|---|---|
+|:---:|:---:|
 |![](imori.jpg)|![](answer_8.jpg)|
 
 答え >> answer_8.py
@@ -209,7 +209,7 @@ K =  1/16 [ 2 4 2 ]
 ```
 
 |入力画像 (imori_noise.jpg)|出力画像 (answer_9.jpg)|
-|---|---|
+|:---:|:---:|
 |![](imori_noise.jpg)|![](answer_9.jpg)|
 
 答え >> answer_9.py
@@ -224,7 +224,7 @@ K =  1/16 [ 2 4 2 ]
 これもゼロパディングせよ。
 
 |入力画像 (imori_noise.jpg)|出力画像 (answer_10.jpg)|
-|---|---|
+|:---:|:---:|
 |![](imori_noise.jpg)|![](answer_10.jpg)|
 
 答え >> answer_10.py
