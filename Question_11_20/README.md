@@ -142,8 +142,8 @@ K = [ 1 -4  1 ]
 ```
 
 |入力画像 (imori.jpg)|出力画像(answer_17.jpg)|
-|:---:|:---:|
-|![](imori.jpg)|![](answer_17.jpg)|
+|:---:|:---:||
+|![](imori.jpg)|![](answer_17.jpg)||
 
 答え >> answer_17.py
 
