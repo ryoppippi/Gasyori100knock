@@ -23,8 +23,11 @@ iy = np.floor(y).astype(np.int)
 ix = np.minimum(ix, W-2)
 iy = np.minimum(iy, H-2)
 
-dx = np.repeat(np.expand_dims(x - ix, axis=-1), 3, axis=-1)
-dy = np.repeat(np.expand_dims(y - iy, axis=-1), 3, axis=-1)
+dx = x - ix
+dy = y - iy
+
+dx = np.repeat(np.expand_dims(dx, axis=-1), 3, axis=-1)
+dy = np.repeat(np.expand_dims(dy, axis=-1), 3, axis=-1)
 
 
 out = (1-dx) * (1-dy) * img[iy, ix] + dx * (1 - dy) * img[iy, ix+1] + (1 - dx) * dy * img[iy+1, ix] + dx * dy * img[iy+1, ix+1]
