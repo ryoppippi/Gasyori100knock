@@ -6,7 +6,7 @@
 
 平滑化フィルタはフィルタ内の画素の平均値を出力するフィルタである。
 
-|入力画像 (imori.jpg)|出力画像 (answer_11.jpg)|
+|入力 (imori.jpg)|出力 (answer_11.jpg)|
 |:---:|:---:|
 |![](imori.jpg)|![](answer_11.jpg)|
 
@@ -25,7 +25,7 @@
    0   0  1/3
 ```
 
-|入力画像 (imori.jpg)|出力画像 (answer_12.jpg)|
+|入力 (imori.jpg)|出力 (answer_12.jpg)|
 |:---:|:---:|
 |![](imori.jpg)|![](answer_12.jpg)|
 
@@ -39,7 +39,7 @@ MAX-MINフィルタとはフィルタ内の画素の最大値と最小値の差�
 エッジ検出とは画像内の線を検出るすることであり、このような画像内の情報を抜き出す操作を**特徴抽出**と呼ぶ。
 エッジ検出では多くの場合、グレースケール画像に対してフィルタリングを行う。
 
-|入力画像 (imori.jpg)|出力画像 (answer_13.jpg)|
+|入力 (imori.jpg)|出力 (answer_13.jpg)|
 |:---:|:---:|
 |![](imori.jpg)|![](answer_13.jpg)|
 
@@ -59,7 +59,7 @@ K = [ 0  1  0 ]   K = [ -1 1 0 ]
       0  0  0            0 0 0
 ```
 
-|入力画像 (imori.jpg)|出力画像・縦方向 (answer_14_v.jpg)|出力画像・横方向 (answer_14_h.jpg)|
+|入力 (imori.jpg)|出力・縦方向 (answer_14_v.jpg)|出力・横方向 (answer_14_h.jpg)|
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](answer_14_v.jpg)|![](answer_14_h.jpg)|
 
@@ -78,7 +78,7 @@ K = [ 2 0 -2 ]   K = [  0  0  0 ]
       1 0 -1           -1 -2 -1
 ```
 
-|入力画像 (imori.jpg)|出力画像・縦方向 (answer_15_v.jpg)|出力画像・横方向 (answer_15_h.jpg)|
+|入力 (imori.jpg)|出力・縦方向 (answer_15_v.jpg)|出力・横方向 (answer_15_h.jpg)|
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](answer_15_v.jpg)|![](answer_15_h.jpg)|
 
@@ -97,7 +97,7 @@ K = [  0  0  0 ]  K = [ -1 0 1 ]
        1  1  1          -1 0 1
 ```
 
-|入力画像 (imori.jpg)|出力画像・縦方向 (answer_16_v.jpg)|出力画像・横方向 (answer_16_h.jpg)|
+|入力 (imori.jpg)|出力・縦方向 (answer_16_v.jpg)|出力・横方向 (answer_16_h.jpg)|
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](answer_16_v.jpg)|![](answer_16_h.jpg)|
 
@@ -141,7 +141,7 @@ K = [ 1 -4  1 ]
       0  1  0
 ```
 
-|入力画像 (imori.jpg)|出力画像(answer_17.jpg)|
+|入力 (imori.jpg)|出力(answer_17.jpg)|
 |:---:|:---:|
 |![](imori.jpg)|![](answer_17.jpg)||
 
@@ -159,7 +159,7 @@ K = [ -1  1  1 ]
        0  1  2
 ```
 
-|入力画像 (imori.jpg)|出力画像(answer_18.jpg)|
+|入力 (imori.jpg)|出力(answer_18.jpg)|
 |:---:|:---:|
 |![](imori.jpg)|![](answer_18.jpg)|
 
@@ -179,7 +179,7 @@ LoGフィルタは次式で定義される。
 LoG(x,y) = (x^2 + y^2 - s^2) / (2 * pi * s^6) * exp(-(x^2+y^2) / (2*s^2))
 ```
 
-|入力画像 (imori.jpg)|出力画像 (answer_19.jpg) |
+|入力 (imori.jpg)|出力 (answer_19.jpg) |
 |:---:|:---:|
 |![](imori.jpg)|![](answer_19.jpg)|
 
@@ -191,7 +191,7 @@ matplotlibを用いて*imori_dark.jpg*のヒストグラムを表示せよ。
 ヒストグラムとは画素の出現回数をグラフにしたものである。
 matplotlibではhist()という関数がすでにあるので、それを利用する。
 
-|入力画像 (imori_dark.jpg)|出力画像 (answer_20.jpg) |
+|入力 (imori_dark.jpg)|出力 (answer_20.jpg) |
 |:---:|:---:|
 |![](imori_dark.jpg)|![](answer_20.jpg)|
 

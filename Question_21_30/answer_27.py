@@ -3,11 +3,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Read image
-img = cv2.imread("imori.jpg").astype(np.float)
+img = cv2.imread("imori.jpg").astype(np.float32)
 H, W, C = img.shape
 
 
-# Bi-lenear
+# Bi-cubic
 a = 1.5
 aH = int(a * H)
 aW = int(a * W)
@@ -45,8 +45,8 @@ def weight(t):
     w[ind] = (a*np.power(at, 3) - 5*a*np.power(at, 2) + 8*a*at - 4*a)[ind]
     return w
 
-w_sum = np.zeros((aH, aW, C), dtype=np.float)
-out = np.zeros((aH, aW, C), dtype=np.float)
+w_sum = np.zeros((aH, aW, C), dtype=np.float32)
+out = np.zeros((aH, aW, C), dtype=np.float32)
 
 for j in range(-1, 3):
     for i in range(-1, 3):
@@ -62,7 +62,6 @@ for j in range(-1, 3):
         out += wx * wy * img[ind_y, ind_x]
 
 out /= w_sum
-
 out = out.astype(np.uint8)
 
 # Save result

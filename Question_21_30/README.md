@@ -19,7 +19,7 @@ xout = {  a                         (xin < c)
           b                         (d < xin)
 ```
 
-|入力画像 (imori_dark.jpg)|出力画像 (answer_21_1.jpg) |ヒストグラム(answer_21_2.jpg)|
+|入力 (imori_dark.jpg)|出力 (answer_21_1.jpg) |ヒストグラム(answer_21_2.jpg)|
 |:---:|:---:|:---:|
 |![](imori_dark.jpg)|![](answer_21_1.jpg)|![](answer_21_2.jpg)|
 
@@ -37,7 +37,7 @@ xout = {  a                         (xin < c)
 xout = s0 / s * (xin - m) + m0
 ```
 
-|入力画像 (imori.jpg)|出力画像 (answer_22_1.jpg) |ヒストグラム(answer_2_2.jpg)|
+|入力 (imori.jpg)|出力 (answer_22_1.jpg) |ヒストグラム(answer_2_2.jpg)|
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](answer_22_1.jpg)|![](answer_22_2.jpg)|
 
@@ -56,7 +56,7 @@ xout = s0 / s * (xin - m) + m0
 Z' = Zmax / S * Sum{i=0:z} h(z)
 ```
 
-|入力画像 (imori.jpg)|出力画像 (answer_23_1.jpg) |ヒストグラム(answer_23_2.png)|
+|入力 (imori.jpg)|出力 (answer_23_1.jpg) |ヒストグラム(answer_23_2.png)|
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](answer_23_1.jpg)|![](answer_23_2.png)|
 
@@ -86,7 +86,7 @@ Iout = (1/c * Iin) ^ (1/g)
 
 ![](question_24_1.jpg) ![](question_24_2.jpg)
 
-|入力画像 (imori_gamma.jpg)|出力画像 (answer_24.jpg)|
+|入力 (imori_gamma.jpg)|出力 (answer_24.jpg)|
 |:---:|:---:|
 |![](imori_gamma.jpg)|![](answer_24.jpg)|
 
@@ -106,7 +106,7 @@ I' ... 拡大後の画像、 I ... 拡大前の画像、a ... 拡大率、[ ] ..
 ```bash
 I'(x,y) = I([x/a], [y/a])
 ```
-|入力画像 (imori.jpg)|出力画像 (answer_25.jpg)|
+|入力 (imori.jpg)|出力 (answer_25.jpg)|
 |:---:|:---:|
 |![](imori.jpg)|![](answer_25.jpg)|
 
@@ -135,7 +135,7 @@ dx = x'/a - x , dy = y'/a - y
 I'(x',y') = (1-dx)(1-dy)I(x,y) + dx(1-dy)I(x+1,y) + (1-dx)dyI(x,y+1) + dxdyI(x+1,y+1)
 ```
 
-|入力画像 (imori.jpg)|出力画像 (answer_26.jpg)|
+|入力 (imori.jpg)|出力 (answer_26.jpg)|
 |:---:|:---:|
 |![](imori.jpg)|![](answer_26.jpg)|
 
@@ -154,6 +154,13 @@ I(x-1,y+1)  I(x,y+1)  I(x+1,y+1)  I(x+2,y+1)
 I(x-1,y+2)  I(x,y+2)  I(x+1,y+2)  I(x+2,y+2)
 ```
 
+それぞれの画素との距離は次式の様に決定される。
+
+```bash
+dx1 = x'/a - (x-1) , dx2 = x'/a - x , dx3 = (x+1) - x'/a , dx2 = (x+2) - x'/a
+dy1 = y'/a - (y-1) , dy2 = y'/a - y , dy3 = (y+1) - y'/a , dy2 = (y+2) - y'/a
+```
+
 重みは距離によって次の関数により決定される。
 a は多くの場合-1となる。
 
@@ -163,8 +170,71 @@ h(t) = { (a+2)|t|^3 - (a+3)|t|^2 + 1    (when |t|<=1)
          0                              (when 2<|t|) 
 ```
 
-|入力画像 (imori.jpg)|出力画像 (answer_27.jpg)|
+これら画素と重みを用いて、次式で拡大画像の画素が計算される。
+それぞれの画素と重みを掛けた和を重みの和で割る。
+
+```bash
+I'(x', y') = (Sum{i=-1:2}{j=-1:2} I(x+i,y+j) * wxi * wyj) / Sum{i=-1:2}{j=-1:2} wxi * wyj
+```
+
+|入力 (imori.jpg)|出力 (answer_27.jpg)|
 |:---:|:---:|
 |![](imori.jpg)|![](answer_27.jpg)|
 
 答え >> answer_27.py
+
+## Q.28. アフィン変換(平行移動)
+
+アフィン変換を利用して画像をx方向に+30、y方向に-30だけ平行移動させよ。
+
+アフィン変換とは3x3の行列を用いて画像の変換を行う操作である。
+
+変換は(1)平行移動(Q.28) (2)拡大縮小(Q.29) (3)回転(Q.30) (4)スキュー(Q.31) がある。
+
+元画像を(x,y)、変換後の画像を(x',y')とする。
+画像の拡大縮小は、次式で表される。
+
+```bash
+[ x' ] = [a b][x]
+  y'      c d  y
+```
+
+一方、平行移動は次式となる。
+
+```bash
+[ x' ] = [x] + [tx]
+  y'      y  +  ty
+```
+
+以上を一つの式にまとめると、次式になり、これがアフィン変換である。
+
+```bash
+  x'       a b tx    x
+[ y' ] = [ c d ty ][ y ]
+  1        0 0  1    1
+```
+
+平行移動では次式を用いる。
+
+```bash
+  x'       1 0 tx    x
+[ y' ] = [ 0 1 ty ][ y ]
+  1        0 0  1    1
+```
+
+|入力 (imori.jpg)|出力 (answer_28.jpg)|
+|:---:|:---:|
+|![](imori.jpg)|![](answer_28.jpg)|
+
+答え >> answer_28.py
+
+## Q.29. アフィン変換(拡大縮小)
+
+アフィン変換を用いて、(1)x方向に1.3倍、y方向に0.8倍にリサイズせよ。
+また、(2) (1)の条件に加えて、x方向に+30、y方向に-30だけ平行移動を同時に実現せよ。
+
+|入力 (imori.jpg)|出力 (1) (answer_29_1.jpg)|出力 (2) (answer_29_2.jpg)|
+|:---:|:---:|:---:|
+|![](imori.jpg)|![](answer_29_1.jpg)|![](answer_29_2.jpg)|
+
+答え >> answer_289.py

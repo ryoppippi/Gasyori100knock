@@ -14,7 +14,7 @@ img = cv2.imread("imori.jpg")
 red = img[:, :, 2].copy()
 ```
 
-|入力画像 (imori.jpg)|出力画像 (answer_1.jpg)|
+|入力 (imori.jpg)|出力 (answer_1.jpg)|
 |:---:|:---:|
 |![](imori.jpg)|![](answer_1.jpg)|
 
@@ -27,7 +27,7 @@ red = img[:, :, 2].copy()
 
 Y = 0.2126 R + 0.7152 G + 0.0722 B
 
-|入力画像 (imori.jpg)|出力画像 (answer_2.jpg)|
+|入力 (imori.jpg)|出力 (answer_2.jpg)|
 |:---:|:---:|
 |![](imori.jpg)|![](answer_2.jpg)|
 
@@ -44,7 +44,7 @@ y = { 0 (if y < 128)
      255 (else) 
 ```
 
-|入力画像 (imori.jpg)|出力画像 (answer_3.jpg)|
+|入力 (imori.jpg)|出力 (answer_3.jpg)|
 |:---:|:---:|
 |![](imori.jpg)|![](answer_3.jpg)|
 
@@ -79,7 +79,7 @@ argmax_{t} X = argmax_{t} Sb^2
 ```
 となる。すなわち、Sb^2 =  w0 * w1 * (M0 - M1) ^2 となる、閾値tを二値化の閾値とすれば良い。
 
-|入力画像 (imori.jpg)|出力画像 (th = 143) (answer_4.jpg)|
+|入力 (imori.jpg)|出力 (th = 143) (answer_4.jpg)|
 |:---:|:---:|
 |![](imori.jpg)|![](answer_4.jpg)|
 
@@ -133,7 +133,7 @@ X = C (1 - |H' mod 2 - 1|)
 ```
 ここでは色相Hを反転(180を加算)し、RGBに直し画像を表示せよ。
 
-|入力画像 (imori.jpg)|出力画像 (answer_5.jpg)|
+|入力 (imori.jpg)|出力 (answer_5.jpg)|
 |:---:|:---:|
 |![](imori.jpg)|![](answer_5.jpg)|
 
@@ -151,7 +151,7 @@ val = {  32  (0 <= val < 63)
         160  (127 <= val < 191)
         224  (191 <= val < 256)
 ```
-|入力画像 (imori.jpg)|出力画像 (answer_6.jpg)|
+|入力 (imori.jpg)|出力 (answer_6.jpg)|
 |:---:|:---:|
 |![](imori.jpg)|![](answer_6.jpg)|
 
@@ -171,7 +171,7 @@ v = 1/|R| * Sum_{i in R} v_i
 
 ここではimori.jpgは128x128なので、8x8にグリッド分割し、平均プーリングせよ。
 
-|入力画像 (imori.jpg)|出力画像 (answer_7.jpg)|
+|入力 (imori.jpg)|出力 (answer_7.jpg)|
 |:---:|:---:|
 |![](imori.jpg)|![](answer_7.jpg)|
 
@@ -180,7 +180,7 @@ v = 1/|R| * Sum_{i in R} v_i
 
 ここでは平均値でなく最大値でプーリングせよ。
 
-|入力画像 (imori.jpg)|出力画像 (answer_8.jpg)|
+|入力 (imori.jpg)|出力 (answer_8.jpg)|
 |:---:|:---:|
 |![](imori.jpg)|![](answer_8.jpg)|
 
@@ -208,7 +208,7 @@ K =  1/16 [ 2 4 2 ]
             1 2 1
 ```
 
-|入力画像 (imori_noise.jpg)|出力画像 (answer_9.jpg)|
+|入力 (imori_noise.jpg)|出力 (answer_9.jpg)|
 |:---:|:---:|
 |![](imori_noise.jpg)|![](answer_9.jpg)|
 
@@ -223,7 +223,7 @@ K =  1/16 [ 2 4 2 ]
 これは注目画素の3x3の領域内の、メディアン値(中央値)を出力するフィルタである。
 これもゼロパディングせよ。
 
-|入力画像 (imori_noise.jpg)|出力画像 (answer_10.jpg)|
+|入力 (imori_noise.jpg)|出力 (answer_10.jpg)|
 |:---:|:---:|
 |![](imori_noise.jpg)|![](answer_10.jpg)|
 
