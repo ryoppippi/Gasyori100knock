@@ -19,9 +19,9 @@ xout = {  a                         (xin < c)
           b                         (d < xin)
 ```
 
-|入力 (imori_dark.jpg)|出力 (answer_21_1.jpg) |ヒストグラム(answer_21_2.jpg)|
+|入力 (imori_dark.jpg)|出力 (answer_21_1.jpg) |ヒストグラム(answer_21_2.png)|
 |:---:|:---:|:---:|
-|![](imori_dark.jpg)|![](answer_21_1.jpg)|![](answer_21_2.jpg)|
+|![](imori_dark.jpg)|![](answer_21_1.jpg)|![](answer_21_2.png)|
 
 答え >> answer_21.py
 
@@ -37,9 +37,9 @@ xout = {  a                         (xin < c)
 xout = s0 / s * (xin - m) + m0
 ```
 
-|入力 (imori.jpg)|出力 (answer_22_1.jpg) |ヒストグラム(answer_2_2.jpg)|
+|入力 (imori.jpg)|出力 (answer_22_1.jpg) |ヒストグラム(answer_22_2.png)|
 |:---:|:---:|:---:|
-|![](imori.jpg)|![](answer_22_1.jpg)|![](answer_22_2.jpg)|
+|![](imori.jpg)|![](answer_22_1.jpg)|![](answer_22_2.png)|
 
 答え >> answer_22.py
 
@@ -226,15 +226,16 @@ I'(x', y') = (Sum{i=-1:2}{j=-1:2} I(x+i,y+j) * wxi * wyj) / Sum{i=-1:2}{j=-1:2} 
 |:---:|:---:|
 |![](imori.jpg)|![](answer_28.jpg)|
 
-答え >> answer_28.py
+答え >> answer_28.py
 
 ## Q.29. アフィン変換(拡大縮小)
 
-アフィン変換を用いて、(1)x方向に1.3倍、y方向に0.8倍にリサイズせよ。
-また、(2) (1)の条件に加えて、x方向に+30、y方向に-30だけ平行移動を同時に実現せよ。
+アフィン変換を用いて、(1)x方向に1.3倍、y方向に0.8倍にリサイズせよ。
+
+また、(2)  (1)の条件に加えて、x方向に+30、y方向に-30だけ平行移動を同時に実現せよ。
 
 |入力 (imori.jpg)|出力 (1) (answer_29_1.jpg)|出力 (2) (answer_29_2.jpg)|
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](answer_29_1.jpg)|![](answer_29_2.jpg)|
 
-答え >> answer_289.py
+答え >> answer_29.py
