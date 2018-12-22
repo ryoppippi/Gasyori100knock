@@ -259,4 +259,4 @@ I'(x', y') = (Sum{i=-1:2}{j=-1:2} I(x+i,y+j) * wxi * wyj) / Sum{i=-1:2}{j=-1:2} 
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](answer_30_1.jpg)|![](answer_30_2.jpg)|
 
-答え >> answer_30.py
+答え >> answer_30_1.py, answer_30_2.py
