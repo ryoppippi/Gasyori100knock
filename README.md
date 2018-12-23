@@ -67,6 +67,7 @@ $ python sample.py
 これからは問題を解いていってください。それぞれのフォルダに問題内容が入っています。
 問では assets/imori.jpg を使用して下さい。
 
+- チュートリアル >> Tutorial
 - 問題1-10  >> Quetion_01_10
 - 問題11-20 >> Question_11_20
 - 問題21-30 >> Question_21_30
