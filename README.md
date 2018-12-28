@@ -30,6 +30,12 @@ $ conda create python=3.6 -n gasyori100
 $ source actiavte gasyori100
 ```
 
+するとこうなります。
+
+```bash
+(gasyori100) :~/work_space/Gasyori100knock/ :$ 
+```
+
 ### 2. パッケージのインストール
 
 以下のコマンドで必要なパッケージをインストールします。
@@ -60,7 +66,7 @@ $ python sample.py
 何かボタンを押せば消えます。
 
 
-![](assets/imori.jpg)
+![](assets/sample.png)
 
 次に画像処理に関するnumpyの扱い方のために**Tutorial**フォルダを見てみて下さい。（もう知ってるという人はスキップして下さい。）
 
