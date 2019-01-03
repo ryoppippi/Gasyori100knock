@@ -117,17 +117,17 @@ $ python sample.py
 |13|MAX-MINフィルタ | ||33**未**|フーリエ変換 ローパスフィルタ|
 |14|微分フィルタ | ||34**未**|フーリエ変換 ハイパスフィルタ|
 |15|Sobelフィルタ | ||35**未**|フーリエ変換 バンドパスフィルタ|
-|16|Prewittフィルタ | || 36&hearts;| JPEG (Step.1)離散コサイン変換 |JPEG圧縮|
-|17|Laplacianフィルタ | ||37| PSNR|JPEG圧縮 |
-|18|Embossフィルタ | ||38&hearts;| JPEG(Step.2)DCT+量子化|JPEG圧縮|
-|19|LoGフィルタ | ||39|JPEG(Step.3)YCbCr表色系|JPEG圧縮|
-|20|ヒストグラム表示 ||| 40&hearts;|JPEG(Step.4)YCbCr + 量子化 |JPEG圧縮|
+|16|Prewittフィルタ | || 36&hearts;| JPEG圧縮 (Step.1)離散コサイン変換 |
+|17|Laplacianフィルタ | ||37| PSNR|
+|18|Embossフィルタ | ||38&hearts;| JPEG圧縮(Step.2)DCT+量子化|
+|19|LoGフィルタ | ||39|JPEG圧縮(Step.3)YCbCr表色系|
+|20|ヒストグラム表示 ||| 40&hearts;|JPEG圧縮(Step.4)YCbCr + 量子化 |
 
-||番号|問題|備考||番号|問題|備考|
+|番号|問題|備考||番号|問題|備考|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| 41&hearts; | Canny (Step.1) エッジ強度 | エッジ検出．Canny法
-| 42&hearts; | Canny (Step.2) 細線化 | エッジ検出．Canny法
-| 43&hearts; | Canny (Step.3) ヒステリシス閾処理 | エッジ検出．Canny法
+| 41&hearts; | Cannyエッジ検出 (Step.1) エッジ強度 |
+| 42&hearts; | Cannyエッジ検出 (Step.2) 細線化 |
+| 43&hearts; | Cannyエッジ検出 (Step.3) ヒステリシス閾処理 |
 
 ## TODO
 
