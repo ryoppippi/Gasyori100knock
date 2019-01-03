@@ -123,7 +123,7 @@ H' = H // 60
 
 X = C (1 - |H' mod 2 - 1|)
 
-(R,G,B) = (V - C) (1,1,1) = { (0, 0, 0)  (if H is undefined)
+(R,G,B) = (V - C) (1,1,1) + { (0, 0, 0)  (if H is undefined)
                               (C, X, 0)  (if 0 <= H' < 1)
                               (X, C, 0)  (if 1 <= H' < 2)
                               (0, C, X)  (if 2 <= H' < 3)
