@@ -21,7 +21,7 @@ Canny法は、
 
 ```bash
 勾配強度 edge = sqrt(fx^2 + fy^2)
-勾配角度 tan = arctan(fy, fx)
+勾配角度 tan = arctan(fy / fx)
 ```
 
 4. 勾配角度を次式に沿って、量子化する。
