@@ -117,11 +117,11 @@ $ python sample.py
 ||13|MAX-MINフィルタ | |**未**|33|フーリエ変換 ローパスフィルタ|
 ||14|微分フィルタ | |**未**|34|フーリエ変換 ハイパスフィルタ|
 ||15|Sobelフィルタ | |**未**|35|フーリエ変換 バンドパスフィルタ|
-||16|Prewittフィルタ | |&hearts;| 36| JPEG (Step.1)離散コサイン変換 |JPEG圧縮|
+||16|Prewittフィルタ | || 36&hearts;| JPEG (Step.1)離散コサイン変換 |JPEG圧縮|
 ||17|Laplacianフィルタ | ||37| PSNR|JPEG圧縮 |
-||18|Embossフィルタ | |&hearts;|38| JPEG(Step.2)DCT+量子化|JPEG圧縮|
+||18|Embossフィルタ | ||38&hearts;| JPEG(Step.2)DCT+量子化|JPEG圧縮|
 ||19|LoGフィルタ | ||39|JPEG(Step.3)YCbCr表色系|JPEG圧縮|
-||20|ヒストグラム表示 | |&hearts;| 40|JPEG(Step.4)YCbCr + 量子化 |JPEG圧縮|
+||20|ヒストグラム表示 ||| 40&hearts;|JPEG(Step.4)YCbCr + 量子化 |JPEG圧縮|
 
 ||番号|問題|備考||番号|問題|備考|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
