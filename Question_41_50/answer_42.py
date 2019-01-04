@@ -16,7 +16,8 @@ sigma = 1.4
 ## Zero padding
 pad = K_size // 2
 gau = np.zeros((H + pad*2, W + pad*2), dtype=np.float32)
-gau[pad:pad+H, pad:pad+W] = gray.copy().astype(np.float32)
+#gau[pad:pad+H, pad:pad+W] = gray.copy().astype(np.float32)
+gau = np.pad(gray, (pad, pad), 'edge')
 tmp = gau.copy()
 
 ## Kernel
@@ -52,7 +53,7 @@ fy = fy[pad:pad+H, pad:pad+W]
 
 # Non-maximum suppression
 edge = np.sqrt(np.power(fx, 2) + np.power(fy, 2))
-fx[fx == 0] = 1
+fx[fx == 0] = 1e-5
 tan = np.arctan(fy / fx)
 ## Angle quantization
 angle = np.zeros_like(tan, dtype=np.uint8)

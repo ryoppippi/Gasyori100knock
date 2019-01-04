@@ -128,7 +128,10 @@ $ python sample.py
 | 41&hearts; | **Cannyエッジ検出** (Step.1) エッジ強度 |
 | 42&hearts; | **Cannyエッジ検出** (Step.2) 細線化 |
 | 43&hearts; | **Cannyエッジ検出** (Step.3) ヒステリシス閾処理 |
+| 44&hearts; | **Hough変換・直線検出** (Step.1) Hough変換 |
+| 45&hearts; | **Hough変換・直線検出** (Step.2) NMS |
+| 46&hearts; | **Hough変換・直線検出** (Step.3) Hough逆変換 |
 
 ## TODO
 
-Canny, Hough, Gabor, HOG
+Hough, Gabor, HOG
