@@ -111,7 +111,7 @@ Hough変換とは、座標を変換することにより数式に沿って直線
 アルゴリズムは、
 
 1. 画像の対角線の長さrmaxを求める
-2. エッジ箇所(x,y)において、t = 0-180で一度ずつtを変えながら、次式によりhough変換を行う
+2. エッジ箇所(x,y)において、t = 0-180で一度ずつtを変えながら、次式によりHough変換を行う
 
 ```bash
 r = x * cos(t) + y * sin(t)
@@ -123,9 +123,9 @@ r = x * cos(t) + y * sin(t)
 今回は*torino.jpg*を用いて、ボーディングした表を図示せよ。
 Cannyのパラメータは, gaussian filter(5x5, s=1.4), HT = 100, LT = 30で使用せよ。
 
-|入力 (imori.jpg) |出力 (answer_44.jpg)|
+|入力 (thorino.jpg) |出力 (answer_44.jpg)|
 |:---:|:---:|
-|![](imori.jpg)|![](answer_44.jpg)|
+|![](thorino.jpg)|![](answer_44.jpg)|
 
 答え >> answer_44.py
 
@@ -142,9 +142,9 @@ NMSのアルゴリズムは、
 1. 表において、周囲8マス(8近傍)より注目ピクセルの得票数が多ければそのまま。
 2. 注目ピクセルの値が少なければ0にする。
 
-|入力 (imori.jpg) |出力 (answer_45.jpg)|
+|入力 (thorino.jpg) |出力 (answer_45.jpg)|
 |:---:|:---:|
-|![](imori.jpg)|![](answer_45.jpg)|
+|![](thorino.jpg)|![](answer_45.jpg)|
 
 答え >> answer_45.py
 
@@ -163,8 +163,8 @@ x = - sin(t) / cos(t) * y + r / cos(t)
 2. 1の逆変換を極大点ごとにy = 0 - H-1, x = 0 - W-1 で行い、入力画像に検出した直線を描画せよ。
 ただし、描画するのは赤線(R,G,B) = (255, 0, 0)とする。
 
-|入力 (imori.jpg) |出力 (answer_46.jpg)|
+|入力 (thorino.jpg) |出力 (answer_46.jpg)|
 |:---:|:---:|
-|![](imori.jpg)|![](answer_46.jpg)|
+|![](thorino.jpg)|![](answer_46.jpg)|
 
 答え >> answer_46.py
