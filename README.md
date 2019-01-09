@@ -127,7 +127,7 @@ $ python sample.py
 |17|Laplacianフィルタ | ||37| PSNR|
 |18|Embossフィルタ | ||38&#9734;| **JPEG圧縮**(Step.2)DCT+量子化|
 |19|LoGフィルタ | ||39|**JPEG圧縮**(Step.3)YCbCr表色系|
-|20|ヒストグラム表示 ||| 40&#9734;|**JPEG圧縮**(Step.4)YCbCr + 量子化 |
+|20|ヒストグラム表示 ||| 40&#9734;|**JPEG圧縮**(Step.4)YCbCr+DCT+量子化 |
 
 
 |番号|問題|備考||番号|問題|備考|
