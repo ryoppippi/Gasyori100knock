@@ -34,6 +34,11 @@ out[out < th] = 0
 out[out >= th] = 255
 
 
+# Morphology filter
+MF = np.array(((0, 1, 0),
+               (1, 0, 1),
+               (0, 1, 0)), dtype=np.int)
+
 # Morphology - erode
 Erode_time = 2
 
