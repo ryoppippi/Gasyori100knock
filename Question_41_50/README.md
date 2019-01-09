@@ -189,9 +189,9 @@ x = - sin(t) / cos(t) * y + r / cos(t)
 
 例えば、[[0,1,0], [1,0,1], [0,1,0]] のフィルタを掛けた和が255を超えれば膨張である、と考える。
 
-|入力 (thorino.jpg) |大津の二値化(answer_4.jpg)|出力 (answer_47.jpg)|
+|入力 (imori.jpg) |大津の二値化(answer_4.jpg)|出力 (answer_47.jpg)|
 |:---:|:---:|:---:|
-|![](thorino.jpg)|![](answer_4.jpg)|![](answer_47.jpg)|
+|![](imori.jpg)|![](answer_4.jpg)|![](answer_47.jpg)|
 
 答え >> answer_47.py
 ## Q.48. モルフォロジー処理(収縮)
@@ -203,9 +203,9 @@ x = - sin(t) / cos(t) * y + r / cos(t)
 
 例えば、[[0,1,0], [1,0,1], [0,1,0]] のフィルタを掛けた和が255*4未満なら収縮である、と考える。
 
-|入力 (thorino.jpg) |大津の二値化(answer_4.jpg)|出力 (answer_48.jpg)|
+|入力 (imori.jpg) |大津の二値化(answer_4.jpg)|出力 (answer_48.jpg)|
 |:---:|:---:|:---:|
-|![](thorino.jpg)|![](answer_4.jpg)|![](answer_48.jpg)|
+|![](imori.jpg)|![](answer_4.jpg)|![](answer_48.jpg)|
 
 答え >> answer_48.py
 
@@ -217,9 +217,9 @@ x = - sin(t) / cos(t) * y + r / cos(t)
 
 クロージング処理により、一つだけ余分に存在する画素などを削除できる。
 
-|入力 (thorino.jpg) |大津の二値化(answer_4.jpg)|出力 (answer_49.jpg)|
+|入力 (imori.jpg) |大津の二値化(answer_4.jpg)|出力 (answer_49.jpg)|
 |:---:|:---:|:---:|
-|![](thorino.jpg)|![](answer_4.jpg)|![](answer_49.jpg)|
+|![](imori.jpg)|![](answer_4.jpg)|![](answer_49.jpg)|
 
 答え >> answer_49.py
 
@@ -231,8 +231,8 @@ x = - sin(t) / cos(t) * y + r / cos(t)
 
 クロージング処理により、途中で途切れた画素を結合することができる。
 
-|入力 (thorino.jpg) |Canny(answer_43.jpg)|出力 (answer_50.jpg)|
+|入力 (imori.jpg) |Canny(answer_43.jpg)|出力 (answer_50.jpg)|
 |:---:|:---:|:---:|
-|![](thorino.jpg)|![](answer_43.jpg)|![](answer_50.jpg)|
+|![](imori.jpg)|![](answer_43.jpg)|![](answer_50.jpg)|
 
 答え >> answer_50.py
