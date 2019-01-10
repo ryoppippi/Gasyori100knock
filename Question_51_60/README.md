@@ -26,7 +26,7 @@
 
 |入力 (imori.jpg) |大津の二値化(answer_4.jpg)|出力(answer_52.jpg)|
 |:---:|:---:|:---:|
-|![](imori.jpg)|![](answer_4.jpg)||![](answer_52.jpg)|
+|![](imori.jpg)|![](answer_4.jpg)|![](answer_52.jpg)|
 
 答え >> answer_52.py
 
@@ -42,6 +42,6 @@
 
 |入力 (imori.jpg) |大津の二値化(answer_4.jpg)|出力(answer_53.jpg)|
 |:---:|:---:|:---:|
-|![](imori.jpg)|![](answer_4.jpg)||![](answer_53.jpg)|
+|![](imori.jpg)|![](answer_4.jpg)|![](answer_53.jpg)|
 
 答え >> answer_53.py
