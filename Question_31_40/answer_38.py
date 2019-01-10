@@ -70,7 +70,7 @@ for yi in range(0, H, T):
                 _y = y + xi * T
                 out[_y, _x] = np.sum(C * X[_v, _u] * np.cos((2*x+1)*indx*np.pi/(2*T)) * np.cos((2*y+1)*indy*np.pi/(2*T))) * 4. / (T ** 2)
                 """
-
+out[out>255] = 255
 out = np.floor(out).astype(np.uint8)
 
 # MSE

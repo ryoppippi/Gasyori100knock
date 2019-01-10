@@ -62,6 +62,7 @@ for j in range(-1, 3):
         out += wx * wy * img[ind_y, ind_x]
 
 out /= w_sum
+out[out>255] = 255
 out = out.astype(np.uint8)
 
 # Save result

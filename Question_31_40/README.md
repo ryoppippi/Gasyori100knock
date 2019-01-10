@@ -96,7 +96,7 @@ MSE = Sum_{y=0:H-1} Sum_{x=0:W-1} (I1(x,y) - I2(x,y))^2 / (HW)
 bitrate = 8 * K^2 / 8^2
 ```
 
-|入力 (imori.jpg)|グレースケール|出力 (answer_37.jpg) (PSNR = 24.93, Bitrate=2.0)|
+|入力 (imori.jpg)|グレースケール|出力 (answer_37.jpg) (PSNR = 27.62, Bitrate=2.0)|
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](imori_gray.jpg)|![](answer_37.jpg)|
 
@@ -191,7 +191,7 @@ Q2 = np.array(((17, 18, 24, 47, 99, 99, 99, 99),
                (99, 99, 99, 99, 99, 99, 99, 99)), dtype=np.float32)
 ```
 
-|入力 (imori.jpg) (13kb)|出力 (answer_40.jpg) (9kb)|
+|入力 (imori.jpg) (13kb)|出力 (answer_40.jpg) (8kb)|
 |:---:|:---:|
 |![](imori.jpg)|![](answer_40.jpg)|
 

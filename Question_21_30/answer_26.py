@@ -32,6 +32,7 @@ dy = np.repeat(np.expand_dims(dy, axis=-1), 3, axis=-1)
 
 out = (1-dx) * (1-dy) * img[iy, ix] + dx * (1 - dy) * img[iy, ix+1] + (1 - dx) * dy * img[iy+1, ix] + dx * dy * img[iy+1, ix+1]
 
+out[out>255] = 255
 out = out.astype(np.uint8)
 
 # Save result
