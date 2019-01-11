@@ -1,6 +1,6 @@
 # Q. 41 - 50
 
-## Q.41. **Cannyエッジ検出** (Step.1) エッジ強度
+## Q.41. Cannyエッジ検出 (Step.1) エッジ強度
 
 Q.41 - 43 ではエッジ検出手法の一つであるCanny法の理論となる。
 
@@ -41,7 +41,7 @@ angle = {   0  (if -0.4142 < tan <= 0.4142)
 
 答え >> answer_41.py
 
-## Q.42. **Cannyエッジ検出** (Step.2) 細線化
+## Q.42. Cannyエッジ検出 (Step.2) 細線化
 
 ここでは3を実装する。
 
@@ -74,7 +74,7 @@ if angle(x,y)  = 135
 
 答え >> answer_42.py
 
-## Q.43. **Cannyエッジ検出** (Step.3) ヒステリシス閾処理
+## Q.43. Cannyエッジ検出 (Step.3) ヒステリシス閾処理
 
 ここでは4を実装する。これがCanny法の最後である。
 
@@ -95,7 +95,7 @@ if angle(x,y)  = 135
 
 答え >> answer_43.py
 
-## Q.44. **Hough変換・直線検出** (Step.1) Hough変換
+## Q.44. Hough変換・直線検出 (Step.1) Hough変換
 
 Q.44 - 46 ではHough変換を用いた直線検出を行う。
 
@@ -133,7 +133,7 @@ Cannyのパラメータは, gaussian filter(5x5, s=1.4), HT = 100, LT = 30で使
 
 答え >> answer_44.py
 
-## Q.45. **Hough変換・直線検出** (Step.2) NMS
+## Q.45. Hough変換・直線検出 (Step.2) NMS
 
 ここでは2を実装する。
 
@@ -152,7 +152,7 @@ NMSのアルゴリズムは、
 
 答え >> answer_45.py
 
-## Q.46. **Hough変換・直線検出** (Step.3) Hough逆変換
+## Q.46. Hough変換・直線検出 (Step.3) Hough逆変換
 
 ここではQ.45.で得られた極大値をHough逆変換をして直線を描画する。これで、Hough変換による直線検出が完了する。
 
