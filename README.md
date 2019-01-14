@@ -114,6 +114,7 @@ $ python sample.py
 **未**になっている問題は解答未作成
 
 [問題1 - 10](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_01_10)
+
 |番号|問題||番号|問題|
 |:---:|:---|:---:|:---:|:---:|
 |1|チャネル入れ替え| |6|減色処理 | |
@@ -123,6 +124,7 @@ $ python sample.py
 |5|HSV変換 | |10|メディアンフィルタ |
 
 [問題11 - 20](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_11_20)
+
 |番号|問題||番号|問題|
 |:---:|:---|:---:|:---:|:---:|
 |11|平滑化フィルタ | |16|Prewittフィルタ | 
@@ -132,6 +134,7 @@ $ python sample.py
 |15|Sobelフィルタ | |20|ヒストグラム表示  | 
 
 [問題21 - 30](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_21_30)
+
 |番号|問題||番号|問題|
 |:---:|:---|:---:|:---:|:---:|
 |21|ヒストグラム正規化 | |26|Bi-linear補間|
@@ -141,6 +144,7 @@ $ python sample.py
 |25|最近傍補間| |30|アフィン変換(回転)|
 
 [問題31 - 40](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_31_40)
+
 |番号|問題||番号|問題|
 |:---:|:---|:---:|:---:|:---:|
 |31|アフィン変換(スキュー)| | 36&#9734;| JPEG圧縮 (Step.1)離散コサイン変換 |
@@ -150,6 +154,7 @@ $ python sample.py
 |35**未**|フーリエ変換 バンドパスフィルタ| | 40&#9734;| JPEG圧縮 (Step.4)YCbCr+DCT+量子化 |
 
 [問題41 - 50](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_41_50)
+
 |番号|問題||番号|問題|
 |:---:|:---|:---:|:---:|:---:|
 | 41&#9734; | Cannyエッジ検出 (Step.1) エッジ強度 | | 46&#9734; | Hough変換・直線検出 (Step.3) Hough逆変換 |
@@ -159,6 +164,7 @@ $ python sample.py
 | 45&#9734; | Hough変換・直線検出 (Step.2) NMS | | 50 |クロージング処理 |
 
 [問題51 - 60](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_51_60)
+
 |番号|問題||番号|問題|
 |:---:|:---|:---:|:---:|:---:|
 | 51 |モルフォロジー勾配 | | 56 |テンプレートマッチング NCC |
