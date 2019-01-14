@@ -216,8 +216,8 @@ alpha = 0.5
 out = img1 * alpha + img2 * (1 - alpha)
 ```
 
-|入力 (imori.jpg) |入力2 (thorino.jpg) |出力(answer_60.png)|
+|入力 (imori.jpg) |入力2 (thorino.jpg) |出力(answer_60.jpg)|
 |:---:|:---:|:---:|
-|![](imori.jpg)|![](thorino.jpg)|![](answer_60.png)|
+|![](imori.jpg)|![](thorino.jpg)|![](answer_60.jpg)|
 
 答え >> answer_60.py
