@@ -2,10 +2,7 @@ import cv2
 import numpy as np
 
 # Read image
-img = cv2.imread("imori.jpg").astype(np.float) / 255.
-b = img[:, :, 0].copy()
-g = img[:, :, 1].copy()
-r = img[:, :, 2].copy()
+img = cv2.imread("imori.jpg").astype(np.float32) / 255.
 
 # RGB > HSV
 out = np.zeros_like(img)
@@ -16,23 +13,27 @@ min_arg = np.argmin(img, axis=2)
 
 H = np.zeros_like(max_v)
 
-for num, i in enumerate(range(0, 2, 1)):
-    ind = np.where(min_arg == i)
-    _ind = np.where((max_v[ind] - min_v[ind]) == 0)
-    H[ind][_ind] = 0
-    _ind = np.where((max_v[ind] - min_v[ind]) > 0)
-    H[ind][_ind] = 60. * (img[..., ((i+1)%3)][ind][_ind] - img[..., ((i+2)%3)][ind][_ind]) / (max_v[ind] - min_v[ind])[_ind] + 60. * (2*num+1)
-
+H[np.where(max_v == min_v)] = 0
+## if min == B
+ind = np.where(min_arg == 0)
+H[ind] = 60 * (img[..., 1][ind] - img[..., 2][ind]) / (max_v[ind] - min_v[ind]) + 60
+## if min == R
+ind = np.where(min_arg == 2)
+H[ind] = 60 * (img[..., 0][ind] - img[..., 1][ind]) / (max_v[ind] - min_v[ind]) + 180
+## if min == G
+ind = np.where(min_arg == 1)
+H[ind] = 60 * (img[..., 2][ind] - img[..., 0][ind]) / (max_v[ind] - min_v[ind]) + 300
+    
 V = max_v.copy()
 S = max_v.copy() - min_v.copy()
 
 # Transpose Hue
-H += 180 % 360
+H = (H + 180) % 360
 
 # HSV > RGB
 
 C = S
-H_ = H / 60
+H_ = H // 60
 X = C * (1 - np.abs( H_ % 2 - 1))
 Z = np.zeros_like(H)
 

@@ -15,10 +15,10 @@ max_sigma = 0
 max_t = 0
 
 for _t in range(1, 255):
-    v0 = out[np.where(out < _t)[0]]
+    v0 = out[np.where(out < _t)]
     m0 = np.mean(v0) if len(v0) > 0 else 0.
     w0 = len(v0) / (H * W)
-    v1 = out[np.where(out >= _t)[0]]
+    v1 = out[np.where(out >= _t)]
     m1 = np.mean(v1) if len(v1) > 0 else 0.
     w1 = len(v1) / (H * W)
     sigma = w0 * w1 * ((m0 - m1) ** 2)
