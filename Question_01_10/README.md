@@ -79,7 +79,7 @@ argmax_{t} X = argmax_{t} Sb^2
 ```
 となる。すなわち、Sb^2 =  w0 * w1 * (M0 - M1) ^2 となる、閾値tを二値化の閾値とすれば良い。
 
-|入力 (imori.jpg)|出力 (th = 143) (answer_4.jpg)|
+|入力 (imori.jpg)|出力 (th = 127) (answer_4.jpg)|
 |:---:|:---:|
 |![](imori.jpg)|![](answer_4.jpg)|
 
