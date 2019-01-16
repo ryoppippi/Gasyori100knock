@@ -29,7 +29,7 @@ S = [0,4]の範囲をとり、
 
 |入力 (renketsu.png) |出力(answer_61.png)|
 |:---:|:---:|
-|![](renketsu.png)|![](answer_61.png)|
+|<img src="renketsu.png" width="50px">|<img src="answer_61.png" width="50px">|
 
 答え >> answer_61.py
 
