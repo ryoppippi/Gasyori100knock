@@ -46,7 +46,7 @@ S = (x1 - x1 x2 x3) + (x3 - x3 x4 x5) + (x5 - x5 x6 x7) + (x7 - x7 x8 x1)
 
 |入力 (renketsu.png) |出力(answer_62.png)|
 |:---:|:---:|
-|![](renketsu.png)|![](answer_62.png)|
+|<img src="renketsu.png" width="50px">|<img src="answer_62.png" width="50px">|
 
 答え >> answer_62.py
 
