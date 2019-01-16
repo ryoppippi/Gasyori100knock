@@ -215,13 +215,14 @@ True
 
 画像の左半分上のRとBを入れ替えて表示してみましょう。
 
-答え
+回答例
  
 ```bash
 >>> import cv2
 >>> img = cv2.imread("imori.jpg")
->>> H, W, C = img.shape
->>> img[:H//2, :W//2] = img[:H//2, :W//2, (2, 1, 0)]
+>>> img3 = img.copy()
+>>> H, W, C = img3.shape
+>>> img3[:H//2, :W//2] = img3[:H//2, :W//2, (2, 1, 0)]
 >>> cv2.imshow('', img3); cv2.waitKey(0)
 102
 >>> 
