@@ -12,7 +12,7 @@
 - **内容はいろいろな文献を調べて載っけてるので正しくないものもあるかもしれないので注意して下さい**
 - 【注意】このページを利用して、または関して生じた事に関しては、私は一切責任を負いません。すべて**自己責任**でお願い致します。
 
-英語版を作ってくれた方がいました。
+英語版を作ってくれた方がいました。English is here ( thaks https://github.com/KuKuXia )
 >> https://github.com/KuKuXia/Image_Processing_100_Questions
 
 ## Recent
