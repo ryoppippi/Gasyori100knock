@@ -9,23 +9,6 @@ H, W, C = img.shape
 # Gray scale
 gray = 0.2126 * img[..., 2] + 0.7152 * img[..., 1] + 0.0722 * img[..., 0]
 
-"""
-fimg = np.fft.fft2(gray)
-    
-# 第1象限と第3象限, 第2象限と第4象限を入れ替え
-fimg =  np.fft.fftshift(fimg)
-print(fimg.shape)
-# パワースペクトルの計算
-mag = 20*np.log(np.abs(fimg))
-    
-# 入力画像とスペクトル画像をグラフ描画
-plt.subplot(121)
-plt.imshow(gray, cmap = 'gray')
-plt.subplot(122)
-plt.imshow(mag, cmap = 'gray')
-plt.show()
-"""
-
 # DFT
 K = W
 L = H
@@ -40,13 +23,26 @@ y = np.arange(H).repeat(W).reshape(H, -1)
 for l in range(L):
     for k in range(K):
         G[l, k] = np.sum(gray * np.exp(-2j * np.pi * (x * k / M + y * l / N))) / np.sqrt(M * N)
-        #for n in range(N):
-        #    for m in range(M):
-        #        v += gray[n, m] * np.exp(-2j * np.pi * (m * k / M + n * l / N))
-        #G[l, k] = v / np.sqrt(M * N)
 
-ps = (np.abs(G) / np.abs(G).max() * 255).astype(np.uint8)
-cv2.imwrite("out_ps.jpg", ps)
+# low-pass filter
+_G = np.zeros_like(G)
+_G[:H//2, :W//2] = G[H//2:, W//2:]
+_G[:H//2, W//2:] = G[H//2:, :W//2]
+_G[H//2:, :W//2] = G[:H//2, W//2:]
+_G[H//2:, W//2:] = G[:H//2, :W//2]
+p = 0.5
+_x = x - W // 2
+_y = y - H // 2
+r = np.sqrt(_x ** 2 + _y ** 2)
+mask = np.ones((H, W), dtype=np.float32)
+mask[r>(W//2*p)] = 0
+
+_G *= mask
+
+G[:H//2, :W//2] = _G[H//2:, W//2:]
+G[:H//2, W//2:] = _G[H//2:, :W//2]
+G[H//2:, :W//2] = _G[:H//2, W//2:]
+G[H//2:, W//2:] = _G[:H//2, :W//2]
 
 # IDFT
 out = np.zeros((H, W), dtype=np.float32)
