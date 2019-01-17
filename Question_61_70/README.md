@@ -180,7 +180,7 @@ N=8として、8x8の領域を1セルとして、勾配角度のインデック�
 
 |入力 (imori.jpg) |出力(answer_67.png)|
 |:---:|:---:|
-|![](imori.jpg)|![](answer_67.png)|
+|![](imori.jpg)|<img src="answer_67.png" width="100px">|
 
 答え >> answer_67.py
 
@@ -199,7 +199,7 @@ h(t) = h(t) / sqrt(Sum h(t) + epsilon)
 
 |入力 (imori.jpg) |出力(answer_68.png)|
 |:---:|:---:|
-|![](imori.jpg)|![](answer_68.png)|
+|![](imori.jpg)|<img src="answer_68.png" width="100px">|
 
 答え >> answer_68.py
 
