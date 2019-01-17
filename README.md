@@ -1,6 +1,6 @@
 # 画像処理100本ノック!!
 
-英語版を作ってくれた方がいました。English is here ( thaks https://github.com/KuKuXia )
+英語版を作ってくれた方がいました。English is here ( thanks https://github.com/KuKuXia )
 >> https://github.com/KuKuXia/Image_Processing_100_Questions
 
 画像処理の初学者のための問題１００問。
