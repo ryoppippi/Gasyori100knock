@@ -18,6 +18,7 @@
 
 ## Recent
 - 最近息切れしてきた
+- **【New!】2019.1.17. Q.70 - 72 カラートラッキング、マスキング を追加**
 - **【New!】2019.1.17. Q.66 - 69 HOG を追加**
 - **【New!】2019.1.16. Q.65 Zhang-Suenの細線化 を追加**
 - **【New!】2019.1.16. Q.32 - 35 フーリエ変換 を追加**
@@ -39,7 +40,9 @@ Python-3.6でやって下さい。
 https://conda.io/miniconda.html
 のサイトからMinicondaをインストールします。
 
-Minicondaがインストールできたら、以下コマンドで仮想環境を作成します。
+これはWindowでもMacOSでも可能です。
+
+Minicondaがインストールできたら、端末(Windowでは端末、MacOSではターミナル)を開き、以下コマンドで仮想環境を作成します。
 
 ```bash
 $ conda create python=3.6 -n gasyori100
@@ -179,7 +182,6 @@ $ python sample.py
 | 54 |テンプレートマッチング SSD | | 59 |ラベリング 8近傍 |
 | 55 |テンプレートマッチング SAD | | 60 |アルファブレンド |
 
-
 ### [問題61 - 70](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_61_70)
 
 |番号|問題||番号|問題|
@@ -188,12 +190,17 @@ $ python sample.py
 | 62 | 8-連結数 | | 67 | HOG (Step.2) 勾配ヒストグラム
 | 63 | 細線化 | | 68 | HOG (Step.3) ヒストグラム正規化
 | 64**未** | ヒルディッチの細線化 | | 69 | HOG (Step.4) 特徴量の描画
-| 65 | Zhang-Suenの細線化
+| 65 | Zhang-Suenの細線化 || 70 | カラートラッキング
 
+### [問題71 - 80](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_71_80)
 
+|番号|問題||番号|問題|
+|:---:|:---:|:---:|:---:|:---:|
+| 71 | マスキング
+| 72 | マスキング(カラートラッキングとモルフォロジー)
 
 
 ## TODO
 
-Hough, Gabor, HOG, TempleteMatching
+Hough, Gabor, adaptivebinalizatino
 
