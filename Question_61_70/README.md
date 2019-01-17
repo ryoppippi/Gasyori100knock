@@ -203,7 +203,7 @@ h(t) = h(t) / sqrt(Sum h(t) + epsilon)
 
 答え >> answer_68.py
 
-## Q.69. HOG (Step.1) 特徴量の描画
+## Q.69. HOG (Step.4) 特徴量の描画
 
 ここでは得られた特徴量を描画せよ。
 
