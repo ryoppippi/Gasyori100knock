@@ -19,7 +19,8 @@ out = (b-a) / (vmax - vmin) * (out - vmin) + a
 out = out.astype(np.uint8)
 
 # Display histogram
-plt.hist(out.ravel(), rwidth=0.8, range=(0, 255))
+plt.hist(out.ravel(), bins=255, rwidth=0.8, range=(0, 255))
+plt.savefig("out_his.png")
 plt.show()
 
 # Save result
