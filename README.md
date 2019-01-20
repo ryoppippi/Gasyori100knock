@@ -202,9 +202,9 @@ $ python sample.py
 | 72 | マスキング(カラートラッキングとモルフォロジー)
 | 73 | 縮小と拡大
 | 74 | ピラミッド差分による高周波成分の抽出
-| 74 | ガウシアンピラミッド
+| 75 | ガウシアンピラミッド
 
 ## TODO
 
-Hough, Gabor, adaptivebinalizatino
+Gabor, adaptivebinalizatino, poison image blending
 
