@@ -124,6 +124,8 @@ $ python sample.py
 
 ## 問題
 
+詳細な問題内容は各ディレクトリのREADMEにあります。（ディレクトリで下にスクロールすればあります）
+
 **未**になっている問題は解答未作成
 
 ### [問題1 - 10](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_01_10)
