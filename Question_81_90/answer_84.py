@@ -35,6 +35,7 @@ for i, path in enumerate(train):
     img_h[..., 2] += 8
     plt.subplot(2, 5, i+1)
     plt.hist(img_h.ravel(), bins=12, rwidth=0.8)
+    plt.title(path)
 
 print(db)
 plt.show()

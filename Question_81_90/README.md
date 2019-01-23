@@ -91,10 +91,10 @@ CNNが流行る以前はこのアプローチがよく取られたが、CNNは�
 学習データは train_akahara_@@@.jpg (クラス1)と train_madara_@@@.jpg(クラス2) を用いる。(計10枚)
 akaharaとはアカハライモリ、madaraはマダライモリである。
 
-左上から右にかけて、*train_akahara_1.jpg, train_akahara_2.jpg, ..., train_madara_1.jpg, ...* となる。
-|入力 (thorino.jpg) |出力(answer_84.png)|
-|:---:|:---:|
-|![](thorino.jpg)|![](answer_84.png)|
+
+|出力(answer_84.png)|
+|:---:|
+|![](answer_84.png)|
 
 答え >> answer_84.py
 
@@ -121,6 +121,7 @@ akaharaとはアカハライモリ、madaraはマダライモリである。
 
 
 答え
+
 ```bash
 test_akahara_1.jpg is similar >> train_akahara_3.jpg  Pred >> akahara
 test_akahara_2.jpg is similar >> train_akahara_1.jpg  Pred >> akahara
@@ -142,6 +143,7 @@ Accuracy = (正解した画像数) / (テストした画像の総数)
 
 
 答え
+
 ```bash
 Accuracy >> 0.75 (3/4)
 ```
