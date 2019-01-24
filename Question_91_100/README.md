@@ -59,7 +59,7 @@
 
 また、k=5にして*madara.jpg*にも試してみよ。
 
-|入力 (imori.jpg) |出力(answer_92.jpg)|k=10(answer_92_k10.jpg)| |入力2 (madara.jpg) |出力(answer_92_m.jpg) |
+|入力 (imori.jpg) | 出力(answer_92.jpg) | k=10(answer_92_k10.jpg) |入力2 (madara.jpg) |出力(answer_92_m.jpg) |
 |:---:|:---:|:---:|:---:|:---:|
 |![](imori.jpg)|![](answer_92.jpg)|![](answer_92_k10.jpg)|![](madara.jpg)|![](answer_92_m.jpg)|
 
