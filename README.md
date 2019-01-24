@@ -18,7 +18,8 @@ English is here  >> https://github.com/KuKuXia/Image_Processing_100_Questions
 
 
 ## Recent
-- あと14問なんじゃあああああああああああ
+- あと8問なんじゃあああああああああああぁぁぁぁぁぁぁあぁぁぁぁぁあぁ
+- **【New!】2019.1.24. Q.87 - 92 K-means を追加**
 - **【New!】2019.1.24. Q.84 - 86 簡単な画像認識 を追加**
 - **【New!】2019.1.23. Q.81 - 83 コーナー検出 を追加**
 - **【New!】2019.1.23. Q.77 - 80 ガボールフィルタ を追加**
@@ -225,11 +226,18 @@ $ python sample.py
 
 |番号|問題||番号|問題|
 |:---:|:---:|:---:|:---:|:---:|
-| 81 | Hessianのコーナー検出 | | 86 | 簡単な画像認識 (Step.3) 評価
-| 82 | Harrisのコーナー検出 (Step.1) Sobel + Gaussian
-| 83 | Harrisのコーナー検出 (Step.2) コーナー検出
-| 84 | 簡単な画像認識 (Step.1) 減色化 + ヒストグラム
-| 85 | 簡単な画像認識 (Step.2) クラス判別
+| 81 | Hessianのコーナー検出 | | 86 | 簡単な画像認識 (Step.3) 評価(Accuracy) |
+| 82 | Harrisのコーナー検出 (Step.1) Sobel + Gaussian | | 87 | 簡単な画像認識 (Step.4) k-NN |
+| 83 | Harrisのコーナー検出 (Step.2) コーナー検出 | | 88 | K-means (Step.1) 重心作成 |
+| 84 | 簡単な画像認識 (Step.1) 減色化 + ヒストグラム | | 89 | K-means (Step.2) クラスタリング |
+| 85 | 簡単な画像認識 (Step.2) クラス判別 | | 90 | K-means (Step.3) 初期ラベルの変更 |
+
+### [問題91 - 100](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_91_100)
+
+|番号|問題||番号|問題|
+|:---:|:---:|:---:|:---:|:---:|
+| 91 | K-meansによる減色処理 (Step.1) 色の距離によるクラス分類
+| 92 | K-meansによる減色処理 (Step.2) 減色処理
 
 ## TODO
 
