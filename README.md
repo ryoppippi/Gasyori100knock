@@ -236,8 +236,12 @@ $ python sample.py
 
 |番号|問題||番号|問題|
 |:---:|:---:|:---:|:---:|:---:|
-| 91 | K-meansによる減色処理 (Step.1) 色の距離によるクラス分類
-| 92 | K-meansによる減色処理 (Step.2) 減色処理
+| 91 | K-meansによる減色処理 (Step.1) 色の距離によるクラス分類 | | 96 | 簡単な物体検出 (Step.1) スライディングウィンドウ
+| 92 | K-meansによる減色処理 (Step.2) 減色処理 | | 97 | 簡単な物体検出 (Step.2) HOG + SVM
+| 93 | IoUの計算 | | 98 | 簡単な物体検出 (Step.3) Non-Maximum Suppression
+| 94 | ランダムクラッピング | | 99 | 簡単な物体検出 (Step.4) 評価 Precision, Recall, F-measure
+| 95 | SVM | | 100 | 簡単な物体検出 (Step.4) 評価 mAP
+
 
 ## TODO
 
