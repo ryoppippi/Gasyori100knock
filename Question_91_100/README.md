@@ -310,7 +310,7 @@ Q.98にNMS(閾値t=0.25)を組み込み、出力を描画せよ。
 
 |入力 (imori.jpg) |NMS前(answer_98.jpg)|NMS後(answer_99.jpg)|
 |:---:|:---:|:---:|
-|![](imori.jpg)|![](answer_99.jpg)|![](answer_98.jpg)|
+|![](imori.jpg)|![](answer_98.jpg)|![](answer_99.jpg)|
 
 解答 >> answer_99.py
 
