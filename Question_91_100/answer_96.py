@@ -12,12 +12,7 @@ gray = 0.2126 * img[..., 2] + 0.7152 * img[..., 1] + 0.0722 * img[..., 0]
 
 gt = np.array((47, 41, 129, 103), dtype=np.float32)
 
-#gt = np.array((41, 3, 83, 32), dtype=np.float32)
-#gt2 = np.array((123, 41, 161, 74), dtype=np.float32)
-#gt3 = np.array((97, 83, 137, 113), dtype=np.float32)
-cv2.rectangle(img, (gt[0], gt[1]), (gt[2], gt[3]), (0,255,255), 1)
-#cv2.rectangle(img, (gt2[0], gt2[1]), (gt2[2], gt2[3]), (0,255,255), 1)
-#cv2.rectangle(img, (gt3[0], gt3[1]), (gt3[2], gt3[3]), (0,255,255), 1)
+#cv2.rectangle(img, (gt[0], gt[1]), (gt[2], gt[3]), (0,255,255), 1)
 
 def iou(a, b):
     area_a = (a[2] - a[0]) * (a[3] - a[1])
@@ -96,15 +91,55 @@ def resize(img, h, w):
     return out
 
 
+class NN:
+    def __init__(self, ind=2, w=64, w2=64, outd=1, lr=0.1):
+        self.w2 = np.random.randn(ind, w)
+        self.b2 = np.random.randn(w)
+        self.w3 = np.random.randn(w, w2)
+        self.b3 = np.random.randn(w2)
+        self.wout = np.random.randn(w2, outd)
+        self.bout = np.random.randn(outd)
+        self.lr = lr
+
+    def forward(self, x):
+        self.z1 = x
+        self.z2 = self.sigmoid(np.dot(self.z1, self.w2) + self.b2)
+        self.z3 = self.sigmoid(np.dot(self.z2, self.w3) + self.b3)
+        self.out = self.sigmoid(np.dot(self.z3, self.wout) + self.bout)
+        return self.out
+
+    def train(self, x, t):
+        # backpropagation output layer
+        out_d = 2*(self.out - t) * self.out * (1 - self.out)
+        out_dW = np.dot(self.z3.T, out_d)
+        out_dB = np.dot(np.ones([1, out_d.shape[0]]), out_d)
+        self.wout -= self.lr * out_dW
+        self.bout -= self.lr * out_dB[0]
+
+        w3_d = np.dot(out_d, self.wout.T) * self.z3 * (1 - self.z3)
+        w3_dW = np.dot(self.z2.T, w3_d)
+        w3_dB = np.dot(np.ones([1, w3_d.shape[0]]), w3_d)
+        self.w3 -= self.lr * w3_dW
+        self.b3 -= self.lr * w3_dB[0]
+        
+        # backpropagation inter layer
+        w2_d = np.dot(w3_d, self.w3.T) * self.z2 * (1 - self.z2)
+        w2_dW = np.dot(self.z1.T, w2_d)
+        w2_dB = np.dot(np.ones([1, w2_d.shape[0]]), w2_d)
+        self.w2 -= self.lr * w2_dW
+        self.b2 -= self.lr * w2_dB[0]
+
+    def sigmoid(self, x):
+        return 1. / (1. + np.exp(-x))
+
 # crop and create database
 
-Crop_num = 300
+Crop_num = 200
 L = 60
-
 H_size = 32
 F_n = ((H_size // 8) ** 2) * 9
 
-db = np.zeros((Crop_num, F_n + 1))
+db = np.zeros((Crop_num, F_n+1))
 
 for i in range(Crop_num):
     x1 = np.random.randint(W-L)
@@ -120,10 +155,10 @@ for i in range(Crop_num):
 
     if _iou.max() >= 0.5:
         cv2.rectangle(img, (x1, y1), (x2, y2), (0,0,255), 1)
-        label = 0
+        label = 1
     else:
         cv2.rectangle(img, (x1, y1), (x2, y2), (255,0,0), 1)
-        label = 1
+        label = 0
 
     crop_area = gray[y1:y2, x1:x2]
     crop_area = resize(crop_area, H_size, H_size)
@@ -132,53 +167,22 @@ for i in range(Crop_num):
     db[i, :F_n] = _hog.ravel()
     db[i, -1] = label
 
-    #cv2.rectangle(img, (x1, y1), (x2, y2), (255, 0,0), 1)
-    
-cv2.imshow("re", img)
-cv2.waitKey(0)
+# train neural network
+nn = NN(ind=F_n, lr=0.01)
+for i in range(10000):
+    nn.forward(db[:, :F_n])
+    nn.train(db[:, :F_n], db[:, -1][..., None])
 
-from sklearn import svm
-clf = svm.SVC(kernel='linear')
-clf.fit(X=db[..., :F_n], y=db[..., -1])
+# test
+success_pred = 0.
+for data in db:
+    t = data[-1]
+    prob = nn.forward(data[:F_n])
+    pred = 1 if prob >= 0.5 else 0
+    if t == pred:
+        success_pred += 1
 
+accuracy = success_pred / len(db)
 
-# read detect target image
-img2 = cv2.imread("imori_many.jpg")
-H2, W2, C2 = img2.shape
+print("Accuracy >> {} ({} / {})".format(accuracy, success_pred, len(db)))
 
-# Grayscale
-gray2 = 0.2126 * img2[..., 2] + 0.7152 * img2[..., 1] + 0.0722 * img2[..., 0]
-
-# [h, w]
-recs = np.array(((42, 42), (56, 56), (70, 70)), dtype=np.float32)
-
-# sliding window
-for y in range(0, H2, 4):
-    for x in range(0, W2, 4):
-        for rec in recs:
-            dh = int(rec[0] // 2)
-            dw = int(rec[1] // 2)
-            x1 = max(x-dw, 0)
-            x2 = min(x+dw, W2)
-            y1 = max(y-dh, 0)
-            y2 = min(y+dh, H2)
-            region = gray2[max(y-dh,0):min(y+dh,H2), max(x-dw,0):min(x+dw,W2)]
-            region = resize(region, H_size, H_size)
-            r_hog = hog(region).ravel()
-
-            f_dif = np.sum(np.abs(db[:, :F_n] - r_hog) ** 2)
-            min_arg = np.argsort(f_dif)[:5]
-            pred = db[min_arg, -1]
-
-            #if len(np.where(pred==0)[0]) > 0:
-            #    cv2.rectangle(img2, (x1, y1), (x2, y2), (0,0,255), 1)
-            
-            pred = clf.predict(r_hog[None, ...])[0]
-            if pred == 0:
-                cv2.rectangle(img2, (x1, y1), (x2, y2), (0,0,255), 1)
-    print(y, x)
-
-                
-#print(db)
-cv2.imshow("", img2)
-cv2.waitKey(0)
