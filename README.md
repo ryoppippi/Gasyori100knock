@@ -4,7 +4,7 @@ English is here  >> https://github.com/KuKuXia/Image_Processing_100_Questions
 
 英語に訳してくれた方がいました。(Thanks https://github.com/KuKuXia )
 
-画像処理の初学者のための問題１００問が完成しましたぁぁぁぁぁ（＾ｕ＾）
+画像処理の初学者のための問題１００問が完成しましたぁぁぁぁぁ（＾ｕ＾）私の修論作品です。
 
 これはイモリと一緒に画像処理の基本的処理の知識を身に着け、アルゴリズムを理解するための100本ノックです。
 
