@@ -111,9 +111,9 @@ b = np.array((60, 60, 170, 160), dtype=np.float32)
 答えは、ラベル1の矩形を赤、ラベル0の矩形を青、GTを緑にしている。
 これでイモリの顔の画像、それ以外の画像を簡易的に用意できた。
 
-|入力 (imori.jpg) |出力(answer_94.jpg)|
+|入力 (imori_1.jpg) |出力(answer_94.jpg)|
 |:---:|:---:|
-|![](imori.jpg)|![](answer_94.jpg)|
+|![](imori_1.jpg)|![](answer_94.jpg)|
 
 答え >> answer_94.py
 
@@ -224,7 +224,7 @@ Accuracy >> 1.0 (200.0 / 200)
 3. それぞれの矩形に対応する画像を切り抜いて、特徴抽出(HOG, SIFTなど)を行う。
 4. 識別機(CNN, SVMなど)に掛けて各矩形が物体か否かを判別する。
 
-これである程度の物体と矩形の座標が得られる。
+これである程度の物体と矩形の座標が得られる。現在は物体検出はディープラーニングによる手法(Faster R-CNN, YOLO, SSDなど)が主流であるが、ディープラーニングが流行る前まではこのようなスライディングウィンドウの手法が主流であった。今回は検出の基礎を学ぶため、スライディングウィンドウを扱う。
 
 ここでは1-3を実装する。
 
@@ -283,9 +283,9 @@ recs = np.array(((42, 42), (56, 56), (70, 70)), dtype=np.float32)
 [ 97.          81.         167.         144.           0.70371708]]
 ```
 
-|入力 (imori.jpg) |出力(answer_98.jpg)|
+|入力 (imori_many.jpg) |出力(answer_98.jpg)|
 |:---:|:---:|
-|![](imori.jpg)|![](answer_98.jpg)|
+|![](imori_many.jpg)|![](answer_98.jpg)|
 
 解答 >> answer_98.py
 
@@ -308,9 +308,9 @@ Q.98にNMS(閾値t=0.25)を組み込み、出力を描画せよ。
 精度はともあれ、これで検出の一連の流れが完了した。
 ニューラルネットの学習を増やしたりすることで、検出の精度は更に向上ができる。
 
-|入力 (imori.jpg) |NMS前(answer_98.jpg)|NMS後(answer_99.jpg)|
+|入力 (imori_many.jpg) |NMS前(answer_98.jpg)|NMS後(answer_99.jpg)|
 |:---:|:---:|:---:|
-|![](imori.jpg)|![](answer_98.jpg)|![](answer_99.jpg)|
+|![](imori_many.jpg)|![](answer_98.jpg)|![](answer_99.jpg)|
 
 解答 >> answer_99.py
 
@@ -388,8 +388,8 @@ F-score >>  0.4
 mAP >> 0.0625
 ```
 
-|入力 (imori.jpg) |GT(answer_100_gt.jpg)|出力(answer_100.jpg)|
+|入力 (imori_many.jpg) |GT(answer_100_gt.jpg)|出力(answer_100.jpg)|
 |:---:|:---:|:---:|
-|![](imori.jpg)|![](answer_100_gt.jpg)|![](answer_100.jpg)|
+|![](imori_many.jpg)|![](answer_100_gt.jpg)|![](answer_100.jpg)|
 
 解答 >> answer_100.py
