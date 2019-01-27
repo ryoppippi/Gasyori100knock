@@ -324,14 +324,14 @@ Q.98にNMS(閾値t=0.25)を組み込み、出力を描画せよ。
 検出はBounding-boxとそのクラスの２つが一致していないと、精度の評価ができない。
 検出の評価指標には、Recal, Precision, F-score, mAPなどが存在する。
 
-Recall ... 正解の矩形がどれだけ検出できたか。正解をどれだけ網羅できたかを示す。[0,1]の範囲を取り、1が最高。
+### Recall ... 正解の矩形がどれだけ検出できたか。正解をどれだけ網羅できたかを示す。[0,1]の範囲を取り、1が最高。
 
 ```bash
 G' ... Ground-truthの中で検出のどれかとIoUが閾値t以上となったGround-truthの数。
 G ... Ground-truthの矩形の数。
 Recall = G' / G
 ```
-Precision ... 検出がどれだけ正確に行われたかを示す。[0,1]の範囲を取り、1が最高。
+### Precision ... 検出がどれだけ正確に行われたかを示す。[0,1]の範囲を取り、1が最高。
 
 ```bash
 D' ... 検出の中で、Ground-truthのどれかとIoUが閾値t以上となった検出の数。
@@ -339,7 +339,7 @@ D ... 検出の数。
 Precision = D' / D
 ```
 
-F-score ... RecallとPrecisonの調和平均。　２つのバランスを示すもので、[0,1]の範囲を取り、1が最高。
+### F-score ... RecallとPrecisonの調和平均。　２つのバランスを示すもので、[0,1]の範囲を取り、1が最高。
 
 ```bash
 F-scoer = 2 * Recall * Precision / (Recall + Precision)
@@ -347,10 +347,7 @@ F-scoer = 2 * Recall * Precision / (Recall + Precision)
 
 文字を検出する文字検出はRecall, Precision, F-scoreで精度を測ることが多い。
 
-mAP ... Mean Average Precision。
-
-物体を検出する物体検出では、mAPで測ることが多い。
-mAPの計算方法は少し複雑である。
+### mAP ... Mean Average Precision。物体を検出する物体検出では、mAPで測ることが多い。mAPの計算方法は少し複雑である。
 
 1. 各検出に関してGround-truthとのIoUが閾値t以上かどうかを判断して、表を作成する。
 ```bash
