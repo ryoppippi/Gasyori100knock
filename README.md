@@ -84,8 +84,14 @@ $ python sample.py
 - 解答は簡易化のため、main()などは使用しません。
 - numpy中心ですが、numpyの基本知識は自分で調べて下さい。
 
-### [チュートリアル](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_01_10)
+### [チュートリアル](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Tutorial)
 
+|内容| |
+|:---:|:---:|
+|1| 画像読み込み・表示 |
+|2| 画素をいじる |
+|3| 画像のコピー |
+|4| 画像の保存 |
 ### [問題1 - 10](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_01_10)
 
 |番号|問題||番号|問題|
