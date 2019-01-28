@@ -86,7 +86,7 @@ $ python sample.py
 
 ### [チュートリアル](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Tutorial)
 
-|内容| |
+| | 内容 |
 |:---:|:---:|
 |1| 画像読み込み・表示 |
 |2| 画素をいじる |
