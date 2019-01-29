@@ -33,7 +33,7 @@ H = (H + 180) % 360
 # HSV > RGB
 
 C = S
-H_ = H // 60
+H_ = H / 60
 X = C * (1 - np.abs( H_ % 2 - 1))
 Z = np.zeros_like(H)
 

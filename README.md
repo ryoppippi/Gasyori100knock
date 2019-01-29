@@ -1,6 +1,6 @@
 # 画像処理100本ノック!!
 
-English is here  >> https://github.com/KuKuXia/Image_Processing_100_Questions 英語に訳してくれた方がいました。(Thanks https://github.com/KuKuXia )
+English is here  >> https://github.com/KuKuXia/Image_Processing_100_Questions KuKuXia translates into English, so I appreciate his greate effort https://github.com/KuKuXia
 
 画像処理の初学者のための問題１００問が完成しましたぁぁぁぁぁ（＾ｕ＾）私の修論作品です。
 
@@ -10,6 +10,9 @@ English is here  >> https://github.com/KuKuXia/Image_Processing_100_Questions �
 - **内容はいろいろな文献を調べて載っけてるので正しくないものもあるかもしれないので注意して下さい**
 - 【注意】このページを利用して、または関して生じた事に関しては、私は一切責任を負いません。すべて**自己責任**でお願い致します。
 
+
+## Recent
+- 2019.1.29 HSVを修正
 
 ## 環境設定
 
