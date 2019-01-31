@@ -92,38 +92,40 @@ $ python sample.py
 | | 内容 |
 |:---:|:---:|
 |1| [画像読み込み・表示](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Tutorial#%E7%94%BB%E5%83%8F%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%81%BF%E8%A1%A8%E7%A4%BA) |
-|2| 画素をいじる |
-|3| 画像のコピー |
-|4| 画像の保存 |
+|2| [画素をいじる](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Tutorial#%E7%94%BB%E7%B4%A0%E3%82%92%E3%81%84%E3%81%98%E3%82%8B) |
+|3| [画像のコピー](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Tutorial#%E7%94%BB%E5%83%8F%E3%81%AE%E3%82%B3%E3%83%94%E3%83%BC) |
+|4| [画像の保存](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Tutorial#%E7%94%BB%E5%83%8F%E3%81%AE%E4%BF%9D%E5%AD%98) |
+|5| [練習問題](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Tutorial#%E7%B7%B4%E7%BF%92)|
+
 ### [問題1 - 10](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_01_10)
 
 |番号|問題||番号|問題|
 |:---:|:---:|:---:|:---:|:---:|
-|1|チャネル入れ替え| |6|減色処理 | |
-|2|グレースケール化 | |7|平均プーリング |
-|3|二値化 | |8|Maxプーリング | |
-|4|大津の二値化 | |9|ガウシアンフィルタ |
-|5|HSV変換 | |10|メディアンフィルタ |
+|1|[チャネル入れ替え](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_01_10#q1-%E3%83%81%E3%83%A3%E3%83%8D%E3%83%AB%E5%85%A5%E3%82%8C%E6%9B%BF%E3%81%88)| |6| [減色処理] (https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_01_10#q6-%E6%B8%9B%E8%89%B2%E5%87%A6%E7%90%86) | |
+|2|[グレースケール化](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_01_10#q2-%E3%82%B0%E3%83%AC%E3%83%BC%E3%82%B9%E3%82%B1%E3%83%BC%E3%83%AB%E5%8C%96) | |7| [平均プーリング](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_01_10#q7-%E5%B9%B3%E5%9D%87%E3%83%97%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0) |
+|3|[二値化](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_01_10#q3-%E4%BA%8C%E5%80%A4%E5%8C%96) | |8| [Maxプーリング](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_01_10#q8-max%E3%83%97%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0) | |
+|4|[大津の二値化](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_01_10#q4-%E5%A4%A7%E6%B4%A5%E3%81%AE%E4%BA%8C%E5%80%A4%E5%8C%96) | |9| [ガウシアンフィルタ](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_01_10#q9-%E3%82%AC%E3%82%A6%E3%82%B7%E3%82%A2%E3%83%B3%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF) |
+|5|[HSV変換](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_01_10#q5-hsv%E5%A4%89%E6%8F%9B) | |10| [メディアンフィルタ](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_01_10#q10-%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2%E3%83%B3%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF) |
 
 ### [問題11 - 20](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_11_20)
 
 |番号|問題||番号|問題|
 |:---:|:---:|:---:|:---:|:---:|
-|11|平滑化フィルタ | |16|Prewittフィルタ | 
-|12|モーションフィルタ | |17|Laplacianフィルタ |
-|13|MAX-MINフィルタ | |18|Embossフィルタ |
-|14|微分フィルタ | |19|LoGフィルタ | 
-|15|Sobelフィルタ | |20|ヒストグラム表示  | 
+|11| [平滑化フィルタ](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_11_20#q11-%E5%B9%B3%E6%BB%91%E5%8C%96%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF) | |16| [Prewittフィルタ](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_11_20#q16-prewitt%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF) | 
+|12| [モーションフィルタ](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_11_20#q12-%E3%83%A2%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF) | |17| [Laplacianフィルタ](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_11_20#q17-laplacian%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF) |
+|13| [MAX-MINフィルタ](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_11_20#q13-max-min%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF) | |18| [Embossフィルタ](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_11_20#q18-emboss%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF) |
+|14| [微分フィルタ](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_11_20#q14-%E5%BE%AE%E5%88%86%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF) | |19| [LoGフィルタ](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_11_20#q19-log%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF) | 
+|15| [Sobelフィルタ](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_11_20#q15-sobel%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF) | |20| [ヒストグラム表示](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_11_20#q20-%E3%83%92%E3%82%B9%E3%83%88%E3%82%B0%E3%83%A9%E3%83%A0%E8%A1%A8%E7%A4%BA)  | 
 
 ### [問題21 - 30](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_21_30)
 
 |番号|問題||番号|問題|
 |:---:|:---:|:---:|:---:|:---:|
-|21|ヒストグラム正規化 | |26|Bi-linear補間|
-|22|ヒストグラム操作 | |27|Bi-cubic補間|
-| 23|ヒストグラム平坦化 | |28|アフィン変換(平行移動)|
-| 24|ガンマ補正| |29|アフィン変換(拡大縮小)|
-|25|最近傍補間| |30|アフィン変換(回転)|
+|21| [ヒストグラム正規化](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_21_30#q21-%E3%83%92%E3%82%B9%E3%83%88%E3%82%B0%E3%83%A9%E3%83%A0%E6%AD%A3%E8%A6%8F%E5%8C%96) | |26| [Bi-linear補間](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_21_30#q26-bi-linear%E8%A3%9C%E9%96%93) |
+|22| [ヒストグラム操作](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_21_30#q22-%E3%83%92%E3%82%B9%E3%83%88%E3%82%B0%E3%83%A9%E3%83%A0%E6%93%8D%E4%BD%9C) | |27| [Bi-cubic補間](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_21_30#q27-bi-cubic%E8%A3%9C%E9%96%93) |
+| 23| [ヒストグラム平坦化](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_21_30#q23-%E3%83%92%E3%82%B9%E3%83%88%E3%82%B0%E3%83%A9%E3%83%A0%E5%B9%B3%E5%9D%A6%E5%8C%96) | |28| [アフィン変換(平行移動)](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_21_30#q28-%E3%82%A2%E3%83%95%E3%82%A3%E3%83%B3%E5%A4%89%E6%8F%9B%E5%B9%B3%E8%A1%8C%E7%A7%BB%E5%8B%95) |
+| 24| [ガンマ補正](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_21_30#q24-%E3%82%AC%E3%83%B3%E3%83%9E%E8%A3%9C%E6%AD%A3) | |29| [アフィン変換(拡大縮小)](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_21_30#q29-%E3%82%A2%E3%83%95%E3%82%A3%E3%83%B3%E5%A4%89%E6%8F%9B%E6%8B%A1%E5%A4%A7%E7%B8%AE%E5%B0%8F) |
+|25| [最近傍補間](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_21_30#q25-%E6%9C%80%E8%BF%91%E5%82%8D%E8%A3%9C%E9%96%93) | |30| [アフィン変換(回転)](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_21_30#q30-%E3%82%A2%E3%83%95%E3%82%A3%E3%83%B3%E5%A4%89%E6%8F%9B%E5%9B%9E%E8%BB%A2) |
 
 ### [問題31 - 40](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Question_31_40)
 
