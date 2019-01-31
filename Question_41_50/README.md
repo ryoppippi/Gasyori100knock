@@ -39,7 +39,7 @@ angle = {   0  (if -0.4142 < tan <= 0.4142)
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](answer_41_1.jpg)|![](answer_41_2.jpg)|
 
-答え >> answer_41.py
+答え >> [answer_41.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_41_50/answer_41.py)
 
 ## Q.42. Cannyエッジ検出 (Step.2) 細線化
 
@@ -72,7 +72,7 @@ if angle(x,y)  = 135
 |:---:|:---:|
 |![](imori.jpg)|![](answer_42.jpg)|
 
-答え >> answer_42.py
+答え >> [answer_42.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_41_50/answer_42.py)
 
 ## Q.43. Cannyエッジ検出 (Step.3) ヒステリシス閾処理
 
@@ -93,7 +93,7 @@ if angle(x,y)  = 135
 |:---:|:---:|
 |![](imori.jpg)|![](answer_43.jpg)|
 
-答え >> answer_43.py
+答え >> [answer_43.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_41_50/answer_43.py)
 
 ## Q.44. Hough変換・直線検出 (Step.1) Hough変換
 
@@ -131,7 +131,7 @@ Cannyのパラメータは, gaussian filter(5x5, s=1.4), HT = 100, LT = 30で使
 |:---:|:---:|
 |![](thorino.jpg)|![](answer_44.jpg)|
 
-答え >> answer_44.py
+答え >> [answer_44.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_41_50/answer_44.py)
 
 ## Q.45. Hough変換・直線検出 (Step.2) NMS
 
@@ -150,7 +150,7 @@ NMSのアルゴリズムは、
 |:---:|:---:|
 |![](thorino.jpg)|![](answer_45.jpg)|
 
-答え >> answer_45.py
+答え >> [answer_45.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_41_50/answer_45.py)
 
 ## Q.46. Hough変換・直線検出 (Step.3) Hough逆変換
 
@@ -171,7 +171,7 @@ x = - sin(t) / cos(t) * y + r / cos(t)
 |:---:|:---:|
 |![](thorino.jpg)|![](answer_46.jpg)|
 
-答え >> answer_46.py
+答え >> [answer_46.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_41_50/answer_46.py)
 
 ## Q.47. モルフォロジー処理(膨張)
 
@@ -193,7 +193,8 @@ x = - sin(t) / cos(t) * y + r / cos(t)
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](answer_4.jpg)|![](answer_47.jpg)|
 
-答え >> answer_47.py
+答え >> [answer_47.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_41_50/answer_47.py)
+
 ## Q.48. モルフォロジー処理(収縮)
 
 *imori.jpg*を大津の二値化したものに、モルフォロジー処理による収縮を2回行え。
@@ -207,7 +208,7 @@ x = - sin(t) / cos(t) * y + r / cos(t)
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](answer_4.jpg)|![](answer_48.jpg)|
 
-答え >> answer_48.py
+答え >> [answer_48.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_41_50/answer_48.py)
 
 ## Q.49. オープニング処理
 
@@ -221,7 +222,7 @@ x = - sin(t) / cos(t) * y + r / cos(t)
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](answer_4.jpg)|![](answer_49.jpg)|
 
-答え >> answer_49.py
+答え >> [answer_49.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_41_50/answer_49.py)
 
 ## Q.50. クロージング処理
 
@@ -235,4 +236,4 @@ x = - sin(t) / cos(t) * y + r / cos(t)
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](answer_43.jpg)|![](answer_50.jpg)|
 
-答え >> answer_50.py
+答え >> [answer_50.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_41_50/answer_50.py)

@@ -40,7 +40,7 @@
 |:---:|:---:|
 |![](imori.jpg)|![](answer_91.jpg)|
 
-答え >> answer_91.py
+答え >> [answer_91.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answer_91.py)
 
 ## Q.92. K-meansによる減色処理 (Step.2) 減色処理
 
@@ -63,7 +63,7 @@
 |:---:|:---:|:---:|:---:|:---:|
 |![](imori.jpg)|![](answer_92.jpg)|![](answer_92_k10.jpg)|![](madara.jpg)|![](answer_92_m.jpg)|
 
-答え >> answer_92.py
+答え >> [answer_92.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answer_92.py)
 
 
 ## Q.93. 機械学習の学習データの用意 (Step.1) IoUの計算
@@ -96,7 +96,7 @@ b = np.array((60, 60, 170, 160), dtype=np.float32)
 ```bash
 0.627907
 ```
-答え >> answer_93.py
+答え >> [answer_93.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answer_93.py)
 
 ## Q.94. 機械学習の学習データの用意 (Step.2) ランダムクラッピング
 
@@ -115,7 +115,7 @@ b = np.array((60, 60, 170, 160), dtype=np.float32)
 |:---:|:---:|
 |![](imori_1.jpg)|![](answer_94.jpg)|
 
-答え >> answer_94.py
+答え >> [answer_94.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answer_94.py)
 
 ## Q.95. ニューラルネットワーク (Step.1) ディープラーニングにする
 
@@ -191,7 +191,7 @@ in: [1. 0.] pred: [0.9641076]
 in: [1. 1.] pred: [0.03937037]
 ```
 
-答え >> answer_95.py
+答え >> [answer_95.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answer_95.py)
 
 ## Q.96. ニューラルネットワーク (Step.2) 学習
 
@@ -207,7 +207,7 @@ in: [1. 1.] pred: [0.03937037]
 Accuracy >> 1.0 (200.0 / 200)
 ```
 
-答え >> answer_96.py
+答え >> [answer_96.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answer_96.py)
 
 ## Q.97. 簡単な物体検出 (Step.1) スライディングウィンドウ + HOG
 
@@ -240,7 +240,7 @@ recs = np.array(((42, 42), (56, 56), (70, 70)), dtype=np.float32)
 - 矩形部分を切り抜いたら、その部分を32x32にリサイズする。
 - HOG特徴量の取得は8x8を1セルとする。
 
-答え >> answer_97.py
+答え >> [answer_97.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answer_97.py)
 
 ## Q.98. 簡単な物体検出 (Step.2) スライディングウィンドウ + NN
 
@@ -287,7 +287,7 @@ recs = np.array(((42, 42), (56, 56), (70, 70)), dtype=np.float32)
 |:---:|:---:|
 |![](imori_many.jpg)|![](answer_98.jpg)|
 
-解答 >> answer_98.py
+解答 >> [answer_98.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answer_98.py)
 
 ## Q.99. 簡単な物体検出 (Step.3) Non-Maximum Suppression
 
@@ -312,7 +312,7 @@ Q.98にNMS(閾値t=0.25)を組み込み、出力を描画せよ。
 |:---:|:---:|:---:|
 |![](imori_many.jpg)|![](answer_98.jpg)|![](answer_99.jpg)|
 
-解答 >> answer_99.py
+解答 >> [answer_99.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answer_99.py)
 
 
 ## Q.100. 簡単な物体検出 (Step.4) 評価 Precision, Recall, F-score, mAP
@@ -389,4 +389,4 @@ mAP >> 0.0625
 |:---:|:---:|:---:|
 |![](imori_many.jpg)|![](answer_100_gt.jpg)|![](answer_100.jpg)|
 
-解答 >> answer_100.py
+解答 >> [answer_100.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answer_100.py)

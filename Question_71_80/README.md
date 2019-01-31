@@ -14,7 +14,7 @@
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](answer_70.png)|![](answer_71.jpg)|
 
-答え >> answer_71.py
+答え >> [answer_71.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_71_80/answer_71.py)
 
 ## Q.72. マスキング(カラートラッキング＋モルフォロジー)
 
@@ -26,7 +26,7 @@ Q.71ではマスクが雑になってしまっていたので、イモリの目�
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](answer_72_mask.png)|![](answer_72.jpg)|
 
-答え >> answer_72.py
+答え >> [answer_72.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_71_80/answer_72.py)
 
 ## Q.73. 縮小と拡大
 
@@ -39,7 +39,7 @@ Q.71ではマスクが雑になってしまっていたので、イモリの目�
 |:---:|:---:|
 |![](imori.jpg)|![](answer_73.jpg)|
 
-答え >> answer_73.py
+答え >> [answer_73.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_71_80/answer_73.py)
 
 ## Q.74. ピラミッド差分による高周波成分の抽出
 
@@ -51,7 +51,7 @@ Q.73で求めた画像と元画像の差分を求め、[0,255]に正規化せよ
 |:---:|:---:|
 |![](imori.jpg)|![](answer_74.jpg)|
 
-答え >> answer_74.py
+答え >> [answer_74.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_71_80/answer_74.py)
 
 ## Q.75. ガウシアンピラミッド
 
@@ -65,7 +65,7 @@ Q.73で求めた画像と元画像の差分を求め、[0,255]に正規化せよ
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |![](imori.jpg)|![](answer_75_1.jpg)|![](answer_75_2.jpg)|![](answer_75_4.jpg)|![](answer_75_8.jpg)|![](answer_75_16.jpg)|![](answer_75_32.jpg)|
 
-答え >> answer_75.py
+答え >> [answer_75.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_71_80/answer_75.py)
 
 ## Q.76. 顕著性マップ
 
@@ -92,7 +92,7 @@ Q.73で求めた画像と元画像の差分を求め、[0,255]に正規化せよ
 |:---:|:---:|
 |![](imori.jpg)|![](answer_76.jpg)|
 
-答え >> answer_76.py
+答え >> [answer_76.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_71_80/answer_76.py)
 
 
 ## Q.77. ガボールフィルタ
@@ -128,7 +128,7 @@ A ... フィルタの回転　抽出したい角度を指定する。
 |:---:|
 |![](answer_77.jpg)|
 
-答え >> answer_77.py
+答え >> [answer_77.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_71_80/answer_77.py)
 
 ## Q.78. ガボールフィルタの回転
 
@@ -141,7 +141,7 @@ A ... フィルタの回転　抽出したい角度を指定する。
 |:---:|
 |![](answer_78.png)|
 
-答え >> answer_78.py
+答え >> [answer_78.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_71_80/answer_78.py)
 
 ## Q.79. ガボールフィルタによるエッジ抽出
 
@@ -160,7 +160,7 @@ A ... フィルタの回転　抽出したい角度を指定する。
 |:---:|:---:|
 |![](imori.jpg)|![](answer_79.png)|
 
-答え >> answer_79.py
+答え >> [answer_79.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_71_80/answer_79.py)
 
 ## Q.80. ガボールフィルタによる特徴抽出
 
@@ -174,4 +174,4 @@ Q.79で求めた４枚の画像を足し合わせることで、画像の特徴�
 |:---:|:---:|
 |![](imori.jpg)|![](answer_80.jpg)|
 
-答え >> answer_80.py
+答え >> [answer_80.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_71_80/answer_80.py)

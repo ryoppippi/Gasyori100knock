@@ -10,7 +10,7 @@
 |:---:|:---:|
 |![](imori.jpg)|![](answer_11.jpg)|
 
-答え >> answer_11.py
+答え >> [answer_11.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answer_11.py)
 
 
 ## Q.12. モーションフィルタ
@@ -29,7 +29,7 @@
 |:---:|:---:|
 |![](imori.jpg)|![](answer_12.jpg)|
 
-答え >> answer_12.py
+答え >> [answer_12.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answer_12.py)
 
 ## Q.13. MAX-MINフィルタ
 
@@ -43,7 +43,7 @@ MAX-MINフィルタとはフィルタ内の画素の最大値と最小値の差�
 |:---:|:---:|
 |![](imori.jpg)|![](answer_13.jpg)|
 
-答え >> answer_13.py
+答え >> [answer_13.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answer_13.py)
 
 
 ## Q.14. 微分フィルタ
@@ -63,7 +63,7 @@ K = [ 0  1  0 ]   K = [ -1 1 0 ]
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](answer_14_v.jpg)|![](answer_14_h.jpg)|
 
-答え >> answer_14.py
+答え >>[ answer_14.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answer_14.py)
 
 ## Q.15. Sobelフィルタ
 
@@ -82,7 +82,7 @@ K = [ 2 0 -2 ]   K = [  0  0  0 ]
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](answer_15_v.jpg)|![](answer_15_h.jpg)|
 
-答え >> answer_15.py
+答え >> [answer_15.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answer_15.py)
 
 ## Q.16. Prewittフィルタ
 
@@ -101,7 +101,7 @@ K = [  0  0  0 ]  K = [ -1 0 1 ]
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](answer_16_v.jpg)|![](answer_16_h.jpg)|
 
-答え >> answer_16.py
+答え >> [answer_16.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answer_16.py)
 
 
 ## Q.17. Laplacianフィルタ
@@ -145,7 +145,7 @@ K = [ 1 -4  1 ]
 |:---:|:---:|
 |![](imori.jpg)|![](answer_17.jpg)||
 
-答え >> answer_17.py
+答え >> [answer_17.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answer_17.py)
 
 ## Q.18. Embossフィルタ
 
@@ -163,7 +163,7 @@ K = [ -1  1  1 ]
 |:---:|:---:|
 |![](imori.jpg)|![](answer_18.jpg)|
 
-答え >> answer_17.py
+答え >> [answer_17.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answer_18.py)
 
 ## Q.19. LoGフィルタ
 
@@ -183,7 +183,8 @@ LoG(x,y) = (x^2 + y^2 - s^2) / (2 * pi * s^6) * exp(-(x^2+y^2) / (2*s^2))
 |:---:|:---:|
 |![](imori.jpg)|![](answer_19.jpg)|
 
-答え >> answer_20.py
+答え >> [answer_20.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answer_19.py)
+
 ## Q.20. ヒストグラム表示
 
 matplotlibを用いて*imori_dark.jpg*のヒストグラムを表示せよ。
@@ -195,5 +196,5 @@ matplotlibではhist()という関数がすでにあるので、それを利用�
 |:---:|:---:|
 |![](imori_dark.jpg)|![](answer_20.png)|
 
-答え >> answer_20.py
+答え >> [answer_20.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answer_20.py)
 

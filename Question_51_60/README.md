@@ -12,7 +12,7 @@
 |:---:|:---:|
 |![](imori.jpg)|![](answer_51.jpg)|
 
-答え >> answer_51.py
+答え >> [answer_51.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answer_51.py)
 
 ## Q.52. トップハット変換
 
@@ -28,7 +28,7 @@
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](answer_4.jpg)|![](answer_52.jpg)|
 
-答え >> answer_52.py
+答え >> [answer_52.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answer_52.py)
 
 ## Q.53. ブラックハット変換
 
@@ -44,7 +44,7 @@
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](answer_4.jpg)|![](answer_53.jpg)|
 
-答え >> answer_53.py
+答え >> [answer_53.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answer_53.py)
 
 ## Q.54. テンプレートマッチング SSD
 
@@ -75,7 +75,7 @@ S = Sum_{x=0:w, y=0:h} (I(i+x, j+y) - T(x, y) )^2
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](imori_part.jpg)|![](answer_54.jpg)|
 
-答え >> answer_54.py
+答え >> [answer_54.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answer_54.py)
 
 ## Q.55. テンプレートマッチング SAD
 
@@ -91,7 +91,7 @@ S = Sum_{x=0:w, y=0:h} |I(i+x, j+y) - T(x, y)|
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](imori_part.jpg)|![](answer_55.jpg)|
 
-答え >> answer_55.py
+答え >> [answer_55.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answer_55.py)
 
 ## Q.56. テンプレートマッチング NCC
 
@@ -112,7 +112,7 @@ NCCは証明変化に強いと言われる。
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](imori_part.jpg)|![](answer_56.jpg)|
 
-答え >> answer_56.py
+答え >> [answer_56.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answer_56.py)
 
 ## Q.57. テンプレートマッチング ZNCC
 
@@ -135,7 +135,7 @@ ZNCCは平均値を引くことでNCCよりも証明変化に強いと言われ�
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](imori_part.jpg)|![](answer_57.jpg)|
 
-答え >> answer_57.py
+答え >> [answer_57.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answer_57.py)
 
 ## Q.58. ラベリング 4近傍
 
@@ -184,7 +184,7 @@ ZNCCは平均値を引くことでNCCよりも証明変化に強いと言われ�
 |:---:|:---:|
 |![](seg.png)|![](answer_58.png)|
 
-答え >> answer_58.py
+答え >> [answer_58.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answer_58.py)
 
 ## Q.59. ラベリング 8近傍
 
@@ -196,7 +196,7 @@ ZNCCは平均値を引くことでNCCよりも証明変化に強いと言われ�
 |:---:|:---:|
 |![](seg.png)|![](answer_59.png)|
 
-答え >> answer_59.py
+答え >> [answer_59.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answer_59.py)
 
 ## Q.60. アルファブレンド
 
@@ -220,4 +220,4 @@ out = img1 * alpha + img2 * (1 - alpha)
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](thorino.jpg)|![](answer_60.jpg)|
 
-答え >> answer_60.py
+答え >> [answer_60.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answer_60.py)
