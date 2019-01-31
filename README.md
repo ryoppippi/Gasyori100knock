@@ -91,7 +91,7 @@ $ python sample.py
 
 | | 内容 |
 |:---:|:---:|
-|1| 画像読み込み・表示 |
+|1| [画像読み込み・表示](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Tutorial#%E7%94%BB%E5%83%8F%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%81%BF%E8%A1%A8%E7%A4%BA) |
 |2| 画素をいじる |
 |3| 画像のコピー |
 |4| 画像の保存 |
