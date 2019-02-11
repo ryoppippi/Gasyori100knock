@@ -29,7 +29,7 @@ $ conda create python=3.6 -n gasyori100
 作成できたら、以下コマンドで仮想環境を動作します。
 
 ```bash
-$ source actiavte gasyori100
+$ source activate gasyori100
 ```
 
 するとこうなります。
