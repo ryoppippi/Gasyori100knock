@@ -205,7 +205,7 @@ adaptivebinalizatino, poison image blending
 ## Citation
 
 ```bash
-@article{jjfaster2rcnn,
+@article{yoyoyo-yoGasyori100knock,
     Author = {yoyoyo-yo},
     Title = {Gasyori100knock},
     Journal = {https://github.com/yoyoyo-yo/Gasyori100knock},
