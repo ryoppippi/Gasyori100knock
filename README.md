@@ -202,3 +202,14 @@ $ python sample.py
 
 adaptivebinalizatino, poison image blending
 
+## Citation
+
+```bash
+@article{jjfaster2rcnn,
+    Author = {yoyoyo-yo},
+    Title = {Gasyori100knock},
+    Journal = {https://github.com/yoyoyo-yo/Gasyori100knock},
+    Year = {2019}
+}
+```
+
