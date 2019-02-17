@@ -2,7 +2,7 @@
 
 English is here  >> https://github.com/KuKuXia/Image_Processing_100_Questions KuKuXia translates into English, so I appreciate his greate effort https://github.com/KuKuXia
 
-画像処理の初学者のための問題１００問が完成しましたぁぁぁぁぁ（＾ｕ＾）私の修論作品です。
+画像処理の初学者のための問題１００問が完成しましたぁぁぁぁぁ(´；ω；｀)
 
 これはイモリと一緒に画像処理の基本的処理の知識を身に着け、アルゴリズムを理解するための100本ノックです。ここに載っている問題はOpenCVでAPIが用意されているものが殆どですが、**あえてそれを自分の手で実装**してください。解答も載っけてますが、それはあくまで解答です。自分で考えながら実装して下さい。
 
@@ -201,4 +201,15 @@ $ python sample.py
 ## TODO
 
 adaptivebinalizatino, poison image blending
+
+## Citation
+
+```bash
+@article{yoyoyo-yoGasyori100knock,
+    Author = {yoyoyo-yo},
+    Title = {Gasyori100knock},
+    Journal = {https://github.com/yoyoyo-yo/Gasyori100knock},
+    Year = {2019}
+}
+```
 
