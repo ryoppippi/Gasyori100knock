@@ -18,15 +18,18 @@ out[pad:pad+H, pad:pad+W] = img.copy().astype(np.float)
 ## Kernel
 K = np.zeros((K_size, K_size), dtype=np.float)
 for x in range(-pad, -pad+K_size):
+    
     for y in range(-pad, -pad+K_size):
         K[y+pad, x+pad] = np.exp( -(x**2 + y**2) / (2* (sigma**2)))
 K /= (sigma * np.sqrt(2 * np.pi))
 K /= K.sum()
 
+tmp = out.copy()
+
 for y in range(H):
     for x in range(W):
         for c in range(C):
-            out[pad+y, pad+x, c] = np.sum(K * out[y:y+K_size, x:x+K_size, c])
+            out[pad+y, pad+x, c] = np.sum(K * tmp[y:y+K_size, x:x+K_size, c])
 
 out = out[pad:pad+H, pad:pad+W].astype(np.uint8)
 
