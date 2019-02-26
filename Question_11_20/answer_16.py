@@ -33,6 +33,9 @@ for y in range(H):
 
 out = out[pad:pad+H, pad:pad+W].astype(np.uint8)
 
+out[out < 0] = 0
+out[out > 255] = 255
+
 # Save result
 cv2.imwrite("out.jpg", out)
 cv2.imshow("result", out)
