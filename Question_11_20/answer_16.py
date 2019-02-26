@@ -29,7 +29,7 @@ K = [[-1., -1., -1.],[0., 0., 0.], [1., 1., 1.]]
 
 for y in range(H):
     for x in range(W):
-        out[pad+y, pad+x] = np.mean(K * (tmp[y:y+K_size, x:x+K_size]))
+        out[pad+y, pad+x] = np.sum(K * (tmp[y:y+K_size, x:x+K_size]))
 
 out = out[pad:pad+H, pad:pad+W].astype(np.uint8)
 
