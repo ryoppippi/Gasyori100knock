@@ -163,7 +163,7 @@ K = [ -1  1  1 ]
 |:---:|:---:|
 |![](imori.jpg)|![](answer_18.jpg)|
 
-答え >> [answer_17.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answer_18.py)
+答え >> [answer_18.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answer_18.py)
 
 ## Q.19. LoGフィルタ
 
@@ -179,11 +179,11 @@ LoGフィルタは次式で定義される。
 LoG(x,y) = (x^2 + y^2 - s^2) / (2 * pi * s^6) * exp(-(x^2+y^2) / (2*s^2))
 ```
 
-|入力 (imori.jpg)|出力 (answer_19.jpg) |
+|入力 (imori_noise.jpg)|出力 (answer_19.jpg) |
 |:---:|:---:|
-|![](imori.jpg)|![](answer_19.jpg)|
+|![](imori_noise.jpg)|![](answer_19.jpg)|
 
-答え >> [answer_20.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answer_19.py)
+答え >> [answer_19.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answer_19.py)
 
 ## Q.20. ヒストグラム表示
 
