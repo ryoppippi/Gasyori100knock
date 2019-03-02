@@ -23,9 +23,9 @@ out[pad:pad+H, pad:pad+W] = gray.copy().astype(np.float)
 tmp = out.copy()
 
 ## Sobel vertical
-#K = [[-1., 0., 1.],[-1., 0., 1.],[-1., 0., 1.]]
-## Sobel horizontal
 K = [[-1., -1., -1.],[0., 0., 0.], [1., 1., 1.]]
+## Sobel horizontal
+#K = [[-1., 0., 1.],[-1., 0., 1.],[-1., 0., 1.]]
 
 for y in range(H):
     for x in range(W):
