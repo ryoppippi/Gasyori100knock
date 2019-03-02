@@ -15,6 +15,8 @@ s = np.std(img)
 
 out = img.copy()
 out = s0 / s * (out - m) + m0
+out[out < 0] = 0
+out[out > 255] = 255
 out = out.astype(np.uint8)
 
 # Display histogram
