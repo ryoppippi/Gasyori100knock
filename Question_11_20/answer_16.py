@@ -31,10 +31,10 @@ for y in range(H):
     for x in range(W):
         out[pad+y, pad+x] = np.sum(K * (tmp[y:y+K_size, x:x+K_size]))
 
-out = out[pad:pad+H, pad:pad+W].astype(np.uint8)
-
 out[out < 0] = 0
 out[out > 255] = 255
+
+out = out[pad:pad+H, pad:pad+W].astype(np.uint8)
 
 # Save result
 cv2.imwrite("out.jpg", out)
