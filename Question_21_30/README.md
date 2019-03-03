@@ -37,9 +37,9 @@ xout = {  a                         (xin < c)
 xout = s0 / s * (xin - m) + m0
 ```
 
-|入力 (imori.jpg)|出力 (answer_22_1.jpg) |ヒストグラム(answer_22_2.png)|
+|入力 (imori_dark.jpg)|出力 (answer_22_1.jpg) |ヒストグラム(answer_22_2.png)|
 |:---:|:---:|:---:|
-|![](imori.jpg)|![](answer_22_1.jpg)|![](answer_22_2.png)|
+|![](imori_dark.jpg)|![](answer_22_1.jpg)|![](answer_22_2.png)|
 
 答え >> [answer_22.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answer_22.py)
 
