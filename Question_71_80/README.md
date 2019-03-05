@@ -10,11 +10,11 @@
 
 これによりある程度のイモリの部分の抽出ができる。
 
-|入力 (imori.jpg) |マスク(answer_70.png)|出力(answer_71.jpg)|
+|入力 (imori.jpg) |マスク(answers/answer_70.png)|出力(answers/answer_71.jpg)|
 |:---:|:---:|:---:|
-|![](imori.jpg)|![](answer_70.png)|![](answer_71.jpg)|
+|![](imori.jpg)|![](answers/answer_70.png)|![](answers/answer_71.jpg)|
 
-答え >> [answer_71.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_71_80/answer_71.py)
+答え >> [answers/answer_71.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_71_80/answers/answer_71.py)
 
 ## Q.72. マスキング(カラートラッキング＋モルフォロジー)
 
@@ -22,11 +22,11 @@ Q.71ではマスクが雑になってしまっていたので、イモリの目�
 
 よってマスク画像にN=5のクロージング処理(Q.50)とオープニング処理(Q.49)を施してマスク画像を正確にして、マスキングを行え。
 
-|入力 (imori.jpg) |マスク(answer_72_mask.png)|出力(answer_72.jpg)|
+|入力 (imori.jpg) |マスク(answers/answer_72_mask.png)|出力(answers/answer_72.jpg)|
 |:---:|:---:|:---:|
-|![](imori.jpg)|![](answer_72_mask.png)|![](answer_72.jpg)|
+|![](imori.jpg)|![](answers/answer_72_mask.png)|![](answers/answer_72.jpg)|
 
-答え >> [answer_72.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_71_80/answer_72.py)
+答え >> [answers/answer_72.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_71_80/answers/answer_72.py)
 
 ## Q.73. 縮小と拡大
 
@@ -35,11 +35,11 @@ Q.71ではマスクが雑になってしまっていたので、イモリの目�
 
 拡大縮小にはbi-linear補間を用いよ。bi-linear補間をメソッド（関数）化すると、プログラムが簡潔にできる。
 
-|入力 (imori.jpg) |出力(answer_73.jpg)|
+|入力 (imori.jpg) |出力(answers/answer_73.jpg)|
 |:---:|:---:|
-|![](imori.jpg)|![](answer_73.jpg)|
+|![](imori.jpg)|![](answers/answer_73.jpg)|
 
-答え >> [answer_73.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_71_80/answer_73.py)
+答え >> [answers/answer_73.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_71_80/answers/answer_73.py)
 
 ## Q.74. ピラミッド差分による高周波成分の抽出
 
@@ -47,11 +47,11 @@ Q.73で求めた画像と元画像の差分を求め、[0,255]に正規化せよ
 
 ここで求めた画像はエッジとなっている。つまり、画像中の高周波成分をとったことになる。
 
-|入力 (imori.jpg) |出力(answer_74.jpg)|
+|入力 (imori.jpg) |出力(answers/answer_74.jpg)|
 |:---:|:---:|
-|![](imori.jpg)|![](answer_74.jpg)|
+|![](imori.jpg)|![](answers/answer_74.jpg)|
 
-答え >> [answer_74.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_71_80/answer_74.py)
+答え >> [answers/answer_74.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_71_80/answers/answer_74.py)
 
 ## Q.75. ガウシアンピラミッド
 
@@ -61,11 +61,11 @@ Q.73で求めた画像と元画像の差分を求め、[0,255]に正規化せよ
 
 このガウシアンピラミッドの概念は現在でも有効であり、画像をきれいにする超解像を行うディープラーニングの手法でもガウシアンピラミッドの概念が用いられる。
 
-|入力 (imori.jpg) |1/1(answer_75_1.jpg)|1/2|1/4|1/8|1/16|1/32|
+|入力 (imori.jpg) |1/1(answers/answer_75_1.jpg)|1/2|1/4|1/8|1/16|1/32|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|![](imori.jpg)|![](answer_75_1.jpg)|![](answer_75_2.jpg)|![](answer_75_4.jpg)|![](answer_75_8.jpg)|![](answer_75_16.jpg)|![](answer_75_32.jpg)|
+|![](imori.jpg)|![](answers/answer_75_1.jpg)|![](answers/answer_75_2.jpg)|![](answers/answer_75_4.jpg)|![](answers/answer_75_8.jpg)|![](answers/answer_75_16.jpg)|![](answers/answer_75_32.jpg)|
 
-答え >> [answer_75.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_71_80/answer_75.py)
+答え >> [answers/answer_75.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_71_80/answers/answer_75.py)
 
 ## Q.76. 顕著性マップ
 
@@ -88,11 +88,11 @@ Q.73で求めた画像と元画像の差分を求め、[0,255]に正規化せよ
 
 解答例( (0,1), (0,3), (0,5), (1,4), (2,3), (3,5) を使用)
 
-|入力 (imori.jpg) |出力(answer_76.jpg)|
+|入力 (imori.jpg) |出力(answers/answer_76.jpg)|
 |:---:|:---:|
-|![](imori.jpg)|![](answer_76.jpg)|
+|![](imori.jpg)|![](answers/answer_76.jpg)|
 
-答え >> [answer_76.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_71_80/answer_76.py)
+答え >> [answers/answer_76.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_71_80/answers/answer_76.py)
 
 
 ## Q.77. ガボールフィルタ
@@ -124,11 +124,11 @@ A ... フィルタの回転　抽出したい角度を指定する。
 
 答えでは可視化のためにフィルタの値を[0,255]に正規化している。
 
-|出力(answer_77.jpg)|
+|出力(answers/answer_77.jpg)|
 |:---:|
-|![](answer_77.jpg)|
+|![](answers/answer_77.jpg)|
 
-答え >> [answer_77.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_71_80/answer_77.py)
+答え >> [answers/answer_77.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_71_80/answers/answer_77.py)
 
 ## Q.78. ガボールフィルタの回転
 
@@ -137,11 +137,11 @@ A ... フィルタの回転　抽出したい角度を指定する。
 
 ここではガボールフィルタをメソッド化すれば簡単に実装できる。
 
-|出力(answer_78.png)|
+|出力(answers/answer_78.png)|
 |:---:|
-|![](answer_78.png)|
+|![](answers/answer_78.png)|
 
-答え >> [answer_78.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_71_80/answer_78.py)
+答え >> [answers/answer_78.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_71_80/answers/answer_78.py)
 
 ## Q.79. ガボールフィルタによるエッジ抽出
 
@@ -156,11 +156,11 @@ A ... フィルタの回転　抽出したい角度を指定する。
 
 **ディープラーニング**のConvolutional層はガボールフィルタの働きに近いとも考えられている。しかし、ディープラーニングではフィルタの係数が機械学習によって自動的に決定される。機械学習の結果、ガボールフィルタに近い働きが生じると言われる。
 
-入力 (imori.jpg) |出力(answer_79.png)|
+入力 (imori.jpg) |出力(answers/answer_79.png)|
 |:---:|:---:|
-|![](imori.jpg)|![](answer_79.png)|
+|![](imori.jpg)|![](answers/answer_79.png)|
 
-答え >> [answer_79.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_71_80/answer_79.py)
+答え >> [answers/answer_79.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_71_80/answers/answer_79.py)
 
 ## Q.80. ガボールフィルタによる特徴抽出
 
@@ -170,8 +170,8 @@ Q.79で求めた４枚の画像を足し合わせることで、画像の特徴�
 
 ディープラーニングのCNN(Convolutional Neural Network)では、最初に画像の特徴を抽出する働きが備わっているが、その特徴抽出の計算はこの問で行ったような操作を延々と繰り返している。ディープラーニングではこのようにして画像の特徴を自動的に抽出している。
 
-入力 (imori.jpg) |出力(answer_80.jpg)|
+入力 (imori.jpg) |出力(answers/answer_80.jpg)|
 |:---:|:---:|
-|![](imori.jpg)|![](answer_80.jpg)|
+|![](imori.jpg)|![](answers/answer_80.jpg)|
 
-答え >> [answer_80.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_71_80/answer_80.py)
+答え >> [answers/answer_80.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_71_80/answers/answer_80.py)

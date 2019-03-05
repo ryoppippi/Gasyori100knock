@@ -6,11 +6,11 @@
 
 平滑化フィルタはフィルタ内の画素の平均値を出力するフィルタである。
 
-|入力 (imori.jpg)|出力 (answer_11.jpg)|
+|入力 (imori.jpg)|出力 (answers/answer_11.jpg)|
 |:---:|:---:|
-|![](imori.jpg)|![](answer_11.jpg)|
+|![](imori.jpg)|![](answers/answer_11.jpg)|
 
-答え >> [answer_11.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answer_11.py)
+答え >> [answers/answer_11.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_11.py)
 
 
 ## Q.12. モーションフィルタ
@@ -25,11 +25,11 @@
    0   0  1/3
 ```
 
-|入力 (imori.jpg)|出力 (answer_12.jpg)|
+|入力 (imori.jpg)|出力 (answers/answer_12.jpg)|
 |:---:|:---:|
-|![](imori.jpg)|![](answer_12.jpg)|
+|![](imori.jpg)|![](answers/answer_12.jpg)|
 
-答え >> [answer_12.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answer_12.py)
+答え >> [answers/answer_12.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_12.py)
 
 ## Q.13. MAX-MINフィルタ
 
@@ -39,11 +39,11 @@ MAX-MINフィルタとはフィルタ内の画素の最大値と最小値の差�
 エッジ検出とは画像内の線を検出るすることであり、このような画像内の情報を抜き出す操作を**特徴抽出**と呼ぶ。
 エッジ検出では多くの場合、グレースケール画像に対してフィルタリングを行う。
 
-|入力 (imori.jpg)|出力 (answer_13.jpg)|
+|入力 (imori.jpg)|出力 (answers/answer_13.jpg)|
 |:---:|:---:|
-|![](imori.jpg)|![](answer_13.jpg)|
+|![](imori.jpg)|![](answers/answer_13.jpg)|
 
-答え >> [answer_13.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answer_13.py)
+答え >> [answers/answer_13.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_13.py)
 
 
 ## Q.14. 微分フィルタ
@@ -59,11 +59,11 @@ K = [ 0  1  0 ]   K = [ -1 1 0 ]
       0  0  0            0 0 0
 ```
 
-|入力 (imori.jpg)|出力・縦方向 (answer_14_v.jpg)|出力・横方向 (answer_14_h.jpg)|
+|入力 (imori.jpg)|出力・縦方向 (answers/answer_14_v.jpg)|出力・横方向 (answers/answer_14_h.jpg)|
 |:---:|:---:|:---:|
-|![](imori.jpg)|![](answer_14_v.jpg)|![](answer_14_h.jpg)|
+|![](imori.jpg)|![](answers/answer_14_v.jpg)|![](answers/answer_14_h.jpg)|
 
-答え >>[ answer_14.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answer_14.py)
+答え >>[ answers/answer_14.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_14.py)
 
 ## Q.15. Sobelフィルタ
 
@@ -78,11 +78,11 @@ K = [ 2 0 -2 ]   K = [  0  0  0 ]
       1 0 -1           -1 -2 -1
 ```
 
-|入力 (imori.jpg)|出力・縦方向 (answer_15_v.jpg)|出力・横方向 (answer_15_h.jpg)|
+|入力 (imori.jpg)|出力・縦方向 (answers/answer_15_v.jpg)|出力・横方向 (answers/answer_15_h.jpg)|
 |:---:|:---:|:---:|
-|![](imori.jpg)|![](answer_15_v.jpg)|![](answer_15_h.jpg)|
+|![](imori.jpg)|![](answers/answer_15_v.jpg)|![](answers/answer_15_h.jpg)|
 
-答え >> [answer_15.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answer_15.py)
+答え >> [answers/answer_15.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_15.py)
 
 ## Q.16. Prewittフィルタ
 
@@ -97,11 +97,11 @@ K = [  0  0  0 ]  K = [ -1 0 1 ]
        1  1  1          -1 0 1
 ```
 
-|入力 (imori.jpg)|出力・縦方向 (answer_16_v.jpg)|出力・横方向 (answer_16_h.jpg)|
+|入力 (imori.jpg)|出力・縦方向 (answers/answer_16_v.jpg)|出力・横方向 (answers/answer_16_h.jpg)|
 |:---:|:---:|:---:|
-|![](imori.jpg)|![](answer_16_v.jpg)|![](answer_16_h.jpg)|
+|![](imori.jpg)|![](answers/answer_16_v.jpg)|![](answers/answer_16_h.jpg)|
 
-答え >> [answer_16.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answer_16.py)
+答え >> [answers/answer_16.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_16.py)
 
 
 ## Q.17. Laplacianフィルタ
@@ -141,11 +141,11 @@ K = [ 1 -4  1 ]
       0  1  0
 ```
 
-|入力 (imori.jpg)|出力(answer_17.jpg)|
+|入力 (imori.jpg)|出力(answers/answer_17.jpg)|
 |:---:|:---:|
-|![](imori.jpg)|![](answer_17.jpg)||
+|![](imori.jpg)|![](answers/answer_17.jpg)||
 
-答え >> [answer_17.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answer_17.py)
+答え >> [answers/answer_17.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_17.py)
 
 ## Q.18. Embossフィルタ
 
@@ -159,11 +159,11 @@ K = [ -1  1  1 ]
        0  1  2
 ```
 
-|入力 (imori.jpg)|出力(answer_18.jpg)|
+|入力 (imori.jpg)|出力(answers/answer_18.jpg)|
 |:---:|:---:|
-|![](imori.jpg)|![](answer_18.jpg)|
+|![](imori.jpg)|![](answers/answer_18.jpg)|
 
-答え >> [answer_18.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answer_18.py)
+答え >> [answers/answer_18.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_18.py)
 
 ## Q.19. LoGフィルタ
 
@@ -179,11 +179,11 @@ LoGフィルタは次式で定義される。
 LoG(x,y) = (x^2 + y^2 - s^2) / (2 * pi * s^6) * exp(-(x^2+y^2) / (2*s^2))
 ```
 
-|入力 (imori_noise.jpg)|出力 (answer_19.jpg) |
+|入力 (imori_noise.jpg)|出力 (answers/answer_19.jpg) |
 |:---:|:---:|
-|![](imori_noise.jpg)|![](answer_19.jpg)|
+|![](imori_noise.jpg)|![](answers/answer_19.jpg)|
 
-答え >> [answer_19.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answer_19.py)
+答え >> [answers/answer_19.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_19.py)
 
 ## Q.20. ヒストグラム表示
 
@@ -192,9 +192,9 @@ matplotlibを用いて*imori_dark.jpg*のヒストグラムを表示せよ。
 ヒストグラムとは画素の出現回数をグラフにしたものである。
 matplotlibではhist()という関数がすでにあるので、それを利用する。
 
-|入力 (imori_dark.jpg)|出力 (answer_20.png) |
+|入力 (imori_dark.jpg)|出力 (answers/answer_20.png) |
 |:---:|:---:|
-|![](imori_dark.jpg)|![](answer_20.png)|
+|![](imori_dark.jpg)|![](answers/answer_20.png)|
 
-答え >> [answer_20.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answer_20.py)
+答え >> [answers/answer_20.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_20.py)
 

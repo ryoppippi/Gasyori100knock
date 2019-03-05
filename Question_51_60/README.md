@@ -8,11 +8,11 @@
 
 ここではモルフォロジー処理のN=1とする。
 
-|入力 (imori.jpg) |出力(answer_51.jpg)|
+|入力 (imori.jpg) |出力(answers/answer_51.jpg)|
 |:---:|:---:|
-|![](imori.jpg)|![](answer_51.jpg)|
+|![](imori.jpg)|![](answers/answer_51.jpg)|
 
-答え >> [answer_51.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answer_51.py)
+答え >> [answers/answer_51.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answers/answer_51.py)
 
 ## Q.52. トップハット変換
 
@@ -24,11 +24,11 @@
 
 ＊ここの問題だと効果が分かりにくいので、他の画像があればそのうち訂正します。
 
-|入力 (imori.jpg) |大津の二値化(answer_4.jpg)|出力(answer_52.jpg)|
+|入力 (imori.jpg) |大津の二値化(answers/answer_4.jpg)|出力(answers/answer_52.jpg)|
 |:---:|:---:|:---:|
-|![](imori.jpg)|![](answer_4.jpg)|![](answer_52.jpg)|
+|![](imori.jpg)|![](answers/answer_4.jpg)|![](answers/answer_52.jpg)|
 
-答え >> [answer_52.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answer_52.py)
+答え >> [answers/answer_52.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answers/answer_52.py)
 
 ## Q.53. ブラックハット変換
 
@@ -40,11 +40,11 @@
 
 ＊ここの問題だと効果が分かりにくいので、他の画像があればそのうち訂正します。
 
-|入力 (imori.jpg) |大津の二値化(answer_4.jpg)|出力(answer_53.jpg)|
+|入力 (imori.jpg) |大津の二値化(answers/answer_4.jpg)|出力(answers/answer_53.jpg)|
 |:---:|:---:|:---:|
-|![](imori.jpg)|![](answer_4.jpg)|![](answer_53.jpg)|
+|![](imori.jpg)|![](answers/answer_4.jpg)|![](answers/answer_53.jpg)|
 
-答え >> [answer_53.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answer_53.py)
+答え >> [answers/answer_53.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answers/answer_53.py)
 
 ## Q.54. テンプレートマッチング SSD
 
@@ -71,11 +71,11 @@ S = Sum_{x=0:w, y=0:h} (I(i+x, j+y) - T(x, y) )^2
 矩形の描画には*cv2.rectangle()*を用いると良い。
 ちなみにimori_part.jpgは若干色味を変えています。
 
-|入力 (imori.jpg) |テンプレート画像(imori_part.jpg)|出力(answer_54.jpg)|
+|入力 (imori.jpg) |テンプレート画像(imori_part.jpg)|出力(answers/answer_54.jpg)|
 |:---:|:---:|:---:|
-|![](imori.jpg)|![](imori_part.jpg)|![](answer_54.jpg)|
+|![](imori.jpg)|![](imori_part.jpg)|![](answers/answer_54.jpg)|
 
-答え >> [answer_54.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answer_54.py)
+答え >> [answers/answer_54.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answers/answer_54.py)
 
 ## Q.55. テンプレートマッチング SAD
 
@@ -87,11 +87,11 @@ SAD(Sum of Absolute Difference)とは画素値の差分の絶対値の和を類�
 S = Sum_{x=0:w, y=0:h} |I(i+x, j+y) - T(x, y)|
 ```
 
-|入力 (imori.jpg) |テンプレート画像(imori_part.jpg)|出力(answer_55.jpg)|
+|入力 (imori.jpg) |テンプレート画像(imori_part.jpg)|出力(answers/answer_55.jpg)|
 |:---:|:---:|:---:|
-|![](imori.jpg)|![](imori_part.jpg)|![](answer_55.jpg)|
+|![](imori.jpg)|![](imori_part.jpg)|![](answers/answer_55.jpg)|
 
-答え >> [answer_55.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answer_55.py)
+答え >> [answers/answer_55.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answers/answer_55.py)
 
 ## Q.56. テンプレートマッチング NCC
 
@@ -108,11 +108,11 @@ S = ----------------------------------------------------------------------------
 このSは、-1<=S<=1をとる。
 NCCは証明変化に強いと言われる。
 
-|入力 (imori.jpg) |テンプレート画像(imori_part.jpg)|出力(answer_56.jpg)|
+|入力 (imori.jpg) |テンプレート画像(imori_part.jpg)|出力(answers/answer_56.jpg)|
 |:---:|:---:|:---:|
-|![](imori.jpg)|![](imori_part.jpg)|![](answer_56.jpg)|
+|![](imori.jpg)|![](imori_part.jpg)|![](answers/answer_56.jpg)|
 
-答え >> [answer_56.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answer_56.py)
+答え >> [answers/answer_56.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answers/answer_56.py)
 
 ## Q.57. テンプレートマッチング ZNCC
 
@@ -131,11 +131,11 @@ S = ----------------------------------------------------------------------------
 このSは、-1<=S<=1をとる。
 ZNCCは平均値を引くことでNCCよりも証明変化に強いと言われる。（だが今回は検出が失敗する。）
 
-|入力 (imori.jpg) |テンプレート画像(imori_part.jpg)|出力(answer_57.jpg)|
+|入力 (imori.jpg) |テンプレート画像(imori_part.jpg)|出力(answers/answer_57.jpg)|
 |:---:|:---:|:---:|
-|![](imori.jpg)|![](imori_part.jpg)|![](answer_57.jpg)|
+|![](imori.jpg)|![](imori_part.jpg)|![](answers/answer_57.jpg)|
 
-答え >> [answer_57.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answer_57.py)
+答え >> [answers/answer_57.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answers/answer_57.py)
 
 ## Q.58. ラベリング 4近傍
 
@@ -180,11 +180,11 @@ ZNCCは平均値を引くことでNCCよりも証明変化に強いと言われ�
 以上により隣接ピクセル同士に同じラベルを割り当てる。
 4近傍としているが、ラスタスキャンのため、上画素と左画素の２画素に注目すればいい。
 
-|入力 (seg.png) |出力(answer_58.png)|
+|入力 (seg.png) |出力(answers/answer_58.png)|
 |:---:|:---:|
-|![](seg.png)|![](answer_58.png)|
+|![](seg.png)|![](answers/answer_58.png)|
 
-答え >> [answer_58.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answer_58.py)
+答え >> [answers/answer_58.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answers/answer_58.py)
 
 ## Q.59. ラベリング 8近傍
 
@@ -192,11 +192,11 @@ ZNCCは平均値を引くことでNCCよりも証明変化に強いと言われ�
 
 8近傍とは、i(x-1,y-1), i(x, y-1), i(x+1,y-1), i(x-1,y)の4画素に注目すればよい。
 
-|入力 (seg.png) |出力(answer_59.png)|
+|入力 (seg.png) |出力(answers/answer_59.png)|
 |:---:|:---:|
-|![](seg.png)|![](answer_59.png)|
+|![](seg.png)|![](answers/answer_59.png)|
 
-答え >> [answer_59.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answer_59.py)
+答え >> [answers/answer_59.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answers/answer_59.py)
 
 ## Q.60. アルファブレンド
 
@@ -216,8 +216,8 @@ alpha = 0.5
 out = img1 * alpha + img2 * (1 - alpha)
 ```
 
-|入力 (imori.jpg) |入力2 (thorino.jpg) |出力(answer_60.jpg)|
+|入力 (imori.jpg) |入力2 (thorino.jpg) |出力(answers/answer_60.jpg)|
 |:---:|:---:|:---:|
-|![](imori.jpg)|![](thorino.jpg)|![](answer_60.jpg)|
+|![](imori.jpg)|![](thorino.jpg)|![](answers/answer_60.jpg)|
 
-答え >> [answer_60.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answer_60.py)
+答え >> [answers/answer_60.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answers/answer_60.py)

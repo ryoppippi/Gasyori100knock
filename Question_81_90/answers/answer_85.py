@@ -10,7 +10,7 @@ def dic_color(img):
     return img
 
 ## Database
-train = glob("train_*")
+train = glob("dataset/train_*")
 train.sort()
 
 db = np.zeros((len(train), 13), dtype=np.int32)
@@ -33,7 +33,7 @@ for i, path in enumerate(train):
     pdb.append(path)
 
 ## test
-test = glob("test_*")
+test = glob("dataset/test_*")
 test.sort()
 
 success_num = 0.
@@ -60,10 +60,3 @@ for path in test:
     
     print(path, "is similar >>", pdb[pred_i], " Pred >>", pl)
 
-    ## Count success
-    gt = "akahara" if "akahara" in path else "madara"
-    if gt == pl:
-        success_num += 1.
-
-accuracy = success_num / len(test)
-print("Accuracy >>", accuracy, "({}/{})".format(int(success_num), len(test)))

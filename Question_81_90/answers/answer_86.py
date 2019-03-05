@@ -10,7 +10,7 @@ def dic_color(img):
     return img
 
 ## Database
-train = glob("train_*")
+train = glob("dataset/train_*")
 train.sort()
 
 db = np.zeros((len(train), 13), dtype=np.int32)
@@ -33,7 +33,7 @@ for i, path in enumerate(train):
     pdb.append(path)
 
 ## test
-test = glob("test_*")
+test = glob("dataset/test_*")
 test.sort()
 
 success_num = 0.
@@ -50,17 +50,15 @@ for path in test:
     ## compute difference
     difs = np.abs(db[:, :12] - hist)
     difs = np.sum(difs, axis=1)
-    pred_i = np.argsort(difs)[:3]
+    pred_i = np.argmin(difs)
     pred = db[pred_i, -1]
-    if len(pred[pred == 0]) > len(pred[pred == 1]):
-        pl = "akahara"
-    else:
-        pl = 'madara'
 
-    print(path, "is similar >> ", end='')
-    for i in pred_i:
-        print(pdb[i], end=', ')
-    print("|Pred >>", pl)
+    if pred == 0:
+        pl = "akahara"
+    elif pred == 1:
+        pl = "madara"
+    
+    print(path, "is similar >>", pdb[pred_i], " Pred >>", pl)
 
     ## Count success
     gt = "akahara" if "akahara" in path else "madara"

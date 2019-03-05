@@ -11,7 +11,10 @@ English is here  >> https://github.com/KuKuXia/Image_Processing_100_Questions Ku
 - 【注意】このページを利用して、または関して生じた事に関しては、私は一切責任を負いません。すべて**自己責任**でお願い致します。
 
 
+**ディープラーニングのノックはこっち** >> https://github.com/yoyoyo-yo/DeepLearningMugenKnock
+
 ## Recent
+- 2019.3.5 各Questionの答えをanswersディレクトリに収納
 - 2019.3.3 Q.18-22. 一部修正
 - 2019.2.26 Q.10. メディアンフィルタの解答を一部修正
 - 2019.2.25 Q.9. ガウシアンフィルタの解答を一部修正
@@ -86,7 +89,7 @@ https://qiita.com/karaage0703/items/e0b57b63dbebed908b2f
 
 次に画像処理に関するnumpyの扱い方のために**Tutorial**フォルダを見てみて下さい。（もう知ってるという人はスキップして下さい。）
 
-あとは問題を解いていってください。それぞれのフォルダに問題内容が入っています。問題では assets/imori.jpg を使用して下さい。各フォルダのREADME.mdに問題、解答プログラムがあります。python answer_@@.py　とすると解答が出ます。
+あとは問題を解いていってください。それぞれのフォルダに問題内容が入っています。問題では assets/imori.jpg を使用して下さい。各フォルダのREADME.mdに問題、解答プログラムがあります。```python answers/answer_@@.py```　とすると解答が出ます。
 
 ## 問題
 

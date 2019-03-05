@@ -23,11 +23,11 @@ H = [ Ix^2  IxIy]
 
 解答ではdet(H)が極大点かつ、max(H)*0.1以上である点をコーナーとしている。
 
-|入力 (thorino.jpg) |出力(answer_81.jpg)|
+|入力 (thorino.jpg) |出力(answers/answer_81.jpg)|
 |:---:|:---:|
-|![](thorino.jpg)|![](answer_81.jpg)|
+|![](thorino.jpg)|![](answers/answer_81.jpg)|
 
-答え >> [answer_81.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answer_81.py)
+答え >> [answers/answer_81.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_81.py)
 
 ## Q.82. Harrisのコーナー検出 (Step.1) Sobel + Gauusian
 
@@ -50,11 +50,11 @@ Q.82-83においての各パラメータは以下の通り。
 
 ここでは1-3までを実装せよ。
 
-|入力 (thorino.jpg) |出力(answer_82.png)|
+|入力 (thorino.jpg) |出力(answers/answer_82.png)|
 |:---:|:---:|
-|![](thorino.jpg)|![](answer_82.png)|
+|![](thorino.jpg)|![](answers/answer_82.png)|
 
-答え >> [answer_82.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answer_82.py)
+答え >> [answers/answer_82.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_82.py)
 
 ## Q.83. Harrisのコーナー検出 (Step.2) コーナー検出
 
@@ -62,11 +62,11 @@ Q.82-83においての各パラメータは以下の通り。
 
 4における k = 0.04、5におけるth = 0.1
 
-|入力 (thorino.jpg) |出力(answer_83.jpg)|
+|入力 (thorino.jpg) |出力(answers/answer_83.jpg)|
 |:---:|:---:|
-|![](thorino.jpg)|![](answer_83.jpg)|
+|![](thorino.jpg)|![](answers/answer_83.jpg)|
 
-答え >> [answer_83.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answer_83.py)
+答え >> [answers/answer_83.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_83.py)
 
 ## Q.84. 簡単な画像認識 (Step.1) 減色化 + ヒストグラム
 
@@ -89,18 +89,18 @@ CNNが流行る以前はこのアプローチがよく取られたが、CNNは�
 5. ヒストグラムの差の合計で、最小となった画像が予測となるクラスである。つまり、色が近い画像と同じクラスになると考えられる。
 
 ここでは1-3を実装し、ヒストグラムを可視化せよ。
-学習データは train_akahara_@@@.jpg (クラス1)と train_madara_@@@.jpg(クラス2) を用いる。(計10枚)
+学習データはdatasetフォルダにあり train_akahara_@@@.jpg (クラス1)と train_madara_@@@.jpg(クラス2) を用いる。(計10枚)
 akaharaとはアカハライモリ、madaraはマダライモリである。
 
 
 このような予め特徴量を保存しておくデータベース型は人工知能第一世代の手法である。ようは、全部のパターンを暗記しておけばOKという考え方である。ただし、そうするとメモリを大量に消費するので使用が限られる手法である。
 
 
-|出力(answer_84.png)|
+|出力(answers/answer_84.png)|
 |:---:|
-|![](answer_84.png)|
+|![](answers/answer_84.png)|
 
-答え >> [answer_84.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answer_84.py)
+答え >> [answers/answer_84.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_84.py)
 
 ```bash
 格納されるヒストグラムの中身
@@ -133,7 +133,7 @@ test_akahara_2.jpg is similar >> train_akahara_1.jpg  Pred >> akahara
 test_madara_1.jpg is similar >> train_madara_2.jpg  Pred >> madara
 test_madara_2.jpg is similar >> train_akahara_2.jpg  Pred >> akahara
 ```
-答え >> [answer_85.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answer_85.py)
+答え >> [answers/answer_85.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_85.py)
 
 ## Q.86. 簡単な画像認識 (Step.3) 評価(Accuracy)
 
@@ -152,7 +152,7 @@ Accuracy = (正解した画像数) / (テストした画像の総数)
 ```bash
 Accuracy >> 0.75 (3/4)
 ```
-答え >> [answer_86.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answer_86.py)
+答え >> [answers/answer_86.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_86.py)
 
 ## Q.87. 簡単な画像認識 (Step.4) k-NN
 
@@ -178,7 +178,7 @@ test_madara_2.jpg is similar >> train_akahara_2.jpg, train_madara_3.jpg, train_m
 Accuracy >> 1.0 (4/4)
 ```
 
-答え >> [answer_87.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answer_87.py)
+答え >> [answers/answer_87.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_87.py)
 
 ## Q.88. K-means (Step.1) 重心作成
 
@@ -219,7 +219,7 @@ Grabity
 2247.      1338.       434.     10822.      4506.       622.    ]]
 ```
 
-答え >> [answer_88.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answer_88.py)
+答え >> [answers/answer_88.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_88.py)
 
 ## Q.89. K-means (Step.2) クラスタリング
 
@@ -241,7 +241,7 @@ test_madara_1.jpg  Pred: 0
 test_madara_2.jpg  Pred: 0
 ```
 
-答え >> [answer_89.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answer_89.py)
+答え >> [answers/answer_89.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_89.py)
 
 ## Q.90. K-means (Step.3) 初期ラベルの変更
 
@@ -267,4 +267,4 @@ train_madara_4.jpg  Pred: 0
 train_madara_5.jpg  Pred: 0
 ```
 
-答え >> [answer_90.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answer_90.py)
+答え >> [answers/answer_90.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_90.py)

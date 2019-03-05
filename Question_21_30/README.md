@@ -19,11 +19,11 @@ xout = {  a                         (xin < c)
           b                         (d < xin)
 ```
 
-|入力 (imori_dark.jpg)|出力 (answer_21_1.jpg) |ヒストグラム(answer_21_2.png)|
+|入力 (imori_dark.jpg)|出力 (answers/answer_21_1.jpg) |ヒストグラム(answers/answer_21_2.png)|
 |:---:|:---:|:---:|
-|![](imori_dark.jpg)|![](answer_21_1.jpg)|![](answer_21_2.png)|
+|![](imori_dark.jpg)|![](answers/answer_21_1.jpg)|![](answers/answer_21_2.png)|
 
-答え >> [answer_21.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answer_21.py)
+答え >> [answers/answer_21.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_21.py)
 
 ## Q.22. ヒストグラム操作
 
@@ -37,11 +37,11 @@ xout = {  a                         (xin < c)
 xout = s0 / s * (xin - m) + m0
 ```
 
-|入力 (imori_dark.jpg)|出力 (answer_22_1.jpg) |ヒストグラム(answer_22_2.png)|
+|入力 (imori_dark.jpg)|出力 (answers/answer_22_1.jpg) |ヒストグラム(answers/answer_22_2.png)|
 |:---:|:---:|:---:|
-|![](imori_dark.jpg)|![](answer_22_1.jpg)|![](answer_22_2.png)|
+|![](imori_dark.jpg)|![](answers/answer_22_1.jpg)|![](answers/answer_22_2.png)|
 
-答え >> [answer_22.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answer_22.py)
+答え >> [answers/answer_22.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_22.py)
 
 ## Q.23. ヒストグラム平坦化
 
@@ -56,11 +56,11 @@ xout = s0 / s * (xin - m) + m0
 Z' = Zmax / S * Sum{i=0:z} h(z)
 ```
 
-|入力 (imori.jpg)|出力 (answer_23_1.jpg) |ヒストグラム(answer_23_2.png)|
+|入力 (imori.jpg)|出力 (answers/answer_23_1.jpg) |ヒストグラム(answers/answer_23_2.png)|
 |:---:|:---:|:---:|
-|![](imori.jpg)|![](answer_23_1.jpg)|![](answer_23_2.png)|
+|![](imori.jpg)|![](answers/answer_23_1.jpg)|![](answers/answer_23_2.png)|
 
-答え >> [answer_23.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answer_23.py)
+答え >> [answers/answer_23.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_23.py)
 
 
 ## Q.24. ガンマ補正
@@ -86,11 +86,11 @@ Iout = (1/c * Iin) ^ (1/g)
 
 ![](question_24_1.jpg) ![](question_24_2.jpg)
 
-|入力 (imori_gamma.jpg)|出力 (answer_24.jpg)|
+|入力 (imori_gamma.jpg)|出力 (answers/answer_24.jpg)|
 |:---:|:---:|
-|![](imori_gamma.jpg)|![](answer_24.jpg)|
+|![](imori_gamma.jpg)|![](answers/answer_24.jpg)|
 
-答え >> [answer_24.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answer_24.py)
+答え >> [answers/answer_24.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_24.py)
 
 
 ## Q.25. 最近傍補間
@@ -106,11 +106,11 @@ I' ... 拡大後の画像、 I ... 拡大前の画像、a ... 拡大率、[ ] ..
 ```bash
 I'(x,y) = I([x/a], [y/a])
 ```
-|入力 (imori.jpg)|出力 (answer_25.jpg)|
+|入力 (imori.jpg)|出力 (answers/answer_25.jpg)|
 |:---:|:---:|
-|![](imori.jpg)|![](answer_25.jpg)|
+|![](imori.jpg)|![](answers/answer_25.jpg)|
 
-答え >> [answer_25.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answer_25.py)
+答え >> [answers/answer_25.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_25.py)
 
 ## Q.26. Bi-linear補間
 
@@ -135,11 +135,11 @@ dx = x'/a - x , dy = y'/a - y
 I'(x',y') = (1-dx)(1-dy)I(x,y) + dx(1-dy)I(x+1,y) + (1-dx)dyI(x,y+1) + dxdyI(x+1,y+1)
 ```
 
-|入力 (imori.jpg)|出力 (answer_26.jpg)|
+|入力 (imori.jpg)|出力 (answers/answer_26.jpg)|
 |:---:|:---:|
-|![](imori.jpg)|![](answer_26.jpg)|
+|![](imori.jpg)|![](answers/answer_26.jpg)|
 
-答え >> [answer_26.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answer_26.py)
+答え >> [answers/answer_26.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_26.py)
 
 ## Q.27. Bi-cubic補間
 
@@ -177,11 +177,11 @@ h(t) = { (a+2)|t|^3 - (a+3)|t|^2 + 1    (when |t|<=1)
 I'(x', y') = (Sum{i=-1:2}{j=-1:2} I(x+i,y+j) * wxi * wyj) / Sum{i=-1:2}{j=-1:2} wxi * wyj
 ```
 
-|入力 (imori.jpg)|出力 (answer_27.jpg)|
+|入力 (imori.jpg)|出力 (answers/answer_27.jpg)|
 |:---:|:---:|
-|![](imori.jpg)|![](answer_27.jpg)|
+|![](imori.jpg)|![](answers/answer_27.jpg)|
 
-答え >> [answer_27.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answer_27.py)
+答え >> [answers/answer_27.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_27.py)
 
 ## Q.28. アフィン変換(平行移動)
 
@@ -222,11 +222,11 @@ I'(x', y') = (Sum{i=-1:2}{j=-1:2} I(x+i,y+j) * wxi * wyj) / Sum{i=-1:2}{j=-1:2} 
   1        0 0  1    1
 ```
 
-|入力 (imori.jpg)|出力 (answer_28.jpg)|
+|入力 (imori.jpg)|出力 (answers/answer_28.jpg)|
 |:---:|:---:|
-|![](imori.jpg)|![](answer_28.jpg)|
+|![](imori.jpg)|![](answers/answer_28.jpg)|
 
-答え >> [answer_28.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answer_28.py)
+答え >> [answers/answer_28.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_28.py)
 
 ## Q.29. アフィン変換(拡大縮小)
 
@@ -234,11 +234,11 @@ I'(x', y') = (Sum{i=-1:2}{j=-1:2} I(x+i,y+j) * wxi * wyj) / Sum{i=-1:2}{j=-1:2} 
 
 また、(2)  (1)の条件に加えて、x方向に+30、y方向に-30だけ平行移動を同時に実現せよ。
 
-|入力 (imori.jpg)|出力 (1) (answer_29_1.jpg)|出力 (2) (answer_29_2.jpg)|
+|入力 (imori.jpg)|出力 (1) (answers/answer_29_1.jpg)|出力 (2) (answers/answer_29_2.jpg)|
 |:---:|:---:|:---:|
-|![](imori.jpg)|![](answer_29_1.jpg)|![](answer_29_2.jpg)|
+|![](imori.jpg)|![](answers/answer_29_1.jpg)|![](answers/answer_29_2.jpg)|
 
-答え >> [answer_29.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answer_29.py)
+答え >> [answers/answer_29.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_29.py)
 
 ## Q.30. アフィン変換(回転)
 
@@ -255,8 +255,8 @@ I'(x', y') = (Sum{i=-1:2}{j=-1:2} I(x+i,y+j) * wxi * wyj) / Sum{i=-1:2}{j=-1:2} 
   1         0     0    1    1
 ```
 
-|入力 (imori.jpg)|出力 (1) (answer_30_1.jpg)|出力 (2) (answer_30_2.jpg)|
+|入力 (imori.jpg)|出力 (1) (answers/answer_30_1.jpg)|出力 (2) (answers/answer_30_2.jpg)|
 |:---:|:---:|:---:|
-|![](imori.jpg)|![](answer_30_1.jpg)|![](answer_30_2.jpg)|
+|![](imori.jpg)|![](answers/answer_30_1.jpg)|![](answers/answer_30_2.jpg)|
 
-答え >> [answer_30_1.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answer_30_1.py) , [answer_30_2.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answer_30_2.py)
+答え >> [answers/answer_30_1.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_30_1.py) , [answers/answer_30_2.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_30_2.py)

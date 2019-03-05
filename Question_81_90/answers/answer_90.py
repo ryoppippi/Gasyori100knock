@@ -10,7 +10,7 @@ def dic_color(img):
     return img
 
 ## Database
-train = glob("test_*")
+train = glob("dataset/train_*")
 train.sort()
 
 db = np.zeros((len(train), 13), dtype=np.int32)
@@ -36,10 +36,10 @@ for i, path in enumerate(train):
 Class = 2
 
 feats = db.copy()
-np.random.seed(1)
+np.random.seed(4)
 ## assign random class 
 for i in range(len(feats)):
-    if np.random.random() < 0.5:
+    if np.random.random() < 0.3:
         feats[i, -1] = 0
     else:
         feats[i, -1] = 1

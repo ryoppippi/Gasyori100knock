@@ -10,7 +10,7 @@ def dic_color(img):
     return img
 
 ## Database
-train = glob("train_*")
+train = glob("dataset/test_*")
 train.sort()
 
 db = np.zeros((len(train), 13), dtype=np.int32)
@@ -32,31 +32,23 @@ for i, path in enumerate(train):
     db[i, -1] = cls
     pdb.append(path)
 
-## test
-test = glob("test_*")
-test.sort()
+# k-Means
+Class = 2
 
-success_num = 0.
+feats = db.copy()
+np.random.seed(1)
+## assign random class 
+for i in range(len(feats)):
+    if np.random.random() < 0.5:
+        feats[i, -1] = 0
+    else:
+        feats[i, -1] = 1
 
-for path in test:
-    img = dic_color(cv2.imread(path))
-
-    hist = np.zeros(12, dtype=np.int32)
-    for j in range(4):
-        hist[j] = len(np.where(img[..., 0] == (64 * j + 32))[0])
-        hist[j+4] = len(np.where(img[..., 1] == (64 * j + 32))[0])
-        hist[j+8] = len(np.where(img[..., 2] == (64 * j + 32))[0])
-
-    ## compute difference
-    difs = np.abs(db[:, :12] - hist)
-    difs = np.sum(difs, axis=1)
-    pred_i = np.argmin(difs)
-    pred = db[pred_i, -1]
-
-    if pred == 0:
-        pl = "akahara"
-    elif pred == 1:
-        pl = "madara"
+gs = np.zeros((Class, 12), dtype=np.float32)
     
-    print(path, "is similar >>", pdb[pred_i], " Pred >>", pl)
-
+for i in range(Class):
+    gs[i] = np.mean(feats[np.where(feats[..., -1] == i)[0], :12], axis=0)
+print("assigned label")
+print(feats)
+print("Grabity")
+print(gs)

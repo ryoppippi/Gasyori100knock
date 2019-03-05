@@ -10,7 +10,7 @@ def dic_color(img):
     return img
 
 ## Database
-train = glob("test_*")
+train = glob("dataset/test_*")
 train.sort()
 
 db = np.zeros((len(train), 13), dtype=np.int32)
@@ -44,11 +44,24 @@ for i in range(len(feats)):
     else:
         feats[i, -1] = 1
 
-gs = np.zeros((Class, 12), dtype=np.float32)
-    
-for i in range(Class):
-    gs[i] = np.mean(feats[np.where(feats[..., -1] == i)[0], :12], axis=0)
-print("assigned label")
-print(feats)
-print("Grabity")
-print(gs)
+while True:
+    gs = np.zeros((Class, 12), dtype=np.float32)
+    change_count = 0
+
+    ## compute gravity
+    for i in range(Class):
+        gs[i] = np.mean(feats[np.where(feats[..., -1] == i)[0], :12], axis=0)
+
+    ## re-labeling
+    for i in range(len(feats)):
+        dis = np.square(np.sum(np.abs(gs - feats[i, :12]), axis=1))
+        pred = np.argmin(dis, axis=0)
+        if int(feats[i, -1]) != pred:
+            change_count += 1
+            feats[i, -1] = pred
+
+    if change_count < 1:
+        break
+
+for i in range(len(train)):
+    print(pdb[i], " Pred:", feats[i, -1])

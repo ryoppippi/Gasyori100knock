@@ -35,11 +35,11 @@ angle = {   0  (if -0.4142 < tan <= 0.4142)
 
 ただし、フィルタリングをパディングする際は、numpy.pad()を用いて、エッジの値でパディングせよ。
 
-|入力 (imori.jpg) |出力(勾配強度) (answer_41_1.jpg)|出力(勾配角度) (answer_41_2.jpg)|
+|入力 (imori.jpg) |出力(勾配強度) (answers/answer_41_1.jpg)|出力(勾配角度) (answers/answer_41_2.jpg)|
 |:---:|:---:|:---:|
-|![](imori.jpg)|![](answer_41_1.jpg)|![](answer_41_2.jpg)|
+|![](imori.jpg)|![](answers/answer_41_1.jpg)|![](answers/answer_41_2.jpg)|
 
-答え >> [answer_41.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_41_50/answer_41.py)
+答え >> [answers/answer_41.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_41_50/answers/answer_41.py)
 
 ## Q.42. Cannyエッジ検出 (Step.2) 細線化
 
@@ -68,11 +68,11 @@ if angle(x,y)  = 135
   then edge(x,y) = 0
 ```
 
-|入力 (imori.jpg) |出力 (answer_42.jpg)|
+|入力 (imori.jpg) |出力 (answers/answer_42.jpg)|
 |:---:|:---:|
-|![](imori.jpg)|![](answer_42.jpg)|
+|![](imori.jpg)|![](answers/answer_42.jpg)|
 
-答え >> [answer_42.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_41_50/answer_42.py)
+答え >> [answers/answer_42.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_41_50/answers/answer_42.py)
 
 ## Q.43. Cannyエッジ検出 (Step.3) ヒステリシス閾処理
 
@@ -89,11 +89,11 @@ if angle(x,y)  = 135
 
 以上のアルゴリズムによって、Canny法が行われる。
 
-|入力 (imori.jpg) |出力 (answer_43.jpg)|
+|入力 (imori.jpg) |出力 (answers/answer_43.jpg)|
 |:---:|:---:|
-|![](imori.jpg)|![](answer_43.jpg)|
+|![](imori.jpg)|![](answers/answer_43.jpg)|
 
-答え >> [answer_43.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_41_50/answer_43.py)
+答え >> [answers/answer_43.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_41_50/answers/answer_43.py)
 
 ## Q.44. Hough変換・直線検出 (Step.1) Hough変換
 
@@ -127,11 +127,11 @@ r = x * cos(t) + y * sin(t)
 今回は*torino.jpg*を用いて、ボーディングした表を図示せよ。
 Cannyのパラメータは, gaussian filter(5x5, s=1.4), HT = 100, LT = 30で使用せよ。
 
-|入力 (thorino.jpg) |出力 (answer_44.jpg)|
+|入力 (thorino.jpg) |出力 (answers/answer_44.jpg)|
 |:---:|:---:|
-|![](thorino.jpg)|![](answer_44.jpg)|
+|![](thorino.jpg)|![](answers/answer_44.jpg)|
 
-答え >> [answer_44.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_41_50/answer_44.py)
+答え >> [answers/answer_44.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_41_50/answers/answer_44.py)
 
 ## Q.45. Hough変換・直線検出 (Step.2) NMS
 
@@ -146,11 +146,11 @@ NMSのアルゴリズムは、
 1. 表において、周囲8マス(8近傍)より注目ピクセルの得票数が多ければそのまま。
 2. 注目ピクセルの値が少なければ0にする。
 
-|入力 (thorino.jpg) |出力 (answer_45.jpg)|
+|入力 (thorino.jpg) |出力 (answers/answer_45.jpg)|
 |:---:|:---:|
-|![](thorino.jpg)|![](answer_45.jpg)|
+|![](thorino.jpg)|![](answers/answer_45.jpg)|
 
-答え >> [answer_45.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_41_50/answer_45.py)
+答え >> [answers/answer_45.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_41_50/answers/answer_45.py)
 
 ## Q.46. Hough変換・直線検出 (Step.3) Hough逆変換
 
@@ -167,11 +167,11 @@ x = - sin(t) / cos(t) * y + r / cos(t)
 2. 1の逆変換を極大点ごとにy = 0 - H-1, x = 0 - W-1 で行い、入力画像に検出した直線を描画せよ。
 ただし、描画するのは赤線(R,G,B) = (255, 0, 0)とする。
 
-|入力 (thorino.jpg) |出力 (answer_46.jpg)|
+|入力 (thorino.jpg) |出力 (answers/answer_46.jpg)|
 |:---:|:---:|
-|![](thorino.jpg)|![](answer_46.jpg)|
+|![](thorino.jpg)|![](answers/answer_46.jpg)|
 
-答え >> [answer_46.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_41_50/answer_46.py)
+答え >> [answers/answer_46.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_41_50/answers/answer_46.py)
 
 ## Q.47. モルフォロジー処理(膨張)
 
@@ -189,11 +189,11 @@ x = - sin(t) / cos(t) * y + r / cos(t)
 
 例えば、[[0,1,0], [1,0,1], [0,1,0]] のフィルタを掛けた和が255を超えれば膨張である、と考える。
 
-|入力 (imori.jpg) |大津の二値化(answer_4.jpg)|出力 (answer_47.jpg)|
+|入力 (imori.jpg) |大津の二値化(answers/answer_4.jpg)|出力 (answers/answer_47.jpg)|
 |:---:|:---:|:---:|
-|![](imori.jpg)|![](answer_4.jpg)|![](answer_47.jpg)|
+|![](imori.jpg)|![](answers/answer_4.jpg)|![](answers/answer_47.jpg)|
 
-答え >> [answer_47.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_41_50/answer_47.py)
+答え >> [answers/answer_47.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_41_50/answers/answer_47.py)
 
 ## Q.48. モルフォロジー処理(収縮)
 
@@ -204,11 +204,11 @@ x = - sin(t) / cos(t) * y + r / cos(t)
 
 例えば、[[0,1,0], [1,0,1], [0,1,0]] のフィルタを掛けた和が255*4未満なら収縮である、と考える。
 
-|入力 (imori.jpg) |大津の二値化(answer_4.jpg)|出力 (answer_48.jpg)|
+|入力 (imori.jpg) |大津の二値化(answers/answer_4.jpg)|出力 (answers/answer_48.jpg)|
 |:---:|:---:|:---:|
-|![](imori.jpg)|![](answer_4.jpg)|![](answer_48.jpg)|
+|![](imori.jpg)|![](answers/answer_4.jpg)|![](answers/answer_48.jpg)|
 
-答え >> [answer_48.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_41_50/answer_48.py)
+答え >> [answers/answer_48.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_41_50/answers/answer_48.py)
 
 ## Q.49. オープニング処理
 
@@ -218,11 +218,11 @@ x = - sin(t) / cos(t) * y + r / cos(t)
 
 クロージング処理により、一つだけ余分に存在する画素などを削除できる。
 
-|入力 (imori.jpg) |大津の二値化(answer_4.jpg)|出力 (answer_49.jpg)|
+|入力 (imori.jpg) |大津の二値化(answers/answer_4.jpg)|出力 (answers/answer_49.jpg)|
 |:---:|:---:|:---:|
-|![](imori.jpg)|![](answer_4.jpg)|![](answer_49.jpg)|
+|![](imori.jpg)|![](answers/answer_4.jpg)|![](answers/answer_49.jpg)|
 
-答え >> [answer_49.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_41_50/answer_49.py)
+答え >> [answers/answer_49.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_41_50/answers/answer_49.py)
 
 ## Q.50. クロージング処理
 
@@ -232,8 +232,8 @@ x = - sin(t) / cos(t) * y + r / cos(t)
 
 クロージング処理により、途中で途切れた画素を結合することができる。
 
-|入力 (imori.jpg) |Canny(answer_43.jpg)|出力 (answer_50.jpg)|
+|入力 (imori.jpg) |Canny(answers/answer_43.jpg)|出力 (answers/answer_50.jpg)|
 |:---:|:---:|:---:|
-|![](imori.jpg)|![](answer_43.jpg)|![](answer_50.jpg)|
+|![](imori.jpg)|![](answers/answer_43.jpg)|![](answers/answer_50.jpg)|
 
-答え >> [answer_50.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_41_50/answer_50.py)
+答え >> [answers/answer_50.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_41_50/answers/answer_50.py)

@@ -10,7 +10,7 @@ def dic_color(img):
     return img
 
 ## Database
-train = glob("train_*")
+train = glob("dataset/train_*")
 train.sort()
 
 db = np.zeros((len(train), 13), dtype=np.int32)
