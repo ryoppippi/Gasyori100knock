@@ -91,6 +91,10 @@ https://qiita.com/karaage0703/items/e0b57b63dbebed908b2f
 
 あとは問題を解いていってください。それぞれのフォルダに問題内容が入っています。問題では assets/imori.jpg を使用して下さい。各フォルダのREADME.mdに問題、解答プログラムがあります。```python answers/answer_@@.py```　とすると解答が出ます。
 
+## C++用OpenCVのインストール
+
+C++用のopencvのインストール方法 >> https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Tutorial/README_opencv_c_install.md
+
 ## 問題
 
 詳細な問題内容は各ディレクトリのREADMEにあります。（ディレクトリで下にスクロールすればあります）
@@ -98,6 +102,7 @@ https://qiita.com/karaage0703/items/e0b57b63dbebed908b2f
 - numpy中心ですが、numpyの基本知識は自分で調べて下さい。
 
 ### [チュートリアル](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Tutorial)
+
 
 | | 内容 |
 |:---:|:---:|
