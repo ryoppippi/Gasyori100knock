@@ -142,7 +142,7 @@ for(i=0; i<width/2; i++){
 ```
 となる。144 = 400 - 256, 56 = 256 - 200から得られ、画像もあきらかに緑がかっています。
 
-![](assets/sanoke9.png)
+![](assets/answer9.png)
 
 img.at<cv::Vec3b>(j, i)にはunsigned char型で値が入っているので、RGB値を取るには、こんな風にしなきゃいけない。
 
