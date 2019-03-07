@@ -23,10 +23,11 @@ int main(int argc, const char* argv[]){
   }
 
   cv::Mat disp;
-  cv::Mat tmp[2];
+  cv::Mat tmp[3];
   tmp[0] = img;
-  tmp[1] = img2;
-  cv::hconcat(tmp, 2, disp);
+  tmp[1] = cv::Mat (cv::Size(10, height), CV_8UC3, cv::Scalar(0,0,0));
+  tmp[2] = img2;
+  cv::hconcat(tmp, 3, disp);
 
   cv::imshow("sample", disp);
   cv::waitKey(0);
