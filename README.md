@@ -104,9 +104,9 @@ C++用のopencvのインストール方法 >> https://github.com/yoyoyo-yo/Gasyo
 ### [チュートリアル](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Tutorial)
 
 
-| | 内容 | | 内容 |
-|:---:|:---:|:---:|:---:|
-|1| [画像読み込み・表示](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Tutorial#%E7%94%BB%E5%83%8F%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%81%BF%E8%A1%A8%E7%A4%BA) | | 6 | [C++でのOpenCVの使い方](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Tutorial/README_opencv_c_install.md)
+| | 内容 | | | 内容 |
+|:---:|:---:|:---:|:---:|:---:|
+|1| [画像読み込み・表示](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Tutorial#%E7%94%BB%E5%83%8F%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%81%BF%E8%A1%A8%E7%A4%BA) | | 6 | [C++でのOpenCVの使い方](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Tutorial/README_opencv_c_install.md) |
 |2| [画素をいじる](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Tutorial#%E7%94%BB%E7%B4%A0%E3%82%92%E3%81%84%E3%81%98%E3%82%8B) |
 |3| [画像のコピー](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Tutorial#%E7%94%BB%E5%83%8F%E3%81%AE%E3%82%B3%E3%83%94%E3%83%BC) |
 |4| [画像の保存](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Tutorial#%E7%94%BB%E5%83%8F%E3%81%AE%E4%BF%9D%E5%AD%98) |
