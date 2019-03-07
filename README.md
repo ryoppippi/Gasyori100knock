@@ -14,6 +14,7 @@ English is here  >> https://github.com/KuKuXia/Image_Processing_100_Questions Ku
 **ディープラーニングのノックはこっち** >> https://github.com/yoyoyo-yo/DeepLearningMugenKnock
 
 ## Recent
+- 2019.3.7 TutorialにC++用を加えた　そろそろC++用の答えもつくろっかなーと
 - 2019.3.5 各Questionの答えをanswersディレクトリに収納
 - 2019.3.3 Q.18-22. 一部修正
 - 2019.2.26 Q.10. メディアンフィルタの解答を一部修正

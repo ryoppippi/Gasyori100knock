@@ -1,5 +1,7 @@
 # Tutorial
 
+C++でやりたい人はこっち〜〜 >> https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Tutorial/README_opencv_c_install.md
+
 ここでは画像処理におけるnumpyの基本的な使い方をいくつか紹介していきます。
 
 **numpy**とはpyhtonで用意されたパッケージ(Cでいうライブラリのようなもの)の一種で、行列演算などを得意としています。

@@ -1,5 +1,7 @@
 # C++のOpenCVのインストール
 
+Pythonでやりたい人はこっち〜〜 >> https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Tutorial/README.md
+
 Ubuntu-16.04(18.04でも可)を想定してます。Dockerを使うと便利だと思います。
 
 ## パッケージインストール
@@ -46,8 +48,7 @@ int main(int argc, const char* argv[]){
 次にコンパイル
 
 ```bash
-$ g++ sample.cpp -o sample  \
-               -lopencv_core -lopencv_imgcodecs -lopencv_highgui
+$ g++ sample.cpp -o sample -lopencv_core -lopencv_imgcodecs -lopencv_highgui
 ```
 
 これで、コンパイルが通れば、フォルダ内に *sample* というものができてます。
