@@ -44,9 +44,14 @@ $ source activate gasyori100
 
 以下のコマンドで必要なパッケージをインストールします。
 
+```bash
+$ pip install numpy matplotlib opencv-python
+```
+
+もしくはホームディレクトリにある*requirements.txt*を使ってこうしてもインストールできます。
 
 ```bash
-$ pip install -r requirement.txt
+$ pip install -r requirements.txt
 ```
 
 ### 3. 画像処理チュートリアル
