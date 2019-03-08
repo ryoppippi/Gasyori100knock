@@ -15,6 +15,65 @@ pythonでのOpenCVはnumpyをベースとしているため、numpyがいじれ�
 
 ここからはpyファイルでなく、インタプリタ形式でやってみて下さい。
 
+## 環境設定
+
+Python-3.6でやって下さい。(解答はPython-3.6で用意してます)
+
+### 1. Minicondaのインストール
+
+https://conda.io/miniconda.html のサイトからMinicondaをインストールします。これはWindowでもMacOSでも可能です。Minicondaがインストールできたら、端末(Windowでは端末、MacOSではターミナル)を開き、以下コマンドで仮想環境を作成します。
+
+```bash
+$ conda create python=3.6 -n gasyori100
+```
+
+作成できたら、以下コマンドで仮想環境を動作します。
+
+```bash
+$ source activate gasyori100
+```
+
+するとこうなります。
+
+```bash
+(gasyori100) :~/work_space/Gasyori100knock/ :$ 
+```
+
+### 2. パッケージのインストール
+
+以下のコマンドで必要なパッケージをインストールします。
+
+
+```bash
+$ pip install -r requirement.txt
+```
+
+### 3. 画像処理チュートリアル
+
+以下のファイルを作成し sample.py という名前で保存し、実行します。
+
+```python
+import cv2
+
+img = cv2.imread("assets/imori.jpg")
+cv2.imshow("imori", img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+
+```bash
+$ python sample.py
+```
+
+これで以下の画像が表示されれば成功です！
+何かボタンを押せば消えます。
+
+![](assets/sample.png)
+
+もし上記の設定ができなかったという人はこちらが参考になると思います。
+https://qiita.com/karaage0703/items/e0b57b63dbebed908b2f
+
+次に画像処理に関するnumpyの扱い方のために**Tutorial**フォルダを見てみて下さい。（もう知ってるという人はスキップして下さい。）
 
 ## Python起動
 
