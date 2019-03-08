@@ -1,4 +1,4 @@
-# Tutorial
+# Tutorial -Python-
 
 C++でやりたい人はこっち〜〜 >> https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Tutorial/README_opencv_c_install.md
 

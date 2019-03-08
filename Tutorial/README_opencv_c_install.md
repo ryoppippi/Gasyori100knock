@@ -1,15 +1,17 @@
-# C++のOpenCVのインストール
+# Tutorial -C++-
+
+## C++のOpenCVのインストール
 
 Pythonでやりたい人はこっち〜〜 >> https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Tutorial/README.md
 
 Ubuntu-16.04(18.04でも可)を想定してます。Dockerを使うと便利だと思います。
 
-## パッケージインストール
+### パッケージインストール
 
 ```bash
 $ apt install build-essential cmake checkinstall libgtk-3-dev libjpeg-dev libpng++-dev wget emacs vim sudo
 ```
-## OpenCVのダウンロード
+### OpenCVのダウンロード
 
 ```bash
 $ mkdir opencv
@@ -23,7 +25,7 @@ $ cmake ..
 $ make -j4
 $ make install
 ```
-## サンプルプログラム
+### サンプルプログラム
 
 以下をsample.cppとして保存
 
@@ -61,9 +63,6 @@ $ ./sample
 んでこんなウィンドウが出たら成功です!!
 
 ![](assets/sample6.png)
-
-
-# チュートリアル
 
 ## 画像読み込み
 
