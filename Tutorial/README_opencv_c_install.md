@@ -183,12 +183,14 @@ cv::waitKey(0);
 保存する時は、cv::imwrite()メソッドを使います。
 
 ```cpp
-cv::imshow("out.jpg", disp);
+cv::imshow("out.jpg", disp);
 ```
 
 ## 練習問題
 
 画像の左半分上のRとBを入れ替えて表示してみましょう。
+
+![](assets/sample4.png)
 
 回答例
 
