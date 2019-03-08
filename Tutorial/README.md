@@ -1,6 +1,7 @@
 # Tutorial -Python-
 
-C++でやりたい人はこっち〜〜 >> https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Tutorial/README_opencv_c_install.md
+C++でやりたい人はこっち〜〜 
+>> https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Tutorial/README_opencv_c_install.md
 
 ここでは画像処理におけるnumpyの基本的な使い方をいくつか紹介していきます。
 
