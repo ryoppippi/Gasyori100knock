@@ -12,7 +12,8 @@ English is here  >> https://github.com/KuKuXia/Image_Processing_100_Questions Ku
 
 PythonとC++の好きな方でやってみてね
 
-**ディープラーニングのノックはこっち** >> https://github.com/yoyoyo-yo/DeepLearningMugenKnock
+**ディープラーニングのノックはこっち** 
+>> [ディープラーニング∞本ノック!!](https://github.com/yoyoyo-yo/DeepLearningMugenKnock)
 
 ## Recent
 - 2019.3.8 Questions_01_10 にC++の解答を追加！
