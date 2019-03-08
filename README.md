@@ -32,7 +32,7 @@ gitをインストールします。そして、端末を開いて、このコ�
 $ git clone https://github.com/yoyoyo-yo/Gasyori100knock.git
 ```
 
-そしたら、PythonかC++のやりたい方を選んで「インストール」か「問題」の「チュートリアル」に進みましょう！
+そしたら、PythonかC++のやりたい方を選んで「**チュートリアル**」に進みましょう！
 
 ## [チュートリアル](https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Tutorial)
 
