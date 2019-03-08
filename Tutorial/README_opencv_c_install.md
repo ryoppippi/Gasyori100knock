@@ -65,6 +65,8 @@ $ ./sample
 
 ![](assets/sample6.png)
 
+次に画像処理の基本操作を説明していきます。（もう知ってるという人はスキップして、問題に進んでください！）
+
 ## 画像読み込み
 
 C++でOepncvを使う時、必ずこれをincludeしなきゃいけません。
@@ -225,3 +227,7 @@ int main(int argc, const char* argv[]){
 ```
 
 答え >> https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Tutorial/answer.cpp
+
+以上でチュートリアルは終了です。
+
+あとはばんばん問題を解いて下さい！！！！

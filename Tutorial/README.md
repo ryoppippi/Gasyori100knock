@@ -81,7 +81,8 @@ Google colaboratory というウェブブラウザ上でpythonが実行できる
 
 >> [画像処理100本ノックを「Google Colaboratory」で楽々学習](https://qiita.com/karaage0703/items/e0b57b63dbebed908b2f)
 
-次に画像処理に関するnumpyの扱い方のために**Tutorial**フォルダを見てみて下さい。（もう知ってるという人はスキップして下さい。）
+
+次に画像処理に関するnumpyの扱い方を説明していきます。（もう知ってるという人はスキップして問題に進んで下さい！）
 
 ## Python起動
 
