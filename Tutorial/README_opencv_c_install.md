@@ -190,7 +190,7 @@ cv::imshow("out.jpg", disp);
 
 画像の左半分上のRとBを入れ替えて表示してみましょう。
 
-![](assets/sample4.png)
+![](assets/out_practive.jpg)
 
 回答例
 
