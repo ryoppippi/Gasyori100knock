@@ -95,7 +95,8 @@ https://qiita.com/karaage0703/items/e0b57b63dbebed908b2f
 
 ## C++用OpenCVのインストール
 
-C++用のopencvのインストール方法 >> https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Tutorial/README_opencv_c_install.md
+C++用のopencvのインストール方法 
+ >> https://github.com/yoyoyo-yo/Gasyori100knock/tree/master/Tutorial/README_opencv_c_install.md
 
 ## 問題
 
