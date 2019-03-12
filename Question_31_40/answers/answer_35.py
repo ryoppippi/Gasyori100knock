@@ -36,7 +36,8 @@ _x = x - W // 2
 _y = y - H // 2
 r = np.sqrt(_x ** 2 + _y ** 2)
 mask = np.zeros((H, W), dtype=np.float32)
-mask[np.where((r > (W//2*p1)) & (r < (W//2*p2)))] = 1
+max_r = np.sqrt(((W//2)**2)+((H//2)**2))
+mask[np.where((r > (max_r*p1)) & (r < (max_r*p2)))] = 1
 
 _G *= mask
 

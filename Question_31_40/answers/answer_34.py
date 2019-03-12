@@ -35,7 +35,7 @@ _x = x - W // 2
 _y = y - H // 2
 r = np.sqrt(_x ** 2 + _y ** 2)
 mask = np.ones((H, W), dtype=np.float32)
-mask[r<(W//2*p)] = 0
+mask[r<(np.sqrt(((W//2)**2)+((H//2)**2))*p)] = 0
 
 _G *= mask
 
