@@ -133,10 +133,10 @@ np.random.seed(0)
 class NN:
     def __init__(self, ind=2, w=64, outd=1, lr=0.1):
         self.w1 = np.random.normal(0, 1, [ind, w])
-            self.b1 = np.random.normal(0, 1, [w])
-            self.wout = np.random.normal(0, 1, [w, outd])
-            self.bout = np.random.normal(0, 1, [outd])
-            self.lr = lr
+        self.b1 = np.random.normal(0, 1, [w])
+        self.wout = np.random.normal(0, 1, [w, outd])
+        self.bout = np.random.normal(0, 1, [outd])
+        self.lr = lr
 
     def forward(self, x):
         self.z1 = x
