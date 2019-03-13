@@ -91,46 +91,7 @@ def resize(img, h, w):
     return out
 
 
-class NN:
-    def __init__(self, ind=2, w=64, w2=64, outd=1, lr=0.1):
-        self.w2 = np.random.randn(ind, w)
-        self.b2 = np.random.randn(w)
-        self.w3 = np.random.randn(w, w2)
-        self.b3 = np.random.randn(w2)
-        self.wout = np.random.randn(w2, outd)
-        self.bout = np.random.randn(outd)
-        self.lr = lr
 
-    def forward(self, x):
-        self.z1 = x
-        self.z2 = self.sigmoid(np.dot(self.z1, self.w2) + self.b2)
-        self.z3 = self.sigmoid(np.dot(self.z2, self.w3) + self.b3)
-        self.out = self.sigmoid(np.dot(self.z3, self.wout) + self.bout)
-        return self.out
-
-    def train(self, x, t):
-        # backpropagation output layer
-        out_d = 2*(self.out - t) * self.out * (1 - self.out)
-        out_dW = np.dot(self.z3.T, out_d)
-        out_dB = np.dot(np.ones([1, out_d.shape[0]]), out_d)
-        self.wout -= self.lr * out_dW
-        self.bout -= self.lr * out_dB[0]
-
-        w3_d = np.dot(out_d, self.wout.T) * self.z3 * (1 - self.z3)
-        w3_dW = np.dot(self.z2.T, w3_d)
-        w3_dB = np.dot(np.ones([1, w3_d.shape[0]]), w3_d)
-        self.w3 -= self.lr * w3_dW
-        self.b3 -= self.lr * w3_dB[0]
-        
-        # backpropagation inter layer
-        w2_d = np.dot(w3_d, self.w3.T) * self.z2 * (1 - self.z2)
-        w2_dW = np.dot(self.z1.T, w2_d)
-        w2_dB = np.dot(np.ones([1, w2_d.shape[0]]), w2_d)
-        self.w2 -= self.lr * w2_dW
-        self.b2 -= self.lr * w2_dB[0]
-
-    def sigmoid(self, x):
-        return 1. / (1. + np.exp(-x))
 
 # crop and create database
 
@@ -164,6 +125,49 @@ for i in range(Crop_num):
     db[i, :F_n] = _hog.ravel()
     db[i, -1] = label
 
+
+class NN:
+    def __init__(self, ind=2, w=64, w2=64, outd=1, lr=0.1):
+        self.w1 = np.random.normal(0, 1, [ind, w])
+        self.b1 = np.random.normal(0, 1, [w])
+        self.w2 = np.random.normal(0, 1, [w, w2])
+        self.b2 = np.random.normal(0, 1, [w2])
+        self.wout = np.random.normal(0, 1, [w2, outd])
+        self.bout = np.random.normal(0, 1, [outd])
+        self.lr = lr
+
+    def forward(self, x):
+        self.z1 = x
+        self.z2 = sigmoid(np.dot(self.z1, self.w1) + self.b1)
+        self.z3 = sigmoid(np.dot(self.z2, self.w2) + self.b2)
+        self.out = sigmoid(np.dot(self.z3, self.wout) + self.bout)
+        return self.out
+
+    def train(self, x, t):
+        # backpropagation output layer
+        #En = t * np.log(self.out) + (1-t) * np.log(1-self.out)
+        En = (self.out - t) * self.out * (1 - self.out)
+        grad_wout = np.dot(self.z3.T, En)
+        grad_bout = np.dot(np.ones([En.shape[0]]), En)
+        self.wout -= self.lr * grad_wout
+        self.bout -= self.lr * grad_bout
+
+        # backpropagation inter layer
+        grad_u2 = np.dot(En, self.wout.T) * self.z3 * (1 - self.z3)
+        grad_w2 = np.dot(self.z2.T, grad_u2)
+        grad_b2 = np.dot(np.ones([grad_u2.shape[0]]), grad_u2)
+        self.w2 -= self.lr * grad_w2
+        self.b2 -= self.lr * grad_b2
+        
+        grad_u1 = np.dot(grad_u2, self.w2.T) * self.z2 * (1 - self.z2)
+        grad_w1 = np.dot(self.z1.T, grad_u1)
+        grad_b1 = np.dot(np.ones([grad_u1.shape[0]]), grad_u1)
+        self.w1 -= self.lr * grad_w1
+        self.b1 -= self.lr * grad_b1
+
+def sigmoid(x):
+    return 1. / (1. + np.exp(-x))
+    
 
 ## training neural network
 nn = NN(ind=F_n, lr=0.01)

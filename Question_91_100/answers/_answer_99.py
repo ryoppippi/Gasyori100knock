@@ -93,46 +93,44 @@ def resize(img, h, w):
 
 class NN:
     def __init__(self, ind=2, w=64, w2=64, outd=1, lr=0.1):
-        self.w1 = np.random.normal(0, 1, [ind, w])
-        self.b1 = np.random.normal(0, 1, [w])
-        self.w2 = np.random.normal(0, 1, [w, w2])
-        self.b2 = np.random.normal(0, 1, [w2])
-        self.wout = np.random.normal(0, 1, [w2, outd])
-        self.bout = np.random.normal(0, 1, [outd])
+        self.w2 = np.random.randn(ind, w)
+        self.b2 = np.random.randn(w)
+        self.w3 = np.random.randn(w, w2)
+        self.b3 = np.random.randn(w2)
+        self.wout = np.random.randn(w2, outd)
+        self.bout = np.random.randn(outd)
         self.lr = lr
 
     def forward(self, x):
         self.z1 = x
-        self.z2 = sigmoid(np.dot(self.z1, self.w1) + self.b1)
-        self.z3 = sigmoid(np.dot(self.z2, self.w2) + self.b2)
-        self.out = sigmoid(np.dot(self.z3, self.wout) + self.bout)
+        self.z2 = self.sigmoid(np.dot(self.z1, self.w2) + self.b2)
+        self.z3 = self.sigmoid(np.dot(self.z2, self.w3) + self.b3)
+        self.out = self.sigmoid(np.dot(self.z3, self.wout) + self.bout)
         return self.out
 
     def train(self, x, t):
         # backpropagation output layer
-        #En = t * np.log(self.out) + (1-t) * np.log(1-self.out)
-        En = (self.out - t) * self.out * (1 - self.out)
-        grad_wout = np.dot(self.z3.T, En)
-        grad_bout = np.dot(np.ones([En.shape[0]]), En)
-        self.wout -= self.lr * grad_wout
-        self.bout -= self.lr * grad_bout
+        out_d = 2*(self.out - t) * self.out * (1 - self.out)
+        out_dW = np.dot(self.z3.T, out_d)
+        out_dB = np.dot(np.ones([1, out_d.shape[0]]), out_d)
+        self.wout -= self.lr * out_dW
+        self.bout -= self.lr * out_dB[0]
 
-        # backpropagation inter layer
-        grad_u2 = np.dot(En, self.wout.T) * self.z3 * (1 - self.z3)
-        grad_w2 = np.dot(self.z2.T, grad_u2)
-        grad_b2 = np.dot(np.ones([grad_u2.shape[0]]), grad_u2)
-        self.w2 -= self.lr * grad_w2
-        self.b2 -= self.lr * grad_b2
+        w3_d = np.dot(out_d, self.wout.T) * self.z3 * (1 - self.z3)
+        w3_dW = np.dot(self.z2.T, w3_d)
+        w3_dB = np.dot(np.ones([1, w3_d.shape[0]]), w3_d)
+        self.w3 -= self.lr * w3_dW
+        self.b3 -= self.lr * w3_dB[0]
         
-        grad_u1 = np.dot(grad_u2, self.w2.T) * self.z2 * (1 - self.z2)
-        grad_w1 = np.dot(self.z1.T, grad_u1)
-        grad_b1 = np.dot(np.ones([grad_u1.shape[0]]), grad_u1)
-        self.w1 -= self.lr * grad_w1
-        self.b1 -= self.lr * grad_b1
+        # backpropagation inter layer
+        w2_d = np.dot(w3_d, self.w3.T) * self.z2 * (1 - self.z2)
+        w2_dW = np.dot(self.z1.T, w2_d)
+        w2_dB = np.dot(np.ones([1, w2_d.shape[0]]), w2_d)
+        self.w2 -= self.lr * w2_dW
+        self.b2 -= self.lr * w2_dB[0]
 
-def sigmoid(x):
-    return 1. / (1. + np.exp(-x))
-
+    def sigmoid(self, x):
+        return 1. / (1. + np.exp(-x))
 
 # crop and create database
 
@@ -286,62 +284,11 @@ def nms(_bboxes, iou_th=0.5, select_num=None, prob_th=None):
 
 detects = detects[nms(detects, iou_th=0.25)]
 
-
-# Evaluation
-
-# [x1, y1, x2, y2]
-GT = np.array(((27, 48, 95, 110), (101, 75, 171, 138)), dtype=np.float32)
-
-## Recall, Precision, F-score
-iou_th = 0.5
-
-Rs = np.zeros((len(GT)))
-Ps = np.zeros((len(detects)))
-
-for i, g in enumerate(GT):
-    iou_x1 = np.maximum(g[0], detects[:, 0])
-    iou_y1 = np.maximum(g[1], detects[:, 1])
-    iou_x2 = np.minimum(g[2], detects[:, 2])
-    iou_y2 = np.minimum(g[3], detects[:, 3])
-    iou_w = np.maximum(0, iou_x2 - iou_x1)
-    iou_h = np.maximum(0, iou_y2 - iou_y1)
-    iou_area = iou_w * iou_h
-    g_area = (g[2] - g[0]) * (g[3] - g[1])
-    d_area = (detects[:, 2] - detects[:, 0]) * (detects[:, 3] - detects[:, 1])
-    ious = iou_area / (g_area + d_area - iou_area)
-    
-    Rs[i] = 1 if len(np.where(ious >= iou_th)[0]) > 0 else 0
-    Ps[ious >= iou_th] = 1
-    
-
-R = np.sum(Rs) / len(Rs)
-P = np.sum(Ps) / len(Ps)
-F = (2 * P * R) / (P + R) 
-
-print("Recall >> {:.2f} ({} / {})".format(R, np.sum(Rs), len(Rs)))
-print("Precision >> {:.2f} ({} / {})".format(P, np.sum(Ps), len(Ps)))
-print("F-score >> ", F)
-
-## mAP
-mAP = 0.
-for i in range(len(detects)):
-    mAP += np.sum(Ps[:i]) / (i + 1) * Ps[i]
-mAP /= np.sum(Ps)
-
-print("mAP >>", mAP)
-
-# Display
-for i in range(len(detects)):
-    v = list(map(int, detects[i, :4]))
-    if Ps[i] > 0:
-        cv2.rectangle(img2, (v[0], v[1]), (v[2], v[3]), (0,0,255), 1)
-    else:
-        cv2.rectangle(img2, (v[0], v[1]), (v[2], v[3]), (255,0,0), 1)
-    cv2.putText(img2, "{:.2f}".format(detects[i, -1]), (v[0], v[1]+9),
+for d in detects:
+    v = list(map(int, d[:4]))
+    cv2.rectangle(img2, (v[0], v[1]), (v[2], v[3]), (0,0,255), 1)
+    cv2.putText(img2, "{:.2f}".format(d[-1]), (v[0], v[1]+9),
                 cv2.FONT_HERSHEY_SIMPLEX, 0.4, (255,0,255), 1)
-
-for g in GT:
-    cv2.rectangle(img2, (g[0], g[1]), (g[2], g[3]), (0,255,0), 1)
 
 cv2.imwrite("out.jpg", img2)
 cv2.imshow("result", img2)
