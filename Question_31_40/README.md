@@ -121,19 +121,21 @@ DFTによって得られた周波数成分は左上、右上、左下、右下�
 
 ```bash
 T = 8
-F(u,v) = 1 / T * C(u)C(v) * Sum_{y=0:T-1} Sum_{x=0:T-1} f(x,y) cos((2x+1)u*pi/2T) cos((2y+1)v*pi/2T)
+F(u,v) = 2 / T * C(u)C(v) * Sum_{y=0:T-1} Sum_{x=0:T-1} f(x,y) cos((2x+1)u*pi/2T) cos((2y+1)v*pi/2T)
 ```
 
 逆離散コサイン変換(IDCT: Inverse Discrete Cosine Transformation)とは離散コサイン変換の逆（復号）であり、次式で定義される。
 
 ```bash
-f(x,y) = 1 / T * C(x)C(y) * Sum_{u=0:T-1} Sum_{v=0:T-1} F(u,v) cos((2x+1)u*pi/2T) cos((2y+1)v*pi/2T)
+T = 8
+K = 8
+f(x,y) = 2 / T * C(x)C(y) * Sum_{u=0:K-1} Sum_{v=0:K-1} F(u,v) cos((2x+1)u*pi/2T) cos((2y+1)v*pi/2T)
 ```
 
 ここでは画像を8x8ずつの領域に分割して、各領域で以上のDCT, IDCTを繰り返すことで、jpeg符号に応用される。
 今回も同様に8x8の領域に分割して、DCT, IDCTを行え。
 
-|入力 (imori.jpg)|グレースケール (imori_gray.jpg)|出力 (1) (answers/answer_36.jpg)|
+|入力 (imori.jpg)|グレースケール (imori_gray.jpg)|出力 (answers/answer_36.jpg)|
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](imori_gray.jpg)|![](answers/answer_36.jpg)|
 
