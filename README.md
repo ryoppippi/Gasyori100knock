@@ -14,8 +14,10 @@ English is here  (KuKuXia translates into English, so I appreciate his greate ef
 
 PythonとC++の好きな方でやってみてね
 
+## Related
+
 **ディープラーニングのノックはこっち** 
->> [ディープラーニング∞本ノック!!](https://github.com/yoyoyo-yo/DeepLearningMugenKnock)
+> [ディープラーニング∞本ノック!!](https://github.com/yoyoyo-yo/DeepLearningMugenKnock)
 
 ## Recent
 - 2019.3.25 Q.31 フーリエ系 Q.36 DCT,  Q.47,48 トップハット変換系を修正
