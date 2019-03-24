@@ -18,6 +18,7 @@ PythonとC++の好きな方でやってみてね
 >> [ディープラーニング∞本ノック!!](https://github.com/yoyoyo-yo/DeepLearningMugenKnock)
 
 ## Recent
+- 2019.3.25 Q.31 フーリエ系 Q.36 DCT,  Q.47,48 トップハット変換系を修正
 - 2019.3.13 Q95-100 Neural Networkを修正
 - 2019.3.8 Questions_01_10 にC++の解答を追加！
 - 2019.3.7 TutorialにC++用を追加　そろそろC++用の答えもつくろっかなーと
