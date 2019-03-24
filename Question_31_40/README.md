@@ -174,7 +174,7 @@ bitrate = 8 * K^2 / 8^2
 
 答え >> [answers/answer_37.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_31_40/answers/answer_37.py)
 
-## Q.38. JPEG圧縮 (Step.2)DCT+量子化|
+## Q.38. JPEG圧縮 (Step.2)DCT+量子化
 
 DCT係数を量子化し、IDCTで復元せよ。また、その時の画像の容量を比べよ。
 
