@@ -12,7 +12,7 @@ English is here  (KuKuXia translates into English, so I appreciate his greate ef
 - **内容はいろいろな文献を調べて載っけてるので正しくないものもあるかもしれないので注意して下さい** まちがいがあったらプルリクもらえるととても助かります！！
 - 【注意】このページを利用して、または関して生じた事に関しては、私は一切責任を負いません。すべて**自己責任**でお願い致します。
 
-PythonとC++の好きな方でやってみてね
+PythonとC++の好きな方でやってみてね♡
 
 ## Related
 
