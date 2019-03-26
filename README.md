@@ -1,8 +1,12 @@
 # 画像処理100本ノック!!
 
-English is here  (KuKuXia translates into English, so I appreciate his greate effort https://github.com/KuKuXia)
+***English is here*** (KuKuXia translates into English)
 
-> https://github.com/KuKuXia/Image_Processing_100_Questions 
+> https://github.com/KuKuXia/Image_Processing_100_Questions
+
+***Chinese is here***  (gzr2017, my ex-colleague, translates into Chinese)
+
+> https://github.com/gzr2017/ImageProcessing100Wen
 
 画像処理の初学者のための問題１００問ですうう(´；ω；｀)
 
