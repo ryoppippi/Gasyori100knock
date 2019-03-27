@@ -43,7 +43,7 @@ Dil_time = 3
 mor = out.copy()
 
 for i in range(Dil_time):
-    tmp = np.pad(out, (1, 1), 'edge')
+    tmp = np.pad(mor, (1, 1), 'edge')
     for y in range(1, H+1):
         for x in range(1, W+1):
             if np.sum(MF * tmp[y-1:y+2, x-1:x+2]) >= 255:
