@@ -10,8 +10,9 @@
 |:---:|:---:|
 |![](imori.jpg)|![](answers/answer_11.jpg)|
 
-答え >> [answers/answer_11.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_11.py)
-
+答え
+- Python >> [answers/answer_11.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_11.py)
+- C++ >> [answers/answer_11.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers_cpp/answer_11.cpp)
 
 ## Q.12. モーションフィルタ
 
@@ -29,7 +30,9 @@
 |:---:|:---:|
 |![](imori.jpg)|![](answers/answer_12.jpg)|
 
-答え >> [answers/answer_12.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_12.py)
+答え
+- Python >> [answers/answer_12.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_12.py)
+- C++ >> [answers/answer_12.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers_cpp/answer_12.cpp)
 
 ## Q.13. MAX-MINフィルタ
 
@@ -43,8 +46,9 @@ MAX-MINフィルタとはフィルタ内の画素の最大値と最小値の差�
 |:---:|:---:|
 |![](imori.jpg)|![](answers/answer_13.jpg)|
 
-答え >> [answers/answer_13.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_13.py)
-
+答え 
+- Python >> [answers/answer_13.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_13.py)
+- C++ >> [answers/answer_13.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers_cpp/answer_13.cpp)
 
 ## Q.14. 微分フィルタ
 
@@ -63,7 +67,9 @@ K = [ 0  1  0 ]   K = [ -1 1 0 ]
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](answers/answer_14_v.jpg)|![](answers/answer_14_h.jpg)|
 
-答え >>[ answers/answer_14.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_14.py)
+答え
+- Python >>[ answers/answer_14.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_14.py)
+- C++ >> [answers/answer_14.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers_cpp/answer_14.cpp)
 
 ## Q.15. Sobelフィルタ
 
@@ -73,17 +79,18 @@ Sobelフィルタ(3x3)を実装せよ。
 
 ```bash
     (a)縦方向       (b)横方向
-      1 0 -1            1  2  1
-K = [ 2 0 -2 ]   K = [  0  0  0 ]
-      1 0 -1           -1 -2 -1
+       1  2  1           1  0 -1
+K = [  0  0  0 ]   K = [ 2  0 -2 ]
+      -1 -2 -1           1  0 -1
 ```
 
 |入力 (imori.jpg)|出力・縦方向 (answers/answer_15_v.jpg)|出力・横方向 (answers/answer_15_h.jpg)|
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](answers/answer_15_v.jpg)|![](answers/answer_15_h.jpg)|
 
-答え >> [answers/answer_15.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_15.py)
-
+答え
+- Python >> [answers/answer_15.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_15.py)
+- C++ >> [answers/answer_15.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers_cpp/answer_15.cpp)
 ## Q.16. Prewittフィルタ
 
 Prewittフィルタ(3x3)を実装せよ。
@@ -101,8 +108,9 @@ K = [  0  0  0 ]  K = [ -1 0 1 ]
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](answers/answer_16_v.jpg)|![](answers/answer_16_h.jpg)|
 
-答え >> [answers/answer_16.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_16.py)
-
+答え
+- Python >> [answers/answer_16.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_16.py)
+- C++ >> [answers/answer_16.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers_cpp/answer_16.cpp)
 
 ## Q.17. Laplacianフィルタ
 
@@ -145,7 +153,9 @@ K = [ 1 -4  1 ]
 |:---:|:---:|
 |![](imori.jpg)|![](answers/answer_17.jpg)||
 
-答え >> [answers/answer_17.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_17.py)
+答え
+- Python >> [answers/answer_17.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_17.py)
+- C++ >> [answers/answer_17.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers_cpp/answer_17.cpp)
 
 ## Q.18. Embossフィルタ
 
@@ -163,11 +173,13 @@ K = [ -1  1  1 ]
 |:---:|:---:|
 |![](imori.jpg)|![](answers/answer_18.jpg)|
 
-答え >> [answers/answer_18.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_18.py)
+答え
+- Python >> [answers/answer_18.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_18.py)
+- C++ >> [answers/answer_198.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers_cpp/answer_18.cpp)
 
 ## Q.19. LoGフィルタ
 
-LoGフィルタ(s=3)を実装し、*imori_noise.jpg*のエッジを検出せよ。
+LoGフィルタ(s=3、カーネルサイズ=5)を実装し、*imori_noise.jpg*のエッジを検出せよ。
 
 LoGフィルタとはLaplacian of Gaussianであり、ガウシアンフィルタで画像を平滑化した後にラプラシアンフィルタで輪郭を取り出すフィルタである。
 
@@ -183,7 +195,9 @@ LoG(x,y) = (x^2 + y^2 - s^2) / (2 * pi * s^6) * exp(-(x^2+y^2) / (2*s^2))
 |:---:|:---:|
 |![](imori_noise.jpg)|![](answers/answer_19.jpg)|
 
-答え >> [answers/answer_19.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_19.py)
+答え 
+- Python >> [answers/answer_19.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers/answer_19.py)
+- C++ >> [answers/answer_19.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_11_20/answers_cpp/answer_19.cpp)
 
 ## Q.20. ヒストグラム表示
 
