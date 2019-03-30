@@ -26,15 +26,15 @@ while count > 0:
                 
             ## condition 2
             c = 0
-            c += (out[y,min(x+1,W-1)] - out[y,min(x+1,W-1)]*out[max(y-1,0),min(x+1,W-1)]*out[max(y-1,0),x])
-            c += (out[max(y-1,0),x] - out[max(y-1,0),x]*out[max(y-1,0),max(x-1,0)]*out[y,max(x-1,0)])
-            c += (out[y,max(x-1,0)] - out[y,max(x-1,0)]*out[min(y+1,H-1),max(x-1,0)]*out[min(y+1,H-1),x])
-            c += (out[min(y+1,H-1),x] - out[min(y+1,H-1),x]*out[min(y+1,H-1),min(x+1,W-1)]*out[y,min(x+1,W-1)])
+            c += (tmp[y,min(x+1,W-1)] - tmp[y,min(x+1,W-1)]*tmp[max(y-1,0),min(x+1,W-1)]*tmp[max(y-1,0),x])
+            c += (tmp[max(y-1,0),x] - tmp[max(y-1,0),x]*tmp[max(y-1,0),max(x-1,0)]*tmp[y,max(x-1,0)])
+            c += (tmp[y,max(x-1,0)] - tmp[y,max(x-1,0)]*tmp[min(y+1,H-1),max(x-1,0)]*tmp[min(y+1,H-1),x])
+            c += (tmp[min(y+1,H-1),x] - tmp[min(y+1,H-1),x]*tmp[min(y+1,H-1),min(x+1,W-1)]*tmp[y,min(x+1,W-1)])
             if c == 1:
                 judge += 1
                 
             ##x condition 3
-            if np.sum(out[max(y-1,0):min(y+2,H), max(x-1,0):min(x+2,W)]) >= 4:
+            if np.sum(tmp[max(y-1,0):min(y+2,H), max(x-1,0):min(x+2,W)]) >= 4:
                 judge += 1
             
             if judge == 3:
