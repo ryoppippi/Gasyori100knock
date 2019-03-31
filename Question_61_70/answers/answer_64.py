@@ -50,33 +50,41 @@ while count > 0:
                 judge += 1
 
             ## condition 5
-            flag = False
-
-            if (out[max(y-1,0), x] != tmp[max(y-1,0), x]) and (out[y, max(x-1,0)] != tmp[y, max(x-1,0)]):
-                flag = True
-
             _tmp2 = 1-out
-            
+
+            c = 0
+            c += (_tmp2[y,min(x+1,W-1)] - _tmp2[y,min(x+1,W-1)] * _tmp2[max(y-1,0),min(x+1,W-1)] * _tmp2[max(y-1,0),x])
+            c += (_tmp2[max(y-1,0),x] - _tmp2[max(y-1,0),x] * (1-tmp[max(y-1,0),max(x-1,0)]) * _tmp2[y,max(x-1,0)])
+            c += (_tmp2[y,max(x-1,0)] - _tmp2[y,max(x-1,0)] * _tmp2[min(y+1,H-1),max(x-1,0)] * _tmp2[min(y+1,H-1),x])
+            c += (_tmp2[min(y+1,H-1),x] - _tmp2[min(y+1,H-1),x] * _tmp2[min(y+1,H-1),min(x+1,W-1)] * _tmp2[y,min(x+1,W-1)])
+            if c == 1 or (out[max(y-1,0), max(x-1,0)] != tmp[max(y-1,0), max(x-1,0)]):
+                judge += 1
+
             c = 0
             c += (_tmp2[y,min(x+1,W-1)] - _tmp2[y,min(x+1,W-1)] * _tmp2[max(y-1,0),min(x+1,W-1)] * (1-tmp[max(y-1,0),x]))
             c += ((1-tmp[max(y-1,0),x]) - (1-tmp[max(y-1,0),x]) * _tmp2[max(y-1,0),max(x-1,0)] * _tmp2[y,max(x-1,0)])
             c += (_tmp2[y,max(x-1,0)] - _tmp2[y,max(x-1,0)] * _tmp2[min(y+1,H-1),max(x-1,0)] * _tmp2[min(y+1,H-1),x])
             c += (_tmp2[min(y+1,H-1),x] - _tmp2[min(y+1,H-1),x] * _tmp2[min(y+1,H-1),min(x+1,W-1)] * _tmp2[y,min(x+1,W-1)])
-            if c == 1:
-                flag = True
+            if c == 1 or (out[max(y-1,0), x] != tmp[max(y-1,0), x]):
+                judge += 1
+
+            c = 0
+            c += (_tmp2[y,min(x+1,W-1)] - _tmp2[y,min(x+1,W-1)] * (1-tmp[max(y-1,0),min(x+1,W-1)]) * _tmp2[max(y-1,0),x])
+            c += (_tmp2[max(y-1,0),x] - _tmp2[max(y-1,0),x] * _tmp2[max(y-1,0),max(x-1,0)] * _tmp2[y,max(x-1,0)])
+            c += (_tmp2[y,max(x-1,0)] - _tmp2[y,max(x-1,0)] * _tmp2[min(y+1,H-1),max(x-1,0)] * _tmp2[min(y+1,H-1),x])
+            c += (_tmp2[min(y+1,H-1),x] - _tmp2[min(y+1,H-1),x] * _tmp2[min(y+1,H-1),min(x+1,W-1)] * _tmp2[y,min(x+1,W-1)])
+            if c == 1 or (out[max(y-1,0), min(x+1,W-1)] != tmp[max(y-1,0), min(x+1,W-1)]):
+                judge += 1
 
             c = 0
             c += (_tmp2[y,min(x+1,W-1)] - _tmp2[y,min(x+1,W-1)] * _tmp2[max(y-1,0),min(x+1,W-1)] * _tmp2[max(y-1,0),x])
             c += (_tmp2[max(y-1,0),x] - _tmp2[max(y-1,0),x] * _tmp2[max(y-1,0),max(x-1,0)] * (1-tmp[y,max(x-1,0)]))
             c += ((1-tmp[y,max(x-1,0)]) - (1-tmp[y,max(x-1,0)]) * _tmp2[min(y+1,H-1),max(x-1,0)] * _tmp2[min(y+1,H-1),x])
             c += (_tmp2[min(y+1,H-1),x] - _tmp2[min(y+1,H-1),x] * _tmp2[min(y+1,H-1),min(x+1,W-1)] * _tmp2[y,min(x+1,W-1)])
-            if c == 1:
-                flag = True
-
-            if flag:
+            if c == 1 or (out[y, max(x-1,0)] != tmp[y, max(x-1,0)]):
                 judge += 1
             
-            if judge >= 5:
+            if judge >= 8:
                 out[y,x] = 0
                 count += 1
                 
