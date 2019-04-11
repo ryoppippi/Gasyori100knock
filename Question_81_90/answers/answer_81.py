@@ -29,9 +29,23 @@ for y in range(H):
         Ix[y, x] = np.mean(tmp[y:y+3, x:x+3] * sobelx)
         Iy[y, x] = np.mean(tmp[y:y+3, x:x+3] * sobely)
      
-Ix2 = Ix ** 2
-IxIy = Ix * Iy
-Iy2 = Iy ** 2
+tmp = np.pad(Ix, (1, 1), 'edge')
+
+Ix2 = np.zeros_like(gray, dtype=np.float32)
+IxIy = np.zeros_like(gray, dtype=np.float32)
+
+for y in range(H):
+    for x in range(W):
+        Ix2[y, x] = np.mean(tmp[y:y+3, x:x+3] * sobelx)
+        IxIy[y, x] = np.mean(tmp[y:y+3, x:x+3] * sobely)
+
+tmp = np.pad(Iy, (1, 1), 'edge')
+
+Iy2 = np.zeros_like(gray, dtype=np.float32)
+
+for y in range(H):
+    for x in range(W):
+        Iy2[y, x] = np.mean(tmp[y:y+3, x:x+3] * sobely)
 
 out = np.array((gray, gray, gray))
 out = np.transpose(out, (1,2,0))
