@@ -54,7 +54,7 @@ while True:
 
     ## re-labeling
     for i in range(len(feats)):
-        dis = np.square(np.sum(np.abs(gs - feats[i, :12]), axis=1))
+        dis = np.sqrt(np.sum(np.square(np.abs(gs - feats[i, :12])), axis=1))
         pred = np.argmin(dis, axis=0)
         if int(feats[i, -1]) != pred:
             change_count += 1
