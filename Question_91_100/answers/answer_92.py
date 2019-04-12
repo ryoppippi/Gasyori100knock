@@ -23,7 +23,7 @@ while True:
     clss = np.zeros((H*W), dtype=int)
     
     for i in range(H*W):
-        dis = np.sum(np.abs(Cs - img[i]), axis=1)
+        dis = np.sqrt(np.sum((Cs - img[i])**2, axis=1))
         clss[i] = np.argmin(dis)
 
     Cs_tmp = np.zeros((Class, 3))
