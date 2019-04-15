@@ -10,7 +10,7 @@
 
 ***License***
 
-&copu; Yoshito Nagaoka All Rights Reserved.
+&copy; Yoshito Nagaoka All Rights Reserved.
 
 This is under MIT License.
 
