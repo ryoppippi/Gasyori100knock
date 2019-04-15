@@ -8,14 +8,6 @@
 
 > https://github.com/gzr2017/ImageProcessing100Wen
 
-***License***
-
-&copy; Yoshito Nagaoka All Rights Reserved.
-
-This is under MIT License.
-
-> https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/LICENSE
-
 ## Description
 
 画像処理の初学者のための問題１００問ですうう(´；ω；｀)
