@@ -191,3 +191,11 @@ adaptivebinalizatino, poison image blending
 }
 ```
 
+## License
+
+&copy; Yoshito Nagaoka All Rights Reserved.
+
+This is under MIT License.
+
+> https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/LICENSE
+
