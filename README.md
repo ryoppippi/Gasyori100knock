@@ -8,6 +8,16 @@
 
 > https://github.com/gzr2017/ImageProcessing100Wen
 
+***License***
+
+&copu; Yoshito Nagaoka All Rights Reserved.
+
+This is under MIT License.
+
+> https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/LICENSE
+
+## Description
+
 画像処理の初学者のための問題１００問ですうう(´；ω；｀)
 
 これはイモリと一緒に画像処理の基本的処理の知識を身に着け、アルゴリズムを理解するための100本ノックです。ここに載っている問題はOpenCVでAPIが用意されているものが殆どですが、**あえてそれを自分の手で実装**してください。解答も載っけてますが、それはあくまで解答です。自分で考えながら実装して下さい。
