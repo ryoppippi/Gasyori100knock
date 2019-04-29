@@ -21,7 +21,7 @@ for y in range(K_size):
         theta = angle / 180. * np.pi
         _x = np.cos(theta) * px + np.sin(theta) * py
         _y = -np.sin(theta) * px + np.cos(theta) * py
-        gabor[x, y] = np.exp(-(_x**2 + Gamma**2 * _y**2) / (2 * Sigma**2)) * np.cos(2*np.pi*_x/Lambda + Psi)
+        gabor[y, x] = np.exp(-(_x**2 + Gamma**2 * _y**2) / (2 * Sigma**2)) * np.cos(2*np.pi*_x/Lambda + Psi)
 
 gabor /= np.sum(np.abs(gabor))
 

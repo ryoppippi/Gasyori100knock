@@ -17,7 +17,7 @@ def gabor_f(k=111, s=10, g=1.2, l=10, p=0, A=0):
             theta = A / 180. * np.pi
             _x = np.cos(theta) * px + np.sin(theta) * py
             _y = -np.sin(theta) * px + np.cos(theta) * py
-            gabor[x, y] = np.exp(-(_x**2 + g**2 * _y**2) / (2 * s**2)) * np.cos(2*np.pi*_x/l + p)
+            gabor[y, x] = np.exp(-(_x**2 + g**2 * _y**2) / (2 * s**2)) * np.cos(2*np.pi*_x/l + p)
 
     gabor /= np.sum(np.abs(gabor))
 
