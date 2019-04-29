@@ -20,7 +20,7 @@ red = img[:, :, 2].copy()
 
 答え 
 - Python >> [answers/answer_1.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers/answer_1.py)
-- C++ >> [answers_cpp/answer_1.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers_cpp/answer_1.cpp)
+- C++ >> [answers_cpp/answer_1.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers_cpp/answer_1.cpp)
 
 ## Q.2. グレースケール化
 
@@ -35,7 +35,7 @@ Y = 0.2126 R + 0.7152 G + 0.0722 B
 
 答え
 - Python >> [answers/answer_2.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers/answer_2.py)
-- C++ >> [answers_cpp/answer_2.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers_cpp/answer_2.cpp)
+- C++ >> [answers_cpp/answer_2.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers_cpp/answer_2.cpp)
 ## Q.3. 二値化
 
 画像を二値化せよ。
@@ -53,7 +53,7 @@ y = { 0 (if y < 128)
 
 答え 
 - Python >> [answers/answer_3.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers/answer_3.py)
-- C++ >> [answers_cpp/answer_3.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers_cpp/answer_3.cpp)
+- C++ >> [answers_cpp/answer_3.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers_cpp/answer_3.cpp)
 ## Q.4. 大津の二値化
 
 大津の二値化を実装せよ。
@@ -89,7 +89,7 @@ argmax_{t} X = argmax_{t} Sb^2
 
 答え
 - Python >> [answers/answer_4.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers/answer_4.py)
-- C++ >> [answers_cpp/answer_4.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers_cpp/answer_4.cpp)
+- C++ >> [answers_cpp/answer_4.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers_cpp/answer_4.cpp)
 
 ## Q.5. HSV変換
 
@@ -150,7 +150,7 @@ X = C (1 - |H' mod 2 - 1|)
 
 答え 
 - Python >> [answers/answer_5.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers/answer_5.py)
-- C++ >> [answers_cpp/answer_5.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers_cpp/answer_5.cpp)
+- C++ >> [answers_cpp/answer_5.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers_cpp/answer_5.cpp)
 
 ## Q.6. 減色処理
 
@@ -170,7 +170,7 @@ val = {  32  (  0 <= val <  64)
 
 答え 
 - Python >> [answers/answer_6.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers/answer_6.py)
-- C++ >> [answers_cpp/answer_6.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers_cpp/answer_6.cpp)
+- C++ >> [answers_cpp/answer_6.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers_cpp/answer_6.cpp)
 
 ## Q.7. 平均プーリング
 
@@ -192,7 +192,7 @@ v = 1/|R| * Sum_{i in R} v_i
 
 答え 
 - Python >> [answers/answer_7.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers/answer_7.py)
-- C++ >> [answers_cpp/answer_7.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers_cpp/answer_7.cpp)
+- C++ >> [answers_cpp/answer_7.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers_cpp/answer_7.cpp)
 
 ## Q.8. Maxプーリング
 
@@ -204,7 +204,7 @@ v = 1/|R| * Sum_{i in R} v_i
 
 答え
 - Python >> [answers/answer_8.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers/answer_8.py)
-- C++ >> [answers_cpp/answer_8.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers_cpp/answer_8.cpp)
+- C++ >> [answers_cpp/answer_8.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers_cpp/answer_8.cpp)
 
 ## Q.9. ガウシアンフィルタ
 
@@ -234,7 +234,7 @@ K =  1/16 [ 2 4 2 ]
 
 答え 
 - Python >> [answers/answer_9.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers/answer_9.py)
-- C++ >> [answers_cpp/answer_9.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers_cpp/answer_9.cpp)
+- C++ >> [answers_cpp/answer_9.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers_cpp/answer_9.cpp)
 
 ## Q.10 メディアンフィルタ
 
@@ -251,4 +251,4 @@ K =  1/16 [ 2 4 2 ]
 
 答え 
 - Python >> [answers/answer_10.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers/answer_10.py)
-- C++ >> [answers_cpp/answer_10.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers_cpp/answer_10.cpp)
+- C++ >> [answers_cpp/answer_10.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers_cpp/answer_10.cpp)
