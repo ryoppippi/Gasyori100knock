@@ -100,13 +100,13 @@ S = Sum_{x=0:w, y=0:h} |I(i+x, j+y) - T(x, y)|
 NCC(Normalized Cross Correlation)とは正規化相互相関を類似度にする手法であり、Sが**最大**の位置がマッチング位置となる。
 
 ```bash
-     Sum_{x=0:w, y=0:h} |I(i+x, j+y) T(x, y)|
+     Sum_{x=0:w, y=0:h} I(i+x, j+y) * T(x, y)
 S = -----------------------------------------------------------------------------
     Sqrt(Sum_{x=0:w, y=0:h} I(i+x, j+y)^2) * Sqrt(Sum_{x=0:w, y=0:h} T(x, y)^2)
 ```
 
 このSは、-1<=S<=1をとる。
-NCCは証明変化に強いと言われる。
+NCCは照明変化に強いと言われる。
 
 |入力 (imori.jpg) |テンプレート画像(imori_part.jpg)|出力(answers/answer_56.jpg)|
 |:---:|:---:|:---:|
@@ -118,18 +118,18 @@ NCCは証明変化に強いと言われる。
 
 ここではテンプレートマッチングのZNCCを用いて、*imori_part.jpg*が*imori.jpg*のどこに位置するかを*imori.jpg*の赤の矩形で図示せよ。
 
-SZNCC(Zero means Normalized Cross Correlation)とは零平均正規化相互相関を類似度にする手法であり、Sが**最大**の位置がマッチング位置となる。
+ZNCC(Zero means Normalized Cross Correlation)とは零平均正規化相互相関を類似度にする手法であり、Sが**最大**の位置がマッチング位置となる。
 
 画像Iの平均値をmi、画像Tの平均値をmtとすると、Sは次式で計算される。
 
 ```bash
-       Sum_{x=0:w, y=0:h} |(I(i+x, j+y)-mi) (T(x, y)-mt)|
+       Sum_{x=0:w, y=0:h} (I(i+x, j+y)-mi) * (T(x, y)-mt)
 S = --------------------------------------------------------------------------------------
     Sqrt(Sum_{x=0:w, y=0:h} (I(i+x, j+y)-mi)^2) * Sqrt(Sum_{x=0:w, y=0:h} (T(x, y)-mt)^2)
 ```
 
 このSは、-1<=S<=1をとる。
-ZNCCは平均値を引くことでNCCよりも証明変化に強いと言われる。（だが今回は検出が失敗する。）
+ZNCCは平均値を引くことでNCCよりも照明変化に強いと言われる。（だが今回は検出が失敗する。）
 
 |入力 (imori.jpg) |テンプレート画像(imori_part.jpg)|出力(answers/answer_57.jpg)|
 |:---:|:---:|:---:|
