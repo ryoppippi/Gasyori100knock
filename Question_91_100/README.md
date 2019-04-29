@@ -324,7 +324,7 @@ Q.98にNMS(閾値t=0.25)を組み込み、出力を描画せよ。
 ここでは検出の評価指標を実装する。
 
 検出はBounding-boxとそのクラスの２つが一致していないと、精度の評価ができない。
-検出の評価指標には、Recal, Precision, F-score, mAPなどが存在する。
+検出の評価指標には、Recall, Precision, F-score, mAPなどが存在する。
 
 ### Recall ... 正解の矩形がどれだけ検出できたか。正解をどれだけ網羅できたかを示す。[0,1]の範囲を取り、1が最高。
 
@@ -344,7 +344,7 @@ Precision = D' / D
 ### F-score ... RecallとPrecisonの調和平均。　２つのバランスを示すもので、[0,1]の範囲を取り、1が最高。
 
 ```bash
-F-scoer = 2 * Recall * Precision / (Recall + Precision)
+F-score = 2 * Recall * Precision / (Recall + Precision)
 ```
 
 文字を検出する文字検出はRecall, Precision, F-scoreで精度を測ることが多い。
