@@ -5,6 +5,9 @@
 Pythonでやりたい人はこっち〜〜 
 >> https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Tutorial/README.md
 
+JavaScriptでやりたい人はこっち〜〜 
+>> https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Tutorial/README_javascript.md
+
 Ubuntu-16.04(18.04でも可)を想定してます。Dockerを使うと便利だと思います。
 
 ### パッケージインストール
