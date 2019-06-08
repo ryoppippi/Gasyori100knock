@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Image Processing</title>
+
+    </head>
+
+    <body>
+        <h1>Image Processing!</h1>
+
+        <canvas id="canvas" style="border: solid thin black;"></canvas>
+        <canvas id="canvas_result"  style="border: solid thin black;"></canvas>
+
+        <br>
+        <button onclick="process();" style="margin-left: 90px; font-size: 20px;">process!</button>
+
+    <script type="text/javascript">
+        let image = new Image();
+        var src = "imori.jpg";
+        image.src = src;
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+        const canvas_result = document.getElementById("canvas_result");
+        const ctx_result = canvas_result.getContext("2d");
+        image.onload = () => {
+            canvas.width = image.width;
+            canvas.height = image.height;
+            
+            ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+
+            canvas_result.width = image.width;
+            canvas_result.height = image.height;
+        }
+
+        function process(){
+
+            let src = ctx.getImageData(0, 0, image.width, image.height);
+            let dst = ctx_result.createImageData(image.width, image.height);
+
+            ctx_result.putImageData(src, 0, 0);
+        }
+    
+    </script>
+
+    </body>
+</html>
