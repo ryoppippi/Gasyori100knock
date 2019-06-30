@@ -3,6 +3,8 @@
 
 ## Q.21. ヒストグラム正規化
 
+#### Histogram normalization
+
 ヒストグラム正規化を実装せよ。
 
 ヒストグラムは偏りを持っていることが伺える。
@@ -23,7 +25,9 @@ xout = {  a                         (xin < c)
 |:---:|:---:|:---:|
 |![](imori_dark.jpg)|![](answers/answer_21_1.jpg)|![](answers/answer_21_2.png)|
 
-答え >> [answers/answer_21.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_21.py)
+答え 
+- Python >> [answers/answer_21.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_21.py)
+- C++ >> [answers_cpp/answer_21.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers_cpp/answer_21.cpp)
 
 ## Q.22. ヒストグラム操作
 
@@ -41,9 +45,13 @@ xout = s0 / s * (xin - m) + m0
 |:---:|:---:|:---:|
 |![](imori_dark.jpg)|![](answers/answer_22_1.jpg)|![](answers/answer_22_2.png)|
 
-答え >> [answers/answer_22.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_22.py)
+答え 
+- Python >> [answers/answer_22.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_22.py)
+- C++ >> [answers_cpp/answer_22.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers_cpp/answer_22.cpp)
 
 ## Q.23. ヒストグラム平坦化
+
+#### Histogram equalization
 
 ヒストグラム平坦化を実装せよ。
 
@@ -60,10 +68,14 @@ Z' = Zmax / S * Sum{i=0:z} h(z)
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](answers/answer_23_1.jpg)|![](answers/answer_23_2.png)|
 
-答え >> [answers/answer_23.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_23.py)
+答え 
+- Python >> [answers/answer_23.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_23.py)
+- C++ >> [answers_cpp/answer_23.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers_cpp/answer_23.cpp)
 
 
 ## Q.24. ガンマ補正
+
+#### Gamma correction
 
 *imori_gamma.jpg*に対してガンマ補正(c=1, g=2.2)を実行せよ。
 
@@ -90,8 +102,9 @@ Iout = (1/c * Iin) ^ (1/g)
 |:---:|:---:|
 |![](imori_gamma.jpg)|![](answers/answer_24.jpg)|
 
-答え >> [answers/answer_24.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_24.py)
-
+答え 
+- Python >> [answers/answer_24.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_24.py)
+- C++ >> [answers_cpp/answer_24.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers_cpp/answer_24.cpp)
 
 ## Q.25. 最近傍補間
 
