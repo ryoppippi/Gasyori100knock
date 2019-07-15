@@ -9,13 +9,14 @@ H, W, C = img.shape
 # Trans [0, 255]
 a, b = 0., 255.
 
-vmin = img.min()
-vmax = img.max()
+c = img.min()
+d = img.max()
 
 out = img.copy()
-out[out<a] = a
-out[out>b] = b
-out = (b-a) / (vmax - vmin) * (out - vmin) + a
+
+out = (b-a) / (d - c) * (out - c) + a
+out[out < a] = a
+out[out > b] = b
 out = out.astype(np.uint8)
 
 # Display histogram
