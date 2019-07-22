@@ -4,11 +4,14 @@
 #include <math.h>
 
 int main(int argc, const char* argv[]){
+
+  // read original image
   cv::Mat img = cv::imread("imori.jpg", cv::IMREAD_COLOR);
 
   int width = img.rows;
   int height = img.cols;
 
+  // resized ratio
   double rx = 1.5, ry = 1.5;
 
   int resized_width = (int)(width * rx);
@@ -17,6 +20,7 @@ int main(int argc, const char* argv[]){
   double dx, dy;
   double val;
 
+  // output image
   cv::Mat out = cv::Mat::zeros(resized_height, resized_width, CV_8UC3);
 
   // bi-linear interpolation
@@ -30,12 +34,15 @@ int main(int argc, const char* argv[]){
       x_before = fmin(x_before, width - 1);
       dx = x / rx - x_before;
       
+      // compute bi-linear
       for (int k = 0; k < 3; k++){
-	val = (1. - dx) * (1. - dy) * img.at<cv::Vec3b>(y_before, x_before)[k] +
-	  dx * (1. - dy) * img.at<cv::Vec3b>(y_before, x_before + 1)[k] +
-	  (1. - dx) * dy * img.at<cv::Vec3b>(y_before + 1, x_before)[k] +
-	  dx * dy * img.at<cv::Vec3b>(y_before + 1, x_before)[k];
-	out.at<cv::Vec3b>(y, x)[k] = (uchar)val;
+        val = (1. - dx) * (1. - dy) * img.at<cv::Vec3b>(y_before, x_before)[k] +
+          dx * (1. - dy) * img.at<cv::Vec3b>(y_before, x_before + 1)[k] +
+          (1. - dx) * dy * img.at<cv::Vec3b>(y_before + 1, x_before)[k] +
+          dx * dy * img.at<cv::Vec3b>(y_before + 1, x_before)[k];
+
+        // assign pixel to new position
+        out.at<cv::Vec3b>(y, x)[k] = (uchar)val;
       }
     }
   }

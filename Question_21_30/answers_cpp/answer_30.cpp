@@ -12,14 +12,25 @@ int main(int argc, const char* argv[]){
   int height = img.cols;
 
   // Affine parameters
-  double a = 1.3, b = 0.0, tx = 30;
-  double c = 0.0, d = .8, ty = -30;
+  double theta = -30;
+  double rad = theta / 180. * M_PI;
+  double a = std::cos(rad), b = - std::sin(rad), tx = 0;
+  double c = std::sin(rad), d = std::cos(rad), ty = 0;
 
   double det = a * d - b * c;
 
+  // center transition
+  double cx = width / 2.;
+  double cy = height / 2.;
+  double new_cx = (d * cx - b * cy) / det;
+  double new_cy = (- c * cx + a * cy) / det;
+  tx = new_cx - cx;
+  ty = new_cy - cy;
+
+
   // Resize width and height
-  int resized_width = (int)(width * a);
-  int resized_height = (int)(height * d);
+  int resized_width = (int)(width);
+  int resized_height = (int)(height);
 
   // other parameters
   int x_before, y_before;

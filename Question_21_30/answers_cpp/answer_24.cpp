@@ -4,24 +4,28 @@
 #include <math.h>
 
 int main(int argc, const char* argv[]){
+
+  // read original image
   cv::Mat img = cv::imread("imori_gamma.jpg", cv::IMREAD_COLOR);
 
   int width = img.rows;
   int height = img.cols;
 
+  // gamma correction hyper-parameters
   double c = 1;
   double g = 2.2;
   double val;
 
+  // output image
   cv::Mat out = cv::Mat::zeros(height, width, CV_8UC3);
 
   // gamma correction
   for (int i = 0; i < height; i++){
     for (int j = 0; j < width; j++){
       for (int k = 0; k < 3; k++){
-	val = (double)img.at<cv::Vec3b>(j, i)[k] / 255;
+	      val = (double)img.at<cv::Vec3b>(j, i)[k] / 255;
 
-	out.at<cv::Vec3b>(j, i)[k] = (uchar)(pow(val / c, 1 / g) * 255);
+	      out.at<cv::Vec3b>(j, i)[k] = (uchar)(pow(val / c, 1 / g) * 255);
       }
     }
   }

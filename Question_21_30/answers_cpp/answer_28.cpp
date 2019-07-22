@@ -48,6 +48,7 @@ int main(int argc, const char* argv[]){
         continue;
       }
 
+      // assign pixel to new position
       for ( int k = 0; k < 3; k++){
         out.at<cv::Vec3b>(y, x)[k] = img.at<cv::Vec3b>(y_before, x_before)[k];
       }
