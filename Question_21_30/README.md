@@ -123,7 +123,9 @@ I'(x,y) = I([x/a], [y/a])
 |:---:|:---:|
 |![](imori.jpg)|![](answers/answer_25.jpg)|
 
-答え >> [answers/answer_25.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_25.py)
+答え 
+- Python >> [answers/answer_25.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_25.py)
+- C++ >> [answers_cpp/answer_25.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers_cpp/answer_25.cpp)
 
 ## Q.26. Bi-linear補間
 
@@ -152,7 +154,9 @@ I'(x',y') = (1-dx)(1-dy)I(x,y) + dx(1-dy)I(x+1,y) + (1-dx)dyI(x,y+1) + dxdyI(x+1
 |:---:|:---:|
 |![](imori.jpg)|![](answers/answer_26.jpg)|
 
-答え >> [answers/answer_26.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_26.py)
+答え 
+- Python >> [answers/answer_26.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_26.py)
+- C++ >> [answers_cpp/answer_26.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers_cpp/answer_26.cpp)
 
 ## Q.27. Bi-cubic補間
 
@@ -194,7 +198,9 @@ I'(x', y') = (Sum{i=-1:2}{j=-1:2} I(x+i,y+j) * wxi * wyj) / Sum{i=-1:2}{j=-1:2} 
 |:---:|:---:|
 |![](imori.jpg)|![](answers/answer_27.jpg)|
 
-答え >> [answers/answer_27.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_27.py)
+答え 
+- Python >> [answers/answer_27.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_27.py)
+- C++ >> [answers_cpp/answer_27.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers_cpp/answer_27.cpp)
 
 ## Q.28. アフィン変換(平行移動)
 
@@ -239,7 +245,9 @@ I'(x', y') = (Sum{i=-1:2}{j=-1:2} I(x+i,y+j) * wxi * wyj) / Sum{i=-1:2}{j=-1:2} 
 |:---:|:---:|
 |![](imori.jpg)|![](answers/answer_28.jpg)|
 
-答え >> [answers/answer_28.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_28.py)
+答え 
+- Python >> [answers/answer_28.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_28.py)
+- C++ >> [answers_cpp/answer_28.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers_cpp/answer_28.cpp)
 
 ## Q.29. アフィン変換(拡大縮小)
 
@@ -251,7 +259,9 @@ I'(x', y') = (Sum{i=-1:2}{j=-1:2} I(x+i,y+j) * wxi * wyj) / Sum{i=-1:2}{j=-1:2} 
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](answers/answer_29_1.jpg)|![](answers/answer_29_2.jpg)|
 
-答え >> [answers/answer_29.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_29.py)
+答え 
+- Python >> [answers/answer_29.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_29.py)
+- C++ >> [answers_cpp/answer_29.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers_cpp/answer_29.cpp)
 
 ## Q.30. アフィン変換(回転)
 
@@ -272,4 +282,8 @@ I'(x', y') = (Sum{i=-1:2}{j=-1:2} I(x+i,y+j) * wxi * wyj) / Sum{i=-1:2}{j=-1:2} 
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](answers/answer_30_1.jpg)|![](answers/answer_30_2.jpg)|
 
-答え >> [answers/answer_30_1.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_30_1.py) , [answers/answer_30_2.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_30_2.py)
+答え >> 
+
+答え 
+- Python >> [answers/answer_30_1.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_30_1.py) , [answers/answer_30_2.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_30_2.py)
+- C++ >> [answers_cpp/answer_30.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers_cpp/answer_30.cpp)

@@ -30,7 +30,9 @@
 |:---:|:---:|:---:|:---:|
 |![](imori.jpg)|![](answers/answer_31_1.jpg)|![](answers/answer_31_2.jpg)|![](answers/answer_31_3.jpg)|
 
-答え >> [answers/answer_31.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_31_40/answers/answer_31.py)
+答え 
+- Python >> [answers/answer_31.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_31_40/answers/answer_31.py)
+- C++ >> [answers_cpp/answer_31.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_31_40/answers_cpp/answer_31.cpp)
 
 ## Q.32. フーリエ変換
 
