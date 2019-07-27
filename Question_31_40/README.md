@@ -55,6 +55,7 @@ G(k,l) = Sum_{y=0:H-1, x=0:W-1} I(x,y) exp( -2pi * j * (kx/W + ly/H)) / sqrt(H *
 -->
 
 K = [0, W-1], l = [0, H-1], 入力画像を I として
+
 ![](assets/dft_equ.png)
 
 ここでは画像をグレースケール化してから二次元離散フーリエ変換を行え。
@@ -71,6 +72,7 @@ I(x,y) = Sum_{l=0:H-1, k=0:W-1} G(k,l) exp( 2pi * j * (kx/W + ly/H)) / sqrt(H * 
 ```
 -->
 x = [0, W-1], y = [0, H-1] として
+
 ![](assets/idft_equ.png)
 
 上が定義式ですがexp(j)は複素数の値をとってしまうので、実際にコードにするときはぜ下式のように絶対値を使います。
@@ -83,7 +85,9 @@ x = [0, W-1], y = [0, H-1] として
 |:---:|:---:|:---:|:---:|
 |![](imori.jpg)|![](imori_gray.jpg)|![](answers/answer_32.jpg)|![](answers/answer_32_ps.jpg)|
 
-答え >> [answers/answer_32.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_31_40/answers/answer_32.py)
+答え 
+- Python >> [answers/answer_32.py](answers/answer_32.py)
+- C++ >> [answers_cpp/answer_32.cpp](answers_cpp/answer_32.cpp)
 
 ## Q.33. フーリエ変換　ローパスフィルタ
 
