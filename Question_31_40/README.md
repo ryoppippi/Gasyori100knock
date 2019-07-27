@@ -31,8 +31,8 @@
 |![](imori.jpg)|![](answers/answer_31_1.jpg)|![](answers/answer_31_2.jpg)|![](answers/answer_31_3.jpg)|
 
 答え 
-- Python >> [answers/answer_31.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_31_40/answers/answer_31.py)
-- C++ >> [answers_cpp/answer_31.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_31_40/answers_cpp/answer_31.cpp)
+- Python >> [answers/answer_31.py](Question_31_40/answers/answer_31.py)
+- C++ >> [answers_cpp/answer_31.cpp](Question_31_40/answers_cpp/answer_31.cpp)
 
 ## Q.32. フーリエ変換
 
@@ -106,7 +106,7 @@ DFTによって得られた周波数成分は左上、右上、左下、右下�
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](imori_gray.jpg)|![](answers/answer_33.jpg)|
 
-答え >> [answers/answer_33.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_31_40/answers/answer_33.py)
+答え >> [answers/answer_33.py](Question_31_40/answers/answer_33.py)
 
 ## Q.34. フーリエ変換　ハイパスフィルタ
 
@@ -120,7 +120,7 @@ DFTによって得られた周波数成分は左上、右上、左下、右下�
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](imori_gray.jpg)|![](answers/answer_34.jpg)|
 
-答え >> [answers/answer_34.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_31_40/answers/answer_34.py)
+答え >> [answers/answer_34.py](Question_31_40/answers/answer_34.py)
 
 ## Q.35. フーリエ変換　バンドパスフィルタ
 
@@ -134,7 +134,7 @@ DFTによって得られた周波数成分は左上、右上、左下、右下�
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](imori_gray.jpg)|![](answers/answer_35.jpg)|
 
-答え >> [answers/answer_35.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_31_40/answers/answer_35.py)
+答え >> [answers/answer_35.py](Question_31_40/answers/answer_35.py)
 
 ## Q.36. JPEG圧縮 (Step.1)離散コサイン変換
 
@@ -162,7 +162,7 @@ f(x,y) = 2 / T * C(x)C(y) * Sum_{u=0:K-1} Sum_{v=0:K-1} F(u,v) cos((2x+1)u*pi/2T
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](imori_gray.jpg)|![](answers/answer_36.jpg)|
 
-答え >> [answers/answer_36.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_31_40/answers/answer_36.py)
+答え >> [answers/answer_36.py](Question_31_40/answers/answer_36.py)
 
 ## Q.37. PSNR
 
@@ -191,7 +191,7 @@ bitrate = 8 * K^2 / 8^2
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](imori_gray.jpg)|![](answers/answer_37.jpg)|
 
-答え >> [answers/answer_37.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_31_40/answers/answer_37.py)
+答え >> [answers/answer_37.py](Question_31_40/answers/answer_37.py)
 
 ## Q.38. JPEG圧縮 (Step.2)DCT+量子化
 
@@ -223,7 +223,7 @@ Q = np.array(((16, 11, 10, 16, 24, 40, 51, 61),
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](imori_gray.jpg)|![](answers/answer_38.jpg)|
 
-答え >> [answers/answer_38.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_31_40/answers/answer_38.py)
+答え >> [answers/answer_38.py](Question_31_40/answers/answer_38.py)
 
 ## Q.39. JPEG圧縮 (Step.3)YCbCr表色系
 
@@ -253,7 +253,7 @@ B = Y + (Cb - 128) * 1.7718
 |:---:|:---:|
 |![](imori.jpg)|![](answers/answer_39.jpg)|
 
-答え >> [answers/answer_39.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_31_40/answers/answer_39.py)
+答え >> [answers/answer_39.py](Question_31_40/answers/answer_39.py)
 
 ## Q.40. JPEG圧縮 (Step.4)YCbCr+DCT+量子化
 
@@ -286,5 +286,5 @@ Q2 = np.array(((17, 18, 24, 47, 99, 99, 99, 99),
 |:---:|:---:|
 |![](imori.jpg)|![](answers/answer_40.jpg)|
 
-答え >> [answers/answer_40.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_31_40/answers/answer_40.py)
+答え >> [answers/answer_40.py](Question_31_40/answers/answer_40.py)
 
