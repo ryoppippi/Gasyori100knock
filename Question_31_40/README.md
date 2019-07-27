@@ -52,7 +52,7 @@ K = 0:W, l = 0:H, 入力画像をI として
 G(k,l) = Sum_{y=0:H-1, x=0:W-1} I(x,y) exp( -2pi * j * (kx/W + ly/H)) / sqrt(H * W)
 ```
 
-![](assets/dft_equ.jpg)
+![](assets/dft_equ.png)
 
 ここでは画像をグレースケール化してから二次元離散フーリエ変換を行え。
 
@@ -66,7 +66,7 @@ x = 0:W, y = 0:H  として
 I(x,y) = Sum_{l=0:H-1, k=0:W-1} G(k,l) exp( 2pi * j * (kx/W + ly/H)) / sqrt(H * W)
 ```
 
-![](assets/idft_equ.jpg)
+![](assets/idft_equ.png)
 
 シンプルに全部for文で回すと128^4の計算になるので、時間がかかってしまいます。numpyをうまく活用すれば計算コストを減らすことができます。（解答は128^2まで減らしました。）
 
