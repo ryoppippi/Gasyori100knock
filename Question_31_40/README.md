@@ -106,7 +106,9 @@ DFTによって得られた周波数成分は左上、右上、左下、右下�
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](imori_gray.jpg)|![](answers/answer_33.jpg)|
 
-答え >> [answers/answer_33.py](Question_31_40/answers/answer_33.py)
+答え 
+- Python >> [answers/answer_33.py](Question_31_40/answers/answer_33.py)
+- C++ >> [answers_cpp/answer_33.cpp](Question_31_40/answers_cpp/answer_33.cpp)
 
 ## Q.34. フーリエ変換　ハイパスフィルタ
 
@@ -120,7 +122,9 @@ DFTによって得られた周波数成分は左上、右上、左下、右下�
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](imori_gray.jpg)|![](answers/answer_34.jpg)|
 
-答え >> [answers/answer_34.py](Question_31_40/answers/answer_34.py)
+答え 
+- Python >> [answers/answer_34.py](Question_31_40/answers/answer_34.py)
+- C++ >> [answers_cpp/answer_34.cpp](Question_31_40/answers_cpp/answer_34.cpp)
 
 ## Q.35. フーリエ変換　バンドパスフィルタ
 
@@ -134,7 +138,9 @@ DFTによって得られた周波数成分は左上、右上、左下、右下�
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](imori_gray.jpg)|![](answers/answer_35.jpg)|
 
-答え >> [answers/answer_35.py](Question_31_40/answers/answer_35.py)
+答え 
+- Python >> [answers/answer_35.py](Question_31_40/answers/answer_35.py)
+- C++ >> [answers_cpp/answer_35.cpp](Question_31_40/answers_cpp/answer_35.cpp)
 
 ## Q.36. JPEG圧縮 (Step.1)離散コサイン変換
 
