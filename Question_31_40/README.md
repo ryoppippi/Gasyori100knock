@@ -148,18 +148,26 @@ DFTによって得られた周波数成分は左上、右上、左下、右下�
 
 離散コサイン変換(DCT: Discrete Cosine Transformation)とは、次式で定義される周波数変換の一つである。
 
+![](assets/dct_equ.png)
+
+<!--
 ```bash
 T = 8
 F(u,v) = 2 / T * C(u)C(v) * Sum_{y=0:T-1} Sum_{x=0:T-1} f(x,y) cos((2x+1)u*pi/2T) cos((2y+1)v*pi/2T)
 ```
+-->
 
 逆離散コサイン変換(IDCT: Inverse Discrete Cosine Transformation)とは離散コサイン変換の逆（復号）であり、次式で定義される。
 
+![](assets/idct_equ.png)
+
+<!--
 ```bash
 T = 8
 K = 8
 f(x,y) = 2 / T * C(x)C(y) * Sum_{u=0:K-1} Sum_{v=0:K-1} F(u,v) cos((2x+1)u*pi/2T) cos((2y+1)v*pi/2T)
 ```
+-->
 
 ここでは画像を8x8ずつの領域に分割して、各領域で以上のDCT, IDCTを繰り返すことで、jpeg符号に応用される。
 今回も同様に8x8の領域に分割して、DCT, IDCTを行え。
@@ -168,7 +176,9 @@ f(x,y) = 2 / T * C(x)C(y) * Sum_{u=0:K-1} Sum_{v=0:K-1} F(u,v) cos((2x+1)u*pi/2T
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](imori_gray.jpg)|![](answers/answer_36.jpg)|
 
-答え >> [answers/answer_36.py](Question_31_40/answers/answer_36.py)
+答え 
+- Python >> [answers/answer_36.py](Question_31_40/answers/answer_36.py)
+- C++ >> [answers_cpp/answer_36.cpp](Question_31_40/answers_cpp/answer_36.cpp)
 
 ## Q.37. PSNR
 
@@ -181,11 +191,14 @@ PSNRが大きいほど、画像が劣化していないことを示し、次式�
 MAXは取りうる値の最大値で[0,255]の表示なら MAX=255　となる。
 また、MSEはMean Squared Error(平均二乗誤差)と呼ばれ、二つの画像の差分の二乗の平均値を示す。
 
+![](assets/psnr_mse_equ.png)
 
+<!--
 ```bash
 PSNR = 10 * log10(MAX^2 / MSE)
 MSE = Sum_{y=0:H-1} Sum_{x=0:W-1} (I1(x,y) - I2(x,y))^2 / (HW)
 ```
+-->
 
 ビットレートとは8x8でDCTを行い、IDCTでKxKの係数までを用いた時に次式で定義される。
 
@@ -197,7 +210,9 @@ bitrate = 8 * K^2 / 8^2
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](imori_gray.jpg)|![](answers/answer_37.jpg)|
 
-答え >> [answers/answer_37.py](Question_31_40/answers/answer_37.py)
+答え 
+- Python >> [answers/answer_37.py](Question_31_40/answers/answer_37.py)
+- C++ >> [answers_cpp/answer_37.cpp](Question_31_40/answers_cpp/answer_37.cpp)
 
 ## Q.38. JPEG圧縮 (Step.2)DCT+量子化
 
@@ -229,7 +244,9 @@ Q = np.array(((16, 11, 10, 16, 24, 40, 51, 61),
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](imori_gray.jpg)|![](answers/answer_38.jpg)|
 
-答え >> [answers/answer_38.py](Question_31_40/answers/answer_38.py)
+答え 
+- Python >> [answers/answer_38.py](Question_31_40/answers/answer_38.py)
+- C++ >> [answers_cpp/answer_38.cpp](Question_31_40/answers_cpp/answer_38.cpp)
 
 ## Q.39. JPEG圧縮 (Step.3)YCbCr表色系
 
