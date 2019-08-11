@@ -191,7 +191,7 @@ PSNRが大きいほど、画像が劣化していないことを示し、次式�
 MAXは取りうる値の最大値で[0,255]の表示なら MAX=255　となる。
 また、MSEはMean Squared Error(平均二乗誤差)と呼ばれ、二つの画像の差分の二乗の平均値を示す。
 
-![](assets/psnr_mse_equ.png)
+<img src="assets/psnr_mse_equ.png" width="1000">
 
 <!--
 ```bash
