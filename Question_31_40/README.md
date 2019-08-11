@@ -56,7 +56,7 @@ G(k,l) = Sum_{y=0:H-1, x=0:W-1} I(x,y) exp( -2pi * j * (kx/W + ly/H)) / sqrt(H *
 
 K = [0, W-1], l = [0, H-1], 入力画像を I として
 
-<img src="assets/dft_equ.png" width="600">
+<img src="assets/dft_equ.png" width="500">
 
 ここでは画像をグレースケール化してから二次元離散フーリエ変換を行え。
 
@@ -73,11 +73,11 @@ I(x,y) = Sum_{l=0:H-1, k=0:W-1} G(k,l) exp( 2pi * j * (kx/W + ly/H)) / sqrt(H * 
 -->
 x = [0, W-1], y = [0, H-1] として
 
-<img src="assets/idft_equ.png" width="600" >
+<img src="assets/idft_equ.png" width="500" >
 
 上が定義式ですがexp(j)は複素数の値をとってしまうので、実際にコードにするときはぜ下式のように絶対値を使います。
 
-<img src="assets/idft_equ2.png" width="600" >
+<img src="assets/idft_equ2.png" width="500" >
 
 シンプルに全部for文で回すと128^4の計算になるので、時間がかかってしまいます。numpyをうまく活用すれば計算コストを減らすことができます。（解答は128^2まで減らしました。）
 
