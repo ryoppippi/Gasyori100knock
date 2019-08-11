@@ -73,11 +73,11 @@ I(x,y) = Sum_{l=0:H-1, k=0:W-1} G(k,l) exp( 2pi * j * (kx/W + ly/H)) / sqrt(H * 
 -->
 x = [0, W-1], y = [0, H-1] として
 
-![](assets/idft_equ.png)
+<img src="assets/idft_equ.png" width="800" >
 
 上が定義式ですがexp(j)は複素数の値をとってしまうので、実際にコードにするときはぜ下式のように絶対値を使います。
 
-![](assets/idft_equ2.png)
+<img src="assets/idft_equ2.png" width="800" >
 
 シンプルに全部for文で回すと128^4の計算になるので、時間がかかってしまいます。numpyをうまく活用すれば計算コストを減らすことができます。（解答は128^2まで減らしました。）
 
@@ -148,7 +148,7 @@ DFTによって得られた周波数成分は左上、右上、左下、右下�
 
 離散コサイン変換(DCT: Discrete Cosine Transformation)とは、次式で定義される周波数変換の一つである。
 
-![](assets/dct_equ.png)
+<img src="assets/dct_equ.png" width="800" >
 
 <!--
 ```bash
@@ -159,7 +159,7 @@ F(u,v) = 2 / T * C(u)C(v) * Sum_{y=0:T-1} Sum_{x=0:T-1} f(x,y) cos((2x+1)u*pi/2T
 
 逆離散コサイン変換(IDCT: Inverse Discrete Cosine Transformation)とは離散コサイン変換の逆（復号）であり、次式で定義される。
 
-![](assets/idct_equ.png)
+<img src="assets/idct_equ.png" width="800">
 
 <!--
 ```bash
@@ -191,7 +191,7 @@ PSNRが大きいほど、画像が劣化していないことを示し、次式�
 MAXは取りうる値の最大値で[0,255]の表示なら MAX=255　となる。
 また、MSEはMean Squared Error(平均二乗誤差)と呼ばれ、二つの画像の差分の二乗の平均値を示す。
 
-<img src="assets/psnr_mse_equ.png" width="1000">
+<img src="assets/psnr_mse_equ.png" width="800">
 
 <!--
 ```bash
