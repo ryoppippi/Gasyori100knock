@@ -56,7 +56,7 @@ G(k,l) = Sum_{y=0:H-1, x=0:W-1} I(x,y) exp( -2pi * j * (kx/W + ly/H)) / sqrt(H *
 
 K = [0, W-1], l = [0, H-1], 入力画像を I として
 
-![](assets/dft_equ.png)
+<img src="assets/dft_equ.png" width="600">
 
 ここでは画像をグレースケール化してから二次元離散フーリエ変換を行え。
 
@@ -191,7 +191,7 @@ PSNRが大きいほど、画像が劣化していないことを示し、次式�
 MAXは取りうる値の最大値で[0,255]の表示なら MAX=255　となる。
 また、MSEはMean Squared Error(平均二乗誤差)と呼ばれ、二つの画像の差分の二乗の平均値を示す。
 
-<img src="assets/psnr_mse_equ.png" width="600">
+<img src="assets/psnr_mse_equ.png" width="500">
 
 <!--
 ```bash
