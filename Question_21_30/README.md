@@ -136,7 +136,7 @@ Iout = (1/c * Iin) ^ (1/g)
 次式で補間される。
 I' ... 拡大後の画像、 I ... 拡大前の画像、a ... 拡大率、[ ] ... 四捨五入
 
-<img src="assets/nn_fig.png" width="700">
+<img src="assets/nni_fig.png" width="700">
 
 <!--
 ```bash
