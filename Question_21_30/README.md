@@ -258,7 +258,7 @@ I'(x', y') = (Sum{i=-1:2}{j=-1:2} I(x+i,y+j) * wxi * wyj) / Sum{i=-1:2}{j=-1:2} 
 元画像を(x,y)、変換後の画像を(x',y')とする。
 画像の拡大縮小は、次式で表される。
 
-<img src="affine_equ1.png" width="200">
+<img src="assets/affine_equ1.png" width="200">
 
 <!--
 ```bash
@@ -269,7 +269,7 @@ I'(x', y') = (Sum{i=-1:2}{j=-1:2} I(x+i,y+j) * wxi * wyj) / Sum{i=-1:2}{j=-1:2} 
 
 一方、平行移動は次式となる。
 
-<img src="affine_equ2.png" width="200">
+<img src="assets/affine_equ2.png" width="200">
 
 <!--
 ```bash
@@ -280,7 +280,7 @@ I'(x', y') = (Sum{i=-1:2}{j=-1:2} I(x+i,y+j) * wxi * wyj) / Sum{i=-1:2}{j=-1:2} 
 
 以上を一つの式にまとめると、次式になり、これがアフィン変換である。
 
-<img src="affine_equ3.png" width="200">
+<img src="assets/affine_equ3.png" width="200">
 
 <!--
 ```bash
@@ -292,11 +292,11 @@ I'(x', y') = (Sum{i=-1:2}{j=-1:2} I(x+i,y+j) * wxi * wyj) / Sum{i=-1:2}{j=-1:2} 
 
 しかし実装する時は、元画像に対して１ピクセルずつ行うと、処理後の画像で値が割り当てられない可能性がでてきてしまう。よって、処理後画像の各ピクセルに対してAffine変換の逆変換を行い、値をあ割り当てる元画像の座標を取得する必要がある。Affine変換の逆操作は次式となる。
 
-<img src="affine_equ6.png" width="300">
+<img src="assets/affine_equ6.png" width="300">
 
-平行移動では次式を用いる。
+今回の平行移動では次式を用いる。tx, tyが平行移動のピクセルの移動距離となる。
 
-<img src="affine_equ4.png" width="200">
+<img src="assets/affine_equ4.png" width="200">
 
 <!--
 ```bash
@@ -337,7 +337,7 @@ I'(x', y') = (Sum{i=-1:2}{j=-1:2} I(x+i,y+j) * wxi * wyj) / Sum{i=-1:2}{j=-1:2} 
 
 アフィン変換において、反時計方向にA度回転させる時は、次式となる。
 
-<img src="affine_equ5.png" width="200">
+<img src="assets/affine_equ5.png" width="200">
 
 <!--
 ```bash
