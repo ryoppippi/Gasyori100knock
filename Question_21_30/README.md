@@ -15,11 +15,15 @@
 このヒストグラム正規化は**濃度階調変換(gray-scale transformation)** と呼ばれ、[c,d]の画素値を持つ画像を[a,b]のレンジに変換する場合は次式で実現できる。
 今回は*imori_dark.jpg*を[0, 255]のレンジにそれぞれ変換する。
 
+<img src="assets/hist_norm_equ.png" width="700">
+
+<!--
 ```bash
 xout = {  a                         (xin < c)
          (b-a)/(d-c) * (xin-c) + a  (c <= xin <= d)
           b                         (d < xin)
 ```
+-->
 
 |入力 (imori_dark.jpg)|出力 (answers/answer_21_1.jpg) |ヒストグラム(answers/answer_21_2.png)|
 |:---:|:---:|:---:|
@@ -37,9 +41,13 @@ xout = {  a                         (xin < c)
 
 平均値m、標準偏差s、のヒストグラムを平均値m0, 標準偏差s0に変更するには、次式によって変換する。
 
+<img src="assets/hist_mani_equ.png" width="700">
+
+<!--
 ```bash
 xout = s0 / s * (xin - m) + m0
 ```
+-->
 
 |入力 (imori_dark.jpg)|出力 (answers/answer_22_1.jpg) |ヒストグラム(answers/answer_22_2.png)|
 |:---:|:---:|:---:|
@@ -60,9 +68,13 @@ xout = s0 / s * (xin - m) + m0
 これは次式で定義される。
 ただし、S ... 画素値の総数、Zmax ... 画素値の最大値、h(z) ... 濃度zの度数
 
+<img src="assets/hist_equ_equ.png" width="700">
+
+<!--
 ```bash
 Z' = Zmax / S * Sum{i=0:z} h(z)
 ```
+-->
 
 |入力 (imori.jpg)|出力 (answers/answer_23_1.jpg) |ヒストグラム(answers/answer_23_2.png)|
 |:---:|:---:|:---:|
@@ -86,15 +98,23 @@ Z' = Zmax / S * Sum{i=0:z} h(z)
 ただしxは[0,1]に正規化されている。
 c ... 定数、g ... ガンマ特性(通常は2.2)
 
+<img src="assets/gamma_equ1.png" width="300">
+
+<!--
 ```bash
 x' = c * Iin ^ g
 ```
+-->
 
 そこで、ガンマ補正は次式で行われる。
 
+<img src="assets/gamma_equ2.png" width="300">
+
+<!--
 ```bash
 Iout = (1/c * Iin) ^ (1/g)
 ```
+-->
 
 ![](question_24_1.jpg) ![](question_24_2.jpg)
 
@@ -116,9 +136,14 @@ Iout = (1/c * Iin) ^ (1/g)
 次式で補間される。
 I' ... 拡大後の画像、 I ... 拡大前の画像、a ... 拡大率、[ ] ... 四捨五入
 
+<img src="assets/nn_fig.png" width="700">
+
+<!--
 ```bash
 I'(x,y) = I([x/a], [y/a])
 ```
+-->
+
 |入力 (imori.jpg)|出力 (answers/answer_25.jpg)|
 |:---:|:---:|
 |![](imori.jpg)|![](answers/answer_25.jpg)|
@@ -137,11 +162,15 @@ Bi-linear補間とは周辺の４画素に距離に応じた重みをつける�
 1. 拡大画像の座標(x', y')を拡大率aで割り、floor(x'/a, y'/a)を求める。
 2. 元画像の(x'/a, y'/a)の周囲4画素、I(x,y), I(x+1,y), I(x,y+1), I(x+1, y+1)を求める
 
+<img src="assets/bli_fig.png" width="700">
+
+<!--
 ```bash
 I(x,y)    I(x+1,y) 
      * (x'/a,y'/a)
 I(x,y+1)  I(x+1,y+1)
 ```
+-->
 
 3. それぞれの画素と(x'/a, y'/a)との距離dを求め、重み付けする。 w = d / Sum d
 4. 次式によって拡大画像の画素(x',y')を求める。 
@@ -164,35 +193,51 @@ Bi-cubic補間により画像を1.5倍に拡大せよ。
 
 Bi-cubic補間とはBi-linear補間の拡張であり、周辺の16画素から補間を行う。
 
+<img src="assets/bci_fig.png" width="700">
+
+<!--
 ```bash
 I(x-1,y-1)  I(x,y-1)  I(x+1,y-1)  I(x+2,y-1)
 I(x-1,y)    I(x,y)    I(x+1,y)    I(x+2,y)
 I(x-1,y+1)  I(x,y+1)  I(x+1,y+1)  I(x+2,y+1)
 I(x-1,y+2)  I(x,y+2)  I(x+1,y+2)  I(x+2,y+2)
 ```
+-->
 
 それぞれの画素との距離は次式の様に決定される。
 
+<img src="assets/bci_equ1.png" width="700">
+
+<!--
 ```bash
 dx1 = x'/a - (x-1) , dx2 = x'/a - x , dx3 = (x+1) - x'/a , dx4 = (x+2) - x'/a
 dy1 = y'/a - (y-1) , dy2 = y'/a - y , dy3 = (y+1) - y'/a , dy4 = (y+2) - y'/a
 ```
+-->
 
 重みは距離によって次の関数により決定される。
 a は多くの場合-1となる。
 
+<img src="assets/bci_equ2.png" width="700">
+
+<!--
 ```bash
 h(t) = { (a+2)|t|^3 - (a+3)|t|^2 + 1    (when |t|<=1)
          a|t|^3 - 5a|t|^2 + 8a|t| - 4a  (when 1<|t|<=2)
          0                              (when 2<|t|) 
 ```
+-->
 
 これら画素と重みを用いて、次式で拡大画像の画素が計算される。
 それぞれの画素と重みを掛けた和を重みの和で割る。
 
+<img src="assets/bci_equ3.png" width="700">
+
+<!--
 ```bash
 I'(x', y') = (Sum{i=-1:2}{j=-1:2} I(x+i,y+j) * wxi * wyj) / Sum{i=-1:2}{j=-1:2} wxi * wyj
 ```
+-->
 
 |入力 (imori.jpg)|出力 (answers/answer_27.jpg)|
 |:---:|:---:|
@@ -267,7 +312,7 @@ I'(x', y') = (Sum{i=-1:2}{j=-1:2} I(x+i,y+j) * wxi * wyj) / Sum{i=-1:2}{j=-1:2} 
 
 (1)アフィン変換を用いて、反時計方向に30度回転させよ。
 
-(2) アフィン変換を用いて、反時計方向に30度回転した画像全体を見れる画像を作成せよ。
+(2) アフィン変換を用いて、反時計方向に30度回転した画像で中心座標を固定することで、なるべく黒い領域がなくなるように画像を作成せよ。
 （ただし、単純なアフィン変換を行うと画像が切れてしまうので、工夫を要する。）
 
 アフィン変換において、反時計方向にA度回転させる時は、次式となる。
