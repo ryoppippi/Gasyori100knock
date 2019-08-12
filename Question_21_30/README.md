@@ -175,6 +175,9 @@ I(x,y+1)  I(x+1,y+1)
 3. それぞれの画素と(x'/a, y'/a)との距離dを求め、重み付けする。 w = d / Sum d
 4. 次式によって拡大画像の画素(x',y')を求める。 
 dx = x'/a - x , dy = y'/a - y
+
+<img src="assets/bli_equ1.png" width="400">
+
 ```bash
 I'(x',y') = (1-dx)(1-dy)I(x,y) + dx(1-dy)I(x+1,y) + (1-dx)dyI(x,y+1) + dxdyI(x+1,y+1)
 ```
