@@ -2,33 +2,13 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Read image
-img = cv2.imread("imori.jpg").astype(np.float32)
-H, W, C = img.shape
-
-# Gray scale
-gray = 0.2126 * img[..., 2] + 0.7152 * img[..., 1] + 0.0722 * img[..., 0]
-
-# DCT
+# DCT hyoer-parameter
 T = 8
-K = 8
-X = np.zeros((H, W), dtype=np.float64)
-#indx = np.tile(np.arange(T), (T, 1))
-#indy = np.arange(T).repeat(T).reshape(T, -1)
-#dct = np.ones_like(indx, dtype=np.float32)
-#dct[:, 0] /= np.sqrt(2)
-#dct[0] /= np.sqrt(2)
+K = 4
+channel = 3
 
-Q = np.array(((16, 11, 10, 16, 24, 40, 51, 61),
-              (12, 12, 14, 19, 26, 58, 60, 55),
-              (14, 13, 16, 24, 40, 57, 69, 56),
-              (14, 17, 22, 29, 51, 87, 80, 62),
-              (18, 22, 37, 56, 68, 109, 103, 77),
-              (24, 35, 55, 64, 81, 104, 113, 92),
-              (49, 64, 78, 87, 103, 121, 120, 101),
-              (72, 92, 95, 98, 112, 100, 103, 99)), dtype=np.float32)
-
-def w(x, y, u, v):
+# DCT weight
+def DCT_w(x, y, u, v):
     cu = 1.
     cv = 1.
     if u == 0:
@@ -37,51 +17,106 @@ def w(x, y, u, v):
         cv /= np.sqrt(2)
     theta = np.pi / (2 * T)
     return (( 2 * cu * cv / T) * np.cos((2*x+1)*u*theta) * np.cos((2*y+1)*v*theta))
-    
-for yi in range(0, H, T):
-    for xi in range(0, W, T):
-        for v in range(T):
-            for u in range(T):
-                for y in range(T):
-                    for x in range(T):
-                        X[v+yi, u+xi] += gray[y+yi, x+xi] * w(x,y,u,v)
-        X[yi:yi+T, xi:xi+T] = np.round(X[yi:yi+T, xi:xi+T] / Q) * Q
-                
-                #_x = indx + xi * T
-                #_y = indy + yi * T
-                #_u = u + xi * T
-                #_v = v + yi * T
-                #X[_v, _u] = np.sum(C * gray[_y, _x] * np.cos((2*indx+1)*u*np.pi/(2*T)) * np.cos((2*indy+1)*v*np.pi/(2*T)))
+
+# DCT
+def dct(img):
+    H, W, _ = img.shape
+
+    F = np.zeros((H, W, channel), dtype=np.float32)
+
+    for c in range(channel):
+        for yi in range(0, H, T):
+            for xi in range(0, W, T):
+                for v in range(T):
+                    for u in range(T):
+                        for y in range(T):
+                            for x in range(T):
+                                F[v+yi, u+xi, c] += img[y+yi, x+xi, c] * DCT_w(x,y,u,v)
+
+    return F
+
 
 # IDCT
-out = np.zeros((H, W), dtype=np.float64)
+def idct(F):
+    H, W, _ = F.shape
 
-for yi in range(0, H, T):
-    for xi in range(0, W, T):
-        for y in range(T):
-            for x in range(T):
-                for v in range(K):
-                    for u in range(K):
-                        out[y+yi, x+xi] += X[v+yi, u+xi] * w(x,y,u,v)
-                """
-                _u = indx + xi * T
-                _v = indy + yi * T
-                _x = x + yi * T
-                _y = y + xi * T
-                out[_y, _x] = np.sum(C * X[_v, _u] * np.cos((2*x+1)*indx*np.pi/(2*T)) * np.cos((2*y+1)*indy*np.pi/(2*T))) * 4. / (T ** 2)
-                """
-out[out>255] = 255
-out = np.floor(out).astype(np.uint8)
+    out = np.zeros((H, W, channel), dtype=np.float32)
+
+    for c in range(channel):
+        for yi in range(0, H, T):
+            for xi in range(0, W, T):
+                for y in range(T):
+                    for x in range(T):
+                        for v in range(K):
+                            for u in range(K):
+                                out[y+yi, x+xi, c] += F[v+yi, u+xi, c] * DCT_w(x,y,u,v)
+
+    out = np.clip(out, 0, 255)
+    out = np.round(out).astype(np.uint8)
+
+    return out
+
+# Quantization
+def quantization(F):
+    H, W, _ = F.shape
+
+    Q = np.array(((16, 11, 10, 16, 24, 40, 51, 61),
+                (12, 12, 14, 19, 26, 58, 60, 55),
+                (14, 13, 16, 24, 40, 57, 69, 56),
+                (14, 17, 22, 29, 51, 87, 80, 62),
+                (18, 22, 37, 56, 68, 109, 103, 77),
+                (24, 35, 55, 64, 81, 104, 113, 92),
+                (49, 64, 78, 87, 103, 121, 120, 101),
+                (72, 92, 95, 98, 112, 100, 103, 99)), dtype=np.float32)
+
+    for ys in range(0, H, T):
+        for xs in range(0, W, T):
+            for c in range(channel):
+                F[ys: ys + T, xs: xs + T, c] =  np.round(F[ys: ys + T, xs: xs + T, c] / Q) * Q
+
+    return F
+
+
 
 # MSE
-v_max = 255.
-mse = np.sum(np.power(np.abs(gray.astype(np.float32) - out.astype(np.float32)), 2)) / (H * W)
-psnr = 10 * np.log10(v_max ** 2 / mse)
+def MSE(img1, img2):
+    H, W, _ = img1.shape
+    mse = np.sum((img1 - img2) ** 2) / (H * W * channel)
+    return mse
 
-print("PSNR >>", psnr)
+# PSNR
+def PSNR(mse, vmax=255):
+    return 10 * np.log10(vmax * vmax / mse)
 
-bitrate = 1. * T * K ** 2 / (T ** 2)
-print("bitrate >>", bitrate)
+# bitrate
+def BITRATE():
+    return 1. * T * K * K / T / T
+
+
+# Read image
+img = cv2.imread("imori.jpg").astype(np.float32)
+
+# DCT
+F = dct(img)
+
+# quantization
+F = quantization(F)
+
+# IDCT
+out = idct(F)
+
+# MSE
+mse = MSE(img, out)
+
+# PSNR
+psnr = PSNR(mse)
+
+# bitrate
+bitrate = BITRATE()
+
+print("MSE:", mse)
+print("PSNR:", psnr)
+print("bitrate:", bitrate)
 
 # Save result
 cv2.imshow("result", out)

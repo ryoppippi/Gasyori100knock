@@ -2,45 +2,41 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Read image
-img = cv2.imread("imori.jpg").astype(np.float32)
-H, W, C = img.shape
-
-# RGB > YCbCr
-Y = 0.2990 * img[..., 2] + 0.5870 * img[..., 1] + 0.1140 * img[..., 0]
-Cb = -0.1687 * img[..., 2] - 0.3313 * img[..., 1] + 0.5 * img[..., 0] + 128.
-Cr = 0.5 * img[..., 2] - 0.4187 * img[..., 1] - 0.0813 * img[..., 0] + 128.
-
-YCC = np.zeros_like(img, dtype=np.float32)
-YCC[..., 0] = Y
-YCC[..., 1] = Cb
-YCC[..., 2] = Cr
-
-
-# DCT
+# DCT hyoer-parameter
 T = 8
 K = 8
-X = np.zeros((H, W, C), dtype=np.float64)
+channel = 3
 
-Q1 = np.array(((16, 11, 10, 16, 24, 40, 51, 61),
-               (12, 12, 14, 19, 26, 58, 60, 55),
-               (14, 13, 16, 24, 40, 57, 69, 56),
-               (14, 17, 22, 29, 51, 87, 80, 62),
-               (18, 22, 37, 56, 68, 109, 103, 77),
-               (24, 35, 55, 64, 81, 104, 113, 92),
-               (49, 64, 78, 87, 103, 121, 120, 101),
-               (72, 92, 95, 98, 112, 100, 103, 99)), dtype=np.float32)
 
-Q2 = np.array(((17, 18, 24, 47, 99, 99, 99, 99),
-               (18, 21, 26, 66, 99, 99, 99, 99),
-               (24, 26, 56, 99, 99, 99, 99, 99),
-               (47, 66, 99, 99, 99, 99, 99, 99),
-               (99, 99, 99, 99, 99, 99, 99, 99),
-               (99, 99, 99, 99, 99, 99, 99, 99),
-               (99, 99, 99, 99, 99, 99, 99, 99),
-               (99, 99, 99, 99, 99, 99, 99, 99)), dtype=np.float32)
+# BGR -> Y Cb Cr
+def BGR2YCbCr(img):
+  H, W, _ = img.shape
 
-def w(x, y, u, v):
+  ycbcr = np.zeros([H, W, 3], dtype=np.float32)
+
+  ycbcr[..., 0] = 0.2990 * img[..., 2] + 0.5870 * img[..., 1] + 0.1140 * img[..., 0]
+  ycbcr[..., 1] = -0.1687 * img[..., 2] - 0.3313 * img[..., 1] + 0.5 * img[..., 0] + 128.
+  ycbcr[..., 2] = 0.5 * img[..., 2] - 0.4187 * img[..., 1] - 0.0813 * img[..., 0] + 128.
+
+  return ycbcr
+
+# Y Cb Cr -> BGR
+def YCbCr2BGR(ycbcr):
+  H, W, _ = ycbcr.shape
+
+  out = np.zeros([H, W, channel], dtype=np.float32)
+  out[..., 2] = ycbcr[..., 0] + (ycbcr[..., 2] - 128.) * 1.4020
+  out[..., 1] = ycbcr[..., 0] - (ycbcr[..., 1] - 128.) * 0.3441 - (ycbcr[..., 2] - 128.) * 0.7139
+  out[..., 0] = ycbcr[..., 0] + (ycbcr[..., 1] - 128.) * 1.7718
+
+  out = np.clip(out, 0, 255)
+  out = out.astype(np.uint8)
+
+  return out
+
+
+# DCT weight
+def DCT_w(x, y, u, v):
     cu = 1.
     cv = 1.
     if u == 0:
@@ -49,51 +45,119 @@ def w(x, y, u, v):
         cv /= np.sqrt(2)
     theta = np.pi / (2 * T)
     return (( 2 * cu * cv / T) * np.cos((2*x+1)*u*theta) * np.cos((2*y+1)*v*theta))
-    
-for yi in range(0, H, T):
-    for xi in range(0, W, T):
-        for v in range(T):
-            for u in range(T):
-                for y in range(T):
-                    for x in range(T):
-                        for c in range(C):
-                            X[v+yi, u+xi, c] += YCC[y+yi, x+xi, c] * w(x,y,u,v)
-                            
-        X[yi:yi+T, xi:xi+T, 0] = np.round(X[yi:yi+T, xi:xi+T, 0] / Q1) * Q1
-        X[yi:yi+T, xi:xi+T, 1] = np.round(X[yi:yi+T, xi:xi+T, 1] / Q2) * Q2
-        X[yi:yi+T, xi:xi+T, 2] = np.round(X[yi:yi+T, xi:xi+T, 2] / Q2) * Q2
-                
+
+# DCT
+def dct(img):
+    H, W, _ = img.shape
+
+    F = np.zeros((H, W, channel), dtype=np.float32)
+
+    for c in range(channel):
+        for yi in range(0, H, T):
+            for xi in range(0, W, T):
+                for v in range(T):
+                    for u in range(T):
+                        for y in range(T):
+                            for x in range(T):
+                                F[v+yi, u+xi, c] += img[y+yi, x+xi, c] * DCT_w(x,y,u,v)
+
+    return F
+
 
 # IDCT
-IYCC = np.zeros((H, W, 3), dtype=np.float64)
+def idct(F):
+    H, W, _ = F.shape
 
-for yi in range(0, H, T):
-    for xi in range(0, W, T):
-        for y in range(T):
-            for x in range(T):
-                for v in range(K):
-                    for u in range(K):
-                        IYCC[y+yi, x+xi] += X[v+yi, u+xi] * w(x,y,u,v)
+    out = np.zeros((H, W, channel), dtype=np.float32)
+
+    for c in range(channel):
+        for yi in range(0, H, T):
+            for xi in range(0, W, T):
+                for y in range(T):
+                    for x in range(T):
+                        for v in range(K):
+                            for u in range(K):
+                                out[y+yi, x+xi, c] += F[v+yi, u+xi, c] * DCT_w(x,y,u,v)
+
+    out = np.clip(out, 0, 255)
+    out = np.round(out).astype(np.uint8)
+
+    return out
+
+# Quantization
+def quantization(F):
+    H, W, _ = F.shape
+
+    Q = np.array(((16, 11, 10, 16, 24, 40, 51, 61),
+                (12, 12, 14, 19, 26, 58, 60, 55),
+                (14, 13, 16, 24, 40, 57, 69, 56),
+                (14, 17, 22, 29, 51, 87, 80, 62),
+                (18, 22, 37, 56, 68, 109, 103, 77),
+                (24, 35, 55, 64, 81, 104, 113, 92),
+                (49, 64, 78, 87, 103, 121, 120, 101),
+                (72, 92, 95, 98, 112, 100, 103, 99)), dtype=np.float32)
+
+    for ys in range(0, H, T):
+        for xs in range(0, W, T):
+            for c in range(channel):
+                F[ys: ys + T, xs: xs + T, c] =  np.round(F[ys: ys + T, xs: xs + T, c] / Q) * Q
+
+    return F
 
 
-# YCbCr > RGB
-out = np.zeros_like(img, dtype=np.float32)
-out[..., 2] = IYCC[..., 0] + (IYCC[..., 2] - 128.) * 1.4020
-out[..., 1] = IYCC[..., 0] - (IYCC[..., 1] - 128.) * 0.3441 - (IYCC[..., 2] - 128.) * 0.7139
-out[..., 0] = IYCC[..., 0] + (IYCC[..., 1] - 128.) * 1.7718
+# JPEG without Hufman coding
+def JPEG(img):
+    # BGR -> Y Cb Cr
+    ycbcr = BGR2YCbCr(img)
 
-out[out>255] = 255
-out = out.astype(np.uint8)
-                        
+    # DCT
+    F = dct(ycbcr)
+
+    # quantization
+    F = quantization(F)
+
+    # IDCT
+    ycbcr = idct(F)
+
+    # Y Cb Cr -> BGR
+    out = YCbCr2BGR(ycbcr)
+
+    return out
+
+
 # MSE
-v_max = 255.
-mse = np.sum(np.power(np.abs(img.astype(np.float32) - out.astype(np.float32)), 2)) / (H * W * C)
-psnr = 10 * np.log10(v_max ** 2 / mse)
+def MSE(img1, img2):
+    H, W, _ = img1.shape
+    mse = np.sum((img1 - img2) ** 2) / (H * W * channel)
+    return mse
 
-print("PSNR >>", psnr)
+# PSNR
+def PSNR(mse, vmax=255):
+    return 10 * np.log10(vmax * vmax / mse)
 
-bitrate = 1. * T * K ** 2 / (T ** 2)
-print("bitrate >>", bitrate)
+# bitrate
+def BITRATE():
+    return 1. * T * K * K / T / T
+
+
+# Read image
+img = cv2.imread("imori.jpg").astype(np.float32)
+
+# JPEG
+out = JPEG(img)
+
+# MSE
+mse = MSE(img, out)
+
+# PSNR
+psnr = PSNR(mse)
+
+# bitrate
+bitrate = BITRATE()
+
+print("MSE:", mse)
+print("PSNR:", psnr)
+print("bitrate:", bitrate)
 
 # Save result
 cv2.imshow("result", out)
