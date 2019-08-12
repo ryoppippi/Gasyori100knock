@@ -15,7 +15,7 @@
 このヒストグラム正規化は**濃度階調変換(gray-scale transformation)** と呼ばれ、[c,d]の画素値を持つ画像を[a,b]のレンジに変換する場合は次式で実現できる。
 今回は*imori_dark.jpg*を[0, 255]のレンジにそれぞれ変換する。
 
-<img src="assets/hist_norm_equ.png" width="700">
+<img src="assets/hist_norm_equ.png" width="300">
 
 <!--
 ```bash
@@ -41,7 +41,7 @@ xout = {  a                         (xin < c)
 
 平均値m、標準偏差s、のヒストグラムを平均値m0, 標準偏差s0に変更するには、次式によって変換する。
 
-<img src="assets/hist_mani_equ.png" width="700">
+<img src="assets/hist_mani_equ.png" width="100">
 
 <!--
 ```bash
@@ -68,7 +68,7 @@ xout = s0 / s * (xin - m) + m0
 これは次式で定義される。
 ただし、S ... 画素値の総数、Zmax ... 画素値の最大値、h(z) ... 濃度zの度数
 
-<img src="assets/hist_equ_equ.png" width="700">
+<img src="assets/hist_equ_equ.png" width="100">
 
 <!--
 ```bash
@@ -98,7 +98,7 @@ Z' = Zmax / S * Sum{i=0:z} h(z)
 ただしxは[0,1]に正規化されている。
 c ... 定数、g ... ガンマ特性(通常は2.2)
 
-<img src="assets/gamma_equ1.png" width="300">
+<img src="assets/gamma_equ1.png" width="100">
 
 <!--
 ```bash
@@ -108,7 +108,7 @@ x' = c * Iin ^ g
 
 そこで、ガンマ補正は次式で行われる。
 
-<img src="assets/gamma_equ2.png" width="300">
+<img src="assets/gamma_equ2.png" width="100">
 
 <!--
 ```bash
@@ -218,7 +218,7 @@ dy1 = y'/a - (y-1) , dy2 = y'/a - y , dy3 = (y+1) - y'/a , dy4 = (y+2) - y'/a
 重みは距離によって次の関数により決定される。
 a は多くの場合-1となる。
 
-<img src="assets/bci_equ2.png" width="700">
+<img src="assets/bci_equ2.png" width="500">
 
 <!--
 ```bash
