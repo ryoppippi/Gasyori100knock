@@ -176,11 +176,13 @@ I(x,y+1)  I(x+1,y+1)
 4. 次式によって拡大画像の画素(x',y')を求める。 
 dx = x'/a - x , dy = y'/a - y
 
-<img src="assets/bli_equ1.png" width="400">
+<img src="assets/bli_equ1.png" width="500">
 
+<!--
 ```bash
 I'(x',y') = (1-dx)(1-dy)I(x,y) + dx(1-dy)I(x+1,y) + (1-dx)dyI(x,y+1) + dxdyI(x+1,y+1)
 ```
+-->
 
 |入力 (imori.jpg)|出力 (answers/answer_26.jpg)|
 |:---:|:---:|
