@@ -15,7 +15,7 @@
 このヒストグラム正規化は**濃度階調変換(gray-scale transformation)** と呼ばれ、[c,d]の画素値を持つ画像を[a,b]のレンジに変換する場合は次式で実現できる。
 今回は*imori_dark.jpg*を[0, 255]のレンジにそれぞれ変換する。
 
-<img src="assets/hist_norm_equ.png" width="300">
+<img src="assets/hist_norm_equ.png" width="400">
 
 <!--
 ```bash
@@ -30,8 +30,8 @@ xout = {  a                         (xin < c)
 |![](imori_dark.jpg)|![](answers/answer_21_1.jpg)|![](answers/answer_21_2.png)|
 
 答え 
-- Python >> [answers/answer_21.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_21.py)
-- C++ >> [answers_cpp/answer_21.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers_cpp/answer_21.cpp)
+- Python >> [answers/answer_21.py](answers/answer_21.py)
+- C++ >> [answers_cpp/answer_21.cpp](answers_cpp/answer_21.cpp)
 
 ## Q.22. ヒストグラム操作
 
@@ -54,8 +54,8 @@ xout = s0 / s * (xin - m) + m0
 |![](imori_dark.jpg)|![](answers/answer_22_1.jpg)|![](answers/answer_22_2.png)|
 
 答え 
-- Python >> [answers/answer_22.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_22.py)
-- C++ >> [answers_cpp/answer_22.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers_cpp/answer_22.cpp)
+- Python >> [answers/answer_22.py](answers/answer_22.py)
+- C++ >> [answers_cpp/answer_22.cpp](answers_cpp/answer_22.cpp)
 
 ## Q.23. ヒストグラム平坦化
 
@@ -81,8 +81,8 @@ Z' = Zmax / S * Sum{i=0:z} h(z)
 |![](imori.jpg)|![](answers/answer_23_1.jpg)|![](answers/answer_23_2.png)|
 
 答え 
-- Python >> [answers/answer_23.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_23.py)
-- C++ >> [answers_cpp/answer_23.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers_cpp/answer_23.cpp)
+- Python >> [answers/answer_23.py](answers/answer_23.py)
+- C++ >> [answers_cpp/answer_23.cpp](answers_cpp/answer_23.cpp)
 
 
 ## Q.24. ガンマ補正
@@ -98,7 +98,7 @@ Z' = Zmax / S * Sum{i=0:z} h(z)
 ただしxは[0,1]に正規化されている。
 c ... 定数、g ... ガンマ特性(通常は2.2)
 
-<img src="assets/gamma_equ1.png" width="200">
+<img src="assets/gamma_equ1.png" width="150">
 
 <!--
 ```bash
@@ -108,7 +108,7 @@ x' = c * Iin ^ g
 
 そこで、ガンマ補正は次式で行われる。
 
-<img src="assets/gamma_equ2.png" width="200">
+<img src="assets/gamma_equ2.png" width="150">
 
 <!--
 ```bash
@@ -123,8 +123,8 @@ Iout = (1/c * Iin) ^ (1/g)
 |![](imori_gamma.jpg)|![](answers/answer_24.jpg)|
 
 答え 
-- Python >> [answers/answer_24.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_24.py)
-- C++ >> [answers_cpp/answer_24.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers_cpp/answer_24.cpp)
+- Python >> [answers/answer_24.py](answers/answer_24.py)
+- C++ >> [answers_cpp/answer_24.cpp](answers_cpp/answer_24.cpp)
 
 ## Q.25. 最近傍補間
 
@@ -149,8 +149,8 @@ I'(x,y) = I([x/a], [y/a])
 |![](imori.jpg)|![](answers/answer_25.jpg)|
 
 答え 
-- Python >> [answers/answer_25.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_25.py)
-- C++ >> [answers_cpp/answer_25.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers_cpp/answer_25.cpp)
+- Python >> [answers/answer_25.py](answers/answer_25.py)
+- C++ >> [answers_cpp/answer_25.cpp](answers_cpp/answer_25.cpp)
 
 ## Q.26. Bi-linear補間
 
@@ -184,8 +184,8 @@ I'(x',y') = (1-dx)(1-dy)I(x,y) + dx(1-dy)I(x+1,y) + (1-dx)dyI(x,y+1) + dxdyI(x+1
 |![](imori.jpg)|![](answers/answer_26.jpg)|
 
 答え 
-- Python >> [answers/answer_26.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_26.py)
-- C++ >> [answers_cpp/answer_26.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers_cpp/answer_26.cpp)
+- Python >> [answers/answer_26.py](answers/answer_26.py)
+- C++ >> [answers_cpp/answer_26.cpp](answers_cpp/answer_26.cpp)
 
 ## Q.27. Bi-cubic補間
 
@@ -244,8 +244,8 @@ I'(x', y') = (Sum{i=-1:2}{j=-1:2} I(x+i,y+j) * wxi * wyj) / Sum{i=-1:2}{j=-1:2} 
 |![](imori.jpg)|![](answers/answer_27.jpg)|
 
 答え 
-- Python >> [answers/answer_27.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_27.py)
-- C++ >> [answers_cpp/answer_27.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers_cpp/answer_27.cpp)
+- Python >> [answers/answer_27.py](answers/answer_27.py)
+- C++ >> [answers_cpp/answer_27.cpp](answers_cpp/answer_27.cpp)
 
 ## Q.28. アフィン変換(平行移動)
 
@@ -311,8 +311,8 @@ I'(x', y') = (Sum{i=-1:2}{j=-1:2} I(x+i,y+j) * wxi * wyj) / Sum{i=-1:2}{j=-1:2} 
 |![](imori.jpg)|![](answers/answer_28.jpg)|
 
 答え 
-- Python >> [answers/answer_28.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_28.py)
-- C++ >> [answers_cpp/answer_28.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers_cpp/answer_28.cpp)
+- Python >> [answers/answer_28.py](answers/answer_28.py)
+- C++ >> [answers_cpp/answer_28.cpp](answers_cpp/answer_28.cpp)
 
 ## Q.29. アフィン変換(拡大縮小)
 
@@ -325,8 +325,8 @@ I'(x', y') = (Sum{i=-1:2}{j=-1:2} I(x+i,y+j) * wxi * wyj) / Sum{i=-1:2}{j=-1:2} 
 |![](imori.jpg)|![](answers/answer_29_1.jpg)|![](answers/answer_29_2.jpg)|
 
 答え 
-- Python >> [answers/answer_29.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_29.py)
-- C++ >> [answers_cpp/answer_29.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers_cpp/answer_29.cpp)
+- Python >> [answers/answer_29.py](answers/answer_29.py)
+- C++ >> [answers_cpp/answer_29.cpp](answers_cpp/answer_29.cpp)
 
 ## Q.30. アフィン変換(回転)
 
@@ -337,7 +337,7 @@ I'(x', y') = (Sum{i=-1:2}{j=-1:2} I(x+i,y+j) * wxi * wyj) / Sum{i=-1:2}{j=-1:2} 
 
 アフィン変換において、反時計方向にA度回転させる時は、次式となる。
 
-<img src="assets/affine_equ5.png" width="200">
+<img src="assets/affine_equ5.png" width="300">
 
 <!--
 ```bash
@@ -354,5 +354,5 @@ I'(x', y') = (Sum{i=-1:2}{j=-1:2} I(x+i,y+j) * wxi * wyj) / Sum{i=-1:2}{j=-1:2} 
 答え >> 
 
 答え 
-- Python >> [answers/answer_30_1.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_30_1.py) , [answers/answer_30_2.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers/answer_30_2.py)
-- C++ >> [answers_cpp/answer_30.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_21_30/answers_cpp/answer_30.cpp)
+- Python >> [answers/answer_30.py](answers/answer_30.py) , 
+- C++ >> [answers_cpp/answer_30.cpp](answers_cpp/answer_30.cpp)
