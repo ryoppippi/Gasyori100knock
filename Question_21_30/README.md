@@ -41,7 +41,7 @@ xout = {  a                         (xin < c)
 
 平均値m、標準偏差s、のヒストグラムを平均値m0, 標準偏差s0に変更するには、次式によって変換する。
 
-<img src="assets/hist_mani_equ.png" width="100">
+<img src="assets/hist_mani_equ.png" width="200">
 
 <!--
 ```bash
@@ -68,7 +68,7 @@ xout = s0 / s * (xin - m) + m0
 これは次式で定義される。
 ただし、S ... 画素値の総数、Zmax ... 画素値の最大値、h(z) ... 濃度zの度数
 
-<img src="assets/hist_equ_equ.png" width="100">
+<img src="assets/hist_equ_equ.png" width="200">
 
 <!--
 ```bash
@@ -98,7 +98,7 @@ Z' = Zmax / S * Sum{i=0:z} h(z)
 ただしxは[0,1]に正規化されている。
 c ... 定数、g ... ガンマ特性(通常は2.2)
 
-<img src="assets/gamma_equ1.png" width="100">
+<img src="assets/gamma_equ1.png" width="200">
 
 <!--
 ```bash
@@ -108,7 +108,7 @@ x' = c * Iin ^ g
 
 そこで、ガンマ補正は次式で行われる。
 
-<img src="assets/gamma_equ2.png" width="100">
+<img src="assets/gamma_equ2.png" width="200">
 
 <!--
 ```bash
@@ -216,7 +216,7 @@ dy1 = y'/a - (y-1) , dy2 = y'/a - y , dy3 = (y+1) - y'/a , dy4 = (y+2) - y'/a
 -->
 
 重みは距離によって次の関数により決定される。
-a は多くの場合-1となる。
+a は多くの場合-1をとる。だいたい図の青色のピクセルは距離|t|<=1、緑色が1<|t|<=2の重みとなる。
 
 <img src="assets/bci_equ2.png" width="500">
 
@@ -258,33 +258,53 @@ I'(x', y') = (Sum{i=-1:2}{j=-1:2} I(x+i,y+j) * wxi * wyj) / Sum{i=-1:2}{j=-1:2} 
 元画像を(x,y)、変換後の画像を(x',y')とする。
 画像の拡大縮小は、次式で表される。
 
+<img src="affine_equ1.png" width="200">
+
+<!--
 ```bash
 [ x' ] = [a b][x]
   y'      c d  y
 ```
+-->
 
 一方、平行移動は次式となる。
 
+<img src="affine_equ2.png" width="200">
+
+<!--
 ```bash
 [ x' ] = [x] + [tx]
   y'      y  +  ty
 ```
+-->
 
 以上を一つの式にまとめると、次式になり、これがアフィン変換である。
 
+<img src="affine_equ3.png" width="200">
+
+<!--
 ```bash
   x'       a b tx    x
 [ y' ] = [ c d ty ][ y ]
   1        0 0  1    1
 ```
+-->
+
+しかし実装する時は、元画像に対して１ピクセルずつ行うと、処理後の画像で値が割り当てられない可能性がでてきてしまう。よって、処理後画像の各ピクセルに対してAffine変換の逆変換を行い、値をあ割り当てる元画像の座標を取得する必要がある。Affine変換の逆操作は次式となる。
+
+<img src="affine_equ6.png" width="300">
 
 平行移動では次式を用いる。
 
+<img src="affine_equ4.png" width="200">
+
+<!--
 ```bash
   x'       1 0 tx    x
 [ y' ] = [ 0 1 ty ][ y ]
   1        0 0  1    1
 ```
+-->
 
 |入力 (imori.jpg)|出力 (answers/answer_28.jpg)|
 |:---:|:---:|
@@ -317,11 +337,15 @@ I'(x', y') = (Sum{i=-1:2}{j=-1:2} I(x+i,y+j) * wxi * wyj) / Sum{i=-1:2}{j=-1:2} 
 
 アフィン変換において、反時計方向にA度回転させる時は、次式となる。
 
+<img src="affine_equ5.png" width="200">
+
+<!--
 ```bash
   x'       cosA -sinA tx    x
 [ y' ] = [ sinA  cosA ty ][ y ]
   1         0     0    1    1
 ```
+-->
 
 |入力 (imori.jpg)|出力 (1) (answers/answer_30_1.jpg)|出力 (2) (answers/answer_30_2.jpg)|
 |:---:|:---:|:---:|
