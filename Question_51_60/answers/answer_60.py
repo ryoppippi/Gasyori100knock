@@ -2,15 +2,21 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
+
+# alpha blend
+def alpha_blend(img1, img2, alpha):
+	# blend
+	out = img * alpha + img2 * (1 - alpha)
+	out = out.astype(np.uint8)
+	return out
+
 # Read image
 img = cv2.imread("imori.jpg").astype(np.float32)
-H, W, C = img.shape
 
+# Read blend target image
 img2 = cv2.imread("thorino.jpg").astype(np.float32)
 
-a = 0.6
-out = img * a + img2 * (1 - a)
-out = out.astype(np.uint8)
+out = alpha_blend(img, img2, alpha=0.6)
     
 # Save result
 cv2.imwrite("out.jpg", out)
