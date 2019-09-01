@@ -89,9 +89,9 @@ def Dilate(img, Dil_time=1):
 
 # Opening morphology
 def Morphology_Opening(img, time=1):
-    dil = Dilate(img, Dil_time=time)
-    erode = Erode(dil, Erode_time=time)
-    return erode
+	out = Erode(img, Erode_time=time)
+	out = Dilate(out, Dil_time=time)
+	return out
 
 
 # Read image

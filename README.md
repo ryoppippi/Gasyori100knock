@@ -33,6 +33,7 @@ PythonとC++の好きな方でやってみてね♡（最近Javascriptも追加�
 
 ## Recent
 
+- 2019.9.2 [Python] Q.61~80にAnswerコードをメソッド化
 - 2019.8.28 [Python] Q.51~60のAnswerコードをメソッド化
 - 2019.8.18 [Python] Q.50までのAnswerコードをメソッド化
 - 2019.8.12 [C++]Q.36-40の解答追加

@@ -2,70 +2,105 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Read image
-img = cv2.imread("imori.jpg").astype(np.float32)
-H, W, C = img.shape
-
-# Otsu binary
-## Grayscale
-gray = 0.2126 * img[..., 2] + 0.7152 * img[..., 1] + 0.0722 * img[..., 0]
-gray = gray.astype(np.uint8)
+# Grayscale
+def BGR2GRAY(img):
+	# Grayscale
+	gray = 0.2126 * img[..., 2] + 0.7152 * img[..., 1] + 0.0722 * img[..., 0]
+	return gray
 
 # Gabor
-def gabor_f(k=111, s=10, g=1.2, l=10, p=0, A=0):
-    d = k // 2
+def Gabor_filter(K_size=111, Sigma=10, Gamma=1.2, Lambda=10, Psi=0, angle=0):
+	# get half size
+	d = K_size // 2
 
-    gabor = np.zeros((k, k), dtype=np.float32)
-    
-    for y in range(k):
-        for x in range(k):
-            px = x - d
-            py = y - d
-            theta = A / 180. * np.pi
-            _x = np.cos(theta) * px + np.sin(theta) * py
-            _y = -np.sin(theta) * px + np.cos(theta) * py
-            gabor[y, x] = np.exp(-(_x**2 + g**2 * _y**2) / (2 * s**2)) * np.cos(2*np.pi*_x/l + p)
+	# prepare kernel
+	gabor = np.zeros((K_size, K_size), dtype=np.float32)
 
-    gabor /= np.sum(np.abs(gabor))
+	# each value
+	for y in range(K_size):
+		for x in range(K_size):
+			# distance from center
+			px = x - d
+			py = y - d
 
-    return gabor
+			# degree -> radian
+			theta = angle / 180. * np.pi
 
-K_size = 11
-Sigma = 1.5
-Gamma = 1.2
-Lambda = 3.
-Psi = 0.
+			# get kernel x
+			_x = np.cos(theta) * px + np.sin(theta) * py
 
-gray = np.pad(gray, (K_size//2, K_size//2), 'edge')
+			# get kernel y
+			_y = -np.sin(theta) * px + np.cos(theta) * py
 
-As = [0, 45, 90, 135]
+			# fill kernel
+			gabor[y, x] = np.exp(-(_x**2 + Gamma**2 * _y**2) / (2 * Sigma**2)) * np.cos(2*np.pi*_x/Lambda + Psi)
 
-gs = []
+	# kernel normalization
+	gabor /= np.sum(np.abs(gabor))
 
-plt.subplots_adjust(left=0, right=1, top=1, bottom=0, hspace=0, wspace=0.2)
+	return gabor
 
-for i, A in enumerate(As):
-    gabor = gabor_f(k=K_size, s=Sigma, g=Gamma, l=Lambda, p=Psi, A=A)
 
+def Gabor_filtering(gray, K_size=111, Sigma=10, Gamma=1.2, Lambda=10, Psi=0, angle=0):
+    # get shape
+    H, W = gray.shape
+
+    # padding
+    gray = np.pad(gray, (K_size//2, K_size//2), 'edge')
+
+    # prepare out image
     out = np.zeros((H, W), dtype=np.float32)
-    
+
+    # get gabor filter
+    gabor = Gabor_filter(K_size=K_size, Sigma=Sigma, Gamma=Gamma, Lambda=Lambda, Psi=0, angle=angle)
+        
+    # filtering
     for y in range(H):
         for x in range(W):
-            out[y, x] = np.sum(gray[y:y+K_size, x:x+K_size] * gabor)
+            out[y, x] = np.sum(gray[y : y + K_size, x : x + K_size] * gabor)
 
-    out[out < 0] = 0
-    out[out > 255] = 255
-    
-    gs.append(out)
+    out = np.clip(out, 0, 255)
+    out = out.astype(np.uint8)
+
+    return out
 
 
-out = np.zeros((H, W), dtype=np.float32)
-for g in gs:
-    out += g
+def Gabor_process(img):
+    # get shape
+    H, W, _ = img.shape
 
-    
-out = out / out.max() * 255
-out = out.astype(np.uint8)
+    # gray scale
+    gray = BGR2GRAY(img).astype(np.float32)
+
+    # define angle
+    As = [0, 45, 90, 135]
+
+    # prepare pyplot
+    plt.subplots_adjust(left=0, right=1, top=1, bottom=0, hspace=0, wspace=0.2)
+
+    out = np.zeros([H, W], dtype=np.float32)
+
+    # each angle
+    for i, A in enumerate(As):
+        # gabor filtering
+        _out = Gabor_filtering(gray, K_size=11, Sigma=1.5, Gamma=1.2, Lambda=3, angle=A)
+
+        # add gabor filtered image
+        out += _out
+
+    # scale normalization
+    out = out / out.max() * 255
+    out = out.astype(np.uint8)
+
+    return out
+
+
+# Read image
+img = cv2.imread("imori.jpg").astype(np.float32)
+
+# gabor process
+out = Gabor_process(img)
+
 
 cv2.imwrite("out.jpg", out)
 cv2.imshow("result", out)
