@@ -3,7 +3,6 @@ import numpy as np
 
 np.random.seed(0)
 
-
 # get HOG
 def HOG(img):
     # Grayscale
@@ -246,25 +245,6 @@ def train_nn(nn, train_x, train_t, iteration_N=10000):
 
     return nn
 
-# test
-def test_nn(nn, test_x, test_t, pred_th=0.5):
-    accuracy_N = 0.
-
-    # each data
-    for data, t in zip(test_x, test_t):
-        # get prediction
-        prob = nn.forward(data)
-
-        # count accuracy
-        pred = 1 if prob >= pred_th else 0
-        if t == pred:
-            accuracy_N += 1
-
-    # get accuracy 
-    accuracy = accuracy_N / len(db)
-
-    print("Accuracy >> {} ({} / {})".format(accuracy, accuracy_N, len(db)))
-
 
 # crop bounding box and make dataset
 def make_dataset(img, gt, Crop_N=200, L=60, th=0.5, H_size=32):
@@ -319,11 +299,58 @@ def make_dataset(img, gt, Crop_N=200, L=60, th=0.5, H_size=32):
 
     return db
 
-# Read image
-img = cv2.imread("imori.jpg").astype(np.float32)
 
-# get HOG
-histogram = HOG(img)
+# sliding window
+def sliding_window(img, nn, H_size=32, prob_th=0.7):
+    # get shape
+    H, W, _ = img.shape
+
+    # base rectangle [h, w]
+    recs = np.array(((42, 42), (56, 56), (70, 70)), dtype=np.float32)
+
+    # detected region
+    detects = np.ndarray((0, 5), dtype=np.float32)
+
+    # sliding window
+    for y in range(0, H, 4):
+        for x in range(0, W, 4):
+            for rec in recs:
+                # get half size of ractangle
+                dh = int(rec[0] // 2)
+                dw = int(rec[1] // 2)
+
+                # get left top x
+                x1 = max(x - dw, 0)
+                # get left top y
+                x2 = min(x + dw, W)
+                # get right bottom x
+                y1 = max(y - dh, 0)
+                # get right bottom y
+                y2 = min(y + dh, H)
+
+                # crop region
+                region = img[max(y - dh, 0) : min(y + dh, H), max(x - dw, 0) : min(x + dw, W)]
+
+                # resize crop region
+                region = resize(region, H_size, H_size)
+
+                # get HOG feature
+                region_hog = HOG(region).ravel()
+
+                # predict score using neural network
+                score = nn.forward(region_hog)
+
+                if score >= prob_th:
+                    cv2.rectangle(img, (x1, y1), (x2, y2), (0,0,255), 1)
+                    detects = np.vstack((detects, np.array((x1, y1, x2, y2, score))))
+
+    print(detects)
+
+    return img
+
+
+# Read image
+img = cv2.imread("imori_1.jpg").astype(np.float32)
 
 # prepare gt bounding box
 gt = np.array((47, 41, 129, 103), dtype=np.float32)
@@ -341,10 +368,18 @@ train_x = db[:, :input_dim]
 train_t = db[:, -1][..., None]
 
 # prepare neural network
-nn = NN(ind=input_dim, lr=0.01)
+nn = NN(ind=input_dim, w=64, w2=64, lr=0.01)
 # training
 nn = train_nn(nn, train_x, train_t, iteration_N=10000)
 
-# test
-test_nn(nn, train_x, train_t)
 
+# read detect target image
+img2 = cv2.imread("imori_many.jpg")
+
+# detection
+out = sliding_window(img2, nn)
+
+
+cv2.imwrite("out.jpg", out)
+cv2.imshow("result", out)
+cv2.waitKey(0)
