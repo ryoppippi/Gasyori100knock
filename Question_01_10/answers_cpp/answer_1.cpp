@@ -5,8 +5,8 @@
 int main(int argc, const char* argv[]){
   cv::Mat img = cv::imread("imori.jpg", cv::IMREAD_COLOR);
 
-  int width = img.rows;
-  int height = img.cols;
+  int width = img.cols;
+  int height = img.rows;
 
   cv::Mat out = img.clone();
 
