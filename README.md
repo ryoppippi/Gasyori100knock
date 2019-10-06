@@ -76,6 +76,8 @@ $ git clone https://github.com/yoyoyo-yo/Gasyori100knock.git
 | 5 | 画像の保存 | [✓](Tutorial#%E7%94%BB%E5%83%8F%E3%81%AE%E4%BF%9D%E5%AD%98) | [✓](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Tutorial/README_opencv_c_install.md#%E7%94%BB%E5%83%8F%E3%81%AE%E4%BF%9D%E5%AD%98) | ー |
 | 6 | 練習問題 | [✓](Tutorial#%E7%B7%B4%E7%BF%92)| [✓](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Tutorial/README_opencv_c_install.md#%E7%B7%B4%E7%BF%92%E5%95%8F%E9%A1%8C)| [✓](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Tutorial/README_javascript.md#%E7%B7%B4%E7%BF%92)
 
+[MatplotlibとかOpenCVのTips](Image_processing_tips.ipynb)
+
 あとは問題を解いていってください。それぞれのフォルダに問題内容が入っています。問題では assets/imori.jpg を使用して下さい。各フォルダのREADME.mdに問題、解答プログラムがあります。```python answers/answer_@@.py```　とすると解答が出ます。
 
 ## 問題
