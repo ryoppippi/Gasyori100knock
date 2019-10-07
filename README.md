@@ -33,6 +33,10 @@ PythonとC++の好きな方でやってみてね♡（最近Javascriptも追加�
 
 ## Recent
 
+Twitterで更新を発信してますぅ
+
+https://twitter.com/curry_yoyoyo
+
 - 2019.9.3 [Python] Q.81~100のAnswerコードをメソッド化
 - 2019.9.2 [Python] Q.61~80のAnswerコードをメソッド化
 - 2019.8.28 [Python] Q.51~60のAnswerコードをメソッド化
