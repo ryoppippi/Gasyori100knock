@@ -68,6 +68,13 @@ y = { 0 (if y < 128)
 
 とすると、
 
+<img src="assets/otsu_binary_1.png" width=300>
+
+となり、分離度Xは次式で定義される。
+
+<img src="assets/otsu_binary_2.png" width=150>
+
+<!--
 ```bash
 クラス内分散 Sw^2 = w0 * S0^2 + w1 * S1^2
 クラス間分散 Sb^2 = w0 * (M0 - Mt)^2 + w1 * (M1 - Mt)^2 = w0 * w1 * (M0 - M1) ^2
@@ -75,12 +82,19 @@ y = { 0 (if y < 128)
 以上より、分離度は次式で定義される。
 分離度 X = Sb^2 / Sw^2 = Sb^2 / (St^2 - Sb^2)
 ```
+-->
 
 となるので、
 
+<img src="assets/otsu_binary_3.png" width=150>
+
+<!--
 ```bash
 argmax_{t} X = argmax_{t} Sb^2
 ```
+-->
+
+
 となる。すなわち、Sb^2 =  w0 * w1 * (M0 - M1) ^2 が最大となる、閾値tを二値化の閾値とすれば良い。
 
 |入力 (imori.jpg)|出力 (th = 127) (answers/answer_4.jpg)|

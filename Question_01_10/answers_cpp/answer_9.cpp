@@ -3,34 +3,36 @@
 #include <iostream>
 #include <math.h>
 
-int main(int argc, const char* argv[]){
-  cv::Mat img = cv::imread("imori_noise.jpg", cv::IMREAD_COLOR);
 
-  int width = img.rows;
-  int height = img.cols;
-  
+// gaussian filter
+cv::Mat gaussian_filter(cv::Mat img, double sigma, int kernel_size){
+  int height = img.rows;
+  int width = img.cols;
+  int channel = img.channels();
+
+  // prepare output
   cv::Mat out = cv::Mat::zeros(height, width, CV_8UC3);
 
   // prepare kernel
-  double s = 1.3;
-  int k_size = 3;
-  int p = floor(k_size / 2);
-  int x = 0, y = 0;
-  double k_sum = 0;
+  int pad = floor(kernel_size / 2);
+  int _x = 0, _y = 0;
+  double kernel_sum = 0;
   
-  float k[k_size][k_size];
-  for (int j = 0; j < k_size; j++){
-    for (int i = 0; i < k_size; i++){
-      y = j - p;
-      x = i - p; 
-      k[j][i] = 1 / (s * sqrt(2 * M_PI)) * exp( - (x*x + y*y) / (2*s*s));
-      k_sum += k[j][i];
+  // get gaussian kernel
+  float kernel[kernel_size][kernel_size];
+
+  for (int y = 0; y < kernel_size; y++){
+    for (int x = 0; x < kernel_size; x++){
+      _y = y - pad;
+      _x = x - pad; 
+      kernel[y][x] = 1 / (sigma * sqrt(2 * M_PI)) * exp( - (_x * _x + _y * _y) / (2 * sigma * sigma));
+      kernel_sum += kernel[y][x];
     }
   }
 
-  for (int j = 0; j < k_size; j++){
-    for (int i = 0; i < k_size; i++){
-      k[j][i] /= k_sum;
+  for (int y = 0; y < kernel_size; y++){
+    for (int x = 0; x < kernel_size; x++){
+      kernel[y][x] /= kernel_sum;
     }
   }
   
@@ -38,21 +40,32 @@ int main(int argc, const char* argv[]){
   // filtering
   double v = 0;
   
-  for (int j = 0; j < height; j++){
-    for (int i = 0; i < width; i++){
-      for (int c = 0; c < 3; c++){
-	v = 0;
-	for (int _j = -p; _j < p+1; _j++){
-	  for (int _i = -p; _i < p+1; _i++){
-	    if (((j+_j) >= 0) && ((i+_i) >= 0)){
-	      v += (double)img.at<cv::Vec3b>(j+_j, i+_i)[c] * k[_j+p][_i+p];
-	    }
-	  }
-	}
-	out.at<cv::Vec3b>(j,i)[c] = v;
+  for (int y = 0; y < height; y++){
+    for (int x = 0; x < width; x++){
+      for (int c = 0; c < channel; c++){
+
+      v = 0;
+
+      for (int dy = -pad; dy < pad + 1; dy++){
+        for (int dx = -pad; dx < pad + 1; dx++){
+          if (((x + dx) >= 0) && ((y + dy) >= 0)){
+            v += (double)img.at<cv::Vec3b>(y + dy, x + dx)[c] * kernel[dy + pad][dx + pad];
+          }
+        }
+      }
+      out.at<cv::Vec3b>(y, x)[c] = v;
       }
     }
   }
+  return out;
+}
+
+int main(int argc, const char* argv[]){
+  // read image
+  cv::Mat img = cv::imread("imori_noise.jpg", cv::IMREAD_COLOR);
+
+  // gaussian filter
+  cv::Mat out = gaussian_filter(img, 1.3, 3);
   
   //cv::imwrite("out.jpg", out);
   cv::imshow("answer", out);

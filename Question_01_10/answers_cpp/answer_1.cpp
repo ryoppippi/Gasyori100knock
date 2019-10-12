@@ -2,21 +2,38 @@
 #include <opencv2/highgui.hpp>
 #include <iostream>
 
-int main(int argc, const char* argv[]){
-  cv::Mat img = cv::imread("imori.jpg", cv::IMREAD_COLOR);
 
+// Channel swap
+cv::Mat channel_swap(cv::Mat img){
+  // get height and width
   int width = img.cols;
   int height = img.rows;
 
-  cv::Mat out = img.clone();
+  // prepare output
+  cv::Mat out = cv::Mat::zeros(height, width, CV_8UC3);
 
-  for (int j=0; j<height; j++){
-    for (int i=0; i<width; i++){
-      unsigned char tmp = out.at<cv::Vec3b>(j, i)[0];
-      out.at<cv::Vec3b>(j, i)[0] = img.at<cv::Vec3b>(j,i)[2];
-      out.at<cv::Vec3b>(j,i)[2] = tmp;
+  // each y, x
+  for (int y = 0; y < height; y++){
+    for (int x = 0; x < width; x++){
+      // R -> B
+      out.at<cv::Vec3b>(y, x)[0] = img.at<cv::Vec3b>(y, x)[2];
+      // B -> R
+      out.at<cv::Vec3b>(y, x)[2] = img.at<cv::Vec3b>(y, x)[0];
+      // G -> G
+      out.at<cv::Vec3b>(y, x)[1] = img.at<cv::Vec3b>(y, x)[1];
     }
   }
+
+  return out;
+}
+
+
+int main(int argc, const char* argv[]){
+  // read image
+  cv::Mat img = cv::imread("imori.jpg", cv::IMREAD_COLOR);
+
+  // channel swap
+  cv::Mat out = channel_swap(img);
 
   //cv::imwrite("out.jpg", out);
   cv::imshow("sample", out);
@@ -24,5 +41,4 @@ int main(int argc, const char* argv[]){
   cv::destroyAllWindows();
 
   return 0;
-
 }
