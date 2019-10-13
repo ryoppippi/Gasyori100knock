@@ -3,37 +3,60 @@
 #include <iostream>
 #include <math.h>
 
-int main(int argc, const char* argv[]){
-  cv::Mat img = cv::imread("imori.jpg", cv::IMREAD_COLOR);
 
-  int width = img.rows;
-  int height = img.cols;
-  
+// motion filter
+cv::Mat motion_filter(cv::Mat img, int kernel_size){
+  int height = img.rows;
+  int width = img.cols;
+  int channel = img.channels();
+
+  // prepare output
   cv::Mat out = cv::Mat::zeros(height, width, CV_8UC3);
-  
-  int k_size = 3;
-  int p = floor(k_size / 2);
 
-  double k[k_size][k_size] = {{1./3, 0, 0}, {0, 1./3, 0}, {0, 0, 1./3}};
+  // prepare kernel
+  int pad = floor(kernel_size / 2);
   
-  // filtering
-  double v = 0;
+  double kernel[kernel_size][kernel_size];//{{1./3, 0, 0}, {0, 1./3, 0}, {0, 0, 1./3}};
   
-  for (int j = 0; j < height; j++){
-    for (int i = 0; i < width; i++){
-      for (int c = 0; c < 3; c++){
-	v = 0;
-	for (int _j = -p; _j < p+1; _j++){
-	  for (int _i = -p; _i < p+1; _i++){
-	    if (((j+_j) >= 0) && ((i+_i) >= 0) && ((j+_j) < height) && ((i+_i) < width)){
-	      v += (double)img.at<cv::Vec3b>(j+_j, i+_i)[c] * k[_j+p][_i+p];
-	    }
-	  }
-	}
-	out.at<cv::Vec3b>(j,i)[c] = (uchar)v;
+  for(int y = 0; y < kernel_size; y++){
+    for(int x = 0; x < kernel_size; x++){
+      if (y == x){
+        kernel[y][x] = 1. / kernel_size;
+      } else {
+        kernel[y][x] = 0;
       }
     }
   }
+
+  // filtering
+  double v = 0;
+  
+  for (int y = 0; y < height; y++){
+    for (int x = 0; x < width; x++){
+      for (int c = 0; c < channel; c++){
+
+      v = 0;
+
+      for (int dy = -pad; dy < pad + 1; dy++){
+        for (int dx = -pad; dx < pad + 1; dx++){
+          if (((y + dy) >= 0) && (( x + dx) >= 0) && ((y + dy) < height) && ((x + dx) < width)){
+            v += (double)img.at<cv::Vec3b>(y + dy, x + dx)[c] * kernel[dy + pad][dx + pad];
+          }
+        }
+      }
+      out.at<cv::Vec3b>(y, x)[c] = (uchar)v;
+      }
+    }
+  }
+  return out;
+}
+
+int main(int argc, const char* argv[]){
+  // read image
+  cv::Mat img = cv::imread("imori.jpg", cv::IMREAD_COLOR);
+
+  // motion filter
+  cv::Mat out = motion_filter(img, 3);
   
   //cv::imwrite("out.jpg", out);
   cv::imshow("answer", out);

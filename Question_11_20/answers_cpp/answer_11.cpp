@@ -3,38 +3,53 @@
 #include <iostream>
 #include <math.h>
 
-int main(int argc, const char* argv[]){
-  cv::Mat img = cv::imread("imori.jpg", cv::IMREAD_COLOR);
 
-  int width = img.rows;
-  int height = img.cols;
-  
+// mean filter
+cv::Mat mean_filter(cv::Mat img, int kernel_size){
+  int height = img.rows;
+  int width = img.cols;
+  int channel = img.channels();
+
+  // prepare output
   cv::Mat out = cv::Mat::zeros(height, width, CV_8UC3);
-  
-  int k_size = 3;
-  int p = floor(k_size / 2);
+
+  // prepare kernel
+  int pad = floor(kernel_size / 2);
   
   // filtering
   double v = 0;
+  int vs[kernel_size * kernel_size];
+  int count = 0;
   
-  for (int j = 0; j < height; j++){
-    for (int i = 0; i < width; i++){
-      for (int c = 0; c < 3; c++){
-	v = 0;
-	
-	for (int _j = -p; _j < p+1; _j++){
-	  for (int _i = -p; _i < p+1; _i++){
-	    if (((j+_j) >= 0) && ((i+_i) >= 0) && ((j+_j) < height) && ((i+_i) < width)){
-	      v += (int)img.at<cv::Vec3b>(j+_j, i+_i)[c];
-	    }
-	  }
-	}
+  for (int y = 0; y < height; y++){
+    for (int x = 0; x < width; x++){
+      for (int c = 0; c < channel; c++){
+      v = 0;
+      
+      // get pixel sum
+      for (int dy = -pad; dy < pad + 1; dy++){
+        for (int dx = -pad; dx < pad + 1; dx++){
+          if (((y + dy) >= 0) && ((x + dx) >= 0)){
+            v += (int)img.at<cv::Vec3b>(y + dy, x + dx)[c];
+          }
+        }
+      }
 
-	v /= (k_size * k_size);
-	out.at<cv::Vec3b>(j,i)[c] = (uchar)v;
+      // assign mean value
+      v /= (kernel_size * kernel_size);
+      out.at<cv::Vec3b>(y, x)[c] = (uchar)v;
       }
     }
   }
+  return out;
+}
+
+int main(int argc, const char* argv[]){
+  // read image
+  cv::Mat img = cv::imread("imori.jpg", cv::IMREAD_COLOR);
+
+  // mean filter
+  cv::Mat out = mean_filter(img, 3);
   
   //cv::imwrite("out.jpg", out);
   cv::imshow("answer", out);
