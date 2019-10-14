@@ -14,13 +14,13 @@ img = cv2.imread("imori.jpg")
 red = img[:, :, 2].copy()
 ```
 
-|入力 (imori.jpg)|出力 (answers/answer_1.jpg)|
+|入力 (imori.jpg)|出力 (answers_image/answer_1.jpg)|
 |:---:|:---:|
-|![](imori.jpg)|![](answers/answer_1.jpg)|
+|![](imori.jpg)|![](answers_image/answer_1.jpg)|
 
 答え 
-- Python >> [answers/answer_1.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers/answer_1.py)
-- C++ >> [answers_cpp/answer_1.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers_cpp/answer_1.cpp)
+- Python >> [answers_py/answer_1.py](answers_py/answer_1.py)
+- C++ >> [answers_cpp/answer_1.cpp](answers_cpp/answer_1.cpp)
 
 ## Q.2. グレースケール化
 
@@ -29,13 +29,13 @@ red = img[:, :, 2].copy()
 
 Y = 0.2126 R + 0.7152 G + 0.0722 B
 
-|入力 (imori.jpg)|出力 (answers/answer_2.jpg)|
+|入力 (imori.jpg)|出力 (answers_image/answer_2.jpg)|
 |:---:|:---:|
-|![](imori.jpg)|![](answers/answer_2.jpg)|
+|![](imori.jpg)|![](answers_image/answer_2.jpg)|
 
 答え
-- Python >> [answers/answer_2.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers/answer_2.py)
-- C++ >> [answers_cpp/answer_2.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers_cpp/answer_2.cpp)
+- Python >> [answers_py/answer_2.py](answers_py/answer_2.py)
+- C++ >> [answers_cpp/answer_2.cpp](answers_cpp/answer_2.cpp)
 ## Q.3. 二値化
 
 画像を二値化せよ。
@@ -47,13 +47,13 @@ y = { 0 (if y < 128)
      255 (else) 
 ```
 
-|入力 (imori.jpg)|出力 (answers/answer_3.jpg)|
+|入力 (imori.jpg)|出力 (answers_image/answer_3.jpg)|
 |:---:|:---:|
-|![](imori.jpg)|![](answers/answer_3.jpg)|
+|![](imori.jpg)|![](answers_image/answer_3.jpg)|
 
 答え 
-- Python >> [answers/answer_3.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers/answer_3.py)
-- C++ >> [answers_cpp/answer_3.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers_cpp/answer_3.cpp)
+- Python >> [answers_py/answer_3.py](answers_py/answer_3.py)
+- C++ >> [answers_cpp/answer_3.cpp](answers_cpp/answer_3.cpp)
 ## Q.4. 大津の二値化
 
 大津の二値化を実装せよ。
@@ -97,13 +97,13 @@ argmax_{t} X = argmax_{t} Sb^2
 
 となる。すなわち、Sb^2 =  w0 * w1 * (M0 - M1) ^2 が最大となる、閾値tを二値化の閾値とすれば良い。
 
-|入力 (imori.jpg)|出力 (th = 127) (answers/answer_4.jpg)|
+|入力 (imori.jpg)|出力 (th = 127) (answers_image/answer_4.jpg)|
 |:---:|:---:|
-|![](imori.jpg)|![](answers/answer_4.jpg)|
+|![](imori.jpg)|![](answers_image/answer_4.jpg)|
 
 答え
-- Python >> [answers/answer_4.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers/answer_4.py)
-- C++ >> [answers_cpp/answer_4.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers_cpp/answer_4.cpp)
+- Python >> [answers_py/answer_4.py](answers_py/answer_4.py)
+- C++ >> [answers_cpp/answer_4.cpp](answers_cpp/answer_4.cpp)
 
 ## Q.5. HSV変換
 
@@ -158,13 +158,13 @@ X = C (1 - |H' mod 2 - 1|)
 ```
 ここでは色相Hを反転(180を加算)し、RGBに直し画像を表示せよ。
 
-|入力 (imori.jpg)|出力 (answers/answer_5.jpg)|
+|入力 (imori.jpg)|出力 (answers_image/answer_5.jpg)|
 |:---:|:---:|
-|![](imori.jpg)|![](answers/answer_5.jpg)|
+|![](imori.jpg)|![](answers_image/answer_5.jpg)|
 
 答え 
-- Python >> [answers/answer_5.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers/answer_5.py)
-- C++ >> [answers_cpp/answer_5.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers_cpp/answer_5.cpp)
+- Python >> [answers_py/answer_5.py](answers_py/answer_5.py)
+- C++ >> [answers_cpp/answer_5.cpp](answers_cpp/answer_5.cpp)
 
 ## Q.6. 減色処理
 
@@ -178,13 +178,13 @@ val = {  32  (  0 <= val <  64)
         160  (128 <= val < 192)
         224  (192 <= val < 256)
 ```
-|入力 (imori.jpg)|出力 (answers/answer_6.jpg)|
+|入力 (imori.jpg)|出力 (answers_image/answer_6.jpg)|
 |:---:|:---:|
-|![](imori.jpg)|![](answers/answer_6.jpg)|
+|![](imori.jpg)|![](answers_image/answer_6.jpg)|
 
 答え 
-- Python >> [answers/answer_6.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers/answer_6.py)
-- C++ >> [answers_cpp/answer_6.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers_cpp/answer_6.cpp)
+- Python >> [answers_py/answer_6.py](answers_py/answer_6.py)
+- C++ >> [answers_cpp/answer_6.cpp](answers_cpp/answer_6.cpp)
 
 ## Q.7. 平均プーリング
 
@@ -200,25 +200,25 @@ v = 1/|R| * Sum_{i in R} v_i
 
 ここではimori.jpgは128x128なので、8x8にグリッド分割し、平均プーリングせよ。
 
-|入力 (imori.jpg)|出力 (answers/answer_7.jpg)|
+|入力 (imori.jpg)|出力 (answers_image/answer_7.jpg)|
 |:---:|:---:|
-|![](imori.jpg)|![](answers/answer_7.jpg)|
+|![](imori.jpg)|![](answers_image/answer_7.jpg)|
 
 答え 
-- Python >> [answers/answer_7.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers/answer_7.py)
-- C++ >> [answers_cpp/answer_7.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers_cpp/answer_7.cpp)
+- Python >> [answers_py/answer_7.py](answers_py/answer_7.py)
+- C++ >> [answers_cpp/answer_7.cpp](answers_cpp/answer_7.cpp)
 
 ## Q.8. Maxプーリング
 
 ここでは平均値でなく最大値でプーリングせよ。
 
-|入力 (imori.jpg)|出力 (answers/answer_8.jpg)|
+|入力 (imori.jpg)|出力 (answers_image/answer_8.jpg)|
 |:---:|:---:|
-|![](imori.jpg)|![](answers/answer_8.jpg)|
+|![](imori.jpg)|![](answers_image/answer_8.jpg)|
 
 答え
-- Python >> [answers/answer_8.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers/answer_8.py)
-- C++ >> [answers_cpp/answer_8.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers_cpp/answer_8.cpp)
+- Python >> [answers_py/answer_8.py](answers_py/answer_8.py)
+- C++ >> [answers_cpp/answer_8.cpp](answers_cpp/answer_8.cpp)
 
 ## Q.9. ガウシアンフィルタ
 
@@ -242,13 +242,13 @@ K =  1/16 [ 2 4 2 ]
             1 2 1
 ```
 
-|入力 (imori_noise.jpg)|出力 (answers/answer_9.jpg)|
+|入力 (imori_noise.jpg)|出力 (answers_image/answer_9.jpg)|
 |:---:|:---:|
-|![](imori_noise.jpg)|![](answers/answer_9.jpg)|
+|![](imori_noise.jpg)|![](answers_image/answer_9.jpg)|
 
 答え 
-- Python >> [answers/answer_9.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers/answer_9.py)
-- C++ >> [answers_cpp/answer_9.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers_cpp/answer_9.cpp)
+- Python >> [answers_py/answer_9.py](answers_py/answer_9.py)
+- C++ >> [answers_cpp/answer_9.cpp](answers_cpp/answer_9.cpp)
 
 ## Q.10 メディアンフィルタ
 
@@ -259,10 +259,10 @@ K =  1/16 [ 2 4 2 ]
 これは注目画素の3x3の領域内の、メディアン値(中央値)を出力するフィルタである。
 これもゼロパディングせよ。
 
-|入力 (imori_noise.jpg)|出力 (answers/answer_10.jpg)|
+|入力 (imori_noise.jpg)|出力 (answers_image/answer_10.jpg)|
 |:---:|:---:|
-|![](imori_noise.jpg)|![](answers/answer_10.jpg)|
+|![](imori_noise.jpg)|![](answers_image/answer_10.jpg)|
 
 答え 
-- Python >> [answers/answer_10.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers/answer_10.py)
-- C++ >> [answers_cpp/answer_10.cpp](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_01_10/answers_cpp/answer_10.cpp)
+- Python >> [answers_py/answer_10.py](answers_py/answer_10.py)
+- C++ >> [answers_cpp/answer_10.cpp](answers_cpp/answer_10.cpp)
