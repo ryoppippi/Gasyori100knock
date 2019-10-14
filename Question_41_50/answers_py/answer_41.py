@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-def Canny_step2(img):
+def Canny_step1(img):
 
 	# Gray scale
 	def BGR2GRAY(img):
@@ -48,14 +48,17 @@ def Canny_step2(img):
 					out[pad + y, pad + x, c] = np.sum(K * tmp[y: y + K_size, x: x + K_size, c])
 
 		out = out[pad: pad + H, pad: pad + W].astype(np.uint8)
-		out = out[..., 0]
 
 		return out
 
 
 	# sobel filter
 	def sobel_filter(img, K_size=3):
-		H, W = img.shape
+		if len(img.shape) == 3:
+			H, W, C = img.shape
+		else:
+			img = np.expand_dims(img, axis=-1)
+			H, W, C = img.shape
 
 		# Zero padding
 		pad = K_size // 2
@@ -86,59 +89,27 @@ def Canny_step2(img):
 		return out_v, out_h
 
 
-	def get_edge_tan(fx, fy):
+	def get_edge_angle(fx, fy):
 		# get edge strength
-		edge = np.sqrt(np.power(fx.astype(np.float32), 2) + np.power(fy.astype(np.float32), 2))
-		edge = np.clip(edge, 0, 255)
-
+		edge = np.sqrt(np.power(fx, 2) + np.power(fy, 2))
 		fx = np.maximum(fx, 1e-5)
-		#fx[np.abs(fx) <= 1e-5] = 1e-5
 
 		# get edge angle
-		tan = np.arctan(fy / fx)
+		angle = np.arctan(fy / fx)
 
-		return edge, tan
-
-
-	def angle_quantization(tan):
-		angle = np.zeros_like(tan, dtype=np.uint8)
-		angle[np.where((tan > -0.4142) & (tan <= 0.4142))] = 0
-		angle[np.where((tan > 0.4142) & (tan < 2.4142))] = 45
-		angle[np.where((tan >= 2.4142) | (tan <= -2.4142))] = 95
-		angle[np.where((tan > -2.4142) & (tan <= -0.4142))] = 135
-
-		return angle
+		return edge, angle
 
 
-	def non_maximum_suppression(angle, edge):
-		H, W = angle.shape
-		
-		for y in range(H):
-			for x in range(W):
-					if angle[y, x] == 0:
-							dx1, dy1, dx2, dy2 = -1, 0, 1, 0
-					elif angle[y, x] == 45:
-							dx1, dy1, dx2, dy2 = -1, 1, 1, -1
-					elif angle[y, x] == 90:
-							dx1, dy1, dx2, dy2 = 0, -1, 0, 1
-					elif angle[y, x] == 135:
-							dx1, dy1, dx2, dy2 = -1, -1, 1, 1
-					if x == 0:
-							dx1 = max(dx1, 0)
-							dx2 = max(dx2, 0)
-					if x == W-1:
-							dx1 = min(dx1, 0)
-							dx2 = min(dx2, 0)
-					if y == 0:
-							dy1 = max(dy1, 0)
-							dy2 = max(dy2, 0)
-					if y == H-1:
-							dy1 = min(dy1, 0)
-							dy2 = min(dy2, 0)
-					if max(max(edge[y, x], edge[y+dy1, x+dx1]), edge[y+dy2, x+dx2]) != edge[y, x]:
-							edge[y, x] = 0
+	def angle_quantization(angle):
+		angle = angle / np.pi * 180
+		angle[angle < -22.5] = 180 + angle[angle < -22.5]
+		_angle = np.zeros_like(angle, dtype=np.uint8)
+		_angle[np.where(angle <= 22.5)] = 0
+		_angle[np.where((angle > 22.5) & (angle <= 67.5))] = 45
+		_angle[np.where((angle > 67.5) & (angle <= 112.5))] = 90
+		_angle[np.where((angle > 112.5) & (angle <= 157.5))] = 135
 
-		return edge
+		return _angle
 
 	# grayscale
 	gray = BGR2GRAY(img)
@@ -150,24 +121,21 @@ def Canny_step2(img):
 	fy, fx = sobel_filter(gaussian, K_size=3)
 
 	# get edge strength, angle
-	edge, tan = get_edge_tan(fx, fy)
+	edge, angle = get_edge_angle(fx, fy)
 
 	# angle quantization
-	angle = angle_quantization(tan)
+	angle = angle_quantization(angle)
 
-	# non maximum suppression
-	edge = non_maximum_suppression(angle, edge)
-
-	return edge
+	return angle
 
 
 # Read image
 img = cv2.imread("imori.jpg").astype(np.float32)
 
-# Canny (step2)
-edge = Canny_step2(img)
+# Canny (step1)
+angle = Canny_step1(img)
 
-out = edge.astype(np.uint8)
+out = angle.astype(np.uint8)
 
 # Save result
 cv2.imwrite("out.jpg", out)

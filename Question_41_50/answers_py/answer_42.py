@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-def Canny(img):
+def Canny_step2(img):
 
 	# Gray scale
 	def BGR2GRAY(img):
@@ -86,7 +86,7 @@ def Canny(img):
 		return out_v, out_h
 
 
-	def get_edge_tan(fx, fy):
+	def get_edge_angle(fx, fy):
 		# get edge strength
 		edge = np.sqrt(np.power(fx.astype(np.float32), 2) + np.power(fy.astype(np.float32), 2))
 		edge = np.clip(edge, 0, 255)
@@ -95,17 +95,19 @@ def Canny(img):
 		#fx[np.abs(fx) <= 1e-5] = 1e-5
 
 		# get edge angle
-		tan = np.arctan(fy / fx)
+		angle = np.arctan(fy / fx)
 
-		return edge, tan
+		return edge, angle
 
 
-	def angle_quantization(tan):
-		angle = np.zeros_like(tan, dtype=np.uint8)
-		angle[np.where((tan > -0.4142) & (tan <= 0.4142))] = 0
-		angle[np.where((tan > 0.4142) & (tan < 2.4142))] = 45
-		angle[np.where((tan >= 2.4142) | (tan <= -2.4142))] = 95
-		angle[np.where((tan > -2.4142) & (tan <= -0.4142))] = 135
+	def angle_quantization(angle):
+		angle = angle / np.pi * 180
+		angle[angle < -22.5] = 180 + angle[angle < -22.5]
+		_angle = np.zeros_like(angle, dtype=np.uint8)
+		_angle[np.where(angle <= 22.5)] = 0
+		_angle[np.where((angle > 22.5) & (angle <= 67.5))] = 45
+		_angle[np.where((angle > 67.5) & (angle <= 112.5))] = 90
+		_angle[np.where((angle > 112.5) & (angle <= 157.5))] = 135
 
 		return angle
 
@@ -140,32 +142,6 @@ def Canny(img):
 
 		return edge
 
-	def hysterisis(edge, HT=100, LT=30):
-		H, W = edge.shape
-
-		# Histeresis threshold
-		edge[edge >= HT] = 255
-		edge[edge <= LT] = 0
-
-		_edge = np.zeros((H+2, W+2), dtype=np.float32)
-		_edge[1:H+1, 1:W+1] = edge
-
-		## 8 - Nearest neighbor
-		nn = np.array(((1., 1., 1.), (1., 0., 1.), (1., 1., 1.)), dtype=np.float32)
-
-		for y in range(1, H+2):
-				for x in range(1, W+2):
-						if _edge[y, x] < LT or _edge[y, x] > HT:
-								continue
-						if np.max(_edge[y-1:y+2, x-1:x+2] * nn) >= HT:
-								_edge[y, x] = 255
-						else:
-								_edge[y, x] = 0
-
-		edge = _edge[1:H+1, 1:W+1]
-								
-		return edge
-
 	# grayscale
 	gray = BGR2GRAY(img)
 
@@ -176,25 +152,22 @@ def Canny(img):
 	fy, fx = sobel_filter(gaussian, K_size=3)
 
 	# get edge strength, angle
-	edge, tan = get_edge_tan(fx, fy)
+	edge, angle = get_edge_angle(fx, fy)
 
 	# angle quantization
-	angle = angle_quantization(tan)
+	angle = angle_quantization(angle)
 
 	# non maximum suppression
 	edge = non_maximum_suppression(angle, edge)
 
-	# hysterisis threshold
-	out = hysterisis(edge)
-
-	return out
+	return edge
 
 
 # Read image
 img = cv2.imread("imori.jpg").astype(np.float32)
 
-# Canny
-edge = Canny(img)
+# Canny (step2)
+edge = Canny_step2(img)
 
 out = edge.astype(np.uint8)
 
