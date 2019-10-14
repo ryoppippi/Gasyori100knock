@@ -3,17 +3,16 @@
 #include <iostream>
 #include <math.h>
 
-int main(int argc, const char* argv[]){
 
-  // read original image
-  cv::Mat img = cv::imread("imori.jpg", cv::IMREAD_COLOR);
+// bilinear
+cv::Mat bilinear(cv::Mat img, double rx, double ry){
+  // get height and width
+  int width = img.cols;
+  int height = img.rows;
+  int channel = img.channels();
 
-  int width = img.rows;
-  int height = img.cols;
 
-  // resized ratio
-  double rx = 1.5, ry = 1.5;
-
+  // get resized shape
   int resized_width = (int)(width * rx);
   int resized_height = (int)(height * ry);
   int x_before, y_before;
@@ -35,22 +34,33 @@ int main(int argc, const char* argv[]){
       dx = x / rx - x_before;
       
       // compute bi-linear
-      for (int k = 0; k < 3; k++){
-        val = (1. - dx) * (1. - dy) * img.at<cv::Vec3b>(y_before, x_before)[k] +
-          dx * (1. - dy) * img.at<cv::Vec3b>(y_before, x_before + 1)[k] +
-          (1. - dx) * dy * img.at<cv::Vec3b>(y_before + 1, x_before)[k] +
-          dx * dy * img.at<cv::Vec3b>(y_before + 1, x_before)[k];
+      for (int c = 0; c < channel; c++){
+        val = (1. - dx) * (1. - dy) * img.at<cv::Vec3b>(y_before, x_before)[c] +
+          dx * (1. - dy) * img.at<cv::Vec3b>(y_before, x_before + 1)[c] +
+          (1. - dx) * dy * img.at<cv::Vec3b>(y_before + 1, x_before)[c] +
+          dx * dy * img.at<cv::Vec3b>(y_before + 1, x_before)[c];
 
         // assign pixel to new position
-        out.at<cv::Vec3b>(y, x)[k] = (uchar)val;
+        out.at<cv::Vec3b>(y, x)[c] = (uchar)val;
       }
     }
   }
+
+  return out;
+}
+
+
+int main(int argc, const char* argv[]){
+  // read image
+  cv::Mat img = cv::imread("imori.jpg", cv::IMREAD_COLOR);
+
+  // bilinear
+  cv::Mat out = bilinear(img, 1.5, 1.5);
   
   //cv::imwrite("out.jpg", out);
   cv::imshow("answer", out);
   cv::waitKey(0);
   cv::destroyAllWindows();
-
+ 
   return 0;
 }

@@ -3,18 +3,15 @@
 #include <iostream>
 #include <math.h>
 
-int main(int argc, const char* argv[]){
 
-  // read original image
-  cv::Mat img = cv::imread("imori.jpg", cv::IMREAD_COLOR);
+// affine
+cv::Mat affine(cv::Mat img, double a, double b, double c, double d, double tx, double ty){
+  // get height and width
+  int width = img.cols;
+  int height = img.rows;
+  int channel = img.channels();
 
-  int width = img.rows;
-  int height = img.cols;
-
-  // Affine parameters
-  double a = 1.3, b = 0.0, tx = 30;
-  double c = 0.0, d = .8, ty = -30;
-
+  // get detriment
   double det = a * d - b * c;
 
   // Resize width and height
@@ -49,17 +46,27 @@ int main(int argc, const char* argv[]){
       }
 
       // assign pixel to new position
-      for ( int k = 0; k < 3; k++){
-        out.at<cv::Vec3b>(y, x)[k] = img.at<cv::Vec3b>(y_before, x_before)[k];
+      for (int c = 0; c < channel; c++){
+        out.at<cv::Vec3b>(y, x)[c] = img.at<cv::Vec3b>(y_before, x_before)[c];
       }
     }
   }
+
+  return out;
+}
+
+
+int main(int argc, const char* argv[]){
+  // read image
+  cv::Mat img = cv::imread("imori.jpg", cv::IMREAD_COLOR);
+
+  // affine
+  cv::Mat out = affine(img, 1.3, 0, 0, 0.8, 30, -30);
   
   //cv::imwrite("out.jpg", out);
   cv::imshow("answer", out);
   cv::waitKey(0);
   cv::destroyAllWindows();
-
+ 
   return 0;
 }
-

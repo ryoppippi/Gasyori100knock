@@ -20,17 +20,15 @@ int val_clip(int x, int min, int max){
 }
 
 
-int main(int argc, const char* argv[]){
+// bicubic
+cv::Mat bicubic(cv::Mat img, double rx, double ry){
+  // get height and width
+  int width = img.cols;
+  int height = img.rows;
+  int channel = img.channels();
 
-  // read original image
-  cv::Mat img = cv::imread("imori.jpg", cv::IMREAD_COLOR);
 
-  int width = img.rows;
-  int height = img.cols;
-
-  // define resized ratio
-  double rx = 1.5, ry = 1.5;
-
+  // get resized shape
   int resized_width = (int)(width * rx);
   int resized_height = (int)(height * ry);
   int x_before, y_before;
@@ -51,7 +49,7 @@ int main(int argc, const char* argv[]){
       x_before = (int)floor(dx);
       
       
-      for (int k = 0; k < 3; k++){
+      for (int c = 0; c < channel; c++){
         w_sum = 0;
         val = 0;
 
@@ -64,7 +62,7 @@ int main(int argc, const char* argv[]){
             _x = val_clip(x_before + i, 0, width - 1);
             wx = h(fabs(dx - _x));
             w_sum += wy * wx;
-            val += (double)img.at<cv::Vec3b>(_y, _x)[k] * wx * wy;
+            val += (double)img.at<cv::Vec3b>(_y, _x)[c] * wx * wy;
           }
         }
 
@@ -73,16 +71,25 @@ int main(int argc, const char* argv[]){
 	      val = val_clip(val, 0, 255);
 
         // assign pixel to new position
-	      out.at<cv::Vec3b>(y, x)[k] = (uchar)val;
+	      out.at<cv::Vec3b>(y, x)[c] = (uchar)val;
       }
     }
   }
+  return out;
+}
+
+
+int main(int argc, const char* argv[]){
+  // read image
+  cv::Mat img = cv::imread("imori.jpg", cv::IMREAD_COLOR);
+
+  // bicubic
+  cv::Mat out = bicubic(img, 1.5, 1.5);
   
   //cv::imwrite("out.jpg", out);
   cv::imshow("answer", out);
   cv::waitKey(0);
   cv::destroyAllWindows();
-
+ 
   return 0;
 }
-
