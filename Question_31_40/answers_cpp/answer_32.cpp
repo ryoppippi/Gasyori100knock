@@ -11,14 +11,16 @@ struct fourier_str {
 };
 
 // RGB to Gray scale
-cv::Mat rgb2gray(cv::Mat img){
+cv::Mat BGR2GRAY(cv::Mat img){
+  // prepare output
   cv::Mat out = cv::Mat::zeros(height, width, CV_8UC1);
   
-  for (int j = 0; j < height; j ++){
-    for (int i = 0; i < width; i ++){
-      out.at<uchar>(j, i) = (int)((float)img.at<cv::Vec3b>(j,i)[0] * 0.0722 + \
-				  (float)img.at<cv::Vec3b>(j,i)[1] * 0.7152 + \
-				  (float)img.at<cv::Vec3b>(j,i)[2] * 0.2126);
+  // BGR -> Gray
+  for (int y = 0; y < height; y++){
+    for (int x = 0; x < width; x++){
+      out.at<uchar>(y, x) = (int)((float)img.at<cv::Vec3b>(y, x)[0] * 0.0722 + \
+				  (float)img.at<cv::Vec3b>(y, x)[1] * 0.7152 + \
+				  (float)img.at<cv::Vec3b>(y, x)[2] * 0.2126);
     }
   }
   return out;
@@ -26,17 +28,16 @@ cv::Mat rgb2gray(cv::Mat img){
 
 // Discrete Fourier transformation
 fourier_str dft(cv::Mat img, fourier_str fourier_s){
-  
   double I;
   double theta;
   std::complex<double> val;
 
-  for ( int l = 0; l < height; l ++){
-    for ( int k = 0; k < width; k ++){
+  for (int l = 0; l < height; l ++){
+    for (int k = 0; k < width; k ++){
       val.real(0);
       val.imag(0);
-      for ( int y = 0; y < height; y ++){
-        for ( int x = 0; x < width; x ++){
+      for (int y = 0; y < height; y++){
+        for (int x = 0; x < width; x++){
           I = (double)img.at<uchar>(y, x);
           theta = -2 * M_PI * ((double)k * (double)x / (double)width + (double)l * (double)y / (double)height);
           val += std::complex<double>(cos(theta), sin(theta)) * I;
@@ -87,11 +88,10 @@ int main(int argc, const char* argv[]){
   fourier_str fourier_s;
 
   // output image
-  cv::Mat gray = cv::Mat::zeros(height, width, CV_8UC1);
   cv::Mat out = cv::Mat::zeros(height, width, CV_8UC1);
 
   // BGR -> Gray
-  gray = rgb2gray(img);
+  cv::Mat gray = BGR2GRAY(img);
 
   // DFT
   fourier_s = dft(gray, fourier_s);

@@ -142,7 +142,7 @@ dct_str quantization(dct_str dct_s){
 
 
 // BGR -> Y Cb Cr
-cv::Mat bgr2YCbCr(cv::Mat img, cv::Mat out){
+cv::Mat BGR2YCbCr(cv::Mat img, cv::Mat out){
   int width = img.rows;
   int height = img.cols;
 
@@ -170,7 +170,7 @@ cv::Mat bgr2YCbCr(cv::Mat img, cv::Mat out){
 }
 
 // Y Cb Cr -> BGR
-cv::Mat YCbCr2bgr(cv::Mat ycbcr, cv::Mat out){
+cv::Mat YCbCr2BGR(cv::Mat ycbcr, cv::Mat out){
 
   int width = out.rows;
   int height = out.cols;
@@ -242,7 +242,7 @@ int main(int argc, const char* argv[]){
   cv::Mat out = cv::Mat::zeros(height, width, CV_8UC3);
 
   // BGR -> Y Cb Cr
-  ycbcr = bgr2YCbCr(img, ycbcr);
+  ycbcr = BGR2YCbCr(img, ycbcr);
 
   // DCT
   dct_s = dct(ycbcr, dct_s);
@@ -254,7 +254,7 @@ int main(int argc, const char* argv[]){
   ycbcr = idct(ycbcr, dct_s);
 
   // Y Cb Cr -> BGR
-  out = YCbCr2bgr(ycbcr, out);
+  out = YCbCr2BGR(ycbcr, out);
 
   // MSE, PSNR
   mse = MSE(img, out);

@@ -31,8 +31,8 @@
 |![](imori.jpg)|![](answers/answer_31_1.jpg)|![](answers/answer_31_2.jpg)|![](answers/answer_31_3.jpg)|
 
 答え 
-- Python >> [answers/answer_31.py](Question_31_40/answers/answer_31.py)
-- C++ >> [answers_cpp/answer_31.cpp](Question_31_40/answers_cpp/answer_31.cpp)
+- Python >> [answers/answer_31.py](answers/answer_31.py)
+- C++ >> [answers_cpp/answer_31.cpp](answers_cpp/answer_31.cpp)
 
 ## Q.32. フーリエ変換
 
