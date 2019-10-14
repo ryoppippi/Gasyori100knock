@@ -26,12 +26,12 @@
   1        0 0  1    1           1        0 0  1    1
 ```
 
-|入力 (imori.jpg)|出力 (1) (answers/answer_31_1.jpg)|出力 (2) (answers/answer_31_2.jpg)|出力 (3) (answers/answer_31_3.jpg)|
+|入力 (imori.jpg)|出力 (1) (answers_image/answer_31_1.jpg)|出力 (2) (answers_image/answer_31_2.jpg)|出力 (3) (answers_image/answer_31_3.jpg)|
 |:---:|:---:|:---:|:---:|
-|![](imori.jpg)|![](answers/answer_31_1.jpg)|![](answers/answer_31_2.jpg)|![](answers/answer_31_3.jpg)|
+|![](imori.jpg)|![](answers_image/answer_31_1.jpg)|![](answers_image/answer_31_2.jpg)|![](answers_image/answer_31_3.jpg)|
 
 答え 
-- Python >> [answers/answer_31.py](answers/answer_31.py)
+- Python >> [answers_py/answer_31.py](answers_py/answer_31.py)
 - C++ >> [answers_cpp/answer_31.cpp](answers_cpp/answer_31.cpp)
 
 ## Q.32. フーリエ変換
@@ -81,12 +81,12 @@ x = [0, W-1], y = [0, H-1] として
 
 シンプルに全部for文で回すと128^4の計算になるので、時間がかかってしまいます。numpyをうまく活用すれば計算コストを減らすことができます。（解答は128^2まで減らしました。）
 
-|入力 (imori.jpg) |出力 (answers/answer_32.jpg)|パワースペクトル (answers/answer_32_ps.py)
+|入力 (imori.jpg) |出力 (answers_image/answer_32.jpg)|パワースペクトル (answers_image/answer_32_ps.py)
 |:---:|:---:|:---:|
-|![](imori.jpg)|![](answers/answer_32.jpg)|![](answers/answer_32_ps.jpg)|
+|![](imori.jpg)|![](answers_image/answer_32.jpg)|![](answers_image/answer_32_ps.jpg)|
 
 答え 
-- Python >> [answers/answer_32.py](answers/answer_32.py)
+- Python >> [answers_py/answer_32.py](answers_py/answer_32.py)
 - C++ >> [answers_cpp/answer_32.cpp](answers_cpp/answer_32.cpp)
 
 ## Q.33. フーリエ変換　ローパスフィルタ
@@ -102,13 +102,13 @@ DFTによって得られた周波数成分は左上、右上、左下、右下�
 
 ここでは低周波数の中心から高周波までの距離をrとすると0.5rまでの成分を通すとする。
 
-|入力 (imori.jpg)|出力 (answers/answer_33.jpg)|
+|入力 (imori.jpg)|出力 (answers_image/answer_33.jpg)|
 |:---:|:---:|
-|![](imori.jpg)|![](answers/answer_33.jpg)|
+|![](imori.jpg)|![](answers_image/answer_33.jpg)|
 
 答え 
-- Python >> [answers/answer_33.py](Question_31_40/answers/answer_33.py)
-- C++ >> [answers_cpp/answer_33.cpp](Question_31_40/answers_cpp/answer_33.cpp)
+- Python >> [answers_py/answer_33.py](answers_py/answer_33.py)
+- C++ >> [answers_cpp/answer_33.cpp](answers_cpp/answer_33.cpp)
 
 ## Q.34. フーリエ変換　ハイパスフィルタ
 
@@ -118,13 +118,13 @@ DFTによって得られた周波数成分は左上、右上、左下、右下�
 
 ここでは低周波数の中心から高周波までの距離をrとすると0.1rからの成分を通すとする。
 
-|入力 (imori.jpg)|出力 (answers/answer_34.jpg)|
+|入力 (imori.jpg)|出力 (answers_image/answer_34.jpg)|
 |:---:|:---:|
-|![](imori.jpg)|![](answers/answer_34.jpg)|
+|![](imori.jpg)|![](answers_image/answer_34.jpg)|
 
 答え 
-- Python >> [answers/answer_34.py](Question_31_40/answers/answer_34.py)
-- C++ >> [answers_cpp/answer_34.cpp](Question_31_40/answers_cpp/answer_34.cpp)
+- Python >> [answers_py/answer_34.py](answers_py/answer_34.py)
+- C++ >> [answers_cpp/answer_34.cpp](answers_cpp/answer_34.cpp)
 
 ## Q.35. フーリエ変換　バンドパスフィルタ
 
@@ -134,13 +134,13 @@ DFTによって得られた周波数成分は左上、右上、左下、右下�
 
 ここでは低周波数の中心から高周波までの距離をrとすると0.1rから0.5rまでの成分を通すとする。
 
-|入力 (imori.jpg)|出力 (answers/answer_35.jpg)|
+|入力 (imori.jpg)|出力 (answers_image/answer_35.jpg)|
 |:---:|:---:|
-|![](imori.jpg)|![](answers/answer_35.jpg)|
+|![](imori.jpg)|![](answers_image/answer_35.jpg)|
 
 答え 
-- Python >> [answers/answer_35.py](Question_31_40/answers/answer_35.py)
-- C++ >> [answers_cpp/answer_35.cpp](Question_31_40/answers_cpp/answer_35.cpp)
+- Python >> [answers_py/answer_35.py](answers_py/answer_35.py)
+- C++ >> [answers_cpp/answer_35.cpp](answers_cpp/answer_35.cpp)
 
 ## Q.36. JPEG圧縮 (Step.1)離散コサイン変換
 
@@ -174,13 +174,13 @@ f(x,y) = 2 / T * C(x)C(y) * Sum_{u=0:K-1} Sum_{v=0:K-1} F(u,v) cos((2x+1)u*pi/2T
 ここでは画像を8x8ずつの領域に分割して、各領域で以上のDCT, IDCTを繰り返すことで、jpeg符号に応用される。
 今回も同様に8x8の領域に分割して、DCT, IDCTを行え。
 
-|入力 (imori.jpg)|出力 (answers/answer_36.jpg)|
+|入力 (imori.jpg)|出力 (answers_image/answer_36.jpg)|
 |:---:|:---:|
-|![](imori.jpg)|![](answers/answer_36.jpg)|
+|![](imori.jpg)|![](answers_image/answer_36.jpg)|
 
 答え 
-- Python >> [answers/answer_36.py](Question_31_40/answers/answer_36.py)
-- C++ >> [answers_cpp/answer_36.cpp](Question_31_40/answers_cpp/answer_36.cpp)
+- Python >> [answers_py/answer_36.py](answers_py/answer_36.py)
+- C++ >> [answers_cpp/answer_36.cpp](answers_cpp/answer_36.cpp)
 
 ## Q.37. PSNR
 
@@ -208,13 +208,13 @@ MSE = Sum_{y=0:H-1} Sum_{x=0:W-1} (I1(x,y) - I2(x,y))^2 / (HW)
 bitrate = 8 * K^2 / 8^2
 ```
 
-|入力 (imori.jpg)|出力 (answers/answer_37.jpg) (PSNR = 27.62, Bitrate=2.0)|
+|入力 (imori.jpg)|出力 (answers_image/answer_37.jpg) (PSNR = 27.62, Bitrate=2.0)|
 |:---:|:---:|
-|![](imori.jpg)|![](answers/answer_37.jpg)|
+|![](imori.jpg)|![](answers_image/answer_37.jpg)|
 
 答え 
-- Python >> [answers/answer_37.py](Question_31_40/answers/answer_37.py)
-- C++ >> [answers_cpp/answer_37.cpp](Question_31_40/answers_cpp/answer_37.cpp)
+- Python >> [answers_py/answer_37.py](answers_py/answer_37.py)
+- C++ >> [answers_cpp/answer_37.cpp](answers_cpp/answer_37.cpp)
 
 ## Q.38. JPEG圧縮 (Step.2)DCT+量子化
 
@@ -242,13 +242,13 @@ Q = np.array(((16, 11, 10, 16, 24, 40, 51, 61),
 
 量子化を行うと画像の容量が減っていることから、データ量が削減されたことが伺える。
 
-|入力 (imori.jpg)|出力 (answers/answer_38.jpg) (7kb)|
+|入力 (imori.jpg)|出力 (answers_image/answer_38.jpg) (7kb)|
 |:---:|:---:|
-|![](imori.jpg)|![](answers/answer_38.jpg)|
+|![](imori.jpg)|![](answers_image/answer_38.jpg)|
 
 答え 
-- Python >> [answers/answer_38.py](Question_31_40/answers/answer_38.py)
-- C++ >> [answers_cpp/answer_38.cpp](Question_31_40/answers_cpp/answer_38.cpp)
+- Python >> [answers_py/answer_38.py](answers_py/answer_38.py)
+- C++ >> [answers_cpp/answer_38.cpp](answers_cpp/answer_38.cpp)
 
 ## Q.39. JPEG圧縮 (Step.3)YCbCr表色系
 
@@ -274,13 +274,13 @@ G = Y - (Cb - 128) * 0.3441 - (Cr - 128) * 0.7139
 B = Y + (Cb - 128) * 1.7718
 ```
 
-|入力 (imori.jpg)|出力 (answers/answer_39.jpg) |
+|入力 (imori.jpg)|出力 (answers_image/answer_39.jpg) |
 |:---:|:---:|
-|![](imori.jpg)|![](answers/answer_39.jpg)|
+|![](imori.jpg)|![](answers_image/answer_39.jpg)|
 
 答え 
-- Python >> [answers/answer_39.py](Question_31_40/answers/answer_39.py)
-- C++ >> [answers_cpp/answer_39.cpp](Question_31_40/answers_cpp/answer_39.cpp)
+- Python >> [answers_py/answer_39.py](answers_py/answer_39.py)
+- C++ >> [answers_cpp/answer_39.cpp](answers_cpp/answer_39.cpp)
 
 ## Q.40. JPEG圧縮 (Step.4)YCbCr+DCT+量子化
 
@@ -316,10 +316,10 @@ Q2 = np.array(((17, 18, 24, 47, 99, 99, 99, 99),
                (99, 99, 99, 99, 99, 99, 99, 99)), dtype=np.float32)
 ```
 
-|入力 (imori.jpg) (13kb)|出力 (answers/answer_40.jpg) (9kb)|
+|入力 (imori.jpg) (13kb)|出力 (answers_image/answer_40.jpg) (9kb)|
 |:---:|:---:|
-|![](imori.jpg)|![](answers/answer_40.jpg)|
+|![](imori.jpg)|![](answers_image/answer_40.jpg)|
 
 答え 
-- Python >> [answers/answer_40.py](Question_31_40/answers/answer_40.py)
-- C++ >> [answers_cpp/answer_40.cpp](Question_31_40/answers_cpp/answer_40.cpp)
+- Python >> [answers_py/answer_40.py](answers_py/answer_40.py)
+- C++ >> [answers_cpp/answer_40.cpp](answers_cpp/answer_40.cpp)
