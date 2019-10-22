@@ -25,7 +25,7 @@ cv::Mat gaussian_filter(cv::Mat img, double sigma, int kernel_size){
     for (int x = 0; x < kernel_size; x++){
       _y = y - pad;
       _x = x - pad; 
-      kernel[y][x] = 1 / (sigma * sqrt(2 * M_PI)) * exp( - (_x * _x + _y * _y) / (2 * sigma * sigma));
+      kernel[y][x] = 1 / (2 * M_PI * sigma * sigma) * exp( - (_x * _x + _y * _y) / (2 * sigma * sigma));
       kernel_sum += kernel[y][x];
     }
   }
