@@ -21,7 +21,7 @@ def gaussian_filter(img, K_size=3, sigma=1.3):
 	for x in range(-pad, -pad + K_size):
 		for y in range(-pad, -pad + K_size):
 			K[y + pad, x + pad] = np.exp( -(x ** 2 + y ** 2) / (2 * (sigma ** 2)))
-	K /= (sigma * np.sqrt(2 * np.pi))
+	K /= (2 * np.pi * sigma * sigma)
 	K /= K.sum()
 
 	tmp = out.copy()
@@ -30,8 +30,9 @@ def gaussian_filter(img, K_size=3, sigma=1.3):
 	for y in range(H):
 		for x in range(W):
 			for c in range(C):
-				out[pad + y, pad + x] = np.sum(K * tmp[y: y + K_size, x: x + K_size])
+				out[pad + y, pad + x, c] = np.sum(K * tmp[y: y + K_size, x: x + K_size, c])
 
+	out = np.clip(out, 0, 255)
 	out = out[pad: pad + H, pad: pad + W].astype(np.uint8)
 
 	return out

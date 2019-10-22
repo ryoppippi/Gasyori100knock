@@ -35,8 +35,9 @@ def Canny_step2(img):
 		K = np.zeros((K_size, K_size), dtype=np.float)
 		for x in range(-pad, -pad + K_size):
 			for y in range(-pad, -pad + K_size):
-				K[y+pad, x+pad] = np.exp( -(x ** 2 + y ** 2) / (2 * (sigma ** 2)))
-		K /= (sigma * np.sqrt(2 * np.pi))
+				K[y + pad, x + pad] = np.exp( - (x ** 2 + y ** 2) / (2 * (sigma ** 2)))
+		#K /= (sigma * np.sqrt(2 * np.pi))
+		K /= (2 * np.pi * sigma * sigma)
 		K /= K.sum()
 
 		tmp = out.copy()
@@ -45,9 +46,11 @@ def Canny_step2(img):
 		for y in range(H):
 			for x in range(W):
 				for c in range(C):
-					out[pad + y, pad + x, c] = np.sum(K * tmp[y: y + K_size, x: x + K_size, c])
+					out[pad + y, pad + x, c] = np.sum(K * tmp[y : y + K_size, x : x + K_size, c])
 
-		out = out[pad: pad + H, pad: pad + W].astype(np.uint8)
+		out = np.clip(out, 0, 255)
+		out = out[pad : pad + H, pad : pad + W]
+		out = out.astype(np.uint8)
 		out = out[..., 0]
 
 		return out
@@ -55,12 +58,15 @@ def Canny_step2(img):
 
 	# sobel filter
 	def sobel_filter(img, K_size=3):
-		H, W = img.shape
+		if len(img.shape) == 3:
+			H, W, C = img.shape
+		else:
+			H, W = img.shape
 
 		# Zero padding
 		pad = K_size // 2
 		out = np.zeros((H + pad * 2, W + pad * 2), dtype=np.float)
-		out[pad: pad + H, pad: pad + W] = gray.copy().astype(np.float)
+		out[pad: pad + H, pad: pad + W] = img.copy().astype(np.float)
 		tmp = out.copy()
 
 		out_v = out.copy()
@@ -109,12 +115,13 @@ def Canny_step2(img):
 		_angle[np.where((angle > 67.5) & (angle <= 112.5))] = 90
 		_angle[np.where((angle > 112.5) & (angle <= 157.5))] = 135
 
-		return angle
+		return _angle
 
 
 	def non_maximum_suppression(angle, edge):
 		H, W = angle.shape
-		
+		_edge = edge.copy()
+
 		for y in range(H):
 			for x in range(W):
 					if angle[y, x] == 0:
@@ -137,10 +144,10 @@ def Canny_step2(img):
 					if y == H-1:
 							dy1 = min(dy1, 0)
 							dy2 = min(dy2, 0)
-					if max(max(edge[y, x], edge[y+dy1, x+dx1]), edge[y+dy2, x+dx2]) != edge[y, x]:
-							edge[y, x] = 0
+					if max(max(edge[y, x], edge[y + dy1, x + dx1]), edge[y + dy2, x + dx2]) != edge[y, x]:
+							_edge[y, x] = 0
 
-		return edge
+		return _edge
 
 	# grayscale
 	gray = BGR2GRAY(img)
@@ -160,19 +167,22 @@ def Canny_step2(img):
 	# non maximum suppression
 	edge = non_maximum_suppression(angle, edge)
 
-	return edge
+	return edge, angle
 
 
 # Read image
 img = cv2.imread("imori.jpg").astype(np.float32)
 
 # Canny (step2)
-edge = Canny_step2(img)
+edge, angle = Canny_step2(img)
 
-out = edge.astype(np.uint8)
+edge = edge.astype(np.uint8)
+angle = angle.astype(np.uint8)
 
 # Save result
-cv2.imwrite("out.jpg", out)
-cv2.imshow("result", out)
+cv2.imwrite("out.jpg", edge)
+cv2.imshow("result", edge)
+cv2.imwrite("out2.jpg", angle)
+cv2.imshow("result2", angle)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
