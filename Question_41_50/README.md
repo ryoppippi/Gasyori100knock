@@ -41,7 +41,9 @@ angle = {   0  (if -22.5 < angle <= 22.5)
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](answers_image/answer_41_1.jpg)|![](answers_image/answer_41_2.jpg)|
 
-答え >> [answers_py/answer_41.py](answers_py/answer_41.py)
+答え 
+- Python >> [answers_py/answer_41.py](answers_py/answer_41.py)
+- C++ >> [answers_cpp/answer_41.py](answers_cpp/answer_41.py)
 
 ## Q.42. Cannyエッジ検出 (Step.2) 細線化
 
@@ -74,7 +76,9 @@ if angle(x,y)  = 135
 |:---:|:---:|
 |![](imori.jpg)|![](answers_image/answer_42.jpg)|
 
-答え >> [answers_py/answer_42.py](answers_py/answer_42.py)
+答え 
+- Python >> [answers_py/answer_42.py](answers_py/answer_42.py)
+- Python >> [answers_cpp/answer_42.py](answers_cpp/answer_42.py)
 
 ## Q.43. Cannyエッジ検出 (Step.3) ヒステリシス閾処理
 
@@ -95,7 +99,9 @@ if angle(x,y)  = 135
 |:---:|:---:|
 |![](imori.jpg)|![](answers_image/answer_43.jpg)|
 
-答え >> [answers_py/answer_43.py](answers_py/answer_43.py)
+答え 
+- Python >> [answers_py/answer_43.py](answers_py/answer_43.py)
+- C++ >> [answers_cpp/answer_43.py](answers_cpp/answer_43.py)
 
 ## Q.44. Hough変換・直線検出 (Step.1) Hough変換
 
