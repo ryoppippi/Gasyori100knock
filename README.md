@@ -37,6 +37,7 @@ Twitterで更新を発信してますぅ
 
 https://twitter.com/curry_yoyoyo
 
+- 2019.10.27 [C++] Q.44~46 Hough直線検出を追加、[Python]の解答を修正
 - 2019.10.22 [C++] Q.41~43 Cannyのエッジ検出を追加, [Python] の解答を修正
 - 2019.9.3 [Python] Q.81~100のAnswerコードをメソッド化
 - 2019.9.2 [Python] Q.61~80のAnswerコードをメソッド化
@@ -134,11 +135,11 @@ $ git clone https://github.com/yoyoyo-yo/Gasyori100knock.git
 
 |番号|問題| Python | C++ | |番号|問題| Python | C++ |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| 41 | [Cannyエッジ検出 (Step.1) エッジ強度](Question_41_50#q41-canny%E3%82%A8%E3%83%83%E3%82%B8%E6%A4%9C%E5%87%BA-step1-%E3%82%A8%E3%83%83%E3%82%B8%E5%BC%B7%E5%BA%A6) | [✓](Question_41_50/answers_py/answer_41.py) | [✓](Question_41_50/answers_cpp/answer_41.py) | | 46 | [Hough変換・直線検出 (Step.3) Hough逆変換](Question_41_50#q46-hough%E5%A4%89%E6%8F%9B%E7%9B%B4%E7%B7%9A%E6%A4%9C%E5%87%BA-step3-hough%E9%80%86%E5%A4%89%E6%8F%9B) | [✓](Question_41_50/answers_py/answer_46.py) | |
-| 42 | [Cannyエッジ検出 (Step.2) 細線化](Question_41_50#q42-canny%E3%82%A8%E3%83%83%E3%82%B8%E6%A4%9C%E5%87%BA-step2-%E7%B4%B0%E7%B7%9A%E5%8C%96) | [✓](Question_41_50/answers_py/answer_42.py) | [✓](Question_41_50/answers_cpp/answer_42.py) | | 47 | [モルフォロジー処理(膨張)](Question_41_50#q47-%E3%83%A2%E3%83%AB%E3%83%95%E3%82%A9%E3%83%AD%E3%82%B8%E3%83%BC%E5%87%A6%E7%90%86%E8%86%A8%E5%BC%B5) | [✓](Question_41_50/answers_py/answer_47.py) | |
-| 43 | [Cannyエッジ検出 (Step.3) ヒステリシス閾処理](Question_41_50#q43-canny%E3%82%A8%E3%83%83%E3%82%B8%E6%A4%9C%E5%87%BA-step3-%E3%83%92%E3%82%B9%E3%83%86%E3%83%AA%E3%82%B7%E3%82%B9%E9%96%BE%E5%87%A6%E7%90%86) | [✓](Question_41_50/answers_py/answer_43.py) | [✓](Question_41_50/answers_cpp/answer_43.py) | | 48 | [モルフォロジー処理(収縮)](Question_41_50#q48-%E3%83%A2%E3%83%AB%E3%83%95%E3%82%A9%E3%83%AD%E3%82%B8%E3%83%BC%E5%87%A6%E7%90%86%E5%8F%8E%E7%B8%AE) | [✓](Question_41_50/answers_py/answer_48.py) | |
-| 44| [Hough変換・直線検出 (Step.1) Hough変換](Question_41_50#q44-hough%E5%A4%89%E6%8F%9B%E7%9B%B4%E7%B7%9A%E6%A4%9C%E5%87%BA-step1-hough%E5%A4%89%E6%8F%9B) | [✓](Question_41_50/answers_py/answer_44.py) | | | 49 | [オープニング処理](Question_41_50#q49-%E3%82%AA%E3%83%BC%E3%83%97%E3%83%8B%E3%83%B3%E3%82%B0%E5%87%A6%E7%90%86) | [✓](Question_41_50/answers_py/answer_49.py) | |
-| 45| [Hough変換・直線検出 (Step.2) NMS](Question_41_50#q45-hough%E5%A4%89%E6%8F%9B%E7%9B%B4%E7%B7%9A%E6%A4%9C%E5%87%BA-step2-nms) | [✓](Question_41_50/answers_py/answer_45.py) | | | 50 | [クロージング処理](Question_41_50#q50-%E3%82%AF%E3%83%AD%E3%83%BC%E3%82%B8%E3%83%B3%E3%82%B0%E5%87%A6%E7%90%86) | [✓](Question_41_50/answers_py/answer_50.py) | |
+| 41 | [Cannyエッジ検出 (Step.1) エッジ強度](Question_41_50#q41-canny%E3%82%A8%E3%83%83%E3%82%B8%E6%A4%9C%E5%87%BA-step1-%E3%82%A8%E3%83%83%E3%82%B8%E5%BC%B7%E5%BA%A6) | [✓](Question_41_50/answers_py/answer_41.py) | [✓](Question_41_50/answers_cpp/answer_41.cpp) | | 46 | [Hough変換・直線検出 (Step.3) Hough逆変換](Question_41_50#q46-hough%E5%A4%89%E6%8F%9B%E7%9B%B4%E7%B7%9A%E6%A4%9C%E5%87%BA-step3-hough%E9%80%86%E5%A4%89%E6%8F%9B) | [✓](Question_41_50/answers_py/answer_46.py) | [✓](Question_41_50/answers_cpp/answer_46.cpp) |
+| 42 | [Cannyエッジ検出 (Step.2) 細線化](Question_41_50#q42-canny%E3%82%A8%E3%83%83%E3%82%B8%E6%A4%9C%E5%87%BA-step2-%E7%B4%B0%E7%B7%9A%E5%8C%96) | [✓](Question_41_50/answers_py/answer_42.py) | [✓](Question_41_50/answers_cpp/answer_42.cpp) | | 47 | [モルフォロジー処理(膨張)](Question_41_50#q47-%E3%83%A2%E3%83%AB%E3%83%95%E3%82%A9%E3%83%AD%E3%82%B8%E3%83%BC%E5%87%A6%E7%90%86%E8%86%A8%E5%BC%B5) | [✓](Question_41_50/answers_py/answer_47.py) | |
+| 43 | [Cannyエッジ検出 (Step.3) ヒステリシス閾処理](Question_41_50#q43-canny%E3%82%A8%E3%83%83%E3%82%B8%E6%A4%9C%E5%87%BA-step3-%E3%83%92%E3%82%B9%E3%83%86%E3%83%AA%E3%82%B7%E3%82%B9%E9%96%BE%E5%87%A6%E7%90%86) | [✓](Question_41_50/answers_py/answer_43.py) | [✓](Question_41_50/answers_cpp/answer_43.cpp) | | 48 | [モルフォロジー処理(収縮)](Question_41_50#q48-%E3%83%A2%E3%83%AB%E3%83%95%E3%82%A9%E3%83%AD%E3%82%B8%E3%83%BC%E5%87%A6%E7%90%86%E5%8F%8E%E7%B8%AE) | [✓](Question_41_50/answers_py/answer_48.py) | |
+| 44| [Hough変換・直線検出 (Step.1) Hough変換](Question_41_50#q44-hough%E5%A4%89%E6%8F%9B%E7%9B%B4%E7%B7%9A%E6%A4%9C%E5%87%BA-step1-hough%E5%A4%89%E6%8F%9B) | [✓](Question_41_50/answers_py/answer_44.py) |  [✓](Question_41_50/answers_cpp/answer_44.cpp)  | | 49 | [オープニング処理](Question_41_50#q49-%E3%82%AA%E3%83%BC%E3%83%97%E3%83%8B%E3%83%B3%E3%82%B0%E5%87%A6%E7%90%86) | [✓](Question_41_50/answers_py/answer_49.py) | |
+| 45| [Hough変換・直線検出 (Step.2) NMS](Question_41_50#q45-hough%E5%A4%89%E6%8F%9B%E7%9B%B4%E7%B7%9A%E6%A4%9C%E5%87%BA-step2-nms) | [✓](Question_41_50/answers_py/answer_45.py) | [✓](Question_41_50/answers_cpp/answer_45.cpp) | | 50 | [クロージング処理](Question_41_50#q50-%E3%82%AF%E3%83%AD%E3%83%BC%E3%82%B8%E3%83%B3%E3%82%B0%E5%87%A6%E7%90%86) | [✓](Question_41_50/answers_py/answer_50.py) | |
 
 ### [問題51 - 60](Question_51_60)
 
