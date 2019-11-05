@@ -35,7 +35,7 @@ PythonとC++の好きな方でやってみてね♡（最近Javascriptも追加�
 
 Twitterで更新を発信してますぅ
 
-https://twitter.com/curry_yoyoyo
+https://twitter.com/curry_frog
 
 - 2019.10.27 [C++] Q.44~46 Hough直線検出を追加、[Python]の解答を修正
 - 2019.10.22 [C++] Q.41~43 Cannyのエッジ検出を追加, [Python] の解答を修正
