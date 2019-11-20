@@ -224,7 +224,9 @@ x = - sin(t) / cos(t) * y + r / cos(t)
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](answers_image/answer_4.jpg)|![](answers_image/answer_48.jpg)|
 
-答え >> [answers_py/answer_48.py](answers_py/answer_48.py)
+答え 
+- Python >> [answers_py/answer_48.py](answers_py/answer_48.py)
+- C++ >> [answers_cpp/answer_48.cpp](answers_cpp/answer_48.cpp)
 
 ## Q.49. オープニング処理
 
