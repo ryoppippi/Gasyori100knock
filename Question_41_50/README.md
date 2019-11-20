@@ -43,7 +43,7 @@ angle = {   0  (if -22.5 < angle <= 22.5)
 
 答え 
 - Python >> [answers_py/answer_41.py](answers_py/answer_41.py)
-- C++ >> [answers_cpp/answer_41.py](answers_cpp/answer_41.py)
+- C++ >> [answers_cpp/answer_41.cpp](answers_cpp/answer_41.cpp)
 
 ## Q.42. Cannyエッジ検出 (Step.2) 細線化
 
@@ -78,7 +78,7 @@ if angle(x,y)  = 135
 
 答え 
 - Python >> [answers_py/answer_42.py](answers_py/answer_42.py)
-- Python >> [answers_cpp/answer_42.py](answers_cpp/answer_42.py)
+- Python >> [answers_cpp/answer_42.cpp](answers_cpp/answer_42.cpp)
 
 ## Q.43. Cannyエッジ検出 (Step.3) ヒステリシス閾処理
 
@@ -101,7 +101,7 @@ if angle(x,y)  = 135
 
 答え 
 - Python >> [answers_py/answer_43.py](answers_py/answer_43.py)
-- C++ >> [answers_cpp/answer_43.py](answers_cpp/answer_43.py)
+- C++ >> [answers_cpp/answer_43.cpp](answers_cpp/answer_43.cpp)
 
 ## Q.44. Hough変換・直線検出 (Step.1) Hough変換
 
@@ -139,7 +139,9 @@ Cannyのパラメータは, gaussian filter(5x5, s=1.4), HT = 100, LT = 30で使
 |:---:|:---:|
 |![](thorino.jpg)|![](answers_image/answer_44.jpg)|
 
-答え >> [answers_py/answer_44.py](answers_py/answer_44.py)
+答え 
+- Python >> [answers_py/answer_44.py](answers_py/answer_44.py)
+- C++ >> [answers_cpp/answer_44.cpp](answers_cpp/answer_44.cpp)
 
 ## Q.45. Hough変換・直線検出 (Step.2) NMS
 
@@ -158,7 +160,9 @@ NMSのアルゴリズムは、
 |:---:|:---:|
 |![](thorino.jpg)|![](answers_image/answer_45.jpg)|
 
-答え >> [answers_py/answer_45.py](answers_py/answer_45.py)
+答え 
+- Python >> [answers_py/answer_45.py](answers_py/answer_45.py)
+- C++ >> [answers_cpp/answer_45.cpp](answers_cpp/answer_45.cpp)
 
 ## Q.46. Hough変換・直線検出 (Step.3) Hough逆変換
 
@@ -179,7 +183,9 @@ x = - sin(t) / cos(t) * y + r / cos(t)
 |:---:|:---:|
 |![](thorino.jpg)|![](answers_image/answer_46.jpg)|
 
-答え >> [answers_py/answer_46.py](answers_py/answer_46.py)
+答え 
+- Python >> [answers_py/answer_46.py](answers_py/answer_46.py)
+- C++ >> [answers_cpp/answer_46.cpp](answers_cpp/answer_46.cpp)
 
 ## Q.47. モルフォロジー処理(膨張)
 
@@ -201,7 +207,9 @@ x = - sin(t) / cos(t) * y + r / cos(t)
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](answers_image/answer_4.jpg)|![](answers_image/answer_47.jpg)|
 
-答え >> [answers_py/answer_47.py](answers_py/answer_47.py)
+答え 
+- Python >> [answers_py/answer_47.py](answers_py/answer_47.py)
+- C++ >> [answers_cpp/answer_47.cpp](answers_cpp/answer_47.cpp)
 
 ## Q.48. モルフォロジー処理(収縮)
 
