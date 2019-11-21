@@ -44,8 +44,8 @@ def otsu_binarization(img, th=128):
 	return out
 
 
-# Erosion
-def Erode(img, Erode_time=1):
+# Morphology Dilate
+def Morphology_Dilate(img, Erode_time=1):
 	H, W = img.shape
 	out = img.copy()
 
@@ -77,7 +77,7 @@ gray = BGR2GRAY(img)
 otsu = otsu_binarization(gray)
 
 # Morphology - dilate
-out = Erode(otsu, Erode_time=2)
+out = Morphology_Dilate(otsu, Erode_time=2)
 
 
 # Save result

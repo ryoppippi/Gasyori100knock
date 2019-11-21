@@ -45,8 +45,8 @@ def otsu_binarization(img, th=128):
 	return out
 
 
-# Dilation
-def Dilate(img, Dil_time=1):
+# Morphology Erode
+def Morphology_Erode(img, Dil_time=1):
 	H, W = img.shape
 
 	# kernel
@@ -76,7 +76,7 @@ gray = BGR2GRAY(img)
 otsu = otsu_binarization(gray)
 
 # Morphology - dilate
-out = Dilate(otsu, Dil_time=2)
+out = Morphology_Erode(otsu, Dil_time=2)
 
 # Save result
 cv2.imwrite("out.jpg", out)

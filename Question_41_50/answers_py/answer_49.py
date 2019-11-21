@@ -44,8 +44,8 @@ def otsu_binarization(img, th=128):
 	return out
 
 
-# Erosion
-def Erode(img, Erode_time=1):
+# Morphology Dilate
+def Morphology_Dilate(img, Erode_time=1):
 	H, W = img.shape
 	out = img.copy()
 
@@ -66,8 +66,8 @@ def Erode(img, Erode_time=1):
 	return out
 
 
-# Dilation
-def Dilate(img, Dil_time=1):
+# Morphology Erode
+def Morphology_Erode(img, Dil_time=1):
 	H, W = img.shape
 
 	# kernel
@@ -89,8 +89,8 @@ def Dilate(img, Dil_time=1):
 
 # Opening morphology
 def Morphology_Opening(img, time=1):
-	out = Erode(img, Erode_time=time)
-	out = Dilate(out, Dil_time=time)
+	out = Morphology_Dilate(img, Erode_time=time)
+	out = Morphology_Erode(out, Dil_time=time)
 	return out
 
 

@@ -3,25 +3,25 @@
 #include <iostream>
 #include <math.h>
 
-
-// RGB to Gray scale
+// BGR -> Gray
 cv::Mat BGR2GRAY(cv::Mat img){
   // get height and width
-  int height = img.rows;
   int width = img.cols;
-  int channel = img.channels();
+  int height = img.rows;
 
   // prepare output
   cv::Mat out = cv::Mat::zeros(height, width, CV_8UC1);
-  
-  // BGR -> Gray
+
+  // each y, x
   for (int y = 0; y < height; y++){
     for (int x = 0; x < width; x++){
-      out.at<uchar>(y, x) = (int)((float)img.at<cv::Vec3b>(y, x)[0] * 0.0722 + \
-				  (float)img.at<cv::Vec3b>(y, x)[1] * 0.7152 + \
-				  (float)img.at<cv::Vec3b>(y, x)[2] * 0.2126);
+      // BGR -> Gray
+      out.at<uchar>(y, x) = 0.2126 * (float)img.at<cv::Vec3b>(y, x)[2] \
+        + 0.7152 * (float)img.at<cv::Vec3b>(y, x)[1] \
+        + 0.0722 * (float)img.at<cv::Vec3b>(y, x)[0];
     }
   }
+
   return out;
 }
 
@@ -340,6 +340,111 @@ cv::Mat Canny(cv::Mat img){
   return edge;
 }
 
+// Morphology Erode
+cv::Mat Morphology_Erode(cv::Mat img, int Erode_time){
+  int height = img.cols;
+  int width = img.rows;
+
+  // output image
+  cv::Mat tmp_img;
+  cv::Mat out = img.clone();
+
+  // for erode time
+  for (int i = 0; i < Erode_time; i++){
+    tmp_img = out.clone();
+
+    // each pixel
+    for (int y = 0; y < height; y++){
+      for (int x = 0; x < width; x++){
+        // check left pixel
+        if ((x > 0) && (tmp_img.at<uchar>(y, x - 1) == 255)){
+          out.at<uchar>(y, x) = 255;
+          continue;
+        } 
+
+        // check up pixel
+        if ((y > 0) && (tmp_img.at<uchar>(y - 1, x) == 255)){
+          out.at<uchar>(y, x) = 255;
+          continue;
+        }
+
+        // check right pixel
+        if ((x < width - 1) && (tmp_img.at<uchar>(y, x + 1) == 255)){
+          out.at<uchar>(y, x) = 255;
+          continue;
+        }
+
+        // check left pixel
+        if ((y < height - 1) && (tmp_img.at<uchar>(y + 1, x) == 255)){
+          out.at<uchar>(y, x) = 255;
+          continue;
+        }
+      }
+    }
+  }
+
+  return out;
+}
+
+// Morphology Dilate
+cv::Mat Morphology_Dilate(cv::Mat img, int Dilate_time){
+  int height = img.cols;
+  int width = img.rows;
+
+  // output image
+  cv::Mat tmp_img;
+  cv::Mat out = img.clone();
+
+  // for erode time
+  for (int i = 0; i < Dilate_time; i++){
+    tmp_img = out.clone();
+
+    // each pixel
+    for (int y = 0; y < height; y++){
+      for (int x = 0; x < width; x++){
+        // check left pixel
+        if ((x > 0) && (tmp_img.at<uchar>(y, x - 1) == 0)){
+          out.at<uchar>(y, x) = 0;
+          continue;
+        } 
+
+        // check up pixel
+        if ((y > 0) && (tmp_img.at<uchar>(y - 1, x) == 0)){
+          out.at<uchar>(y, x) = 0;
+          continue;
+        }
+
+        // check right pixel
+        if ((x < width - 1) && (tmp_img.at<uchar>(y, x + 1) == 0)){
+          out.at<uchar>(y, x) = 0;
+          continue;
+        }
+
+        // check left pixel
+        if ((y < height - 1) && (tmp_img.at<uchar>(y + 1, x) == 0)){
+          out.at<uchar>(y, x) = 0;
+          continue;
+        }
+      }
+    }
+  }
+
+  return out;
+}
+
+// Morphology closing
+cv::Mat Morphology_Closing(cv::Mat img, int open_time){
+
+  // Morphology erode
+  img = Morphology_Erode(img, open_time);
+
+  // Morphology dilate
+  img = Morphology_Dilate(img, open_time);
+
+  return img;
+}
+
+
 int main(int argc, const char* argv[]){
   // read image
   cv::Mat img = cv::imread("imori.jpg", cv::IMREAD_COLOR);
@@ -347,8 +452,11 @@ int main(int argc, const char* argv[]){
   // Canny
   cv::Mat edge = Canny(img);
 
+  // Morphology Opening
+  cv::Mat out = Morphology_Closing(edge, 1);
+
   //cv::imwrite("out.jpg", out);
-  cv::imshow("answer(edge)", edge);
+  cv::imshow("sample", out);
   cv::waitKey(0);
   cv::destroyAllWindows();
 
