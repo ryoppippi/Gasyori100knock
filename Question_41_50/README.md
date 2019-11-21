@@ -247,7 +247,9 @@ Morphology Dilate
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](answers_image/answer_4.jpg)|![](answers_image/answer_49.jpg)|
 
-答え >> [answers/answer_49.py](answers_py/answer_49.py)
+答え 
+- Python >> [answers_py/answer_49.py](answers_py/answer_49.py)
+- C++ >> [answers_cpp/answer_49.cpp](answers_cpp/answer_49.cpp)
 
 ## Q.50. クロージング処理
 
@@ -263,4 +265,6 @@ Morphology Dilate
 |:---:|:---:|:---:|
 |![](imori.jpg)|![](answers_image/answer_43.jpg)|![](answers_image/answer_50.jpg)|
 
-答え >> [answers/answer_50.py](answers_py/answer_50.py)
+答え 
+- Python >> [answers_py/answer_50.py](answers_py/answer_50.py)
+- C++ >> [answers_cpp/answer_50.cpp](answers_cpp/answer_50.cpp)
