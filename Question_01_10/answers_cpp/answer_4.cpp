@@ -17,8 +17,8 @@ cv::Mat BGR2GRAY(cv::Mat img){
     for (int x = 0; x < width; x++){
       // BGR -> Gray
       out.at<uchar>(y, x) = 0.2126 * (float)img.at<cv::Vec3b>(y, x)[2] \
-        + 0.7152 * (float)img.at<cv::Vec3b>(y, x)[1] \
-        + 0.0722 * (float)img.at<cv::Vec3b>(y, x)[0];
+                          + 0.7152 * (float)img.at<cv::Vec3b>(y, x)[1] \
+                          + 0.0722 * (float)img.at<cv::Vec3b>(y, x)[0];
     }
   }
 
@@ -31,8 +31,8 @@ cv::Mat Binarize_Otsu(cv::Mat gray){
   int height = gray.rows;
 
   // determine threshold
-  double w0 = 0, w1 = 0;
-  double m0 = 0, m1 = 0;
+  double w0, w1;
+  double m0, m1;
   double max_sb = 0, sb = 0;
   int th = 0;
   int val;
@@ -46,8 +46,7 @@ cv::Mat Binarize_Otsu(cv::Mat gray){
     for (int y = 0; y < height; y++){
       for (int x = 0; x < width; x++){
         val = (int)(gray.at<uchar>(y, x));
-
-        if (val < t){
+        if (val <= t){
           w0++;
           m0 += val;
         } else {
@@ -83,7 +82,6 @@ cv::Mat Binarize_Otsu(cv::Mat gray){
       } else {
         out.at<uchar>(y, x) = 0;
       }
-    
     }
   }
 
