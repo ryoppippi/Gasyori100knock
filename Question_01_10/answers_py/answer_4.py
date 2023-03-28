@@ -14,13 +14,14 @@ def BGR2GRAY(img):
 
 	return out
 
-# Otsu Binalization
+# Otsu Binarization
 def otsu_binarization(img, th=128):
-	imax_sigma = 0
+	H, W = img.shape
+	max_sigma = 0
 	max_t = 0
 
 	# determine threshold
-	for _t in range(1, 255):
+	for _t in range(255):
 		v0 = out[np.where(out < _t)]
 		m0 = np.mean(v0) if len(v0) > 0 else 0.
 		w0 = len(v0) / (H * W)
@@ -35,8 +36,8 @@ def otsu_binarization(img, th=128):
 	# Binarization
 	print("threshold >>", max_t)
 	th = max_t
-	out[out < th] = 0
-	out[out >= th] = 255
+	out[out <= th] = 0
+	out[out > th] = 255
 
 	return out
 
@@ -49,7 +50,7 @@ img = cv2.imread("imori.jpg").astype(np.float32)
 out = BGR2GRAY(img)
 
 # Otsu's binarization
-out = otsu_binalization(out)
+out = otsu_binarization(out)
 
 # Save result
 cv2.imwrite("out.jpg", out)
