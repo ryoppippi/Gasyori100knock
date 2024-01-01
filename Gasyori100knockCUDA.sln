@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Gasyori100knockCUDA", "Gasyori100knockCUDA\\Tutorial.vcxproj", "{B3CF37C6-D641-4A3C-B334-85CF40E4DD6B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B3CF37C6-D641-4A3C-B334-85CF40E4DD6B}.Debug|x64.ActiveCfg = Debug|x64
+		{B3CF37C6-D641-4A3C-B334-85CF40E4DD6B}.Debug|x64.Build.0 = Debug|x64
+		{B3CF37C6-D641-4A3C-B334-85CF40E4DD6B}.Release|x64.ActiveCfg = Release|x64
+		{B3CF37C6-D641-4A3C-B334-85CF40E4DD6B}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0D4ADC50-732D-4628-8760-5B66BA9C8FA9}
+	EndGlobalSection
+EndGlobal
