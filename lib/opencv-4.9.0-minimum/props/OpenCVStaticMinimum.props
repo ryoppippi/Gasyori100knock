@@ -12,10 +12,10 @@
     </Link>
   </ItemDefinitionGroup>
   <PropertyGroup Condition="'$(Configuration)'=='Debug'">
-    <LinkerInputAdditionalDependencies>aded.lib;ippicvmt.lib;IlmImfd.lib;ippiwd.lib;ittnotifyd.lib;libjpeg-turbod.lib;libopenjp2d.lib;libpngd.lib;libprotobufd.lib;libtiffd.lib;libwebpd.lib;opencv_img_hash490d.lib;opencv_world490d.lib;zlibd.lib%(LinkerInputAdditionalDependencies)</LinkerInputAdditionalDependencies>
+    <LinkerInputAdditionalDependencies>IlmImfd.lib;ippicvmt.lib;ippiwd.lib;ittnotifyd.lib;libjpeg-turbod.lib;libopenjp2d.lib;libpngd.lib;libtiffd.lib;libwebpd.lib;zlibd.lib;opencv_calib3d490d.lib;opencv_core490d.lib;opencv_features2d490d.lib;opencv_flann490d.lib;opencv_highgui490d.lib;opencv_imgcodecs490d.lib;opencv_imgproc490d.lib;opencv_ml490d.lib;opencv_objdetect490d.lib;opencv_photo490d.lib;opencv_stitching490d.lib;opencv_video490d.lib;opencv_videoio490d.lib;%(LinkerInputAdditionalDependencies)</LinkerInputAdditionalDependencies>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)'=='Release'">
-    <LinkerInputAdditionalDependencies>ade.lib;IlmImf.lib;ippicvmt.lib;ippiw.lib;ittnotify.lib;libjpeg-turbo.lib;libopenjp2.lib;libpng.lib;libprotobuf.lib;libtiff.lib;libwebp.lib;opencv_img_hash490.lib;opencv_world490.lib;zlib.lib%(LinkerInputAdditionalDependencies)</LinkerInputAdditionalDependencies>
+    <LinkerInputAdditionalDependencies>IlmImf.lib;ippicvmt.lib;ippiw.lib;ittnotify.lib;libjpeg-turbo.lib;libopenjp2.lib;libpng.lib;libtiff.lib;libwebp.lib;zlib.lib;opencv_calib3d490.lib;opencv_core490.lib;opencv_features2d490.lib;opencv_flann490.lib;opencv_highgui490.lib;opencv_imgcodecs490.lib;opencv_imgproc490.lib;opencv_ml490.lib;opencv_objdetect490.lib;opencv_photo490.lib;opencv_stitching490.lib;opencv_video490.lib;opencv_videoio490.lib;b%(LinkerInputAdditionalDependencies)</LinkerInputAdditionalDependencies>
   </PropertyGroup>
   <ItemGroup>
     <BuildMacro Include="OPENCV_DIR">
