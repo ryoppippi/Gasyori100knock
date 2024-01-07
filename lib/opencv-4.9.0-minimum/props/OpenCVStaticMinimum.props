@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="UserMacros">
+    <OPENCV_DIR>$(SolutionDir)\lib\opencv-4.9.0-minimum</OPENCV_DIR>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(OPENCV_DIR)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(OPENCV_DIR)\lib\$(PlatformTarget)\$(PlatformToolset)\$(Configuration)\;%(AdditionalIncludeDirectories</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+    <LinkerInputAdditionalDependencies>aded.lib;ippicvmt.lib;IlmImfd.lib;ippiwd.lib;ittnotifyd.lib;libjpeg-turbod.lib;libopenjp2d.lib;libpngd.lib;libprotobufd.lib;libtiffd.lib;libwebpd.lib;opencv_img_hash490d.lib;opencv_world490d.lib;zlibd.lib%(LinkerInputAdditionalDependencies)</LinkerInputAdditionalDependencies>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
+    <LinkerInputAdditionalDependencies>ade.lib;IlmImf.lib;ippicvmt.lib;ippiw.lib;ittnotify.lib;libjpeg-turbo.lib;libopenjp2.lib;libpng.lib;libprotobuf.lib;libtiff.lib;libwebp.lib;opencv_img_hash490.lib;opencv_world490.lib;zlib.lib%(LinkerInputAdditionalDependencies)</LinkerInputAdditionalDependencies>
+  </PropertyGroup>
+  <ItemGroup>
+    <BuildMacro Include="OPENCV_DIR">
+      <Value>$(OPENCV_DIR)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+  </ItemGroup>
+</Project>
