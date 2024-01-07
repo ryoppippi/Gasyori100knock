@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup Label="UserMacros">
-    <OPENCV_DIR>$(SolutionDir)\lib\opencv-4.9.0-minimum</OPENCV_DIR>
-  </PropertyGroup>
+  <PropertyGroup Label="UserMacros" />
   <ItemDefinitionGroup>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(OPENCV_DIR)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)lib\opencv-4.9.0-minimum\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(OPENCV_DIR)\lib\$(PlatformTarget)\$(PlatformToolset)\$(Configuration)\;%(AdditionalIncludeDirectories</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib\opencv-4.9.0-minimum\lib\$(PlatformTarget)\$(PlatformToolset)\$(Configuration)\;%(AdditionalIncludeDirectories</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <PropertyGroup Condition="'$(Configuration)'=='Debug'">
@@ -17,10 +15,5 @@
   <PropertyGroup Condition="'$(Configuration)'=='Release'">
     <LinkerInputAdditionalDependencies>IlmImf.lib;ippicvmt.lib;ippiw.lib;ittnotify.lib;libjpeg-turbo.lib;libopenjp2.lib;libpng.lib;libtiff.lib;libwebp.lib;zlib.lib;opencv_calib3d490.lib;opencv_core490.lib;opencv_features2d490.lib;opencv_flann490.lib;opencv_highgui490.lib;opencv_imgcodecs490.lib;opencv_imgproc490.lib;opencv_ml490.lib;opencv_objdetect490.lib;opencv_photo490.lib;opencv_stitching490.lib;opencv_video490.lib;opencv_videoio490.lib;b%(LinkerInputAdditionalDependencies)</LinkerInputAdditionalDependencies>
   </PropertyGroup>
-  <ItemGroup>
-    <BuildMacro Include="OPENCV_DIR">
-      <Value>$(OPENCV_DIR)</Value>
-      <EnvironmentVariable>true</EnvironmentVariable>
-    </BuildMacro>
-  </ItemGroup>
+  <ItemGroup />
 </Project>

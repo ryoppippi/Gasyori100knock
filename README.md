@@ -11,11 +11,6 @@ This repository is dedicated to implementing [画像処理100本ノック](https
 - Software
   - Visual Studio 2022
   - CUDA 11.8
-  - OpenCV 4.9.0
-
-## Preparation
-
-Please set the OpenCV directory as the `OPENCV_DIR` in the system environment variables.
 
 ## Contribution
 
