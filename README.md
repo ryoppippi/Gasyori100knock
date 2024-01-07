@@ -2,7 +2,7 @@
 
 ## Description
 
-This repository is dedicated to implementing [画像処理100本ノック](https://github.com/ryoppippi/Gasyori100knock) in C++ and CUDA C++.
+This repository is dedicated to implementing [画像処理100本ノック](https://github.com/ryoppippi/Gasyori100knock) in C++ and CUDA C++.The primary goal is personal learning and enhancing skills in image processing techniques using these programming languages.
 
 ## Requirements
 
@@ -16,6 +16,10 @@ This repository is dedicated to implementing [画像処理100本ノック](https
 ## Preparation
 
 Please set the OpenCV directory as the `OPENCV_DIR` in the system environment variables.
+
+## Contribution
+
+We appreciate your interest, but we are not seeking contributions to this repository. It is intended for individual learning and development. Thank you for understanding.
 
 ## Citation
 
