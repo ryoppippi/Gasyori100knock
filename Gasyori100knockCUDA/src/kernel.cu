@@ -3,6 +3,8 @@
 #include "device_launch_parameters.h"
 
 #include <stdio.h>
+#include <opencv2/opencv.hpp>
+#include <gtest/gtest.h>
 
 cudaError_t addWithCuda(int *c, const int *a, const int *b, unsigned int size);
 

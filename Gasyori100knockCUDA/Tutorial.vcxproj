@@ -36,11 +36,13 @@
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="..\lib\opencv-4.9.0-minimum\props\OpenCVStaticMinimum.props" />
+    <Import Project="..\lib\gtest-1.14.0\props\Gtest.props" />
     <Import Project="..\lib\opencv-4.9.0-minimum\props\Cuda11.8AdditionalLibraryDirectories.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="..\lib\opencv-4.9.0-minimum\props\OpenCVStaticMinimum.props" />
+    <Import Project="..\lib\gtest-1.14.0\props\Gtest.props" />
     <Import Project="..\lib\opencv-4.9.0-minimum\props\Cuda11.8AdditionalLibraryDirectories.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
