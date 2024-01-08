@@ -6,6 +6,11 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
     <CudaCompile Include="src\kernel.cu">
       <Filter>src</Filter>
     </CudaCompile>

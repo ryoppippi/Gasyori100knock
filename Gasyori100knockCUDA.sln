@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Gasyori100knockCUDA", "Gasyori100knockCUDA\\Gasyori100knockCUDA.vcxproj", "{B3CF37C6-D641-4A3C-B334-85CF40E4DD6B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Gasyori100knockCUDA", "Gasyori100knockCUDA.vcxproj", "{B3CF37C6-D641-4A3C-B334-85CF40E4DD6B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
