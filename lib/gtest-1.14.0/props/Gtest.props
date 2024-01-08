@@ -7,7 +7,7 @@
       <AdditionalIncludeDirectories>$(SolutionDir)lib\gtest-1.14.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(SolutionDir)lib\gtest-1.14.0\lib\$(PlatformTarget)\$(PlatformToolset)\$(Configuration)\;%(AdditionalIncludeDirectories</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib\gtest-1.14.0\lib\$(PlatformTarget)\$(PlatformToolset)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>gtest.lib;gtest_main.lib;gmock.lib;gmock_main.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
